@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta charset="utf-8"/>
+    <title>绑定牛娃账户</title>
+    <meta name="description" content="牛娃"/>
+    <meta name="keywords" content="牛娃"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="email=no" name="format-detection"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <!-- build:css /css/m11/tobind.min.css -->
+    <link href="/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/m11/tobind.css" rel="stylesheet" type="text/css"/>
+    <!-- /build -->
+
+    <script>
+        if (top != self) {
+            location.href = "about:blank";
+        }
+        function isWeiXin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return 'no';
+            } else {
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr, rem, scale, docEl = document.documentElement, fontEl = document.createElement("style"), metaEl = document.querySelector('meta[name="viewport"]');
+        var docWidth = docEl.clientWidth;
+        var u = (window.navigator.appVersion.match(/android/gi), window.navigator.appVersion.match(/iphone/gi));
+        function reDo() {
+            dpr = window.devicePixelRatio || 1;
+            if (u && window.devicePixelRatio >= 3) {
+                dpr = 3;
+            } else if (window.devicePixelRatio >= 2) {
+                dpr = 2;
+            } else {
+                dpr = 1;
+            }
+            rem = docWidth * dpr / 7.5;
+            scale = 1 / dpr;
+            metaEl.setAttribute("content", "width=" + dpr * docWidth + ",initial-scale=" + scale + ",maximum-scale=" + scale + ", minimum-scale=" + scale + ",user-scalable=" + weixing);
+            docEl.setAttribute("data-dpr", dpr);
+            docEl.firstElementChild.appendChild(fontEl);
+            fontEl.innerHTML = "html{font-size:" + rem + "px!important;}";
+            window.rem2px = function (a) {
+                a = parseFloat(a);
+                return a * rem
+            };
+            window.px2rem = function (a) {
+                a = parseFloat(a);
+                return a / rem
+            };
+        }
+        reDo()
+    </script>
+</head>
+<body>
+<div style="" class="">
+    <div class="com_bd">
+        <div class="h_lg">
+            <img src="/imgs/m11/logo.png">
+            <p>绑定牛娃账户</p>
+        </div>
+        <%if(flag=='BIND_TEL'){%>
+            <div class="com_c">
+                <label for="userphone">手机号码</label>
+                <span id="userphone"><%=starTel%></span>
+            </div>
+        <%}else{%>
+            <div class="com_c">
+                <label for="username">用户姓名</label>
+                <span id="username"><%=name%></span>
+            </div>
+            <div class="com_c">
+                <label for="userid">身份证号</label>
+                <span id="userid"><%=starCardNo%></span>
+            </div>
+        <%}%>
+        <div class="com_c">
+            <label for="userpwd">登录密码</label>
+            <input id="userpwd" type="password" placeholder="请输入牛娃或牛呗的登录密码" maxlength="20" class="txt userpwd" style="width: 4rem">
+        </div>
+        <div class="com_c">
+            <label for="userpwd">图形验证</label>
+            <input type="text" placeholder="请输入右侧的图形验证码"  maxlength="6" class="txt img_verifycode">
+            <img src="/pla/generatecaptchareg" id="imgcode">
+        </div>
+        <div style="margin:auto;text-align: center;"><input type="button" value="确认绑定" class="txtreg sureBind"></div>
+        <div class="forget" style="text-align: right"><a href="findpsd">忘记密码？</a> </div>
+        <p class="custom_service"><a class="online" href="http://i-niuwa.udesk.cn/im_client">在线客服</a><span>|</span> <a class="call" href="tel:400-8846-898">客服电话</a></p>
+    </div>
+</div>
+</body>
+<!-- Google Tag Manager -->
+
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+    var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-5H47RG');</script>
+
+<!-- End Google Tag Manager -->
+</html>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.sha256.min.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+
+<!-- build:js /js/m11/tobind.min.js -->
+<script src="/js/g.js"></script>
+<script type="text/javascript" src="/js/common/formSubmit.js"></script>
+<script type="text/javascript" src="/js/m11/tobind.js"></script>
+<!-- /build -->

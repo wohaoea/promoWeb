@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>牛娃互联网金融|注册</title>
+    <meta name="description" content="活动细则" />
+    <meta name="keywords" content="活动细则" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <!-- build:css /css/h5reg.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5reg.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+
+    <script>
+        if(top != self){
+            location.href = "about:blank";
+        }
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return 'no';
+            }else{
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr,rem,scale,docEl=document.documentElement,fontEl=document.createElement("style"),metaEl=document.querySelector('meta[name="viewport"]');
+        var u = (window.navigator.appVersion.match(/android/gi),window.navigator.appVersion.match(/iphone/gi));
+        dpr=window.devicePixelRatio||1;
+        if(u && window.devicePixelRatio>=3){
+            dpr=3;
+        }else if(window.devicePixelRatio>=2){
+            dpr=2;
+        }else{
+            dpr=1;
+        };
+        rem=docEl.clientWidth*dpr/10;scale=1/dpr;metaEl.setAttribute("content","width="+dpr*docEl.clientWidth+",initial-scale="+scale+",maximum-scale="+scale+", minimum-scale="+scale+",user-scalable="+ weixing);docEl.setAttribute("data-dpr",dpr);docEl.firstElementChild.appendChild(fontEl);fontEl.innerHTML="html{font-size:"+rem+"px!important;}";
+        window.rem2px=function(a){a=parseFloat(a);return a*rem};window.px2rem=function(a){a=parseFloat(a);return a/rem};
+    </script>
+</head>
+<body style="background:#ffd232">
+<div class="wraper clearfix">
+    <!--<div class="topheader" style="background:url(../imgs/h5reg/h5reg_top.png) no-repeat;"></div>-->
+    <img width="100%" src="/imgs/h5reg/h5reg_top.png" alt="">
+    <div class="regbodyh5" style="margin-top: -0.09rem">
+        <div class="reglist">
+            <input type="tel" placeholder="请输入手机号" id="phonenum">
+            <div class="phoneico"></div>
+        </div>
+        <div class="reglist">
+            <input type="password" placeholder="密码（可包含字母、数字或符号）" id="password">
+            <div class="mimaico"></div>
+        </div>
+        <div class="rlist clearfix">
+            <div class="reglist small">
+                <input type="text" placeholder="图形验证码" id="imgcode">
+                <div class="tuxingico"></div>
+            </div>
+            <img  style=" cursor: pointer; margin-top: 0.48rem;float: right;width: 2.84rem; border-radius: 0.12rem;" id="refreshimg" class="fl"/>
+        </div>
+        <div class="rlist clearfix">
+            <div class="reglist small">
+                <input type="tel" placeholder="短信验证码" id="phonevalidation">
+                <div class="duanxinico"></div>
+            </div>
+            <button class="yellow" id="btnvalidation" data-ca="btnvalidation">获取验证码</button>
+        </div>
+        <div class="reglist">
+            <input type="text" placeholder="邀请码(推荐人用户名或手机号)" id="invite-code">
+            <div class="invite"></div>
+        </div>
+        <div class="reglist clearfix" style="background:none;height:0.4rem;line-height:0.4rem;">
+            <div class="agree agreed"></div>
+            <div class="yuedu">我已阅读并同意<span onclick="javascript:window.location.href='/clause'">《平台注册协议》</span></div>
+        </div>
+        <div id="regbtn" style="margin-top:0.58rem;text-align: center">
+            <img style="width: 8rem;height: 1.21rem" src="/imgs/h5reg/register_btn.png">
+        </div>
+        <!--<div class="divtijiao">-->
+            <!--<button class="btntijiao" id="regbtn" data-ca="regbtn"></button>-->
+        <!--</div>-->
+        <!--<p style="color:#fff;" class="pclass">已经注册？<a href="<%= h5domain%>user/login">马上登录</a></p>-->
+        <div class="xuxian"></div>
+        <div class="shuoming_new"></div>
+    </div>
+    <div class="moreprdtitle"></div>
+    <!--<a href="<%=h5domain%>prod/news" class="newdetail"><img src="/imgs/h5reg/new.png" style="width: 9.06666666667rem; height: 1.8666666667rem;"/></a>-->
+    <!--<a href="<%=h5domain%>prod/plan" class="plandetail"><img src="/imgs/h5reg/plan.png" style="width: 9.06666666667rem; height: 1.8666666667rem;"/></a>-->
+    <!--<a href="<%=h5domain%>prod/jingxuan" class="ideadetail"><img src="/imgs/h5reg/idea.png" style="width: 9.06666666667rem; height: 1.8666666667rem;"/></a>-->
+    <div class="invest-project">
+        <img class="invest-project-item" src="/imgs/h5reg/xinniu.png" >
+        <img class="invest-project-item" src="/imgs/h5reg/planA.png" >
+        <img class="invest-project-item" src="/imgs/h5reg/planB.png" >
+        <img class="invest-project-item" src="/imgs/h5reg/planC.png" >
+    </div>
+
+    <div class="zijinplat">
+        <div class="zijinplat-tittle"></div>
+        <div class="shuomingtree"></div>
+    </div>
+    <div class="h5footer">
+        <div class="footbox">
+            <p>全国客服热线：<span class="phone">400-8846-898</span></p>
+            <p style="margin-top:0.1rem">工作日9:00-21:00<span class="jiejiari">节假日9:00-18:00</span></p>
+            <p style="margin-top:0.4rem">©牛娃互联网金融  沪ICP备15002518号</p>
+        </div>
+    </div>
+</div>
+</body>
+<!-- Google Tag Manager -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+
+<!-- End Google Tag Manager -->
+</html>
+<script>
+    var domain = '<%= dom%>';
+    var h5domain = '<%= h5domain%>';
+</script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+
+    wx.config({
+        debug: false,
+        appId: 'wx1c31a58272c4dd10',
+        timestamp:'<%=timespan%>' ,
+        nonceStr: '<%=noncestr%>',
+        signature: '<%=signature%>',
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ']
+    });
+
+    wx.ready(function(){
+
+        wx.onMenuShareTimeline({
+            title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            link: window.location.href
+        });
+
+        wx.onMenuShareAppMessage({
+            title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            link: window.location.href
+        });
+
+        wx.onMenuShareQQ({
+            title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            link: window.location.href
+        });
+
+    });
+
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.sha256.min.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+
+<!-- build:js /js/h5reg.min.js -->
+<script src="/js/g.js"></script>
+<script type="text/javascript" src="/js/h5reg.js"></script>
+<!-- /build -->

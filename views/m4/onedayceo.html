@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>一日CEO助理评选</title>
+    <meta name="description" content="一日CEO助理评选" />
+    <meta name="keywords" content="一日CEO助理评选" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/yiriceo.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+
+    <script>
+
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return 'no';
+            }else{
+                return 'yes';
+            }
+        }
+
+        var weixing = isWeiXin();
+        var dpr,rem,scale,docEl=document.documentElement,fontEl=document.createElement("style"),metaEl=document.querySelector('meta[name="viewport"]');
+        var u = (window.navigator.appVersion.match(/android/gi),window.navigator.appVersion.match(/iphone/gi));
+        dpr=window.devicePixelRatio||1;
+        if(u && window.devicePixelRatio>=3){
+            dpr=3;
+        }else if(window.devicePixelRatio>=2){
+            dpr=2;
+        }else{
+            dpr=1;
+        };
+        rem=docEl.clientWidth*dpr/10;scale=1/dpr;metaEl.setAttribute("content","width="+dpr*docEl.clientWidth+",initial-scale="+scale+",maximum-scale="+scale+", minimum-scale="+scale+",user-scalable="+ weixing);docEl.setAttribute("data-dpr",dpr);docEl.firstElementChild.appendChild(fontEl);fontEl.innerHTML="html{font-size:"+rem+"px!important;}";
+        window.rem2px=function(a){a=parseFloat(a);return a*rem};window.px2rem=function(a){a=parseFloat(a);return a/rem};
+    </script>
+    <style type="text/css">
+    .ceobox{
+        width:9.296875rem;
+        margin:0 auto;
+    }
+        h3{
+            font-size:0.4375rem;
+            line-height:1.3125rem;
+            text-align:left;
+            color:#6bbdf6;
+        }
+        p{
+            font-size:0.4375rem;
+        }
+        p a,p span{
+            font-size:0.4375rem;
+            color:#6bbdf6 !important;
+            line-height:0.5rem;
+
+        }
+        p a{
+        }
+        .mt{
+            margin-top:0.71875rem;
+        }
+        .bottomfoot{
+            width:10rem;
+            height:6.671875rem;
+            background:url(../imgs/bottombg.png);
+            background-size:cover;
+            margin-top:0.71875rem;
+        }
+    </style>
+</head>
+<body style="background:#fcfcf5">
+    <div class="ceobox">
+        <h3>评选规则：</h3>
+        <p><span>一、9月1日-9月30日：</span>将简历提交正青春现场工作人员或发至<a href="mailto:mkt@i-niuwa.com">mkt@i-niuwa.com</a>，参与候选人评选。</p>
+        <p class="mt"><span>二、10月1日-10月31日：</span>候选人发布个人简介到牛呗APP牛榜单，<span>邀好友投票<span>。</p>
+        <p class="mt"><span>三、</span>根据投票结果，确定<span>1</span>名CEO一日助理人选</p>
+        <h3 style="margin-top:0.625rem">投票规则：</h3>
+        <p>每人每天可投1票（完成身份认证才可投票）</p>
+    </div>
+    <div class="bottomfoot"></div>
+</body>
+</html>
+
+

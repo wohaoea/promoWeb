@@ -1,0 +1,112 @@
+.detail_plan{
+    background-color: #5a6fbe;
+    overflow: hidden;
+    /*margin-top: .9rem;*/
+}
+
+.fl{
+    float: left
+}
+
+.contain{
+    background-size: contain!important;
+    -webkit-background-size: contain!important;
+    -moz-background-size: contain!important;
+    -o-background-size: contain!important;
+    -ms-background-size: contain!important;
+}
+
+.plan_top{
+    width: 100%;
+    height: 2.06rem;
+    text-align: center;
+    color: #fff;
+    padding-top: .64rem;
+    box-sizing: border-box;
+    font-size: 'Microsoft YaHei';
+    position: relative;
+    margin-bottom: .4rem;
+}
+
+.plan_top > h4{
+    font-size: .3rem;
+    line-height: .48rem;
+}
+
+.money{
+    font-size: .48rem;
+    line-height: .48rem
+}
+
+.separated{
+    width: 6.69rem;
+    height: 2px;
+    background: url('/imgs/langdon/separated.png') 0 0 no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto; 
+}
+
+.plan_content{
+    padding-left: 0.5rem;
+    min-height: 9.98rem;
+}
+
+.year{
+    font-size: 0.3rem;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.day{
+    padding-left: .28rem;
+    font-size: 0.24rem;
+    color: #fff;
+    line-height: 0.22rem;
+    height: 1.4rem;
+}
+.day span{
+    display: inline-block;
+}
+
+.date{
+    width: 1.03rem;
+    color: #fff;
+}
+
+.circle{
+    width: 0.22rem;
+    height: 0.22rem;
+    border-radius: 50%;
+    background-color: #9daad7;
+    margin-right: 1.5rem;
+    position: relative;
+}
+
+.circle::after{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: .3rem auto;
+    content: '';
+    width: .02rem;
+    height: 1rem;
+    background-color: #7b8dcb;
+
+}
+
+.month_money{
+    color: #fff;
+    font-size: 0.28rem;
+}
+
+ul>li:last-child>.circle::after{
+    display: none;
+}
+
+ul>li:last-child{
+    height: .6rem;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>众人帮加息</title>
+    <meta name="description" content="众人帮加息" />
+    <meta name="keywords" content="众人帮加息" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/sdhd.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/sdhd.css">
+    <!-- /build -->
+
+    <script>
+    if(top != self){  
+        location.href = "about:blank";
+    }
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return 'no';
+            }else{
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr,rem,scale,docEl=document.documentElement,fontEl=document.createElement("style"),metaEl=document.querySelector('meta[name="viewport"]');
+        var u = (window.navigator.appVersion.match(/android/gi),window.navigator.appVersion.match(/iphone/gi));
+        dpr=window.devicePixelRatio||1;
+        if(u && window.devicePixelRatio>=3){
+            dpr=3;
+        }else if(window.devicePixelRatio>=2){
+            dpr=2;
+        }else{
+            dpr=1;
+        };
+        rem=docEl.clientWidth*dpr/10;scale=1/dpr;metaEl.setAttribute("content","width="+dpr*docEl.clientWidth+",initial-scale="+scale+",maximum-scale="+scale+", minimum-scale="+scale+",user-scalable="+ weixing);docEl.setAttribute("data-dpr",dpr);docEl.firstElementChild.appendChild(fontEl);fontEl.innerHTML="html{font-size:"+rem+"px!important;}";
+        window.rem2px=function(a){a=parseFloat(a);return a*rem};window.px2rem=function(a){a=parseFloat(a);return a/rem};
+    </script>
+</head>
+<body>
+    <div class="topheader"></div>
+    <div class="jxheader"></div>
+    <a href='<%=config.base.h5domain%>prod/plan' class="goinvest"><img src="/imgs/sdhd/touzi.png" /></a>
+    <div class="jxwraper">
+        <% if(userInfo){%>
+        <div class="jxlist">
+            <div class="mytitle">—— 我的加息 ——</div>
+            <ul>
+                <% if(investList.length==0){%>
+                    <% if(typeof(investListflag)!='undefined'){%>
+                    <li class="nolisttip">投资信息未加载,请刷新页面重新加载！</li>
+                    <%}else{%>
+                      <li class="nolisttip">还没有投资信息，赶紧投资让小伙伴们来加息吧！</li>
+                    <%}%>
+                <%}else{%>
+                    <% investList.forEach(function(v,k){%>
+                        <%if(v.isOver){%>
+                            <li class="hdover" data-url="/m6/interestshare/<%=v.recordNo%>">
+                                <div class="listjxbox clearfix">
+                                    <div class="jxlistleft">投资项目：<%= utils.subString(v.prodName,18)%></div>
+                                    <div class="jxlistright">原标收益：<%= v.yearRate%>%</div>
+                                </div>
+                                <div class="listjxbox clearfix">
+                                    <div class="jxlistleft">加息倒计时：已结束</div>
+                                    <div class="jxlistright">已加收益：<span><%= v.peopleAddRate%>%</span></div>
+                                </div>
+                            </li>
+                        <%}else{%>
+                             <li data-url="/m6/interestshare/<%=v.recordNo%>" data-recordNo='<%=v.recordNo%>'>
+                                <div class="rightarrow"></div>
+                                <div class="listjxbox clearfix">
+                                    <div class="jxlistleft">投资项目：<%= utils.subString(v.prodName,18)%></div>
+                                    <div class="jxlistright">原标收益：<%= v.yearRate%>%</div>
+                                </div>
+                                <div class="listjxbox clearfix">
+                                    <div class="jxlistleft">加息倒计时：<span data-cd='<%- JSON.stringify(utils.DistanceTime(v.investTime))%>' id="<%='cd-'+k %>" class="cd"><%- (utils.DistanceTime(v.investTime))._h%>：<%- (utils.DistanceTime(v.investTime))._m%>：<%- (utils.DistanceTime(v.investTime))._s%></span></div>
+                                    <div class="jxlistright">已加收益：<span class="addrated"><%= v.peopleAddRate%>%</span></div>
+                                </div>
+                            </li>                           
+                        <%}%>
+                    <%})%>
+                <%}%>
+                
+            </ul>
+        </div>
+        <%}%>
+        <div class="rule" <% if(userInfo){%><%}else{%>style="margin-top:0;"<%}%>>
+            <div class="mytitle">—— 活动规则 ——</div>
+           <ul>
+               <li class="clearfix"><div class="number">1.</div><div class="shuoming">活动期间用户单笔投资懒牛计划满2000元即可产生分享链接，分享至朋友圈可邀请朋友帮忙加息，每位好友可帮助加息一次；</div></li>
+               <li class="clearfix"><div class="number">2.</div><div class="shuoming">朋友帮忙加息限时为30分钟，投资完成后即可开启倒计时，累计最高可以加息1%；</div></li>
+               <li class="clearfix"><div class="number">3.</div><div class="shuoming">加息限时结束后，可以通过投资记录查看本次投资的加息情况；</div></li>
+               <li class="clearfix"><div class="number">4.</div><div class="shuoming">使用红包与加息券投资的用户不再同时享受本活动的加息奖励；</div></li>
+               <li class="clearfix"><div class="number">5.</div><div class="shuoming">活动仅限投资懒牛计划的用户参与；</div></li>
+               <li class="clearfix"><div class="number">6.</div><div class="shuoming">帮助用户进行加息的好友，可获得20元红包一个，领取的红包可在投资时使用；</div></li>
+               <li class="clearfix"><div class="number">7.</div><div class="shuoming">活动最终解释权归牛娃互联网金融所有。</div></li>
+           </ul>
+        </div>
+    </div>
+    
+<!--
+1.  活动期间用户单笔投资懒牛计划满2000元即可产生分享链接，分享至朋友圈可邀请朋友帮忙加息，每位好友可帮助加息一次；
+2.  朋友帮忙加息限时为30分钟，投资完成后即可开启倒计时，累计最高可以加息1%；
+3.  加息限时结束后，可以通过投资记录查看本次投资的加息情况；
+4.  使用红包与加息券投资的用户不再同时享受本活动的加息奖励；
+5.  活动仅限投资懒牛计划的用户参与；
+6.  帮助用户进行加息的好友，可获得20元红包一个，领取的红包可在投资时使用；
+7.  活动最终解释权归牛娃互联网金融所有。
+-->
+</body>
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<!-- build:js /js/sdhd.min.js -->
+<script type="text/javascript" src='/js/sdhd.js'></script>
+<!-- /build -->

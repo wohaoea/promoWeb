@@ -1,0 +1,158 @@
+*
+{
+    padding: 0px;
+    margin: 0px;
+}
+h1, h2, h3, h4, h5, h6
+{
+    padding: 0px;
+    margin: 0px;
+}
+img
+{
+    border: none;
+}
+dl, dt
+{
+    padding: 0px;
+    margin: 0px;
+}
+a
+{
+    text-decoration: none;
+    font-family: 微软雅黑;
+}
+.cl
+{
+    clear: both;
+    font-family: 微软雅黑;
+}
+.fl
+{
+    float: left;
+    font-family: 微软雅黑;
+}
+.fr
+{
+    float: right;
+    font-family: 微软雅黑;
+}
+ul, li
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 微软雅黑;
+}
+body{font:14px/22px "微软雅黑","宋体",Arial,'\5b8b\4f53',Helvetica,sans-serif;color:#666; overflow:auto;background:#fff}
+a{color:#666;text-decoration:none; cursor:pointer; outline:none;}
+
+.niuwa-header,.niuwa_footer{
+  width:1000px;
+  margin:0 auto;
+  position:relative;
+
+}
+.clearfix:before, 
+
+.clearfix:after { 
+
+  display: table; 
+
+  line-height: 0; 
+
+  content: ""; 
+
+} 
+.clearfix:after { 
+  clear: both; 
+} 
+.clearfix { 
+  *zoom: 1; 
+} 
+.bcblur{
+  background-color: #3296ff;
+}
+.nb_top{
+  background: url(../imgs/niube/niubeibg.png) -4px -6px;
+  width: 272px;
+  height: 61px;
+}
+.nb_dn{
+  background: url(../imgs/niube/niubeibg.png) -7px -83px;
+  width: 475px;
+  height: 46px;
+}
+.fl{float: left;}
+.fr{float: right;}
+.clearboth{clear: both}
+.nb_dzd{
+  background: url(../imgs/niube/niubeibg.png) -5px -137px;
+  width: 475px;
+  height: 81px;
+  position: relative;
+}
+.nb_dzd_1{
+  width: 220px;
+  height: 81px;
+  position: absolute;
+  cursor: pointer;
+}
+.nb_dzd_2{
+  width: 220px;
+  height: 81px;
+  position: absolute;
+  cursor: pointer;
+  left: 250px;
+}
+.ewmdl{color: #fff;margin-top: 15px;cursor: pointer;width: 100px;}
+.nb_sm1{
+  background: url(../imgs/niube/niubeibg.png) -1px -259px;
+  width: 148px;
+  height: 278px;
+  float: left;
+  
+}
+.nb_sm3{
+  background: url(../imgs/niube/niubeibg.png) -345px -257px;
+  width: 136px;
+  height: 278px;
+  float: left;
+  margin-left: 265px;
+}
+.nb_sm2{
+  background: url(../imgs/niube/niubeibg.png) -165px -259px;
+  width: 136px;
+  height: 278px;
+  float: left;
+  margin-left: 265px;
+}
+.niuwa_footer{
+  margin: auto;
+  text-align: center;
+  color: #fff;}
+
+  .sharetrabs{position: absolute;right: 0px;
+  top: 0px;}
+  #wx,#weibo{display: inline-block;float: left;cursor: pointer;}
+  #wx{background: url(../imgs/niube/niubeibg.png) 1px -553px;
+  width: 44px;
+  height: 42px; }
+  #weibo{background: url(../imgs/niube/niubeibg.png) -57px -553px;
+  width: 44px;
+  height: 42px;margin-left: 20px}
+  .nbabs{  position: absolute;
+  left: -54px;
+  top: -188px;display: none;}
+  .tipsewm{  position: absolute;display: none;
+  width: 340px;
+  height: 160px;
+  top: 190px;
+  background-color: #fff;
+  left: 400px;
+  border-radius: 8px;
+  border: solid 2px #3296FF;padding: 20px}
+  .closexd{background: url(../imgs/niube/niubeibg.png) -125px -559px;
+  float: right;
+  width: 20px;
+  height: 20px;cursor: pointer;}

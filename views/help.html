@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>帮助中心</title>
+    <meta name="description" content="注册" /> 
+    <meta name="keywords" content="注册,牛娃p2p" /> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/niuwah5.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <ul class="help-list">
+            <li>
+                <label><span>申请借款需要什么条件？</span></label>
+                <div class="info">全日制本科及以上在校大学生都可以申请借款。</div>
+            </li>
+            <li>
+                <label><span>什么是信用评分？</span></label>
+                <div class="info">信用评分是利用大数据分析技术提炼用户各类有价值信息，客观反映用户信用水平的信用评价体系。信用评分涵盖了用户的消费习惯、社交行为、信用关联、信用积累、生活标签、学习经验、职业规划，尤其针对学生用户群细化学生特有属性，使信用评分更客观真实。信用评分与平台金融服务密切关联，是信贷产品审批和授信的重要依据。<br>
+                    提升信用评分有利于获得更好的金融服务，完成信用修炼术的各种任务是提高信用评分的有效方法，即便如此，信用评分的提高是一个长期的过程，需要点滴积累。</div>
+            </li>
+            <li>
+                <label><span>什么是信用额度？</span></label>
+                <div class="info">信用额度是根据信用评分计算出的借款最大金额，提高信用评分可以增加信用额度。</div>
+            </li>
+            <li>
+                <label><span>如何借款？</span></label>
+                <div class="info">从“首页-牛小宝”进入借款页面，首次借款需要激活信用额度，根据页面提示填写必要信息，获得信用额度，就可以开始借款了。</div>
+            </li>
+            <li>
+                <label><span>如何查询借款进度？</span></label>
+                <div class="info">在“我的-借款记录”中可以查看从申请借款到借款成功的每一个步骤。</div>
+            </li>
+            <li>
+                <label><span>怎样把借到的钱取出来？</span></label>
+                <div class="info">借款成功完成放款后，在“我的-资金托管账户”中可以查看到当前账户余额，使用提现功能即可将资金转到银行卡。</div>
+            </li>
+            <li>
+                <label><span>提现资金多久可以到账？</span></label>
+                <div class="info">提现到账时间3分钟左右，支持的银行有工商银行、农业银行、建设银行、交通银行、招商银行，其他银行提现到账时间以银行实际支持的时间为准。</div>
+            </li>
+            <li>
+                <label><span>如何还款？</span></label>
+                <div class="info">在“首页-牛小宝”进入借款页面，当已有一笔借款时，页面下方显示还款按钮，点击即可还款。系统会根据当前日期自动判断是提前还款、正常还款还是逾期还款<br>还款资金从资金托管账户扣除，如果可用余额不足需要先充值。</div>
+            </li>
+            <li>
+                <label><span>逾期发生了怎么办？</span></label>
+                <div class="info">发生逾期请尽快还款，逾期未还款会影响信用评分，并收取逾期费用，逾期严重者将被提交至征信系统。</div>
+            </li>
+
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+$(function(){
+    // $(".help-list li").click(function(){
+
+    // });
+    // 
+    $(".help-list li").toggle(
+        function(){
+            //$(this).find("b").attr("class","jticon2");
+            $(this).children(".info").show();
+        },
+        function(){
+            //$(this).find("b").attr("class","jticon1");
+            $(this).children(".info").hide();
+        }
+    );
+    
+
+});
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5H47RG');</script>

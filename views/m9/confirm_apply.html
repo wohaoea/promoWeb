@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/confirm_apply.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" type="text/css" href="/css/m9/confirm_apply.css"> 
+    <!-- /build -->
+    <%include ./h5script10.html%>
+</head>
+
+<body>
+	
+	<img src="/imgs/m9/check_success.png" class="pic1"/>
+	<p class="pass">审核通过</p>
+	<p class="rest">服务确认剩余时间  <span id="rest_time"> <%=time%></span></p>
+	<p class="detail"><span>服务总价 （元）</span><span>3000</span></p>
+	<p class="detail"><span>分期期数 （期）</span><span>3</span></p>
+	<p class="detail"><span>计息时间</span><span><%=pay_data%></span></p>
+	<div class="repay_plan">
+		<hr />
+		<span>还款计划</span>
+
+	</div>
+	<p class="term"><span>1/3期</span><span><%=json[0].repayTime%></span><span>1000元</span></p>
+	<p class="term"><span>2/3期</span><span><%=json[1].repayTime%></span><span>1000元</span></p>
+	<p class="term"><span>3/3期</span><span><%=json[2].repayTime%></span><span>1000元</span></p>
+	<p class="jujianxieyi">
+		<img src="/imgs/m9/ico-check_02.png" class="uncheck"/><span>我已同意并阅读<a href="/m9_2/jiekuanxieyi">《消费分期协议》</a> <a href="/m9_2/zifeishuoming"> 《资费标准及说明》 </a></span>
+	</p>	
+
+	
+	<nav class="button">确定</nav>
+	<p id="phone" style='margin-bottom:1rem'>如有疑问请拨打客服电话：<a id="niuwa_phone">400-8846-898</a></p>
+</body>
+
+</html>
+<script>
+var	rest_time='<%=rest_time%>'
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script>
+/**
+ * jQuery拖拽 & 弹出层
+ * API: http://dreamback.github.io/idialog/
+ * @author: heshimeng1987@qq.com
+ */
+
+    var win = $(window),
+        doc = $(document),
+        ie = $.browser.msie,
+        version = parseInt($.browser.version),
+        ie6 = ie && version < 7,
+        dialog,
+        dialogZindex = 1e4;
+
+    //插入皮肤
+    (function(){
+        var script = document.getElementsByTagName('script'),
+            i = 0,
+            len = script.length,
+            link = document.createElement('link'),
+            theme,
+            path;
+            link.setAttribute('rel', 'stylesheet');
+        for( ; i < len; i++){
+            theme = script['dialog-theme']||script[i].getAttribute('dialog-theme');
+            if(theme){
+                path = (script[i].src||script[i].getAttribute('src'));
+                path = path.substring(0, path.lastIndexOf('/'))+'/theme/';
+                link.setAttribute('href', path+theme+'/style.css');
+                script[i].parentNode.insertBefore(link, script[i]);
+                break;
+            }
+        }
+    })();
+
+    drag = function(target, options) {
+        return new drag.fn.init(target, options);
+    };
+
+    drag.fn = drag.prototype = {
+        init: function(options) {
+
+            var that           = this,
+            ie6fix             = '(document.documentElement || document.body)';
+            this.target        = $(options.target);
+            options            = options || {};
+            this.root          = options.root ? $(options.root) : this.target;
+            this.min           = options.min;
+            this.max           = options.max;
+            this.start         = options.start;
+            this.move          = options.move;
+            this.end           = options.end;
+            this.fixed         = options.fixed;
+            this.startPosition = {};
+            this.movePosition  = {};
+            
+            var _down = function(e) {
+                e = that.fixEvent(e);
+                that.startPosition = {
+                    x: e.layerX,
+                    y: e.layerY
+                };
+                that.start && that.start(that.startPosition);
+                doc.bind('mousemove', _move)
+                    .bind('mouseup', _end);
+                this.setCapture && this.setCapture(false); //ie 鼠标移出浏览器依然可以拖拽
+                e.preventDefault(); //阻止默认行为，chrome的拖拽选择文字行为
+                return false;
+            },
+            _move = function(e) {
+                e = that.fixEvent(e);
+
+                that.movePosition = {
+                    x: e.clientX - that.startPosition.x,
+                    y: e.clientY - that.startPosition.y
+                };
+                that.limit();
+                if (that.fixed && ie6) { //IE6 fixed
+                    that.root[0].style.setExpression('left', 'eval(' + ie6fix + '.scrollLeft + ' + (that.movePosition.x - win.scrollLeft()) + ') + "px"');
+                    that.root[0].style.setExpression('top', 'eval(' + ie6fix + '.scrollTop + ' + (that.movePosition.y - win.scrollTop()) + ') + "px"');
+                } else {
+                    that.root.css({
+                        left: that.movePosition.x,
+                        top: that.movePosition.y
+                    });
+                }
+                that.move && that.move(that.movePosition);
+                return false;
+            },
+            _end = function() {
+                doc.unbind('mousemove', _move)
+                    .unbind('mouseup', _end);
+                that.end && that.end(that.movePosition);
+                return false;
+            };
+
+            this.target.bind('mousedown', _down).bind('mouseup', function() {
+                this.releaseCapture && this.releaseCapture();
+            });
+        },
+        fixEvent: function(e) {
+            if (!e.pageX) {
+                e.pageX = e.clientX + win.scrollTop();
+                e.pageY = e.clientY + win.scrollLeft();
+            }
+            if (!e.layerX) {
+                e.layerX = e.clientX - parseInt(this.root.css('left'));
+                e.layerY = e.clientY - parseInt(this.root.css('top'));
+            }
+            return e;
+        },
+        /**
+         * 限制
+         */
+        limit: function() {
+            if (this.min !== undefined) {
+                this.movePosition = {
+                    x: Math.max(this.min.x, this.movePosition.x),
+                    y: Math.max(this.min.y, this.movePosition.y)
+                };
+            }
+            if (this.max !== undefined) {
+                this.movePosition = {
+                    x: Math.min(this.max.x, this.movePosition.x),
+                    y: Math.min(this.max.y, this.movePosition.y)
+                };
+            }
+        }
+    };
+    drag.fn.init.prototype = drag.fn;
+    window.iDrag = $.drag = drag;
+
+    dialog = function(options) {
+        if (options.id  && dialog.get[options.id] !== undefined) {
+            dialog.get[options.id].show();
+            return dialog.get[options.id];
+        }
+        return new dialog.fn.init(options);
+    };
+
+    dialog.fn = dialog.prototype = {
+        init: function(options) {
+            this.id         = options.id;
+            this._lock      = options.lock || false;
+            this.fixed      = options.fixed || false;
+            this.width      = options.width || 'auto';
+            this.height     = options.height || 'auto';
+            this.top        = options.top;
+            this.left       = options.left;
+            this.padding    = options.padding || 20;
+            this._content   = options.content || 'loading...';
+            this._init      = options.init;
+            this._show      = options.show || function(){};
+            this._hide      = options.hide || function(){};
+            this.opacity    = options.opacity === undefined ? .3 : options.opacity;
+            this.background = options.background || '#000';
+            this.title      = options.title === undefined ? '消息' : options.title;
+            this.follow     = options.follow === undefined ? false : $(options.follow);
+            this.drag       = options.drag === undefined ? true : options.drag;
+            this.effect     = options.effect === undefined ? 'i-scale' : options.effect;
+            this.esc        = options.esc===undefined ? true : options.esc;
+            this.time       = options.time;
+            this.inited     = false;
+            this.myDrag     = {};
+            this._btn       = options.btn;
+            
+            this.$body      = $(document.body);
+
+            /*liuwei 20150625 add remove begin*/
+            this.remove = options.remove || false;
+            this.icon  = options.icon || false;
+            /*liuwei 20150625 add remove end*/
+
+            this.show();
+
+            this.events();
+            this._init && this._init.call(this);
+
+        },
+        lock: function() {
+            var lock = document.createElement('div');
+            this.$lock = $(lock).addClass('i-dialog-lock').css({
+                zIndex: ++dialogZindex,
+                height: doc.height(),
+                background: this.background
+            }).html(!ie6 ? '' : '<iframe src="about:blank"></iframe>');
+            this.$body[0].appendChild(lock);
+        },
+        createHTML: function() {
+
+            this._lock && this.lock();
+            this.inited = true;
+            var dialog = document.createElement('div'),
+                html = '',
+                that = this;
+            if (this.title!==false) {
+                html = '<div class="target">' + '<h2 class="title">' + this.title + '</h2>' ;
+                if(!this._btn) html += '<a href="javascript:void(0);" title="关闭" class="close"></a>' ;
+                    html += '</div>';
+            }
+
+            html += '<div class="content"></div>';
+
+            if(this._btn){
+                html+='<div class="wrapBtn"></div>';
+               /* this.height +=70;*/
+
+            }
+            this.$body[0].appendChild(dialog);
+            this.$dialog = $(dialog).addClass('i-dialog').html(html).css({
+                zIndex: ++dialogZindex,
+                width: this.width,
+                height: this.height
+            });
+
+            this.$dialog.find('*').each(function(){
+                that[ '$'+this.className ] = $(this);
+                this.className = 'i-'+this.className;
+            });
+            this.$content.css({
+                padding: this.padding
+            });
+            this.effect&&this.$dialog.addClass(this.effect);
+            this._btn && this.btn(this._btn,1);
+            if(this.drag){
+                this.myDrag = $.drag({
+                    target: this.$target,
+                    root: this.$dialog,
+                    fixed: this.fixed
+                });
+            }else{
+                this.$target.css('cursor','default');
+            }
+            this.setPosition();
+            this.content();
+            if(this.title===false){
+                this.$dialog.css({background:'none',boxShadow:'none',borderRadius:0,border:'none'});
+            }
+        },
+        content: function(content) {
+            this.content = content || this.content;
+            if (typeof this._content == 'string') {
+
+                if(this.icon){
+                    this.$content.html('<div class="content"><div class="'+this.icon+'"></div><div class="i-center">'+this._content+'</div></div>');
+                }else{
+                    this.$content.html(this._content);
+                }
+            } else if (typeof this._content == 'object' && this._content.nodeType === 1) {
+                this.$content[0].appendChild(this._content);
+                this._content.style.display='block';
+            }
+            return this;
+        },
+        setPosition: function() {
+            if (this.fixed) {
+                if (!ie6) {
+                    this.$dialog.css({
+                        position: 'fixed'
+                    });
+                } else {
+                    this.$dialog.css({
+                        position: 'absolute'
+                    });
+                    $('html').css({
+                        backgroundImage: 'url(about:blank)',
+                        backgroundAttachment: 'fixed'
+                    });
+                }
+            } else {
+                this.$dialog.css({
+                    position: 'absolute'
+                });
+            }
+        },
+        show: function() {
+
+            !this.inited && this.createHTML();
+            if(this.id && !dialog.get[this.id]){
+                dialog.get[this.id] = this;
+            }
+
+            if(this._show.call(this)===false)return;
+            if(this._lock){
+                this.$lock.show();
+                ie&&version<9&&this.$lock.css({opacity: this.opacity});
+            }
+            this.width = this.$dialog.width();
+            this.height = this.$dialog.height();
+            if(this._btn) this.height +=70;
+            var winWidth = win.width(),
+                winHeight = win.height(),
+                scrollLeft = win.scrollLeft(),
+                scrollTop = win.scrollTop(),
+                that = this;
+            this.follow&&this._follow();
+            this.$dialog.show().css({
+                top: this.top!==undefined?this.top : ((winHeight - this.height)*.382  + (ie6 || !this.fixed ? scrollTop : 0)),
+                left: this.top!==undefined?this.left : ((winWidth - this.width) / 2 + (ie6 || !this.fixed ? scrollLeft : 0)),
+                width: this.width,
+                height: this.height
+            });
+            this.width = this.$dialog.outerWidth();
+            this.height = this.$dialog.outerHeight();
+
+            if(this._btn){
+                this.height +=70;
+            }
+
+            setTimeout(function() {
+                that._lock && that.$lock.css({
+                    opacity: that.opacity
+                });
+                that.effect&&that.$dialog.addClass('i-show');
+            }, this.effect?50:0);    
+            this.time = this.time ? setTimeout(function(){that.hide();}, this.time) : 0;
+        },
+        _follow: function(){
+            var offset = this.follow.offset(),
+                width  = parseInt(this.follow.outerWidth()),
+                height = parseInt(this.follow.outerHeight()),
+                scrollTop = win.scrollTop(),
+                scrollLeft = win.scrollLeft(),
+                winWidth = win.width(),
+                winHeight = win.height(),
+                maxTop = scrollTop+winHeight-this.height,
+                maxLeft = scrollLeft+winWidth-this.width;
+            this.top = offset.top + height;
+            this.left = offset.left-(this.width-width)/2;
+
+            this.top = this.top >  maxTop ? offset.top-this.height : this.top;
+            this.left = this.left > maxLeft ? maxLeft : this.left;
+        },
+        hide: function() {
+            if(this._hide.call(this)===false)return;
+            var style = this.$dialog[0].style,
+                time = 0,
+                that = this;
+            if (style.transform !== undefined || style.webkitTransform !== undefined ||
+                style.mozTransform !== undefined || style.msTransform !== undefined) {
+                time = 300;
+            }
+            this.$dialog.removeClass('i-show');
+            this._lock && this.$lock.css({
+                opacity: 0
+            });
+            this.time && clearTimeout(this.time);
+            setTimeout(function() {
+                that._lock && that.$lock.hide();
+                that.$dialog.hide();
+            }, this.effect?time:0);
+
+            /*liuwei 20150625 add remove begin*/
+            if(this.remove) {
+                if(that.$lock)that.$lock.remove();
+                that.$dialog.remove();
+                this.inited = false;
+                if(this.id && dialog.get[this.id] != undefined){
+                    dialog.get[this.id] = undefined;
+                }
+            }
+            /*liuwei 20150625 add remove end*/
+        },
+
+        events: function() {
+
+            var that = this,
+                timeout = null;
+            win.bind('resize', function() {
+                timeout && clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    that.limit();
+                    (parseInt(that.$dialog.css('left'))>that.myDrag.max.x)&&that.$dialog.css('left',that.myDrag.max.x);
+                    (parseInt(that.$dialog.css('top'))>that.myDrag.max.y)&&that.$dialog.css('top',that.myDrag.max.y);
+                }, 100);
+            });
+
+            this.$close && this.$close.bind('click', function() {
+                that.hide();
+            });
+           /* this.$lock && this.$lock.bind('dblclick', function() {
+
+                that.hide();
+            });*/
+            this.esc&&doc.bind('keyup', function(e) {
+                if (e.keyCode == 27&&that.$dialog.css('display')!='none'){
+                     that.hide();
+                }
+            });
+            this.$dialog.bind('mousedown', function () {
+                $.each(dialog.get, function(){
+                    if(this.$dialog){
+                        if(this.$dialog.zIndex == dialogZindex)this.$dialog.css({zIndex:dialogZindex-1});
+                    }
+                    
+                });
+                $(this).css({zIndex:dialogZindex});
+            })
+            //设置限制拖拽区域
+            if(this.drag){
+                this.myDrag.start = function() {
+                    that.limit();
+                }
+            };
+        },
+        limit: function(){
+            var winWidth = win.width(),
+                winHeight = win.height(),
+                scrollLeft = win.scrollLeft(),
+                scrollTop = win.scrollTop();
+            this.myDrag.min = {
+                x: 0,
+                y: 0
+            };                
+            if (this.fixed && ie6) {
+                this.myDrag.min = {
+                    x: scrollLeft,
+                    y: scrollTop
+                };
+            }
+            if (this.fixed) {
+                this.myDrag.max = !ie6 ? {
+                    x: winWidth - this.width,
+                    y: winHeight - this.height
+                } : {
+                    x: winWidth + scrollLeft - this.width,
+                    y: winHeight + scrollTop - this.height
+                };
+            } else {
+                this.myDrag.max = {
+                    x: winWidth - this.width,
+                    y: doc.height() - this.height
+                };
+            }
+        },
+        btn: function(btns,type){
+            var input, that = this;
+                $.each(btns, function(key){
+                    input = (!type&&that._btn[key]) ? that._btn[key].input : document.createElement('input');
+                    input.type = 'button';
+                    input.value = this.val||input.value;
+                    input.className = this.type || input.className || '';
+                    if(that._btn[key].vertical) {
+                        input.style.width = "100%";
+                    }
+                    if(this.disabled === true){
+                        input.disabled = 'disabled';
+                        input.className += ' i-disabled';
+                    }else if(this.disabled === false){
+                        input.disabled = '';
+                        input.className = input.className.replace(' i-disabled','');  
+                    }
+                    if(type||!that._btn[key])that.$wrapBtn.append(input);
+                    if(!that._btn[key])that._btn[key] = this;
+                    that._btn[key].input = input;
+
+                    input.onclick = this.click ? (function(self){
+                        return function(){
+                         if((self.click&&false !== self.click.call(that, this))||!self.click)that.hide();   
+                        }
+                    })(this) : input.onclick || function(){that.hide()};
+                });
+        }
+    };
+
+    dialog.fn.init.prototype = dialog.fn;
+    window.iDialog = $.dialog = dialog;
+    dialog.get = {};
+    window.iDialog.get = $.dialog.get = dialog.get;
+
+
+
+    /*弹窗提示*/
+    function nwDialog(options) {
+        var defaults = {
+            drag: false,
+            width: 400,
+            height: 'auto',
+            opacity: .5,
+            lock: true,
+            padding: 0,
+            effect: 'i-scale',
+            m: 300,
+            content: '',
+            btn: null,
+            close: true
+        };
+        var opt = $.extend(defaults, options);
+
+        var content = '';
+        content = '<div class="" style="text-align:center">';
+        if (opt.title) content += '<div class="title">' + opt.title + '</div>'
+        delete opt.title;
+        content += opt.content;
+        content += '</div>';
+        opt.content = content;
+        $.dialog(opt);
+    }
+
+    /*弹窗按钮*/
+    function nwDialogBtn(options) {
+        var defaults = {
+            m: 1, //按钮个数 1只显示确定按钮 2显示确定和取消按钮
+            ok: {
+                val: '确定',
+                type: 'blue right',
+                click: function() {}
+            },
+            cancle: {
+                val: '取消',
+                type: 'blue left',
+                click: function() {}
+            }
+        }
+
+        var opt = $.extend(defaults, options);
+        var ok = {
+            val: opt.ok.val,
+            type: opt.ok.type,
+            click: opt.ok.click
+        }
+        var cancle = {
+            val: opt.cancle.val,
+            type: opt.cancle.type,
+            click: opt.cancle.click
+        }
+        if(opt.vertical){
+            delete opt.vertical
+            Object.keys(opt).forEach(function (v,i) {
+                if(!Object.isObject(opt[v])){
+                    delete opt[v]
+                }else{
+                    opt[v].vertical = true;
+                }
+            })
+            return opt
+        }
+        if (opt.m == 1) {
+            if (ok.type.indexOf('center') < 0) ok.type += ' center';
+            return {
+                ok: ok
+            }
+        } else if (opt.m == 2) {
+            if (cancle.type.indexOf('left') < 0) cancle.type += ' left';
+            if (ok.type.indexOf('right') < 0) ok.type += ' right';
+            return {
+                cancle: cancle,
+                ok: ok
+            }
+        }
+    }
+    window.nwDialog = nwDialog;
+    window.nwDialogBtn = nwDialogBtn;
+
+
+
+
+
+    String.prototype.trim = function() {
+        return this.replace(/^\s+|\s+$/g, "");
+    };
+    String.prototype.vaildPhone = function() {
+        if (this.length == 11 && this[0] == 1) {
+            return true;
+        }
+        return false;
+    };
+
+    String.prototype.vaildPwd = function() {
+        if (this.length > 5 && this.length <= 18) {
+            return true;
+        }
+        return false;
+    };
+
+
+    Object.isObject = function(obj){
+        var isjson = typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.length;
+        return isjson;
+    }
+
+    window.idialog = function() {
+        var idialogId = Math.random().toString().replace('.', '');
+        this.init = function(options) {
+            this.option = {
+                height: options.height,
+                width: options.width,
+                content: options.content || "",
+                autohide: options.autohide || false,
+                time: options.time || 1500
+            };
+        }
+
+        this.calcSize = function() {
+            var docu = $(window);
+            var node = $("#" + idialogId);
+            var top = (docu.scrollTop() + docu.height() - node.height()) / 2;
+            var left = (docu.scrollLeft() + docu.width() - node.width()) / 2;
+            return {
+                top: top,
+                left: left
+            };
+        };
+        this.remove = function() {
+            var element = document.getElementById(idialogId);
+            element.parentNode.removeChild(element);
+        };
+        this.calcRealPx = function(px) {
+            return window.dpr / 2 * px;
+        }
+        this.show = function(options, callback) {
+            var that = this;
+            that.init(options || {});
+            generat.call(that);
+
+            setTimeout(function() {
+                that.remove();
+                if (callback && typeof callback == "function") {
+                    callback();
+                }
+            }, this.option.time);
+
+
+            function generat() {
+                // var node = document.createElement("DIV");
+                // node.setAttribute("id", idialogId);
+                var paddingrem = 0.28;
+                var node = $("<div style='word-break: break-all;font-size: 0.32rem;position: absolute;background-color:#728496;z-index:100000000000;border-radius:8px;padding:" + paddingrem + "rem;text-align: center;opacity: 0.9;color: #fff;' id=" + idialogId + ">" + this.option.content + "</div>");
+                $("body").append(node);
+                var size = this.calcSize();
+                //var nodestyle = "top:" + size.top + "px,left:" + size.left + "px;";
+
+                node.css({
+                    "top": size.top - window.rem2px(paddingrem) + "px",
+                    "left": size.left - window.rem2px(paddingrem) + "px"
+                });
+            }
+
+        }
+
+    };
+
+    (function footer(){
+        var clientBody=document.documentElement.clientHeight;
+         if(clientBody>960){
+            $(".footer").css({"position": "absolute","bottom":" 0px"});
+         }
+    })();
+
+
+
+
+
+	$('.jujianxieyi img').click(function(){
+		if($(this).hasClass('uncheck')){
+			$(this).attr('src','/imgs/m9/ico-check_01.png').removeClass('uncheck').addClass('check')
+		}else{
+			$(this).attr('src','/imgs/m9/ico-check_02.png').removeClass('check').addClass('uncheck')
+		}
+	})
+	function a(){
+		alert(1)
+	}
+	function tipMsg(msg) {
+	    new window.idialog().show({
+	        content: msg
+	    });
+	}
+
+	function tipDownloadApp2() { 
+	    nwDialog({
+	        lock: true,
+	        opacity: .5,
+	        width: "80%",
+	        height: 462,
+	        content: '<div style="color:#000000;margin-top:50px;font-size:34px;height:350px;"><img src="/imgs/m9/download-app.png"/><p style="margin-top:30px;line-height:42px;font-size:28px;color:#999999">确定服务时间为45分钟<br>请您在限定时间内确定服务 </p></div>',
+	        init: function() {},
+	        btn: nwDialogBtn({
+	            m: 2,
+	            cancle: {
+	                val: '我知道了',
+	                type: 'grey',
+	                click: function() {
+	                	window.location.href='/m9_2/fenqifuwu_second?backBtnStatus=backToIndex&type=yhj2_p3'
+	                }
+	            },
+	            ok: {
+	                val: '确定服务',
+	                type: 'blue',
+	                click: function() {
+                        if($('.jujianxieyi img').hasClass('check')){
+					        $.post('/m9_2/makeLoan', {
+					             
+					        }, function(data) {
+					            if(data.success){
+					            	window.location.href='/m9_2/wait_money?backBtnStatus=hidden'
+					            }else{
+					            	tipMsg(data.msg)
+					            }
+					        }); 
+                        }else{
+                                tipMsg('请阅读并同意消费分期相关协议')
+                        }    	                  
+	                }
+	            }
+	        })
+	    });
+	}
+
+	$('.button').click(function(){
+		if($('.jujianxieyi img').hasClass('check')){
+	        $.post('/m9_2/makeLoan', {
+	          
+	        }, function(data) {
+	            if(data.success){
+	            	window.location.href='/m9_2/wait_money?backBtnStatus=hidden'
+	            }else{
+	            	tipMsg(data.msg)
+	            }
+	        }); 	
+		}else{
+			tipMsg('请阅读并同意消费分期相关协议')
+		}
+	})
+
+
+	$('.goback').click(function(){
+		return false
+	})
+	$('.goback').click(function(){
+		tipDownloadApp2()
+	})
+
+	$('#goback_text').click(function(){
+		return false
+	})
+	$('#goback_text').click(function(){
+		tipDownloadApp2()
+	})
+
+	// var a
+	// var time_clock=setInterval(function(){
+	// 		if(rest_time>(45*60*1000)){
+	// 			window.location.href='/m9_2/check_result/2?backBtnStatus=hidden'
+	// 		}
+	// 		rest_time=rest_time-1000;
+
+ //            if(Math.floor((rest_time%(60*1000))%(60*1000)/1000)<10){
+ //                a=Math.floor(rest_time/(60*1000))+':'+'0'+Math.floor((rest_time%(60*1000))%(60*1000)/1000)
+ //            }else{
+ //                a=Math.floor(rest_time/(60*1000))+':'+Math.floor((rest_time%(60*1000))%(60*1000)/1000)
+ //            }			
+	// 		$('#rest_time').text(a)
+	// 		if(rest_time<=0){
+	// 			clearInterval(time_clock);
+	// 			window.location.href='/m9_2/check_result/2?backBtnStatus=hidden'
+	// 		}			
+	// },1000)
+    var count=parseInt(rest_time/1000) 
+  
+        function convert(number){
+            if(number>=10){
+                return number
+            }else{
+                return "0"+number;
+            }
+        }
+        var time = setInterval(function(){
+        if(count>=0){
+              $("#rest_time").text( convert(parseInt(count/60)) + ":" + convert(parseInt(count%60))); 
+            count--;
+        }else{
+            window.location.href='/m9_2/check_result/2?backBtnStatus=hidden'
+            clearInterval(time);
+        }
+
+    },1000);
+        
+</script>
+
+<script type="text/javascript" src='/js/m9/toast_phone.js'></script> 
+        <script>
+            function a(){
+                tipDownloadApp2()
+            }
+        </script>
+
+

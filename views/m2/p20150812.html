@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content=" width=1000, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <title>夏日疯狂送</title>
+    <!-- build:css /css/summer.min.css -->  
+	 <link href="/css/m2.css" rel="stylesheet" type="text/css" />
+     <link href="/css/idialog.css" rel="stylesheet" type="text/css" />
+   <!-- /build -->
+</head>
+<body >
+	<% if(user){%>
+		<div class="niuwa-header-wrap">
+		    <div class="niuwa-header-wrapbg">
+		        <div class="niuwa-header clearfix">
+		               <div class="service-phone"><div>客服热线:</div><b>400-8846-898</b></div>
+		               <div class="title-menu">
+		                   <ul>
+		                       <li>欢迎您 <a href="/p/account/my"><%=user.loginname%></a></li>
+		                       <li><a href="<%=domain%>p/myaccount">我的账户</a></li>
+		                       <li id="messagemanage"><a href="<%=domain%>p/account/messagemanage">消息 <cite id="xiaoxicount" style="display: none;font-style: normal;">(<span id="msgCount">0</span>)</cite></a></li>
+		                       <li><a href="<%=domain%>p/account/recharge">充值</a></li>
+		                       <li><a href="<%=domain%>logout">退出</a></li>
+		                       <li class="nobd"><a href="<%=domain%>help">帮助中心</a></li>
+		                   </ul>
+		               </div>
+		        </div>
+		    </div>
+		</div>
+        
+       <%}else {%>
+           <div class="niuwa-header-wrap" id="niuwheader">
+              <div class="niuwa-header clearfix">
+                    <div class="service-phone"><div>客服热线:</div>400-8846-898</div>
+
+                    <div class="title-menu">
+                       <ul>
+                           <li><a href="<%=domain%>register" class="active">免费注册</a></li>
+                           <li><a href="<%=domain%>login?s=summer">立即登录</a></li>
+                           <li class="nobd"><a href="<%=domain%>help">帮助中心</a></li>
+                       </ul>
+                    </div>
+                </div>
+        </div>
+        <%}%>
+
+       <div class="niuwa-header-menu-wrap">
+		    <div class="niuwa-header-menu-bg">
+		        <div class="niuwa-header-menu clearfix">
+		          <div class="logo">
+		                <a href="/"><img src="/imgs/logo.png" width="357" height="52"> </a>
+		            </div>
+		            <ul>
+		              <li><a href="<%=domain%>" class="activity">首页</a></li>
+		                 <li><a href="<%=domain%>invest">我要投资</a>
+		                     <div class="header-menu-child" style="display: none;">
+		                         <div class="header-menu-icontop"></div>
+		                         <ul>
+		                             <li><a href="<%=domain%>newclient">新牛专享</a></li>
+		                             <li><a href="<%=domain%>plan">懒牛计划</a> </li>
+		                             <li><a href="<%=domain%>featured">智牛精选</a> </li>
+		                             <li><a href="<%=domain%>claim">债权转让</a> </li>
+		                         </ul>
+
+		                     </div>
+		                 </li>
+		                 <li><a href="<%=domain%>society_accept">安全保障</a></li>
+		                 <li><a href="<%=domain%>choose">新手指引</a></li>
+		                 <li><a href="<%=domain%>aboutus">关于我们</a></li>
+		             </ul>
+		        </div>
+		    </div>
+		</div>
+	<!--body-->	
+	<div class="topheaderbg">
+		<div class="headerbg">
+			<div class="countdown">
+				<div class="first" id="sday">00</div>
+				<div id="shours">00</div>
+				<div id="sminute">00</div>
+				<div id="ssecond">00</div>
+			</div>
+		</div>
+	</div>
+	<div class="bodycontent">
+		<div class="contentsummer clearfix">
+			<div class="division1"></div>
+			<div class="divlotteryarea" id="lottery">
+				<div class="divlotterybtn"><%if(chance){%><div class="jihui">您还有<span id="cishu"><%= chance%></span>次抽奖机会</div><%}else{%>
+					<%if(chance==0){%>
+						<div class="jihui">您还有<span id="cishu"><%= chance%></span>次抽奖机会</div>
+					<%}else{%>
+					<div class="jihui" style="border-bottom:1px solid #7D32AF;width:150px;height:22px;margin-left:48px;">立即登录参与抽奖</div>
+					<%}%>
+				<%}%></div>
+				<div class="lottery-unit lottery-unit1"></div>
+				<div class="lottery-unit lottery-unit2"></div>
+				<div class="lottery-unit lottery-unit3"></div>
+				<div class="lottery-unit lottery-unit4"></div>
+				<div class="lottery-unit lottery-unit5"></div>
+				<div class="lottery-unit lottery-unit6"></div>
+				<div class="lottery-unit lottery-unit7"></div>
+				<div class="lottery-unit lottery-unit8"></div>
+				<div class="lottery-unit lottery-unit9"></div>
+				<div class="lottery-unit lottery-unit10"></div>
+				<div class="lotteryareacontenttitle"></div>
+				<div class="lotteryareacontent"></div>
+				<div class="rightlotteryarea">
+					<div class="titlemingdan"></div>
+					<div class="divrollarea">
+						<ul class="scrollv">
+							<%if(lotterylist.length==0){%>
+								<li style="text-align:center;line-height:40px;height:40px;font-szie:16px;">暂无中奖名单</li>
+							<%}else{%>
+								 <% lotterylist.forEach(function (v, k){ %>
+									<li>用户<span class="summerphone"><%= v.tel%></span>抽中了<span class="summerprize"><% if(v.prizeRange==1){%>Mac Air一台<%}%><% if(v.prizeRange==2){%>Applewatch一块<%}%><% if(v.prizeRange==3){%>500元京东购物卡<%}%><% if(v.prizeRange==4){%>100元京东购物卡<%}%><% if(v.prizeRange==5){%>10元话费<%}%><% if(v.prizeRange==6){%>100元红包<%}%><% if(v.prizeRange==7){%>50元红包<%}%><% if(v.prizeRange==8){%>20元红包<%}%><% if(v.prizeRange==9){%>10元红包<%}%></span></li>
+								 <%})%>
+							<%}%>
+						</ul>
+					</div>
+					<div class="titletishi"></div>
+					<div class="clearfix">
+					<div class="ppp" style="width:18px;">1.</div><div class="ppp" style="width:360px">完成实名认证的牛娃用户均可参与活动。</div>
+					</div>
+					<div class="clearfix">
+					<div class="ppp" style="width:18px;">2.</div><div class="ppp" style="width:360px;height:40px">每日登录即可赢得3次免费抽奖机会，抽奖机会不予累计，有效期之前未进行抽奖，抽奖机会将清零作废。</div>
+					</div>
+					<div class="clearfix">
+					<div class="ppp" style="width:18px;">3.</div><div class="ppp" style="width:360px">每日3次抽奖机会，每天100%中奖。</div>
+					</div>
+					<div class="clearfix">
+					<div class="ppp" style="width:18px;">4.</div><div class="ppp" style="width:360px">抽奖所获红包将在获奖后自动发放至客户红包账户。</div>
+					</div>
+					<div class="clearfix">
+					<div class="ppp" style="width:18px;">5.</div><div class="ppp" style="width:360px">话费奖励将于获奖后的1-5个工作日内充值至客户的手机号。</div>
+					</div>
+					<div class="clearfix">
+					<div class="ppp" style="width:18px;">6.</div><div class="ppp" style="width:360px;height:40px">获奖礼品将于活动结束后的7个工作日内统一发放，奖品一律不予退换，不予兑换现金。</div>
+					</div>
+					<div class="clearfix">
+					<div class="ppp" style="width:18px;">7.</div><div class="ppp" style="width:360px;height:40px">若由于提供收奖信息错误而导致奖品无法递送将视为参与者主动放弃奖品，将不予补发或重寄。</div>
+					</div>
+				</div>
+			</div>
+			<div class="division2"></div>
+			<div class="lotterydesarea">
+					<div class="summerprizelisttitle"></div>
+					<div class="titleliebiao"></div>
+					<div class="summerprizelist"></div>
+					<div class="summershuoming clearfix">
+							<div class="fl flsummershuoming">
+								<div class="tishilisttitle"></div>
+								<p>1. 活动期间投资懒牛计划，单笔投资达到一定金额送精美豪礼，投资金额不累积计算。</p>
+								<p>2. 活动奖品将于活动结束后7个工作日内完成统计与发放，奖品一律不予退换，不予兑换现金。</p>
+								<p>3. 若由于提供收奖信息错误而导致奖品无法递送将视为参与者主动放弃奖品，将不予补发或重寄。</p>
+								<p>4. 奖品请以实物为准。</p>
+								<p>5. 活动最终解释权归上海牛娃互联网金融信息服务有限公司所有。</p>
+							</div>
+							<div class="frsummershuoming">
+								<a href="javascript:;" class="sinashare" id="sinaweibo"></a>
+								<a href="javascript:;" class="qqweibo" id="txweibo"></a>
+								<a href="javascript:;" class="renren" id="renren"></a>
+								<a href="javascript:;" class="qq" id="qqzone"></a>
+								<a href="javascript:;" class="wechat"></a>
+								<div class="showQcode"><img src="/getQrcode" /></div>
+							</div>	
+					</div>
+				<div class="leftnav"></div>
+				<div class="rightnav"></div>
+			 </div>
+			<div class="division3"></div>
+			<div class="nwtoinvest" id="touzi">
+				<a href="<%=domain%>plan" class="lijitouzibtn"></a>
+			</div>
+		</div>
+	</div>
+	<!--footer-->
+  
+	<div>
+    <div  class="niuwa-wrap clearfix mt10 black">
+        <div class="index-footer clearfix">
+            <div class="left-wrap clearfix">
+                <div class="foot-nav">
+                   <ul>
+                       <li><a href="<%=domain%>aboutus" class="title">关于我们</a></li>
+                       <li><a href="http://www.niuwacredit.com">牛娃官网</a></li>
+                       <li><a href="<%=domain%>aboutus#leader">团队介绍</a></li>
+                       <li><a href="<%=domain%>aboutus#advantage">平台优势</a></li>
+                   </ul>
+                   <ul>
+                       <li><a href="<%=domain%>invest" class="title">投资方案</a></li>
+                       <li><a href="<%=domain%>newclient">新牛专享</a></li>
+                       <li><a href="<%=domain%>plan">懒牛计划</a></li>
+                       <li><a href="/m7/xsqglist">精选活动</a></li>
+                   </ul>
+                   <ul>
+                       <li><a href="<%=domain%>society_accept" class="title">安全保障</a></li>
+                       <li><a href="<%=domain%>society_accept">社会认可</a></li>
+                       <li><a href="<%=domain%>project_safeguard">项目安全</a></li>
+                       <li><a href="<%=domain%>fund_safeguard">资金安全</a></li>
+                   </ul>
+                   <ul>
+                       <li><a href="<%=domain%>help" class="title">帮助中心</a></li>
+                       <li><a href="<%=domain%>choose">新手指引</a></li>
+                       <li><a href="<% if(user == null) { %><%=domain%>register<%}else{%><%=domain%>p/account/securitymanage<%}%>">注册认证</a></li>
+                       <li><a href="<%=domain%>helpshow/1-1">常见问题</a></li>
+
+                   </ul>
+                </div>
+                <div class="right-wrap">
+                    <p>全国客服热线</p>
+                    <div class="tel400 font36 colwhite">400-8846-898</div>
+                    <div class="niubei"><a href="https://promo.i-niuwa.com/m3/niubei" target="_blank">牛呗APP产品介绍</a></div>
+                    <div class="work-time">工作日 9:00-21:00<br>节假日 9:00-18:00</div>
+                    <div class="foot-weixin"><img src="/imgs/weixinimg2.png" width="114" height="127"> </div>
+                </div>
+
+
+            </div>
+
+            <div class="web-link clearfix">
+                <div class="link-label">友情链接：</div>
+                <div class="link-all">
+                    <a href="http://www.jingyi98.com" target="_blank" title="经亿网贷">经亿网贷</a>
+                    <a href="http://www.midai.cn/" target="_blank" title="米袋网">米袋网</a>
+                    <a href="http://www.erongtu.com/" target="_blank" title="融途网">融途网</a>
+                    <a href="http://www.ttwdai.com" target="_blank" title="天天网贷">天天网贷</a>
+                    <a href="http://www.p2p110.com" target="_blank" title="网贷110">网贷110</a>
+                    <!--<a href="http://www.wdj168.com" target="_blank" title="网贷界">网贷界</a>-->
+                    <a href="http://daohang.wangdaiguancha.com" target="_blank" title="网贷观察网">网贷观察网</a>
+					<a href="http://www.sfia.org.cn" target="_blank" title="上海金融信息行业协会" style="width: 130px;">上海金融信息行业协会</a>
+                    <div></div>
+                    <!--<a href="http://www.wangdaibuluo.com/pingtai" target="_blank" title="网贷部落">网贷部落</a>-->
+                    <!--<a href="http://www.wangdaidp.com" target="_blank" title="网贷点评网">网贷点评网</a>-->
+                    <a href="http://www.wangdai3.com" target="_blank" title="网贷第三方">网贷第三方</a>
+                    <a href="http://www.p2peye.com/" target="_blank" title="网贷天眼">网贷天眼</a>
+                    <a href="http://www.wdtianxia.com/" target="_blank" title="网贷天下">网贷天下</a>
+                    <a href="http://www.p2pchina.com" target="_blank" title="网贷中国">网贷中国</a>
+                    <a href="http://www.wangdaitiandi.com/" target="_blank" title="网贷天地">网贷天地</a>
+
+                </div>
+            </div>
+            <div class="approve clearfix">
+                <!-- <a href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=dov73ne26zbqq0ilcr2gs9w5imthzi7bx5" class="gongshang" target="_blank"></a> -->
+                <a href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20160222121245727" class="gongshang" target="_blank"></a>
+                <a href="http://www.miitbeian.gov.cn/" class="beian" target="_blank"></a>
+                <a href="http://www.cfca.com.cn/" class="cfca" target="_blank"></a>
+                <a href="https://sealsplash.geotrust.com/splash?&dn=www.i-niuwa.com" class="geotrust" target="_blank"></a>
+                <a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1324324183" class="webtrust" target="_blank"></a>
+                <a href="https://credit.szfw.org/CX20150721010806200197.html" class="cxweb" target="_blank"></a>
+                <a href="http://www.anquan.org/authenticate/cert/?site=www.niuwap2p.com&at=business" class="anquan" target="_blank"></a>
+                <!--<a href="https://ss.knet.cn/verifyseal.dll?sn=e150806310101597602ghf000000&amp;ct=df&amp;a=1&amp;pa=0.9503582664765418" class="kexing" target="_blank"></a>-->
+                <a href="https://ss.knet.cn" class="kexing" target="_blank"></a>
+            </div>
+
+            <div class="copyright">
+                版权所有©上海牛娃互联网金融信息服务有限公司&nbsp;&nbsp;&nbsp;&nbsp;沪ICP备15002518号<br>
+                Shanghai Niuwa Internet Financial Information Service Co.,Ltd.<br>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+<!-- End Google Tag Manager -->
+</body>
+<script type="text/javascript">
+ var islogin=<%=user?true:false%>;
+ var domain="<%=domain%>";
+ var urlpramid='<%=user?user.custId:''%>';
+ var phone='<%=user?user.phoneNumber:''%>';
+ var endactivetime = "<%= endactivetime%>";
+ var list = '<%- JSON.stringify(lotterylist)%>'
+</script>
+<script type="text/javascript" src="/js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<!-- build:js /js/niuwasummer.min.js -->  
+	
+ <!-- /build -->	
+</html>

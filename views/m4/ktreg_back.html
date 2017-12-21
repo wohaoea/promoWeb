@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>注册成功</title>
+    <meta name="description" content="注册成功" />
+    <meta name="keywords" content="注册成功" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/kuantu.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/kuantu.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+
+    <script>
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return 'no';
+            }else{
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr,rem,scale,docEl=document.documentElement,fontEl=document.createElement("style"),metaEl=document.querySelector('meta[name="viewport"]');
+        var u = (window.navigator.appVersion.match(/android/gi),window.navigator.appVersion.match(/iphone/gi));
+        dpr=window.devicePixelRatio||1;
+        if(u && window.devicePixelRatio>=3){
+            dpr=3;
+        }else if(window.devicePixelRatio>=2){
+            dpr=2;
+        }else{
+            dpr=1;
+        };
+        rem=docEl.clientWidth*dpr/10;scale=1/dpr;metaEl.setAttribute("content","width="+dpr*docEl.clientWidth+",initial-scale="+scale+",maximum-scale="+scale+", minimum-scale="+scale+",user-scalable="+ weixing);docEl.setAttribute("data-dpr",dpr);docEl.firstElementChild.appendChild(fontEl);fontEl.innerHTML="html{font-size:"+rem+"px!important;}";
+        window.rem2px=function(a){a=parseFloat(a);return a*rem};window.px2rem=function(a){a=parseFloat(a);return a/rem};
+    </script>
+</head>
+
+<body>
+<div class="my-page">
+    <div class="niuwa-box">
+        <div class="niuwa-hongbao">
+            <h1>恭喜您获得牛娃互联网金融</h1>
+            <p><span>50</span>元红包</p>
+        </div>
+        <a href="<%=h5domain+'account/realauth'%>" class="niuwa-hongbao-btn">点击领取</a>
+        <div class="niuwa-shouyi">享最高14%投资收益</div>
+    </div>
+<%if(xcCoupon){%>
+    <%if(xcCoupon != null){%>
+    <div class="kt-box">
+        <div class="kt-hongbao">
+            <h1><span>40</span>元</h1>
+            <p>您的宽途兑换码为 <span><%=xcCoupon%></span></p>
+        </div>
+        <a href="http://dwz.cn/SO2A0" class="kt-hongbao-btn">点击跳转宽途APP使用</a>
+    </div>
+<%}}%>
+</div>
+</body>
+</html>
+

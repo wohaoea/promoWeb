@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=1000, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>双“蛋”大派送活动</title>
+    <!-- build:css /css/smashingeggs.min.css -->
+    <link href="/css/smashingeggs.css" rel="stylesheet" type="text/css" />
+    <link href="/css/sjkh.css" rel="stylesheet" type="text/css" />
+    <link href="/css/idialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/head-foot.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+</head>
+
+<body>
+    <%include ../tmp_head.html%>
+    <div class="smashingeggs_div smashingeggs_header">
+        <div class="smashingeggs_eggs_container">
+            <div class="smashingeggs_eggs_container_left">
+                <div id="smashingeggs_golden_egg" class="smashingeggs_egg_body"></div>
+                <div class="smashingeggs_egg_label">
+                    <label id="golden_surplus">
+                        <%- _g_surplus%>
+                    </label>
+                </div>
+            </div>
+            <div class="smashingeggs_eggs_container_middle">
+                <img id="invest_now" class="smashingeggs_invest_now" src="/imgs/m6/smashingeggs/invest_now_up.png" />
+                <!-- <a href="/">aaaa</a> -->
+            </div>
+            <div class="smashingeggs_eggs_container_right">
+                <div id="smashingeggs_silver_egg" class="smashingeggs_egg_body"></div>
+                <div class="smashingeggs_egg_label">
+                    <label id="silver_surplus">
+                        <%- _s_surplus%>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="smashingeggs_div smashingeggs_bottom">
+        <div class="smashingeggs_exchange_container">
+            <div>
+                <div class="smashingeggs_exchange_text">
+                    <p id="exchange_golden_egg_text">您已成功获得&nbsp;
+                        <font color="white">
+                            <%- _g_exchange%>
+                        </font>&nbsp;张红包</p>
+                    <p>您可以</p>
+                </div>
+                <div>
+                    <div id="exchange_golden_egg_btn" class="smashingeggs_exchange_btn">快速兑换红包</div>
+                </div>
+            </div>
+            <div>
+                <div class="smashingeggs_exchange_text">
+                    <p id="exchange_silver_egg_text">您还有&nbsp;
+                        <font color="white">
+                            <%- _s_exchange%>
+                        </font>&nbsp;元红包可分享</p>
+                    <p>您可以</p>
+                </div>
+                <div>
+                    <div id="exchange_silver_egg_btn" class="smashingeggs_exchange_btn">获取分享二维码</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img id="smashingeggs_hammer" src="/imgs/m6/smashingeggs/hammer.png" />
+    <input id="_domain" type="hidden" value="<%- domain%>" />
+    <input id="_custId" type="hidden" value="<%- _custId%>" />
+    <input id="_g_surplus" type="hidden" value="<%- _g_surplus%>" />
+    <input id="_s_surplus" type="hidden" value="<%- _s_surplus%>" />
+    <input id="_g_exchange" type="hidden" value="<%- _g_exchange%>" />
+    <input id="_s_exchange" type="hidden" value="<%- _s_exchange%>" />
+    <input id="_shareId" type="hidden" value="<%- _shareId%>" />
+    <div id="smashing_golden_egg_success" class="dialog">
+        <div class="dialogtop"><div class="close"></div></div>
+        <div class="title">恭喜您！</div>
+        <div class="body">
+            <p>获得“牛气冲天”&nbsp;<font color="white" id="smashing_golden_egg_result">0</font>&nbsp;元红包&nbsp;</p>
+            <p>赶快和小伙伴们一起分享银蛋吧！</p>
+        </div>
+    </div>
+    <div id="smashingeggs_smashing_eggs_fail" class="dialog">
+        <div class="dialogtop"><div class="close"></div></div>
+        <div class="title">对不起！</div>
+        <div class="body">
+            <p>您目前还没有砸蛋次数</p>
+            <p>赶紧投资获取&nbsp;<font color="white">「双蛋」</font>&nbsp;吧</p>
+            <p><div class="dialog_yellow_btn smashingeggs_invest_now">立即投资</div></p>
+        </div>
+    </div>
+    <div id="smashing_silver_egg_success" class="dialog">
+        <div class="dialogtop"><div class="close"></div></div>
+        <div class="title">恭喜您！</div>
+        <div class="body">
+            <p>获得“牛气冲天”&nbsp;<font color="white" id="smashing_silver_egg_result">0</font>&nbsp;元分享红包&nbsp;</p>
+            <p>赶快邀请您的小伙伴一起来抢现金吧！</p>
+            <p><img id="qrcodeimg" src="/m6/getQRCode/<%- _shareId%>"/></p>
+            <p style="color:white;font-weight:normal">扫一扫二维码分享给好友</p>
+        </div>
+    </div>
+    <div id="exchange_silver_egg_success" class="dialog">
+        <div class="dialogtop"><div class="close"></div></div>
+        <div class="title"></div>
+        <div class="body">
+            <p><img id="qrcodeimg" src="/m6/getQRCode/<%- _shareId%>"/></p>
+            <p style="color:white;font-weight:normal">扫一扫二维码分享给好友</p>
+        </div>
+    </div>
+    <%include ../tmp_foot.html%>
+</body>
+
+</html>
+<script type="text/javascript" src="/js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<!-- build:js /js/smashingeggs.min.js -->
+<script type="text/javascript" src="/js/smashingeggs.js"></script>
+<script type="text/javascript" src="/js/head.js"></script>
+<!-- /build -->

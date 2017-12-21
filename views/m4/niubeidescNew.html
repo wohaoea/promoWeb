@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>牛呗客户端下载</title>
+    <meta name="description" content="牛呗客户端下载" />
+    <meta name="keywords" content="牛呗客户端下载" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/niubeidescNew.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/swiper.css" rel="stylesheet" type="text/css" />
+    <link href="/css/niubeidescNew.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+
+    <script>
+
+        if (top != self) {
+        location.href = "about:blank";
+    }
+
+    function isWeiXin() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+            return 'no';
+        } else {
+            return 'yes';
+        }
+    }
+    var weixing = isWeiXin();
+    var dpr, rem, scale, docEl = document.documentElement,
+        fontEl = document.createElement("style"),
+        metaEl = document.querySelector('meta[name="viewport"]');
+    var u = (window.navigator.appVersion.match(/android/gi), window.navigator.appVersion.match(/iphone/gi));
+    dpr = window.devicePixelRatio || 1;
+    if (u && window.devicePixelRatio >= 3) {
+        dpr = 3;
+    } else if (window.devicePixelRatio >= 2) {
+        dpr = 2;
+    } else {
+        dpr = 1;
+    };
+    rem = docEl.clientWidth * dpr / 7.5;
+    scale = 1 / dpr;
+    metaEl.setAttribute("content", "width=" + dpr * docEl.clientWidth + ",initial-scale=" + scale + ",maximum-scale=" + scale + ", minimum-scale=" + scale + ",user-scalable=" + weixing);
+    docEl.setAttribute("data-dpr", dpr);
+    docEl.firstElementChild.appendChild(fontEl);
+    fontEl.innerHTML = "html{font-size:" + rem + "px!important;}";
+    window.rem2px = function(a) {
+        a = parseFloat(a);
+        return a * rem
+    };
+    window.px2rem = function(a) {
+        a = parseFloat(a);
+        return a / rem
+    };
+    </script>
+</head>
+<body>
+   <div class='niubeiNew_top'>
+       
+       <img src="/imgs/m4/niubeidesc/niubei_h5_1.png" style="width: 100%; height: 100%;">
+       <img src="/imgs/m4/niubeidesc/niubei_h5_2.png" style="width: 1.4rem; height: 0.6rem;position: absolute;top: 0.3rem;left: 5.3rem" data="<%=url%>" class='downLoad_niubei'>
+   </div> 
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide"> 
+            <div >
+                <img src="/imgs/m4/niubeidesc/niubei_h5_3.png" style="width: 100%; height: 100%;">
+            </div>
+            
+          </div>
+          <div class="swiper-slide">
+            <div>
+                <img src="/imgs/m4/niubeidesc/niubei_h5_4.png" style="width: 100%; height: 100%;">
+            </div> 
+            
+          </div>
+          <div class="swiper-slide"> 
+              <div>
+                  <img src="/imgs/m4/niubeidesc/niubei_h5_5.png" style="width: 100%; height: 100%;">
+              </div>
+            
+          </div>
+          <div class="swiper-slide"> 
+            <div><img src="/imgs/m4/niubeidesc/niubei_h5_6.png" style="width: 100%; height: 100%;"></div>
+            
+          </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>    
+
+
+
+
+
+</body>
+<script src="/js/libs//jquery-1.8.3.min.js"></script>
+<script src="/js/libs/swiper.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+     $(".downLoad_niubei").click(function(){
+            var url = $(this).attr("data");
+            window.location.href=url;
+
+        });
+</script>
+</html>

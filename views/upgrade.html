@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/upgrade.min.css -->    
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/upgrade.css">
+    <!-- /build -->
+    <%include ./m9/h5script10.html %>
+</head>
+
+<body>
+    <p class="p1">网站升级中，稍候更精彩</p>
+    <p class='p2'></p>
+    <p class='p3'>服务器小憩中，程序猿GG正在忙碌中<br>请稍后再试</p>
+    <div class='div1'></div>
+    <div style='height: 0.6rem'>
+    <div class='div2'>下载APP</div>
+    <div class='div3'><a href="tel:400-8846-898">联系客服</a></div>       
+    </div>
+    <p class='p4'>牛娃客服热线：400-8846-898</p>
+</body>
+<script type="text/javascript" src="/promo/js/jquery-1.11.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.div2').click(function(){
+            var ua=navigator.userAgent.toLowerCase();
+             if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                window.location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.niuwa.niubei.android&g_f=991653'
+             }else if(/iphone|ipad|ipod/.test(ua)){
+               window.location.href='https://itunes.apple.com/cn/app/niu-bei/id998444014?mt=8'
+            }else if(/android/.test(ua)){
+                window.location.href='https://ms.i-niuwa.com/file/downLoad?path=pl_niubei.apk'
+            }else{
+                 window.location.href='https://ms.i-niuwa.com/file/downLoad?path=pl_niubei.apk'
+            }
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/shenmeshitongxinrenzheng.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/m9/shenmeshitongxinrenzheng.css">
+    <!-- /build -->
+    <%include ./h5script10.html %>
+</head>
+
+<body style="background: #e9ecef">
+    <div class="repay_1" style="color: #999999"><span class="span1">当前可用余额</span><span class="span2"><%=usemoney%>元</span></div>
+    <div class="repay_1" style="background: white"><span class="span1">还款金额</span><span class="span2"><%=adequate%>元</span></div>
+    <div style="color: #fe7a7a" class="p">
+        <p>提示：还款流程已调整，当您点击“确认还款”按钮后，我们将立即从您帐户资金里进行划转还款操作，请谨慎操作。</p>
+    </div>
+    <div class="repay_2">
+        <p>确认还款</p>
+    </div>
+</body>
+
+</html>
+<script>
+    var repayType = "<%=repayType%>";
+    var loanId = "<%=loanId%>";
+    var repayPlanList = "<%=repayPlanList%>";
+    var id_send = "<%=id_send%>";
+    var bdfPrjType='<%=bdfPrjType%>'
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<!-- build:js /js/m9/shenmeshitongxinrenzheng.min.js -->
+<script type="text/javascript" src='/js/m9/shenmeshitongxinrenzheng.js'></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>

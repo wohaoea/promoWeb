@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/check_result.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />   
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" type="text/css" href="/css/m9/check_result.css"> 
+    <!-- /build -->
+    <%include ./h5script10.html%>
+
+</head>
+
+<body>
+
+<%if(status==1){%>    
+	<img src="/imgs/m9/check_false.png"/>
+	<p>很抱歉，服务申请没有通过</p>
+	<p class="p">请稍后再试</p>
+<%}else if(status==2){%>
+	<img src="/imgs/m9/not_confirm.png"/>
+	<p>您在限定时间内未确认服务</p>
+	<p class="p">本次服务失效</p>
+<%}else if(status==3){%>	
+	<img src="/imgs/m9/time_out.png"/>
+	<p class="p1">服务已超时，请重试</p>
+<%}%>	
+	<nav class="button">确定</nav>
+	<p id="phone" style='margin-bottom:1rem'>如有疑问请拨打客服电话：<a id="niuwa_phone">400-8846-898</a></p>
+</body>
+
+</html>
+<script>
+
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src='/js/m9/toast_phone.js'></script> 
+<script>
+    $('.button').click(function(){
+        $.post('/m9_2/saveUserConfirmLog',{},function(json){
+            if(json.success){
+                window.location.href='/m9_2/fenqifuwu_second?backBtnStatus=backToIndex&type=yhj2_p3'
+            }
+        })
+    })
+</script>

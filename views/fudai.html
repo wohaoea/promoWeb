@@ -1,0 +1,33 @@
+﻿<script src="/js/libs/jquery.cookie.js"></script>
+<%if(fudai){%>
+<%if(fudai.fudaiTime.now > fudai.fudaiTime.start && fudai.fudaiTime.now<fudai.fudaiTime.end){%>
+<!-- build:css /css/fudai.min.css?v=20160113 -->
+<link rel="stylesheet" href="/css/fudai.css" />
+<!-- /build -->
+<!--福袋 begin-->
+<!--吊底-->
+
+<div class="diaodi" style="display: none;">
+    <div class="fudai-body">
+        <div class="houzi"><img src="/imgs/fudai/houzi.gif" width="210" height="270" alt></div>
+        <div class="jp"><img src="/imgs/fudai/jp.png" width="544" height="186" alt></div>
+        <a href="javascript:;" class="fudai-btn1" id="fudai-btn1" data-ca='fudai'></a>
+        <a href="javascript:;" class="fudai-close" id="fudai-close"></a>
+    </div>
+</div>
+<!--左侧-->
+<div class="fudai-float"><img src="/imgs/fudai/houzi2.gif" width="180" height="198" alt></div>
+<!--福袋 end-->
+<script>
+var domain = '<%=domain%>';
+var originalUrl = '<%=originalUrl%>';
+var domainPath='<%=config.sessionconfig.cookie.domain%>';
+<%if(user){%>var username ="<%=user.loginname%>";<%}else{%>var username ="null"<%}%></script>
+<!-- build:js /js/fudai.min.js -->
+<script src="/js/fudai.js"></script>
+<!-- /build -->
+<%}%>
+<%}%>
+<script type="text/javascript">
+	
+</script>

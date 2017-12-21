@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>关于我们</title>
+    <meta name="description" content="关于我们" />
+    <meta name="keywords" content="关于我们" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- build:css /css/jquery.fullpage.min.css -->
+    <link rel="stylesheet" type="text/css" href="/css/common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="/jquery.fullpage/css/jquery.fullPage.css"/>
+    <!-- /build -->
+
+    <script type="text/javascript" src="/js/libs/h5rem.js"></script>
+    <style>
+        .section{
+            position: relative;
+            text-align: center;
+        }
+
+        .arrows-bottom{
+            position: absolute;
+            width: 3.7%;
+            left: 0;
+            right: 0;
+            bottom: 0.45rem;
+            margin: auto;
+            animation:arrows 1s;
+            -webkit-animation:arrows 1s; /* Safari and Chrome */
+            animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+            animation-direction:alternate;
+            -webkit-animation-direction:alternate;
+            animation-timing-function:ease-in;
+            -webkit-animation-timing-function:ease-in;
+        }
+        @keyframes arrows
+        {
+            from {opacity: 0.3;bottom: 0.6rem}
+            to {opacity: 1;bottom: 0.4rem}
+        }
+
+        @-webkit-keyframes arrows /* Safari and Chrome */
+        {
+            from {opacity: 0.3;bottom: 0.6rem}
+            to {opacity: 1;bottom: 0.4rem}
+        }
+        .detail{
+            font-size: 0.24rem;
+            color: #fff;
+            padding-bottom: 1rem;
+        }
+        .operation{
+            position: relative;
+            width: 100%;
+            height: 17.55rem;
+            color: #fff;
+            background: url("/imgs/i_niuwa/operation-data.png");
+            background-size: 7.5rem 17.55rem;
+        }
+        .vertical-center{
+            /*border: 1px solid #fff;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .deadline{
+            position: absolute;
+            top: 1rem;
+            right:0.25rem;
+            font-size: 0.18rem;
+            color: #fff;
+        }
+        .enrollment{
+            position: absolute;
+            top:3.48rem;
+            left: 0.42rem;
+            width: 2.58rem;
+            height: 1.12rem;
+        }
+        .volume-of-business{
+            position: absolute;
+            width: 2.1rem;
+            height: 0.7rem;
+            top:3rem;
+            right: 1.94rem;
+        }
+        .earnings{
+            position: absolute;
+            width: 1.56rem;
+            height: 0.8rem;
+            top:5.1rem;
+            right: 2.68rem;
+        }
+        .operating-days{
+            position: absolute;
+            width: 1.52rem;
+            height: 0.8rem;
+            top:4.25rem;
+            right: 0.42rem;
+        }
+        .font16{
+            font-size: 0.16rem;
+        }
+        .font18{
+            font-size: 0.18rem;
+        }
+        .font20{
+            font-size: 0.20rem;
+        }
+        .font24{
+            font-size: 0.24rem;
+        }
+        .font30{
+            font-size: 0.30rem;
+        }
+        .purple{
+            color:#768aff;
+        }
+        .blue{
+            color: #56b0f2;
+        }
+        .green{
+            color: #1ec7ca;
+        }
+        .yellow{
+            color: #dedc05;
+        }
+        .margin-top5{
+            margin-top: 0.05rem;
+        }
+        .year-90{
+            position: absolute;
+            width: 1.06rem;
+            height: 0.5rem;
+            top:9.34rem;
+            left: 1.17rem;
+        }
+        .year-80{
+            position: absolute;
+            width: 1rem;
+            height: 0.5rem;
+            top:9.38rem;
+            right: 1.4rem;
+        }
+        .year-70{
+            position: absolute;
+            width: 1.06rem;
+            height: 0.5rem;
+            top:11.7rem;
+            left: 1.17rem;
+        }
+        .year-60{
+            position: absolute;
+            width: 1rem;
+            height: 0.5rem;
+            top:11.72rem;
+            right: 1.4rem;
+        }
+        .pillar-sex{
+            position: absolute;
+            left: 0.76rem;
+            width: 5rem;
+            height: 0.54rem;
+        }
+        .pillar-sex-rate{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            line-height: 0.54rem;
+            font-size: 0.18rem;
+            text-indent: 0.3rem;
+        }
+        .man{
+            background-color: #68a4f5;
+        }
+        .man img{
+            width: 0.26rem;
+        }
+        .woman{
+            background-color: #f46e6e;
+        }
+        .woman img{
+            width: 0.28rem;
+        }
+        .sex-ico-left{
+            position: absolute;
+            left: -0.13rem;
+            top: -0.03rem;
+        }
+        .sex-ico-right{
+            position: absolute;
+            right: -0.13rem;
+            top: -0.03rem;
+        }
+        .woman .sex-ico-left{
+            top: -0.02rem;
+        }
+        .woman .sex-ico-right{
+            top: -0.02rem;
+        }
+        .logo{
+            display: block;
+            width: 3.68rem;
+            height: 1.07rem;
+            margin: 0 auto 0.3rem;
+            padding-top: 0.8rem;
+        }
+        .brief{
+            width: 6.8rem;
+            margin: 0 auto;
+            font-size: 0.28rem;
+            color: #e7e6e8;
+            line-height: 0.5rem;
+            text-indent: 0.5rem;
+            text-align: left;
+        }
+        .platform-nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 6.3rem;
+            margin: 0.3rem auto;
+        }
+        .platform-nav p{
+            font-size: 0.28rem;
+            color: #fff;
+            margin-top: 0.2rem;
+        }
+        .platform-nav .item div{
+            width: 1.2rem;
+            height: 1.2rem;
+            background: url("/imgs/i_niuwa/platform-ico.png") no-repeat;
+            background-size: 1.2rem 3.8rem;
+        }
+        .advantage{
+            background-position:0 0 ;
+        }
+        .data{
+            background-position:0 -1.3rem!important;
+        }
+        .safeguard{
+            background-position:0 -2.6rem!important;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="dowebok">
+    <div class="section">
+        <img class="logo" src="/imgs/i_niuwa/niuwa-logo.png" >
+        <p class="brief">上海牛娃互联网金融信息服务有限公司成立于2015年1月，旗下平台爱牛娃（www.i-niuwa.com）于2015年5月正式上线，是牛娃互联网金融运营的收益稳健、风控严谨的投资平台。凭借强大先进的大数据风控能力，牛娃互联网金融2015年Pre-A轮获欧洲世铭投资基金（SMC）投资， 2016年9月完成A轮融资，获得华威国际集团（CID）等机构的战略投资。</p>
+        <p class="brief">爱牛娃致力于搭建一个公开透明、合法合规、安全高效的互联网投资平台。平台采用先进的银行存管系统严格杜绝资金池，资金流向公开透明。根据监管部门要求，平台按时向行业协会公开披露平台运营情况，并定期由第三方审计机构对平台财务情况进行审计监督。确保运营合规合法。在爱牛娃投资平台，用户可以轻松享受低门槛、收益稳健的投资服务，平台通过先进的大数据风控技术，精准护卫用户资金安全。</p>
+        <div class="platform-nav">
+            <div class="item" data-type="1">
+                <div class="advantage"></div>
+                <p>平台优势</p>
+            </div>
+            <div class="item" data-type="2">
+                <div class="data"></div>
+                <p>平台数据</p>
+            </div>
+            <div class="item" data-type="3">
+                <div class="safeguard"></div>
+                <p>安全保障</p>
+            </div>
+        </div>
+        <p class="detail">了解详情</p>
+        <img class="arrows-bottom" src="/imgs/i_niuwa/arrows-double-bottom.png" alt="">
+    </div>
+    <div class="section" style="min-height:17rem;background:#242437">
+        <img width="100%" src="/imgs/i_niuwa/platform-advantage.png" alt="">
+    </div>
+    <div class="section">
+        <div class="operation">
+            <% var date = new Date();  %>
+            <p class="deadline">统计截止时间<%= date.getFullYear() %>年<%= date.getMonth()+1 %>月<%= date.getDate()%>日</p>
+            <div class="enrollment vertical-center">
+                <p class="font30">累计注册人数</p>
+                <p class="font30 margin-top5"><%= totalRegister %>人</p>
+            </div>
+            <div class="volume-of-business vertical-center">
+                <p class="font24">累计成交额</p>
+                <p class="font24 margin-top5"><%= turnOver %>元</p>
+            </div>
+            <div class="earnings vertical-center">
+                <p class="font20">累计产生收益</p>
+                <p class="font24 margin-top5"><%= totalIncome %>元</p>
+            </div>
+            <div class="operating-days vertical-center">
+                <p class="font18">平台已经安全运营</p>
+                <p class="font24 margin-top5"><%= operationDays %>天</p>
+            </div>
+            <div class="year-90 vertical-center">
+                <p class="font16">90后</p>
+                <p class="font18 purple margin-top5"><%= parseFloat(ageMap[9]*100).toFixed(2) %>%</p>
+            </div>
+            <div class="year-80 vertical-center">
+                <p class="font16">80后</p>
+                <p class="font18 blue margin-top5"><%= parseFloat(ageMap[8]*100).toFixed(2) %>%</p>
+            </div>
+            <div class="year-70 vertical-center">
+                <p class="font16">70后</p>
+                <p class="font18 green margin-top5"><%= parseFloat(ageMap[7]*100).toFixed(2) %>%</p>
+            </div>
+            <div class="year-60 vertical-center">
+                <p class="font16">60后</p>
+                <p class="font18 yellow margin-top5"><%= parseFloat(ageMap[6]*100).toFixed(2) %>%</p>
+            </div>
+            <div class="pillar-sex" style="top: 14.32rem">
+                <div class="pillar-sex-rate man">
+                    <span><%= sexMap.M*100 %>%</span>
+                    <img class="sex-ico-left" src="/imgs/i_niuwa/man-ico.png">
+                    <img class="sex-ico-right" src="/imgs/i_niuwa/man-ico.png">
+                </div>
+            </div>
+            <div class="pillar-sex" style="top: 15.30rem">
+                <div class="pillar-sex-rate woman"  style="width: <%= (sexMap.F/sexMap.M)*100 %>%">
+                    <span><%= sexMap.F*100 %>%</span>
+                    <img class="sex-ico-left" src="/imgs/i_niuwa/woman-ico.png">
+                    <img class="sex-ico-right" src="/imgs/i_niuwa/woman-ico.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- build:js /js/jquery.fullpage.min.js -->
+<script type="text/javascript" src="/jquery.fullpage/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/jquery.fullpage/js/jquery.fullPage.min.js"></script>
+<script type="text/javascript" src="/jquery.fullpage/js/jquery.slimscroll.min.js"></script>
+<!-- /build -->
+
+<script>
+    $(function(){
+        $('#dowebok').fullpage({
+            sectionsColor: ['#2f3144', '#252538', '#7BAABE'],
+            scrollOverflow:true,    //内容超过满屏后是否显示滚动条
+            verticalCentered:false  //内容是否垂直居中
+        });
+        $('.detail').on('click',function(){
+            $.fn.fullpage.moveSectionDown();
+        });
+        $('.arrows-bottom').on('click',function(){
+            $.fn.fullpage.moveSectionDown();
+        });
+        $('.platform-nav>div').click(function(){
+            var val = $(this).data('type');
+            if( val==1 ){
+                $.fn.fullpage.moveSectionDown();
+            }else if( val==2 ){
+                $.fn.fullpage.moveSectionDown();
+                $.fn.fullpage.moveSectionDown();
+            }else if( val==3 ){
+                window.location.href = '/niuwa/security';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+

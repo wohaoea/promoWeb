@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>牛呗推广系统</title>
+    <meta name="description" content="牛呗推广系统" />
+    <meta name="keywords" content="牛呗推广系统" />
+    <% include header.html %>
+    <!-- build:css /css/mobiscroll.min.css -->
+    <link rel="stylesheet" href="/css/mobiscroll.css">
+    <!-- /build -->
+</head>
+<body>
+<% include diaoding.html%>
+<div id="box">
+        <div class="container1" id="wrapper">
+
+        <div class="scroller">
+            <div id="searchBox">
+                <div id="scroller-pullDown" style="display: none;">
+                    <span class="pullDownLabel"></span>
+                </div>
+                <%if(roleType==1 || roleType==4){%>
+                <div class="search-box">
+                    <div class="container2" style="width:8.2rem">
+                        <input type="text" name="search-txt" class="search-txt" placeholder="输入推荐人的手机号或姓名" value="<%=search.searchName%>" id="searchTxt"><button type="button" class="search-btn" id="searchBtn">搜索</button></div>
+                </div>
+                <%}%>
+                <div class="search-timebox">
+                    <div class="container2">
+                        <ul class="search-time-ul" style="width:8rem;margin:0 auto">
+                            <li class="search-time-itme1">选择时间</li>
+                            <li class="search-time-itme2">
+                                <div class="selboxtime">
+                                    <!--<input  type="date" class="seltimetxt" value="<%=search.searchStartDate%>" id="searchStartDate" />-->
+                                    <input type="text" class="seltimetxt"  id="searchStartDate" value="<%=search.searchStartDate%>"/>
+                                </div>
+                            </li>
+                            <li class="search-time-item3">-</li>
+                            <li class="search-time-itme2">
+                                <div class="selboxtime">
+                                    <input  type="text" class="seltimetxt" value="<%=search.searchEndDate%>" id="searchEndDate"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <ul class="list-head mycount-head">
+                    <li style="width: 34%;">推荐人</li>
+                    <li>推广身份</li>
+                    <li>有效推荐</li>
+                </ul>
+            </div>
+            <div class="list-box1" id="thelist">
+                <%if(data.rows){%>
+                <%data.rows.forEach(function(v,k){%>
+                <%if(v.nowType==1){%><a href="/spread/p/expand/<%=v.promoId%>"><%}%>
+                <ul class="list-con list-con1">
+                    <li class="list-con-item3"><%if(v.recomName){%><%=v.recomName%><%}%><br><%=utils.mobeileTosen(v.tel)%></li>
+                    <li>
+                        <%if(v.nowType==1){%>
+                        推广大使
+                        <%}else if(v.nowType==2){%>
+                        代理
+                        <%}else if(v.nowType==3){%>
+                        兼职
+                        <%}else if(v.nowType==4){%>
+                        全职
+                        <%}%>
+                    </li>
+                    <li><%=v.counts%>个</li>
+                </ul>
+                <%if(v.nowType==1){%></a><%}%>
+                <%})%>
+                <%}%>
+
+            </div>
+            <div id="scroller-pullUp" style="height:200px;">
+                <span class="pullUpLabel">
+                    <%if(Math.ceil(data.total/20)>1){%>
+                        <div class="loading-box"></div>
+                    <%}%>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.iDialog.js"></script>
+<!-- build:js /js/mobiscroll.min.js -->
+<script src="/js/libs/mobiscroll.js"></script>
+<!-- /build -->
+<!-- build:js /js/iscroll.min.js -->
+<script src="/js/libs/iscroll/iscroll-probe.js"></script>
+<script src="/js/libs/iscroll/iscroll-load-data.js"></script>
+<!-- /build -->
+
+<!-- build:js /js/spread.min.js -->
+<script src="/js/g.js"></script>
+<script type="text/javascript" src="/js/spread.js"></script>
+<!-- /build -->
+<script>
+
+
+    var searchBox;
+    /*搜索参数*/
+    var k = $("#searchTxt").val(),
+            sd = $("#searchStartDate").val(),
+            ed = $("#searchEndDate").val(),
+            m = 'mycount';
+    var totalpageSize = Math.ceil(<%=data.total%>/20);
+
+
+    var opt = {
+        page: 2
+    };
+    var ajaxurl = "/spread/p/pra/"+m;
+
+    document.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+    }, false);
+    loaded();
+    $(function(){
+        searchBox = $("#searchBox").html();
+    });
+</script>

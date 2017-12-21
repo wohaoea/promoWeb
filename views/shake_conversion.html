@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>兑换</title>
+    <!-- build:css /css/thanksgivingday.min.css -->
+    <link rel="stylesheet" href="/css/common/base.css">
+    <link rel="stylesheet" href="/css/thanksGiving_active.css">
+    <!-- /build -->
+    <script src="/js/libs/rem.js"></script>
+    <style>
+        body{
+            width: 7.5rem;
+            /* height: 2rem; */
+            background: url("/imgs/thanksgiving/conversionbg.png") 0 0 no-repeat;
+            background-size:cover;
+            overflow: hidden; 
+            margin: 0 auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="hidden" id="isLogin" name="" value=<%=isLogin%>>
+    <div class="nologin">
+        <div class="hidebox">
+            <p class="textcenter" id="tips" style="font-size:.24rem">请登录后参与活动</p>
+        </div>
+    </div>
+    <div class="boxShadow">
+        <div class="successTips">
+            <p>恭喜您兑换成功</p>
+            <div class="awardpacket">
+                10元
+            </div>
+        </div>
+    </div>
+    <div class="shake_conversion">
+        <div class="center">兑换中心</div>
+        <div class="convert">
+            <div class="niu_money" style="text-align:center">
+                <img src="/imgs/thanksgiving/niu_money.png" alt="">
+                <span style="margin-right: .2rem">牛元宝：</span>
+                <span class="counter" data-counter='<%=ingotsCount%>'><%=ingotsCount>9999?'9999+':ingotsCount%></span>
+            </div>
+        </div>
+        <ul class="cash clearfix">
+            <% for(var i = 0;i < arr.length;i++) { %>
+                <li class="kind fl">
+                    <div class="award"><%= arr[i] %>元</div>
+                    <div class="btn" data-code="<%= prizeCodeEnum1[i] %>" data-money="<%= arr[i] %>"><%= arr[i] %>牛元宝</div>
+                </li>
+            <% } %>
+        </ul>
+        <ul class="interest clearfix">
+            <% for(var i = 0;i < rates.length;i++) { %>
+                <li class="kind fl">
+                    <div class="award" data-type='rate'>
+                        <span class="rate"><%= rates[i] %>%</span>
+                    </div>
+                    <div class="btn" data-code="<%= prizeCodeEnum2[i] %>" data-money="<%= arr2[i] %>">
+                        <%= arr2[i] %>牛元宝
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+    <script src="/js/libs/jquery.countup.js"></script>
+    <script>
+        $(function(){
+            var isLogin = $('#isLogin').val();
+            var drawFlag = true;
+            $('.btn').click(function(){
+                var isRate = false; //是否兑换加息券
+                var _this = this;
+                if(drawFlag){
+                    drawFlag = false;
+                    if(isLogin=="true"){
+                        var needmoney = $(_this).attr('data-money');
+                        needmoney = Number(needmoney);
+                        $.get('/thanksGiving/getActivityInfo',function(data){
+                            if(data.success){
+                                var counter = data.ingotsCount;
+                                counter > 9999 ? $('.counter').text('9999+') : $('.counter').text(counter);
+                                if(counter>=needmoney){
+                                    var content = $(_this).prev().text().replace(/\s/g, "");
+                                    if($(_this).prev().attr('data-type')=='rate'){
+                                        content = '<span style="margin-left:.8rem">' + content + '</span>';
+                                        isRate = true;
+                                    }
+                                    var awardType = $(_this).attr('data-code');
+                                    $.post('/thanksGiving/exchangeThanksGivingAward',{
+                                        awardType: awardType
+                                    },function(result){
+                                        if(result.success){
+                                            $('.awardpacket').html(content);
+                                            if(isRate){
+                                                $('.awardpacket').css({
+                                                    "backgroundImage":"url(/imgs/thanksgiving/rate.png)",
+                                                    "height": "1.26rem",
+                                                    "lineHeight": "1.26rem"
+                                                });
+                                            }else{
+                                                $('.awardpacket').css({
+                                                    "backgroundImage":"url(/imgs/thanksgiving/packet.png)",
+                                                    "height": "1.66rem",
+                                                    "lineHeight": "1.66rem"
+                                                });
+                                            }
+                                            $('.boxShadow,.successTips').show()
+                                            setTimeout(function() {
+                                                $('.successTips').hide('slow',function(){
+                                                    drawFlag = true;
+                                                    $('.boxShadow').hide();
+                                                    $(".counter").numberRock({
+                                                        speed:10,   //速度
+                                                        count: counter - needmoney, //最终数字
+                                                        sum: counter,   //初始数字
+                                                        type: "reduce" //增加或减少
+                                                    })
+                                                    counter = counter - needmoney;
+                                                })
+                                            }, 2000); 
+                                        }else{
+                                            $('.textcenter').text(result.msg)
+                                            $('.nologin').show()
+                                            setTimeout(function() {
+                                                $('.nologin').hide();
+                                                drawFlag = true;
+                                            }, 2000);
+                                        }
+                                    })      
+                                }else{
+                                    $('.textcenter').text('您的牛元宝数量不足')
+                                    $('.nologin').show()
+                                    setTimeout(function() {
+                                        $('.nologin').hide();
+                                        drawFlag = true;
+                                    }, 2000);
+                                }
+                            }else{
+                                $('.textcenter').text(data)
+                                $('.nologin').show()
+                                setTimeout(function() {
+                                    $('.nologin').hide();
+                                    drawFlag = true;
+                                }, 2000);
+                            }
+                        })
+                        
+                    }else{
+                        $('.textcenter').text('请登录后参与活动')
+                        $('.nologin').show()
+                        setTimeout(function() {
+                            $('.nologin').hide();
+                            drawFlag = true;
+                            window.location.href = "toapp://login";
+                        }, 2000);
+                    }
+                }
+            })
+        })
+        
+    </script>
+</body>
+</html>

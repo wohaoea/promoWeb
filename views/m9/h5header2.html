@@ -1,0 +1,16 @@
+<%if(goback){%>
+	<div class="h5header"><%=title%></div>
+	<%if(goback==true){%>
+	<a href="javascript:history.go(-1);" class="goback2">
+		
+	</a>
+	
+	<%}else{%>
+	<a href="<%=goback%>" class="goback2"></a>
+	<%}%>
+	<!-- <div class="h5header"><span class="h5title"><%=title%></span><a href="javascript:history.go(-1);" class="goback"></a></div> -->
+<%}else{%>
+<div class="h5header"><%=title%></div>
+<%}%>
+
+<div style="clear: both;background: #E0E0E0;height: 0.1rem"></div>

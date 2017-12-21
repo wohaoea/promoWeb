@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title><%=title%></title>
+		<meta name="description" content="<%=title%>" />
+	    <meta name="keywords" content="<%=title%>" />
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	    <meta name="format-detection" content="telephone=no" />
+	    <!-- build:css /css/m9/fenqifuwu-confirm-apply.min.css -->
+	    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+	    <link href="/css/niubeih5.css" rel="stylesheet" type="text/css" />
+	    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+	    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+	    <link href="/css/m9/fenqifuwu-confirm-apply.css" rel="stylesheet" type="text/css">
+	    <!-- /build -->
+    	<%include ./h5script.html %>
+	</head>
+	<body>
+		<div class="shop-pannel">
+			<div class="shop-info shop-p">
+            <div class="shop-name" style="font-size: 0.38rem;"><%=shop.shopName%></div>
+            <div class="request-date" style="font-size: 0.32rem;">申请日期：<%=utils.formatDate2(new Date(),'yyyy-MM-dd')%></div>
+       		</div>
+       	</div>
+       	
+       	<table border="0" style="font-size: 0.32rem;">
+       		
+       		<%for (var i=0;i<totradeList1.length;i++){%>
+       			<tr style="font-size: 0.32rem;"><td><%=totradeList1[i].term%></td><td><%=totradeList1[i].repaydate%></td><td><%=totradeList1[i].repayamount%></td></tr>
+       		<%}%>
+       		
+       		
+       		
+       		
+       		
+       		
+       		
+       		
+       		
+       		
+       	</table>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+

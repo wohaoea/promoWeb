@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/fenqifuwu_second.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" type="text/css" href="/css/m9/fenqifuwu_second.css"> 
+    <!-- /build -->
+    <%include ./h5script10.html%>
+</head>
+
+<body>
+    <div class="container">
+    	<div class="section1">
+    		<img src="/imgs/m9/yhj_detail.png" class="section1_left left"/>
+    		<div class="section1_right right">
+    			<p class="section1_p1">易换机S.D. Care贴膜分期服务</p>
+    			<p class="section1_p2">S.D. Care贴膜产品，是由易换机品牌公司壹加众达网络科技（北京）有限公司提供的，全国首款保障型贴膜产品</p>
+    		</div>
+    	</div>
+    	
+    	<div class="section2">
+    		<div style='float: left'>参考价格： <span> ￥3000</span></div> </span> <div style='float: right;'>分期：<span style='color:black'>￥1000*3期</div>
+    	</div>
+        <div style='clear: both'></div>
+    	<hr />
+    	<p class="detail">服务详情： <a href="/m9/fenqifuwu-list?sign=<%=token%>&version=<%=version%>" style="float: right;color: #2994fd;border: 1px solid #2994fd;font-size: 0.25rem;padding: 0.05rem 0.15rem;border-radius:0.05px ">返回</a></p>
+    	<div class="section3">
+    		1、S.D. Care贴膜产品为全国首款保障型贴膜产品，由“易换机”品牌提供。<br />
+			2、牛娃互联网金融与易换机联合推出S.D. Care贴膜分期服务，为商家提供3个月3,000元分期产品包，拟包含50套S.D. Care贴膜（具体适用手机型号由商家指定），每月商家还款1,000元。<br />
+			3、S.D. Care贴膜为每一位购买贴膜的手机用户提供至少90天的屏幕意外损坏维修服务。<br />
+			4、S.D. Care贴膜每包装以套为单位（含贴膜、屏幕清洁纸巾（干、湿）、粘尘贴），每套统一供货价为60元（人民币）。<br />
+			5、申请S.D. Care贴膜分期服务前需在牛呗完成注册并完成基础修炼。<br />
+			6、选择分期付款后，商户订货由易换机总部统一发货。<br />
+			7、本商品分期服务最终解释权归上海牛娃互联网金融信息服务有限公司所有，如需帮助请致电400-88460898。
+    	</div>
+        <%if(!projiect_info.projectNo&&(logins=='true')){%>
+        <p class="jujianxieyi">
+            <img src="/imgs/m9/ico-check_02.png" class="uncheck"/><span>我已同意并阅读<a href="/m9_2/jujianxieyi">《消费分期居间服务协议》</a></span>
+        </p>
+        <%}%>
+        <%if((confirmFlag||(confirmFlag&&(projiect_info.repayStatus=='WAIT_REPAY')))&&(projiect_info.releaseStatus!='OFFLINE')&&(projiect_info.repayStatus!='OVERDUE')&&(projiect_info.auditStatus!='LOANED_FAIL')){%> 
+    	<p class="success">
+    		<img src="/imgs/m9/gou.png" class="gou"/>您已提交服务申请
+    	</p>
+        <%}%>
+        <%if((!!projiect_info.repayStatus)&&(projiect_info.repayStatus!='SETTLED')&&((projiect_info.repayStatus!='EARLY_REPAY'))){%>  
+    	<p class="succeed">
+    		<img src="/imgs/m9/gou.png" class="succeed_apply"/>您已经成功申请分期服务
+    	</p>
+        <%}%>
+    </div>
+
+    <%if(!!projiect_info.projectNo||(logins=='false')){%>     
+    <div id="apply" class='button'>申请分期</div>
+    <%}%> 
+
+    <%if((!projiect_info.projectNo&&(logins=='true'))){%>     
+    <div id="apply_isSign" class='button'>申请分期</div>
+    <%}%>
+    <%if(!!projiect_info.projectNo&&confirmFlag&&(projiect_info.releaseStatus!='OFFLINE')&&(projiect_info.auditStatus!='LOANED_FAIL')){%>
+    <div id="track" class='button'>服务追踪</div>
+    <%}%> 
+    <!-- 还款状态为settled 按钮变灰 -->
+    <%if(!!projiect_info.repayStatus&&(projiect_info.repayStatus!='SETTLED')&&(projiect_info.repayStatus!='EARLY_REPAY')){%>
+    <div  class='button button_gray'>申请分期</div>
+    <%}%>
+    <%if((logins=='false')||(projiect_info.repayStatus=='SETTLED')||(projiect_info.repayStatus=='EARLY_REPAY')){%>
+    <div style='height: 2rem'></div>
+    <%}%>
+    <div class="loading" >
+        <img src="/imgs/m9/loading.gif" >
+    </div>
+</body>
+
+</html>
+<script>
+    var logins='<%=logins%>';
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+
+<!-- build:js /js/m9/fenqifuwu_second.min.js -->
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src='/js/m9/toast_phone.js'></script> 
+<script type="text/javascript" src='/js/m9/fenqifuwu_second.js'></script> 
+<script type="text/javascript" src="/js/common/formSubmit.js"></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>

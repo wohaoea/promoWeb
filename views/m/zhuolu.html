@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>加入牛呗</title>
+		<meta name="description" content="加入牛呗" />
+	    <meta name="keywords" content="加入牛呗" />
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	    <meta name="format-detection" content="telephone=no" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/zhuoluye.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"/>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zhuoluye.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.fullPage.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			if (top != self) {
+				location.href = "about:blank";
+			}
+		</script>
+	</head>
+	<body>
+			<div id="container">
+				<div class="section s1">
+					<div id="m1"></div>
+				</div>
+				<div class="section s2">
+					<div id="m2"></div>
+				</div>
+				<div class="section s3">
+					<a id="m3" href="/toh5reg">速度加入</a>
+				</div>
+			</div>
+			<style>
+				.footer_p3 {
+					font-size: 0.20rem;
+					color: #ffffff;
+					text-align: center;
+					margin-top: 0.2rem;
+				}
+
+				.footer_p4 {
+					font-size: 0.24rem;
+					color: #526692;
+					overflow: hidden;
+					margin: 0.2rem 0
+				}
+
+				.footer_p4 span {
+					padding-right: 0.24rem;
+					display: inline-block;
+				}
+
+				.footer_p {
+					text-align: center;
+					padding-bottom: 0.6666rem;
+					box-sizing: border-box;
+					position: absolute;
+					bottom: 0;
+					left:50%;
+					width: 7rem;
+					margin-left: -3.5rem;
+				}
+			</style>
+			<div id="footer_p" class="footer_p">
+				<p class="footer_p3">上海牛娃互联网金融信息服务有限公司</p>
+				<div class="footer_p3">工作日9:00 - 21:00 节假日9:00 - 18:00</div>
+			</div>
+	</body>
+	<!-- Google Tag Manager -->
+
+	<noscript>
+		<iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0"
+				style="display:none;visibility:hidden"></iframe>
+	</noscript>
+
+	<script>(function (w, d, s, l, i) {
+		w[l] = w[l] || [];
+		w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+		var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+		j.async = true;
+		j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+		f.parentNode.insertBefore(j, f);
+	})(window, document, 'script', 'dataLayer', 'GTM-5H47RG');</script>
+</html>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+
+	wx.config({
+		debug: false,
+		appId: 'wx1c31a58272c4dd10',
+		timestamp: '<%=timespan%>',
+		nonceStr: '<%=noncestr%>',
+		signature: '<%=signature%>',
+		jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ']
+	});
+
+	wx.ready(function () {
+
+		wx.onMenuShareTimeline({
+			title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+			desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+			link: window.location.href
+		});
+
+		wx.onMenuShareAppMessage({
+			title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+			desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+			link: window.location.href
+		});
+
+		wx.onMenuShareQQ({
+			title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+			desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+			link: window.location.href
+		});
+
+	});
+
+</script>
+<script src="/js/libs/jquery.sha256.min.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>

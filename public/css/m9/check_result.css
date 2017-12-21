@@ -1,0 +1,9 @@
+body,html{text-align: center;background: #f2f2f2;min-height: 10rem;}
+img{display: inline-block;width: 2rem;height: 2rem;margin-top: 1.2rem;margin-bottom: 0.8rem;}
+p{font-size: 0.34rem;line-height: 0.5rem;}
+.p{margin-bottom: 1rem;}
+.p1{margin-bottom: 1.65rem;}
+.button{width: 6.08rem;height: 0.9rem;background: #3296fa;color: white;text-align: center;line-height: 0.9rem;font-size: 0.34rem;border-radius:0.08rem ;}
+nav{display: inline-block;}
+#phone{font-size: 0.28rem;margin-top: 0.4rem;}
+#phone a{color: #2994fd;}

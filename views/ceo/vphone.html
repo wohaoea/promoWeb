@@ -1,0 +1,33 @@
+<div id="vphone">
+<%if(app!=1){%>
+<div id="header2">
+	<div class="gohistory">
+		<a href="javascript:void(0)" onclick="javascript:$('#vphone').remove()"><img src="/imgs/ceo/gohistory.png" /></a>
+	</div>
+	投票
+</div>
+<%}%>
+<div id="wrapper2" <%if(app==1){%>style='top:0'<%}%>>
+	<div class="scroller">
+		<div class="apply">
+			<div class="headerimg">
+				<%if(app==1){%><div class="gohome"></div><%}%>
+				<a href="/ceo/referral"><img src="/imgs/ceo/banheader.png" /></a>
+			</div>
+			<div class="applyreg">
+				<div class="list" style="margin-top:1.7866666666666666rem">
+					<div class="pcontent">
+						<div class="pleft">手机号：</div>
+						<div class="pright">
+							<input type='tel' id='pphone' placeholder='请输入手机号' />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="inputbox">
+				<div class="baoming" id="toupiao" data-v='<%= id%>'>投票</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

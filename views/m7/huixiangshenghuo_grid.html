@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=1000, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>牛娃金融</title>
+    <!-- build:css /css/huixiangshenghuo_grid.min.css -->
+    <link href="/css/idialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/sjkh.css" rel="stylesheet" type="text/css" />
+    <link href="/css/head-foot.css" rel="stylesheet" type="text/css" />
+    <link href="/css/xsqg.css" rel="stylesheet" type="text/css" />
+    <link href="/css/huixiangshenghuo_grid.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+    <link href="/css/jquerygray/gray.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    var haslist=<%=data.listData.length%>;
+    var goUrl = "<%=config.base.promodomain%>";
+    var pageDate = <%-JSON.stringify(paging)%>
+    if(!haslist){
+        window.location.href= goUrl+'m7/huixiangshenghuo';
+    }
+    var channel = "<%=channel%>";
+    var _custId = "<%=_custId%>";
+    var domain = "<%=domain%>";
+    var promodomain = "<%=promodomain%>";
+</script>
+</head>
+<body style="background-color:#f2f4f6">
+    <%include ../tmp_head_hxsh.html%>
+    <%include temp_grid_header.html%>
+    <div class="xsqgwrap">
+        <%include temp_grid_body.html%>
+    </div>
+    <%include ../tmp_foot.html%>
+</body>
+</html>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/jquerygray/gray.min.js"></script>
+<!-- build:js /js/huixiangshenghuo_grid.min.js -->
+<script type="text/javascript" src="/js/head.js"></script>
+<script type="text/javascript" src="/js/readmsg.js"></script>
+<script type="text/javascript" src="/js/huixiangshenghuo_grid.js"></script>
+<script type="text/javascript" src="/js/huixiangshenghuo.js"></script>
+<script type="text/javascript" src="/js/gototop.js"></script>
+<!-- /build -->

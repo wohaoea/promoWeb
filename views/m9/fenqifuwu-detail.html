@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/fenqifuwu-detail.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/m9/fenqifuwu-detail.css">
+    <!-- /build -->
+    <%include ./h5script.html %>
+</head>
+
+<body>
+
+<div class="shop-pannel">
+    <div class="shop-img"><img src="<%=shop.shopImg%>"></div>
+    <div class="shop-info">
+        <div class="shop-name"><%=shop.shopName%></div>
+        <div style="display: none;" id="shop-desc">
+
+            <%=shop.shopDesc%>
+        </div>
+        <div class="shop-desc"></div>
+        <div class="shop-price-label">参考价格：&nbsp;<span class="shop-price"><%=shop.shopPrice%></span></div>
+    </div>
+</div>
+<div style="display: none;" id="shop-content"><%=shop.shopContent%></div>
+<p class="fuwu-title" style='font-size:0.38rem '>服务详情:</p>
+<div class="shop-content" style="font-size: 0.28rem"></div>
+<br><br><br><br><br><br><br><br><br>
+<!-- <a href="<%=config.base.promodomain%>m9/tongxinrenzheng">去认证</a> -->
+<table class="div-shanghudaima">
+    <tr>
+        <td class="div-input-shanghudaima"><input class="input-shanghudaima" placeholder="请输入商铺代码" /></td>
+        <td class="btn-shanghudaima">申请分期</td>
+    </tr></table>
+</body>
+
+</html>
+<script type="text/javascript">
+    var prodType = "<%=shop.prodType%>";
+    var h5domain = "<%=config.base.h5domain%>";
+    var promodomain = "<%=config.base.promodomain%>";
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<!-- build:js /js/m9/fenqifuwu-detail.min.js -->
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src='/js/m9/fenqifuwu-detail.js'></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    function HTMLDeCode(str) {
+        var s = "";
+        if (!str || !str.length) {
+            return "";
+        }
+        s = str.replace(/&lt;/g, "<");
+        s = s.replace(/&gt;/g, ">");
+        s = s.replace(/&amp;/g, "&");
+        return s;
+    }
+    $(".shop-content").html(HTMLDeCode($("#shop-content").html()));
+    $(".shop-desc").html(HTMLDeCode($("#shop-desc").html()));
+    <%if(!canApply) {%>
+        new window.idialog().show({
+            content: "今日限额已满，请明日再申请，谢谢！"
+        });
+        $(".btn-shanghudaima").unbind("click")
+        $(".btn-shanghudaima").css("background","#999999")
+        $(".btn-shanghudaima").css("borderColor","#999999")
+        <%}%>
+</script>
+

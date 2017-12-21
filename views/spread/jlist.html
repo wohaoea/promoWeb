@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>牛呗推广系统</title>
+    <meta name="description" content="牛呗推广系统" />
+    <meta name="keywords" content="牛呗推广系统" />
+    <% include header.html %>
+</head>
+<body>
+<% include diaoding.html%>
+<div id="box">
+    <div class="container1" id="wrapper">
+        <div class="scroller">
+            <div id="scroller-pullDown" style="display: none;">
+                <span class="pullDownLabel"></span>
+            </div>
+            <ul class="list-head">
+                <li>手机号</li>
+                <li>用户名</li>
+                <li>加入时间</li>
+                <li>操作</li>
+            </ul>
+            <div class="list-box1" id="thelist" >
+                <%if(data.rows){%>
+                    <%data.rows.forEach(function(v,k){%>
+                        <ul class="list-con">
+                            <li><%=utils.mobeileTosen(v.tel)%></li>
+                            <li><%=v.loginName%></li>
+                            <li class="list-con-item5"><%=v.applyTime.substr(0,10)%><br><%=v.applyTime.substr(11).replace(/:/g," : ")%></li>
+                            <li><a href="javascript:;" class="close jlistclose" rid="<%=v.recommendId%>" roletype="<%=v.recomType%>" cname="<%=v.custName%>" tel="<%=utils.mobeileTosen(v.tel)%>" custname="<%if(v.custName){%><%=v.custName%><%}%>"></a></li>
+                        </ul>
+
+                    <%})%>
+                <%}%>
+                <!--
+                <ul class="list-con">
+                    <li>张三</li>
+                    <li>150****3972</li>
+                    <li class="list-con-item5">2015-11-11<br>13：23：38</li>
+                    <li><a href="javascript:;" class="close"></a></li>
+                </ul>-->
+            </div>
+            <div id="scroller-pullUp" style="height:200px;">
+                <span class="pullUpLabel">
+                    <%if(Math.ceil(data.total/20)>1){%>
+                    <div class="loading-box"></div>
+                    <%}%>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.iDialog.js"></script>
+<script src="/js/libs/iscroll/iscroll-probe.js"></script>
+<script src="/js/libs/iscroll/iscroll-load-data.js"></script>
+<!-- build:js /js/spread.min.js -->
+<script src="/js/g.js"></script>
+<script type="text/javascript" src="/js/spread.js"></script>
+<!-- /build -->
+<script>
+
+    var totalpageSize = Math.ceil(<%=data.total%>/20);
+    var opt = {
+        page: 1
+    };
+    var ajaxurl ="/spread/p/pra/jlist";
+
+    document.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+    }, false);
+    loaded();
+</script>

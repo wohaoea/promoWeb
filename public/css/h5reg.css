@@ -1,0 +1,326 @@
+body{
+	font-family: sans-serif;
+	font-size:0.346666667rem;
+}
+.clearfix:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{zoom:1;}
+input {
+outline: none;
+-webkit-appearance: none; 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+-webkit-appearance: none !important;
+margin: 0;
+}
+.topheader{
+	width:10rem;
+	height:9.6rem;
+	position: relative;
+	background:url(../imgs/h5reg/top.png);
+	background-size:cover;
+}
+.regbodyh5{
+	background:#ff644b;
+	width:9.0666666667rem;
+	padding-top:0.426666667rem;
+	margin:0 auto;
+	/* Webkit browsers */
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-left-radius: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	 
+	/* W3C syntax */
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius:  20px;
+	padding-bottom:0.75rem
+}
+.reglist{
+	width:8rem;
+	height:1.2rem;
+	margin:0 auto;
+	margin-top:0.4rem !important;
+	background:#fff;
+	border-radius:12px;
+	position: relative;
+}
+.reglist .phoneico{
+	position:absolute;
+	width:0.48rem;
+	height:0.56rem;
+	background:url(../imgs/h5reg/phoneico.png);
+	background-size:cover;
+	z-index:1;
+	top:0.3rem;
+	left:0.266666667rem;
+}
+.reglist .mimaico{
+	position:absolute;
+	width:0.48rem;
+	height:0.56rem;
+	background:url(../imgs/h5reg/pwdico.png);
+	background-size:cover;
+	z-index:1;
+	top:0.3rem;
+	left:0.266666667rem;
+}
+.reglist .tuxingico{
+	position:absolute;
+	width:0.4rem;
+	height:0.48rem;
+	background:url(/imgs/tuxing.png);
+	background-size:cover;
+	z-index:1;
+	top:0.32rem;
+	left:0.266666667rem;
+}
+.reglist .duanxinico{
+	position:absolute;
+	width:0.48rem;
+	height:0.56rem;
+	background:url(../imgs/h5reg/duanxin.png);
+	background-size:cover;
+	z-index:1;
+	top:0.32rem;
+	left:0.266666667rem;
+}
+.rlist{
+	width:8rem;
+	margin:0 auto;
+	position: relative;
+	background:none;
+	border:0;
+}
+.reglist.small{
+	width:5.0666667rem;
+	float: left;
+	border:0;
+}
+.reglist input{
+   position:absolute;
+   top:0;
+   left:0;
+   background: none;
+   width:6.8rem;
+   height:1.2rem;
+   padding-left:1.2rem;
+   font-size:0.346666667rem;
+   border: 0;
+   border-radius: 0;
+  /*  -webkit-appearance: none; */
+   z-index:2;
+   font-size:0.373333333rem;
+   border-radius:12px;
+}
+.reglist.small input{
+   position:absolute;
+   top:0;
+   left:0;
+   background: none;
+   width:3.8666667rem;
+   height:1.2rem;
+   padding-left:1.2rem;
+   font-size:0.346666667rem;
+   border: 0;
+   border-radius: 0;
+   /*  -webkit-appearance: none;  */
+   z-index:2;
+   border-radius:12px;
+}
+input::-webkit-input-placeholder { 
+color: #afafaf; 
+font-family: sans-serif;
+} 
+input:focus::-webkit-input-placeholder, input:hover::-webkit-input-placeholder { 
+color: #afafaf;  
+font-family: sans-serif;
+} 
+button.yellow{
+	background:#ffd232;
+	height:1.2rem;
+	width:2.6666667rem;
+	float: right;
+	text-align:center;
+	line-height:1.2rem;
+	font-size:0.373333333rem;
+	border:0;
+	border-radius:12px;
+	margin-top:0.4rem;
+	color:#fff;
+}
+button.yellow[disabled]{
+	background:#787878;
+	font-size:0.346666667rem;
+	color:#fff;
+}
+.agree{
+	width:0.4rem;
+	height:0.4rem;
+	background:url(../imgs/h5reg/check.png);
+	background-size:cover;
+	float: left;
+	margin-right:0.2666666667rem
+}
+.agreed{
+	background:url(../imgs/h5reg/checked.png) !important;
+	background-size:cover !important;
+}
+.yuedu{
+	color:#fff;
+	line-height:0.4rem;
+	font-size:0.37333333rem;
+}
+.yuedu span{
+	color:#ffd232;
+	line-height:0.4rem;
+	font-size:0.37333333rem;
+}
+.divtijiao{
+	width:3.466666667rem;
+	height:3.6rem;
+	margin:0 auto;
+	margin-top:0.8rem;
+}
+button.btntijiao{
+	background:url(../imgs/h5reg/sbtn.png);
+	background-size:cover;
+	border:0;
+	width:3.466666667rem;
+	height:3.6rem;
+	margin:0 auto;
+}
+button.btntijiao[disabled]{
+	background:url(../imgs/h5reg/sbtn.png);
+	background-size:cover;
+	border:0;
+	width:3.466666667rem;
+	height:3.6rem;
+	margin:0 auto;
+}
+.pclass{
+	color:#fff;
+	margin-top:0.4rem;
+	text-align:center;
+}
+.pclass a{
+	color:#ffd232;
+}
+.xuxian{
+	height:1px;
+	width:8.57333333333rem;
+	margin:0 auto;
+	background:none;
+	border-bottom:2px dashed #fff;
+	margin-top:0.75rem;
+}
+.shuoming{
+	width:7.08rem;
+	height:1.44rem;
+	margin:0 auto;
+	margin-top:0.75rem;
+	background:url(../imgs/h5reg/shuoming.png);
+	background-size:cover
+}
+.moreprdtitle{
+	width:8rem;
+	height:1.0666667rem;
+	margin:0 auto;
+	margin-top:1.03333333rem;
+	margin-bottom:0.5333333333rem;
+	background:url(../imgs/h5reg/moreprdtitle.png);
+	background-size:cover
+}
+a.newdetail{
+	display: block;
+	background:url(../imgs/h5reg/new.png);
+	background-size:cover;
+	margin:0 auto;
+	margin-top:0.5333333333rem;
+	width:9.06666666667rem;
+	height:1.8666666667rem;
+}
+a.plandetail{
+	display: block;
+	background:url(../imgs/h5reg/plan.png);
+	background-size:cover;
+	margin:0 auto;
+	margin-top:0.5333333333rem;
+	width:9.06666666667rem;
+	height:1.8666666667rem;
+}
+a.ideadetail{
+	display: block;
+	background:url(../imgs/h5reg/idea.png);
+	background-size:cover;
+	margin:0 auto;
+	margin-top:0.5333333333rem;
+	width:9.06666666667rem;
+	height:2rem;
+	margin-bottom:1.333333333rem;
+}
+.zijinplat{
+	width:10rem;
+	height:16.8rem;
+	background:url(../imgs/h5reg/jieshao.png);
+	background-size:cover;
+	position:relative;
+}
+.zijinplat-tittle{
+	width:8rem;
+	height:1.06666667rem;
+	position: absolute;
+	z-index:1;
+	top:1.06666667rem;
+	left:50%;
+	margin-left:-4rem;
+	background:url(../imgs/h5reg/stitle.png);
+	background-size:cover;
+}
+.shuomingtree{
+	width:8.56rem;
+	height:13.2533333333333rem;
+	position:absolute;
+	z-index:2;
+	background:url(../imgs/h5reg/shuomingtree.png);
+	background-size:cover;
+	top:2.8rem;
+	left:50%;
+	margin-left:-4.28rem;
+}
+.h5footer{
+	background:#fff;
+	padding-top:0.5066666666667rem;
+	padding-bottom:0.5066666666667rem;
+}
+.h5footer .footbox{
+	width:5.6rem;
+	margin:0 auto;
+	white-space:nowrap;
+}
+.h5footer p{
+	text-align:center;
+	color:#969696;
+	font-size:0.32rem;
+}
+span.phone{
+	color:#646464;
+	font-size:0.45rem;
+	margin-left:0.3133333333rem
+}
+span.jiejiari{
+	margin-left:0.4666666667rem;
+}
+.dialog_div{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:99;
+	background:none;
+	display: none;
+}

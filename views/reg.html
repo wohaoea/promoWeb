@@ -1,0 +1,255 @@
+﻿<% include header.html %>
+<body>
+	<div class="container">
+		<div class="regtop">
+			<div style="position: absolute;  left: 8px"><img  src="/imgs/logo.jpg"/></div>	
+			<div >注册</div>
+		</div>
+		<div class="regbody">
+			<div style="margin:auto;">
+				<img style="width:100%" src="<%=imgid%>"/>
+			</div>
+			<div class="regbg"><span class="regs2">用户名:</span><input type="text" maxLength=20 id="custName" placeholder="6-20位,字母、数字及下划线"/></div>
+			<div class="hr1"></div>
+			<div class="regbg"><span class="regs2">密码:</span><input type="password" maxLength=20 id="userPwd" placeholder="6-20位"/></div>
+			<div class="hr2"></div>
+			<div class="regbg"><span class="regs2">确认:</span><input type="password" maxLength=20 id="userenPwd" placeholder="请确认密码"/></div>
+			<div class="hr2"></div>
+			<div class="regbg"><span class="regs2">手机号:</span><input style="width:150px;" type="number" maxlength="11" id="phoneNumber" placeholder="请输入11位手机号"/><input type="button" id="sendvalid" style=" width: 88px;  font-size: 12px;  color: #fff;  background-color: #fb4b4b; border-radius: 4px;" value="发送验证码"/></div>
+			<div class="hr2"></div>
+			<div class="regbg"><span class="regs2">验证码:</span><input type="number" maxlength="6" id="validcode" placeholder="短信收到的验证码"/></div>
+			<div class="hr2"></div>
+			<div class="regbg">
+				<span class="regs2">校验码:</span>
+				<input type="text" maxlength="6" style="width:100px" id="captchacode" placeholder="校验码"/>
+				<img src="/pla/generatecaptcha" style="width: 78px; height: 35px;vertical-align: middle; display: inline;cursor:pointer;" id="imgCode">
+			</div>
+			<div class="hr2"></div>
+			<div><input type="checkbox" checked="checked" id="contact" style="height: 20px; width: 16px;vertical-align: bottom;"/> 我已阅读并同意<a class="a1" href="/clause">《平台注册协议》</a></div>
+			<div style="color:#fb4b4b" id="tips"></div>
+			<div style="text-align:center"><input type="button" value="注册" id="regsubmit"/></div>
+			<input type="hidden" id="hidpcode" value="<%=loginName%>"/>
+			<input type="hidden" id="hidpcustId" value="<%=custId%>"/>
+			
+		</div>
+		<br/><br/>
+		
+	</div>
+	<script type="text/javascript" src="/js/libs/zepto.min.js"></script>
+	<script type="text/javascript">
+	(function(f){var m=8;var k=function(q,t){var s=(q&65535)+(t&65535);var r=(q>>16)+(t>>16)+(s>>16);return(r<<16)|(s&65535)};var e=function(r,q){return(r>>>q)|(r<<(32-q))};var g=function(r,q){return(r>>>q)};var a=function(q,s,r){return((q&s)^((~q)&r))};var d=function(q,s,r){return((q&s)^(q&r)^(s&r))};var h=function(q){return(e(q,2)^e(q,13)^e(q,22))};var b=function(q){return(e(q,6)^e(q,11)^e(q,25))};var p=function(q){return(e(q,7)^e(q,18)^g(q,3))};var l=function(q){return(e(q,17)^e(q,19)^g(q,10))};var c=function(r,s){var E=new Array(1116352408,1899447441,3049323471,3921009573,961987163,1508970993,2453635748,2870763221,3624381080,310598401,607225278,1426881987,1925078388,2162078206,2614888103,3248222580,3835390401,4022224774,264347078,604807628,770255983,1249150122,1555081692,1996064986,2554220882,2821834349,2952996808,3210313671,3336571891,3584528711,113926993,338241895,666307205,773529912,1294757372,1396182291,1695183700,1986661051,2177026350,2456956037,2730485921,2820302411,3259730800,3345764771,3516065817,3600352804,4094571909,275423344,430227734,506948616,659060556,883997877,958139571,1322822218,1537002063,1747873779,1955562222,2024104815,2227730452,2361852424,2428436474,2756734187,3204031479,3329325298);var t=new Array(1779033703,3144134277,1013904242,2773480762,1359893119,2600822924,528734635,1541459225);var q=new Array(64);var G,F,D,C,A,y,x,w,v,u;var B,z;r[s>>5]|=128<<(24-s%32);r[((s+64>>9)<<4)+15]=s;for(var v=0;v<r.length;v+=16){G=t[0];F=t[1];D=t[2];C=t[3];A=t[4];y=t[5];x=t[6];w=t[7];for(var u=0;u<64;u++){if(u<16){q[u]=r[u+v]}else{q[u]=k(k(k(l(q[u-2]),q[u-7]),p(q[u-15])),q[u-16])}B=k(k(k(k(w,b(A)),a(A,y,x)),E[u]),q[u]);z=k(h(G),d(G,F,D));w=x;x=y;y=A;A=k(C,B);C=D;D=F;F=G;G=k(B,z)}t[0]=k(G,t[0]);t[1]=k(F,t[1]);t[2]=k(D,t[2]);t[3]=k(C,t[3]);t[4]=k(A,t[4]);t[5]=k(y,t[5]);t[6]=k(x,t[6]);t[7]=k(w,t[7])}return t};var j=function(t){var s=Array();var q=(1<<m)-1;for(var r=0;r<t.length*m;r+=m){s[r>>5]|=(t.charCodeAt(r/m)&q)<<(24-r%32)}return s};var n=function(s){var r="0123456789abcdef";var t="";for(var q=0;q<s.length*4;q++){t+=r.charAt((s[q>>2]>>((3-q%4)*8+4))&15)+r.charAt((s[q>>2]>>((3-q%4)*8))&15)}return t};var o=function(s,v){var u=j(s);if(u.length>16){u=c(u,s.length*m)}var q=Array(16),t=Array(16);for(var r=0;r<16;r++){q[r]=u[r]^909522486;t[r]=u[r]^1549556828}var w=c(q.concat(j(v)),512+v.length*m);return c(t.concat(w),512+256)};var i=function(q){q=typeof q=="object"?f(q).val():q.toString();return q};f.extend(f,{sha256:function(q){q=i(q);return n(c(j(q),q.length*m))},sha256hmac:function(q,r){q=i(q);r=i(r);return n(o(q,r))},sha256config:function(q){m=parseInt(q)||8}});f.fn.sha256=function(r){f.sha256config(r);var q=i(f(this).val());var s=f.sha256(q);f.sha256config(8);return s}})(Zepto);
+	</script>
+	<script type="text/javascript">
+
+	function IsPC() {
+	    var userAgentInfo = navigator.userAgent;
+	    var Agents = ["Android", "iPhone",
+	                "SymbianOS", "Windows Phone","iPod"];
+	    var flag = true;
+	    for (var v = 0; v < Agents.length; v++) {
+	        if (userAgentInfo.indexOf(Agents[v]) >= 0) {
+	            flag = false;
+	            break;
+	        }
+	    }
+	    return flag;
+	}
+	
+	if(IsPC()){
+		var obj=document.getElementById("hidpcustId")
+		if(obj && obj.value){
+			//window.location.href="/?s="+obj.value;
+		}else{
+			//window.location.href="/";
+		}
+	};
+		$("input").click(function(){
+			$("#tips").html("");
+		});
+		$("#regsubmit").click(function(){
+			var custName=$("#custName").val();
+			var userPwd=$("#userPwd").val();
+			var userenPwd=$("#userenPwd").val();
+			var validcode=$("#validcode").val();
+			var captchacode=$("#captchacode").val();
+
+			if($.trim(custName).length==0){
+				$("#tips").html("请填写用户名")
+				return false;
+			}
+			if($.trim(custName).length<6 ||$.trim(custName).length>20){
+				$("#tips").html("用户名需为6-20个字符")
+				return false;
+			}
+
+			if(/^\d+$/.test(custName)){
+				$("#tips").html("用户名不能为纯数字")
+				return false;
+			}
+			if(custName.toLowerCase().indexOf("niuwa")>=0){
+				$("#tips").html("用户名已存在")
+				return false;
+			}
+			
+			if(!/^((\d+[a-zA-Z]+)|([a-zA-Z]+))(_|-|[a-zA-Z0-9])+$/.test(custName)){
+				$("#tips").html("请输入正确的用户名")
+				return false;
+			}
+			if($.trim(userPwd).length==0){
+				$("#tips").html("请填写登录密码")
+				return false;
+			}
+			if($.trim(userenPwd).length==0){
+				$("#tips").html("请再次输入密码确认")
+				return false;
+			}
+			
+			if(userPwd.length<6 ||userPwd.length>20 || userenPwd.length>20 || userenPwd.length<6){
+				$("#tips").html("密码必须为6-20位字符");
+				return false;
+			}
+			if(userPwd!=userenPwd){
+				$("#tips").html("两次输入的密码不一致,请重新输入");
+				return false;
+			}
+			if(!$('#contact').is(':checked')){
+				$("#tips").html("请勾选服务协议");
+				return false;
+			}
+			if(validcode.length!=6){
+				$("#tips").html("只能输入6位验证码");
+				return false;
+			}
+			if(captchacode.length!=4){
+				$("#tips").html("请输入正确的校验码");
+				return false;
+			}
+			$.ajax({
+					type: "POST",
+					url: "/pla/validatephonecode",
+					data: {
+						pnumber: $("#phoneNumber").val(),
+						pcode: validcode
+					},
+					success: function(msg) {
+					  if(msg.result=="fail"){
+							$("#tips").html("验证码不正确");
+						}else{
+							
+							$.post('/register', { uname:custName,pswd:$.sha256(userPwd),pswdagn:$.sha256(userenPwd),pcode:$("#hidpcode").val(),mobile:$("#phoneNumber").val(),vcode:validcode,captchacode:captchacode}, function(response){
+									 if(response.result!="success"){
+									 	$("#tips").html(response.resultMessage);
+										return false;
+									 }else{
+									 	window.location.href="/succereg";
+									 }
+								 });
+							}
+						}
+					});
+
+			
+			
+		});
+		var code_wait=60;
+		function time(btn) {
+				if (code_wait == -1) {
+					btn.removeClass("regsubmit");
+					btn.prop("disabled", false);
+					code_wait = 60;
+					btn.val("重新发送");
+				} else {
+					btn.addClass("regsubmit");
+					btn.prop("disabled", true);
+					timetext = "(" + code_wait + "秒后重试)";
+					btn.val(timetext);
+					code_wait--;
+					setTimeout(function() {
+							time(btn);
+						},
+						1000);
+				}
+			}
+		
+		$("#sendvalid").click(function(){
+			var that=$(this);
+			var phoneNumber=$("#phoneNumber").val();
+			if(phoneNumber.length!=11){
+				$("#tips").html("请输入11位手机号");
+				return false;
+			}
+			if(!(/^0?(13|15|18|14|17)[0-9]{9}$/.test(phoneNumber))){
+				$("#tips").html("请输入您的有效手机号码");
+				return
+			}
+			if(!/^\d{11}$/.test(phoneNumber)){
+				$("#tips").html("手机号只能为纯数字");
+				return false;
+			}
+			$.ajax({
+				type: "POST",
+				url: "/pla/generatemobilecode",
+				data: {
+					pnumber: phoneNumber
+				},
+				success: function(msg) {
+					if(msg.result=="fail"){
+						$("#tips").html(msg.resultMessage);
+					}else{
+						time(that);
+					}
+				}
+			});
+		});
+
+		$("#imgCode").click(function(){
+			$(this).attr("src","/pla/generatecaptcha?"+Math.random());
+		});
+		$("#imgCode").click();
+
+	</script>
+
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+
+	wx.config({
+	    debug: false,
+	    appId: 'wx1c31a58272c4dd10', 
+	    timestamp:'<%=timespan%>' , 
+	    nonceStr: '<%=noncestr%>', 
+	    signature: '<%=signature%>',
+	    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ']
+	});
+
+	wx.ready(function(){
+
+		wx.onMenuShareTimeline({
+		    title: '牛娃终于和我见面了，在牛娃注册新用户不仅投资有保障更有多重好礼拿到手软，好东西当然要和朋友分享！',
+		     desc: '牛娃终于和我见面了，在牛娃注册新用户不仅投资有保障更有多重好礼拿到手软，好东西当然要和朋友分享！', 
+		    link: window.location.href
+		});
+
+		wx.onMenuShareAppMessage({
+		    title: '牛娃终于和我见面了，在牛娃注册新用户不仅投资有保障更有多重好礼拿到手软，好东西当然要和朋友分享！', 
+		    desc: '牛娃终于和我见面了，在牛娃注册新用户不仅投资有保障更有多重好礼拿到手软，好东西当然要和朋友分享！', 
+		    link: window.location.href
+		});
+
+		wx.onMenuShareQQ({
+		    title: '牛娃终于和我见面了，在牛娃注册新用户不仅投资有保障更有多重好礼拿到手软，好东西当然要和朋友分享！', 
+		    desc: '牛娃终于和我见面了，在牛娃注册新用户不仅投资有保障更有多重好礼拿到手软，好东西当然要和朋友分享！', 
+		    link: window.location.href
+		});
+	   
+	});
+	
+</script>
+
+<!-- Google Tag Manager -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+ 
+<!-- End Google Tag Manager -->
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link href="/css/common/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/infoclt/infoclt.css">
+    <style type="text/css">
+        html,body{
+            height:100%;
+        }
+        iframe {
+            /*padding-top: 0.9rem;*/
+            position: fixed;
+            top:0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!--<div class="head">-->
+    <!--<a href="javascript:history.go(-1);"><img src="/imgs/infoclt/left.png"></a>-->
+    <!--<p><%=title%></p>-->
+    <!--<a id="link" href="javascript:void(0)" ><%=link%></a>-->
+<!--</div>-->
+<iframe src="<%=result.data.tianjiH5Url%>" frameborder="0"></iframe>
+<style id="contact-service" type="text/css">
+    .i-scale{
+        width: 5.6rem!important;
+        height: 4.2rem!important;
+    }
+
+    .i-scale .title{
+        font-size: 0.3rem!important;
+        margin: 5px auto 30px auto;
+    }
+    .i-wrapBtn .right{
+        float: none!important;
+    }
+    .i-wrapBtn input{
+        height: 0.9rem!important;
+        font-size: 0.3rem!important;
+    }
+</style>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script>
+    $("#link").bind("click",function () {
+        contactService();
+    })
+    function contactService(){
+        nwDialog({
+            lock: true,
+            opacity: .5,
+            title:'联系客服',
+            content:'<p style="font-size: 0.26rem;color:#333;margin:0.24rem auto 0.26rem;">请拨打全国客服热线</p>'
+            +'<p style="font-size: 0.26rem;color:#999">工作日&nbsp;&nbsp;9:00-21:00</p>'
+            +'<p style="font-size: 0.26rem;color:#999">节假日&nbsp;&nbsp;9:00-18:00</p>'
+            ,
+            init: function() {},
+            btn: nwDialogBtn({
+                m: 2,
+                cancle: {
+                    val: '取消',
+                    type: 'blue',
+                    click: function() {
+
+                    }
+                },
+                ok: {
+                    val: '400-8846-898',
+                    type: 'blue',
+                    click: function() {
+                        window.location.href = "tel:400-8846-898";
+                    }
+                }
+            })
+        });
+    }
+</script>
+<script src='/js/infoclt/h5script.js' type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+body{background: #e9ecef;}
+section{height: 1.5rem;width: 100%;box-sizing: border-box;padding: 0.34rem 0 0 0.28rem;overflow: hidden;margin-bottom: 0.2rem;background: white;}
+section p:first-of-type{font-size: 0.28rem;margin-bottom: 0.29rem;}
+section p:last-of-type{color: #999999;font-size: 0.24rem;}
+.main{height: auto;width: 100%;overflow: hidden;margin-bottom: 0.2rem;background: white;}
+.main div{line-height: 1rem;box-sizing: border-box;padding:0 0.5rem;font-size: 0.24rem;color: #999999;}
+.main div span{color: black;float: right}
+#center,.over_time,.platformFee{box-sizing: border-box;border-top: 1px solid #999999;border-bottom: 1px solid #999999;}
+#blue_font{color: #3296fa;}
+.main2{height: 1rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/service_success.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" type="text/css" href="/css/m9/service_success.css"> 
+    <!-- /build -->
+    <%include ./h5script10.html%>
+</head>
+
+<body>
+	 
+	<img src="/imgs/m9/apply_success.png" class="pic1"/>
+	<p class="pass">恭喜您，申请服务成功</p>
+
+	<div class="repay_plan">
+		<hr />
+		<span>还款计划</span>
+	</div>
+	<p class="term"><span>1/3期</span><span><%=json[0].repayTime%></span><span>1000元</span></p>
+	<p class="term"><span>2/3期</span><span><%=json[1].repayTime%></span><span>1000元</span></p>
+	<p class="term"><span>3/3期</span><span><%=json[2].repayTime%></span><span>1000元</span></p>
+	<nav class="button">确定</nav>
+    <p id="phone" style='margin-bottom:1rem'>如有疑问请拨打客服电话：<a id="niuwa_phone">400-8846-898</a></p>
+</body>
+
+</html>
+<script>
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src='/js/m9/toast_phone.js'></script>
+<script>
+    $('.button').click(function(){
+            $.post('/m9_2/makeLoan', {
+              
+            }, function(data) {
+                if(data.success){
+                    $.post('/m9_2/saveUserConfirmLog',{},function(json){
+                        if(json.success){
+                            window.location.href='/m9_2/fenqifuwu_second?backBtnStatus=backToIndex&type=yhj2_p3'
+                        }else{
+                            tipMsg(json.msg)
+                        } 
+                    })                       
+                }else{
+                    tipMsg(data.msg)
+                }
+            }); 
+
+    })
+
+</script>

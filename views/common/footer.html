@@ -1,0 +1,56 @@
+<style>
+    .footer_p3 {
+        font-size: 0.32rem;
+        color: #969696;
+        text-align: center;
+        margin-top: 0.2rem;
+    }
+
+    .footer_p4 {
+        font-size: 0.361rem;
+        color: #526692;
+        overflow: hidden;
+        margin: 0.2rem 0
+    }
+
+    .footer_p4 span {
+        padding-right: 0.361rem;
+        display: inline-block;
+    }
+
+    .footer_p {
+        text-align: center;
+        padding-bottom: 0.6666rem;
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 0;
+        left:50%;
+        width: 7rem;
+        margin-left: -3.5rem;
+    }
+</style>
+<div id="footer_p" class="footer_p">
+    <p class="footer_p3">上海牛娃互联网金融信息服务有限公司</p>
+    <div class="footer_p3">工作日9:00 - 21:00 节假日9:00 - 18:00</div>
+</div>
+<script>
+    window.onload = function () {
+        var windowH, bodyH, distance, footerH, height, position, left, footDom;
+        footDom = document.querySelector( '#footer_p' );
+        windowH = window.innerHeight;
+        bodyH = document.body.clientHeight;
+        footerH = footDom.offsetHeight;
+        distance = windowH - bodyH;
+        left = ( window.innerWidth - footDom.offsetWidth ) / 2;
+        height = distance >= footerH ? 0 : '-2.25rem';
+        position = distance >= footerH ? null : 'relative';
+        var absoluteValue=Math.abs(distance);
+        if(bodyH+footerH-windowH >= 0){
+            footDom.style.bottom = height;
+        }else{
+            footDom.style.bottom = 0;
+        }
+//        footDom.style.left = left + 'px';
+        document.body.style.position = position;
+    }
+</script>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta charset="utf-8"/>
+    <title>加入牛呗 - 体验理财生活新方向</title>
+    <meta name="description" content="活动细则"/>
+    <meta name="keywords" content="活动细则"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="email=no" name="format-detection"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <!-- build:css /css/toh5reg.min.css -->
+    <link href="/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="/promo/css/toh5reg.css" rel="stylesheet" type="text/css"/>
+    <!-- /build -->
+
+    <script>
+        if (top != self) {
+            location.href = "about:blank";
+        }
+        function isWeiXin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return 'no';
+            } else {
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr, rem, scale, docEl = document.documentElement, fontEl = document.createElement("style"), metaEl = document.querySelector('meta[name="viewport"]');
+        var docWidth = docEl.clientWidth;
+        var u = (window.navigator.appVersion.match(/android/gi), window.navigator.appVersion.match(/iphone/gi));
+        function reDo() {
+            dpr = window.devicePixelRatio || 1;
+            if (u && window.devicePixelRatio >= 3) {
+                dpr = 3;
+            } else if (window.devicePixelRatio >= 2) {
+                dpr = 2;
+            } else {
+                dpr = 1;
+            }
+            rem = docWidth * dpr / 10;
+            scale = 1 / dpr;
+            metaEl.setAttribute("content", "width=" + dpr * docWidth + ",initial-scale=" + scale + ",maximum-scale=" + scale + ", minimum-scale=" + scale + ",user-scalable=" + weixing);
+            docEl.setAttribute("data-dpr", dpr);
+            docEl.firstElementChild.appendChild(fontEl);
+            fontEl.innerHTML = "html{font-size:" + rem + "px!important;}";
+            window.rem2px = function (a) {
+                a = parseFloat(a);
+                return a * rem
+            };
+            window.px2rem = function (a) {
+                a = parseFloat(a);
+                return a / rem
+            };
+        }
+        reDo()
+    </script>
+</head>
+<body>
+<div style="" class="regbd">
+    <div class="banner">
+        <img src="imgs/toh5reg/<%=imgid%>.png"
+                             style="width:100%;">
+    </div>
+    <div class="loginbd">
+        <div class="loginc">
+            <img src="/imgs/toh5reg/icon/1.png" class="picon pmarg">
+            <input type="tel" placeholder="请输入11位手机号码" maxlength="20" class="txt userphone">
+        </div>
+        <div class="loginc">
+            <img src="/imgs/toh5reg/icon/2.png" class="picon pwmarg" style="height: 0.50rem;">
+            <input type="password" placeholder="登录密码为6-20位数字、字母或符号" maxlength="20" class="txt userpwd">
+        </div>
+        <div class="loginc">
+            <img src="/imgs/toh5reg/icon/4.png" style="top:0.37333333333333335rem;width: 0.4266666666666667rem;" class="picon">
+            <input type="tel" style="width:5.333333333333333rem" placeholder="请输入短信验证码" maxlength="6" class="txt txt_verifycode">
+            <input type="button" value="获取验证码" class="txt_js">
+        </div>
+        <div class="loginc" style="display: none;">
+            <img src="/imgs/toh5reg/icon/3.png" style="top:0.37333333333333335rem;width: 0.37333333333333335rem;" class="picon">
+            <input type="text" placeholder="图形验证码" style="width:5.333333333333333rem" maxlength="6" class="txt img_verifycode">
+            <img src="/pla/generatecaptchareg" id="imgcode">
+        </div>
+        <div class="reg_check"><input type="checkbox" checked="" class="ck"><span>我已阅读并同意<a
+                href="https://promo.i-niuwa.com/clause" class="blur">&lt;&lt;平台注册协议&gt;&gt;</a></span></div>
+        <div style="margin:auto;text-align: center;"><input type="button" value="完成注册" class="txtreg"></div>
+    </div>
+</div>
+<%include ./../common/footer.html%>
+</body>
+<!-- Google Tag Manager -->
+
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+    var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-5H47RG');</script>
+
+<!-- End Google Tag Manager -->
+</html>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+
+    wx.config({
+        debug: false,
+        appId: 'wx1c31a58272c4dd10',
+        timestamp: '<%=timespan%>',
+        nonceStr: '<%=noncestr%>',
+        signature: '<%=signature%>',
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ']
+    });
+
+    wx.ready(function () {
+
+        wx.onMenuShareTimeline({
+            title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            link: window.location.href
+        });
+
+        wx.onMenuShareAppMessage({
+            title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            link: window.location.href
+        });
+
+        wx.onMenuShareQQ({
+            title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            link: window.location.href
+        });
+
+    });
+
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.sha256.min.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+
+<!-- build:js /js/toh5reg.min.js -->
+<script src="/js/g.js"></script>
+<script type="text/javascript" src="/js/toh5reg.js"></script>
+<!-- /build -->

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="注册" />
+    <meta name="keywords" content="注册,牛娃p2p" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/niuwah5.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+    <style>
+        .explain-info img{
+            width: 80%;
+            margin-left: 10%;
+            border: 1px solid #eeeddd;
+        }
+    </style>
+</head>
+
+<body class="inst-bg">
+<div class="container">
+    <div class="explain-info">
+        <% if( type == 'card' ){ %>
+        <p><span>1</span>、绑定银行卡需为本人名下的银行借记卡，请勿使用存折和信用卡。</p>
+        <p><span>2</span>、根据第三方资金存管平台提供的服务要求，绑定银行卡需要四要素鉴权，包括：姓名、身份证号、银行卡号、预留手机号。</p>
+        <p><span>3</span>、执行充值/提现操作前需要成功绑定银行卡。</p>
+        <p><span>4</span>、银行卡绑定所支持的银行以新网银行官网提供的信息为准。</p>
+
+        <% }else if( type == 'recharge' ){ %>
+        <p><span>1</span>、充值服务由新网银行提供，填写充值金额将跳转到新网银行完成充值。</p>
+        <p><span>2</span>、充值支持即时到账，无充值费用。</p>
+        <p><span>3</span>、各银行充值限额不同，超出限额充值可能无法完成（限额以银行官网公告为准）。 </p>
+
+        <% }else if( type == 'withdraw' ){ %>
+        <p><span>1</span>、提现服务由新网银行提供，填写提现金额跳转到新网银行完成提现。</p>
+            <% if( typeof withdrawType != 'undefined' && withdrawType == 'T0'  ){ %>
+            <p><span>2</span>、T+0即时提现，当日即可到账。</p>
+            <% }else if( typeof withdrawType != 'undefined' && withdrawType == 'T1' ){ %>
+            <p><span>2</span>、平台支持T+1个工作日的提现方式，新网银行收到提现请求后的下一个工作日到帐；T+0即时提现正在开发中，即将上线。 </p>
+            <% } %>
+        <p><span>3</span>、系统会根据账户的情况计算出免费提现额度；免费提现额度内的提现费用由平台承担，免费提现额度外的提现费用由用户承担。（提现费用以提现界面显示的金额为准）。</p>
+        <p><span>4</span>、提现金额每次不得低于2元，提现次数无任何限制。</p>
+        <p><span>5</span>、牛呗已开通自动提现功能，自动提现授权成功系统将借款金额划转到用户绑定的银行卡；如绑定银行卡出现异常，需用户手动提现。</p>
+
+        <% }else if( type == 'reward' ){ %>
+        <p style="font-weight: 600">红包奖励说明：</p>
+        <p><span>1</span>、红包需要在有效期内使用，一次只能使用一个，逾期自动失效。</p>
+        <p><span>2</span>、一个红包不能拆分多次使用。</p>
+        <p><span>3</span>、还款抵扣红包可在本人还款的时候使用，抵扣部分还款金额。</p>
+        <p style="font-weight: 600">现金券奖励说明：</p>
+        <p><span>1</span>、现金券为牛娃互联网金融为回馈新老客户所提供的现金奖励，可以通过牛娃互联网金融不定期举办的各种活动而获取。</p>
+        <p><span>2</span>、现金券兑换成功进入可用余额后，即可直接用于还款或提现。</p>
+        <p><span>3</span>、请在有效期内兑换您的现金券，您可在牛呗>>个人中心>>奖励管理>>奖励管理 查看您当前拥有的现金券。</p>
+        <p><span>4</span>、现金券使用规则如下：</p>
+        <p>① 现金券供兑现使用，兑换审核通过后，现金券金额会进入用户的可用余额中；</p>
+        <p>② 现金券兑现周期为1-5个工作日；</p>
+        <p>③ 现金券不可转让、不可出售；</p>
+        <p>④ 现金券有效期为3个月，请在有效期内及时使用，过期后现金券将失效；</p>
+        <p>⑤ 如遇非正当手段获取的现金券（如恶意刷新，盗用他人身份证注册等），上海牛娃互联网金融信息服务有限公司有权将所获得的现金券收回或失效处理。</p>
+
+        <% }else if( type == 'borrowing' ){ %>
+        <p><span>1</span>、牛呗借款只服务于大专及以上学历的毕业人群。</p>
+        <p><span>2</span>、借款人需年满18周岁以上的中国大陆公民且有一定的还款来源。</p>
+        <p><span>3</span>、申请借款需要完成全部基础修炼术，系统根据用户信息给出信用额度，用户申请借款额度不得高于信用额度。</p>
+        <p><span>4</span>、用户提交申请借款，风控系统秒级自动审批借款申请。</p>
+        <p><span>5</span>、借款申请未通过审核，有以下几种情况：</p>
+        <p>（1）不符合牛娃的风控要求；</p>
+        <p>（2）超过了每日或每月的放款限额。</p>
+        <p>建议您保证所填写资料的真实性，过一段时间再重新尝试借款。</p>
+        <p><span>6</span>、借款申请通过审核，借款本金转至借款人的资金账户；用户自行将资金提现至本人银行卡。</p>
+        <p><span>7</span>、牛呗借款产品目前只支持单借单还，未还清全部借款前不能再次申请借款。</p>
+        <p><span>8</span>、牛呗信用借款成功后，本金、利息和服务费将在还款时一次性还清。</p>
+        <p>温馨提示：按时还款会提升信用额度，逾期还款将对信用额度和借款资格产生不良影响。</p>
+
+        <% }else if( type == 'repayment' ){ %>
+        <p><span>1</span>、用户有待还款时，需要把资金从本人银行卡充值到资金账户里，再到还款界面进行还款。</p>
+        <p><span>2</span>、牛呗信用还款：本金、利息和服务费在还款时一次性还清；如您资金充裕，建议提前还款以减少利息支出。</p>
+        <p><span>3</span>、逾期还款要多支付逾期管理费和超期利息，并影响您的信用额度或最终影响借款资格；情节严重者，不排除会联系借款人的紧急联系人或按当前监管要求记入央行征信系统，建议您能珍惜信用、避免逾期。</p>
+
+        <% }else if( type == 'amount' ){ %>
+        <p><span>1</span>、初始信用额度是系统根据信用修炼术的信息为用户风险定额。</p>
+        <p><span>2</span>、系统根据用户历史借款、还款情况，增减信用额度。</p>
+        <p><span>3</span>、增加借款次数并按时还款会提升用户的信用额度。</p>
+        <p><span>4</span>、逾期还款会降低用户的信用额度。</p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5H47RG');</script>

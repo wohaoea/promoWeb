@@ -1,0 +1,20 @@
+body{padding: 0.36rem}
+p{font-size: 0.28rem;color: #333333;text-align: justify;}
+a{height: 1rem;background: #0094fd;color: white !important;text-align: center;line-height: 1rem;font-size: 0.36rem;border-radius: 8px;display: block;text-decoration: none}
+.p1,.p2,.p3,.p4{margin-bottom:0.45rem }
+a{
+text-decoration:none;
+}
+
+a:link{
+text-decoration:none;
+}
+a:visited{
+text-decoration:none;
+}
+a:hover{
+text-decoration:none;
+}
+a:active{
+text-decoration:none;
+}

@@ -1,0 +1,73 @@
+body {
+    background-color: #ef2933;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.jiaxi-banner {
+    width: 10rem;
+    height: 471px;
+    background: url(/imgs/m8/h5-jiaxi-banner.png) center center no-repeat;
+}
+.invest-img{
+    width: 5.8rem;
+    margin:0 0 0 0.3rem;
+}
+.jiaxi-invest-div {
+    width: 9.2rem;
+    height: 1.04rem;
+    margin: 0.53rem auto;
+    background:#539ffb;
+    border-radius: 15px;
+    color: #ff513a;
+}
+/* .jiaxi-invest-div1 {
+    margin-top: 0.9rem;
+    background-position: 0 0;
+}
+.jiaxi-invest-div2 {
+    background-position: 0 78px;
+}
+.jiaxi-invest-div3 {
+    background-position: 0 156px;
+}
+.jiaxi-invest-div4 {
+    background-position: 0 234px;
+} */
+a.jiaxi-invest-btn {
+    color: #ff513a;
+    width: 1.6rem;
+    height: 0.6rem;
+    background: #fff536;
+    border-radius: 15px;
+    position: relative;
+    line-height: 0.6rem;
+    font-size: 0.3rem;
+    text-align: center;
+    right: 0.4rem;
+    top: 0.21rem;
+    float: right;
+}
+.jiaxi-desc{
+	color: #ff9090;
+    font-size: 20px;
+    line-height: 35px;
+}
+
+.jiaxi-desc-div {
+    padding: 0 0.73rem;
+    margin-top: 1rem;
+}
+
+.jiaxi-beian{
+    clear:both;
+	width: 10rem;
+	text-align: center;
+    position: relative;
+	font-size: 22px;
+	bottom: 0.2rem;
+	color: #ffffff;
+}

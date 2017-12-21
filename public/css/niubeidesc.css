@@ -1,0 +1,138 @@
+.my-page{
+    width: 100%;
+    position: relative;
+}
+.my-head{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.68rem;
+    width: 100%;
+    background: #fff;
+    z-index: 9999;
+}
+.my-foot{
+    position: absolute;
+    left: 0;
+    bottom: .4rem;
+    width: 100%;
+    height: 1.3333333333333333rem;
+    z-index: 9999;
+
+}
+.my-foot .jiantou{
+    display: inline-block;
+    width: .7333333333333333rem;
+    height: .4rem;
+    margin-top: .9333333333333333rem;
+
+}
+.my-foot .jiantoubox{
+    width: .7333333333333333rem;
+    height: 1.3333333333333333rem;
+    margin: 0 auto;
+}
+.logo{
+    float: left;
+    display: inline-block;
+    width: 3.88rem;
+    height: .9333333333333333rem;
+    margin: .37333333333333335rem 0 0 .6666666666666666rem;
+}
+.down-btn{
+    float: right;
+    width: 3.066666666666667rem;
+    margin-top: .37333333333333335rem;
+}
+.down-btn .down-btn-a{
+
+}
+.page1{
+    padding-top: 1.68rem;
+}
+
+#fp-nav {
+    position: fixed;
+    z-index: 100;
+    margin-top: -32px;
+    top: 50%;
+    opacity: 1;
+}
+#fp-nav.right {
+    right: .4rem;
+}
+
+.fp-slidesNav{
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    opacity: 1;
+}
+
+#fp-nav ul,
+.fp-slidesNav ul {
+    margin: 0;
+    padding: 0;
+}
+#fp-nav ul li,
+.fp-slidesNav ul li {
+    display: block;
+    width: .26666666666666666rem;
+    height: .26666666666666666rem;
+    margin: .5333333333333333rem;
+    position:relative;
+}
+.fp-slidesNav ul li {
+    display: inline-block;
+}
+#fp-nav ul li a,
+.fp-slidesNav ul li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span {
+    background: #fff;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    top: 0;
+    left: 0;
+    width: .24rem;
+    height: .24rem;
+    border: 2px solid #fff;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+#fp-nav ul li .fp-tooltip {
+    position: absolute;
+    top: -2px;
+    color: #fff;
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    white-space: nowrap;
+    max-width: 220px;
+    overflow: hidden;
+    display: block;
+    opacity: 0;
+    width: 0;
+}
+#fp-nav ul li:hover .fp-tooltip {
+    -webkit-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+    width: auto;
+    opacity: 1;
+}
+#fp-nav ul li .fp-tooltip.right {
+    right: 20px;
+}
+#fp-nav ul li .fp-tooltip.left {
+    left: 20px;
+}

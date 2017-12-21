@@ -1,0 +1,336 @@
+2015-05-08 09:12:42.071 - error: uncaughtException: failed to connect to [172.16.99.52:27017] date=Fri May 08 2015 09:12:42 GMT+0800 (中国标准时间), pid=21280, uid=null, gid=null, cwd=E:\source\Tech\trunk\niuwa-p2pweb\niuwap2p_promo, execPath=D:\node\node.exe, version=v0.10.36, argv=[node, E:\source\Tech\trunk\niuwa-p2pweb\niuwap2p_promo\bin\www.4000], rss=52117504, heapTotal=52044288, heapUsed=25372032, loadavg=[0, 0, 0], uptime=276878.5374954, trace=[column=74, file=E:\source\Tech\trunk\niuwa-p2pweb\niuwap2p_promo\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\connection\server.js, function=, line=555, method=null, native=false, column=17, file=events.js, function=emit, line=106, method=null, native=false, column=15, file=E:\source\Tech\trunk\niuwa-p2pweb\niuwap2p_promo\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\connection\connection_pool.js, function=, line=150, method=null, native=false, column=17, file=events.js, function=emit, line=98, method=null, native=false, column=10, file=E:\source\Tech\trunk\niuwa-p2pweb\niuwap2p_promo\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\connection\connection.js, function=, line=534, method=null, native=false, column=17, file=events.js, function=Socket.emit, line=95, method=emit, native=false, column=14, file=net.js, function=null, line=441, method=null, native=false, column=13, file=node.js, function=process._tickCallback, line=442, method=_tickCallback, native=false], stack=[Error: failed to connect to [172.16.99.52:27017],     at null.<anonymous> (E:\source\Tech\trunk\niuwa-p2pweb\niuwap2p_promo\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\connection\server.js:555:74),     at emit (events.js:106:17),     at null.<anonymous> (E:\source\Tech\trunk\niuwa-p2pweb\niuwap2p_promo\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\connection\connection_pool.js:150:15),     at emit (events.js:98:17),     at Socket.<anonymous> (E:\source\Tech\trunk\niuwa-p2pweb\niuwap2p_promo\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\connection\connection.js:534:10),     at Socket.emit (events.js:95:17),     at net.js:441:14,     at process._tickCallback (node.js:442:13)]
+2015-05-08 09:13:06.571 - debug: HTTP GET /reg/ 304  10ms
+2015-05-08 09:13:06.583 - debug: HTTP GET /css/niuwah5.css 304  2ms
+2015-05-08 09:13:06.587 - debug: HTTP GET /imgs/logo.jpg 304  7ms
+2015-05-08 09:13:06.590 - debug: HTTP GET /js/libs/zepto.min.js 304  12ms
+2015-05-08 09:13:06.592 - debug: HTTP GET /imgs/hb50.jpg 304  1ms
+2015-05-08 09:13:06.597 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:13:06.598 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:13:07.613 - error: 调用Web Service失败： Error: connect ECONNREFUSED
+    at errnoException (net.js:905:11)
+    at Object.afterConnect [as oncomplete] (net.js:896:19)
+2015-05-08 09:14:47.176 - debug: HTTP GET /reg/ 200  17ms
+2015-05-08 09:14:47.194 - debug: HTTP GET /css/niuwah5.css 304  3ms
+2015-05-08 09:14:47.196 - debug: HTTP GET /imgs/logo.jpg 304  4ms
+2015-05-08 09:14:47.204 - debug: HTTP GET /js/libs/zepto.min.js 304  5ms
+2015-05-08 09:14:47.209 - debug: HTTP GET /imgs/hb50.jpg 304  3ms
+2015-05-08 09:14:47.211 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:14:47.212 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:14:48.216 - error: 调用Web Service失败： Error: connect ECONNREFUSED
+    at errnoException (net.js:905:11)
+    at Object.afterConnect [as oncomplete] (net.js:896:19)
+2015-05-08 09:15:25.753 - debug: HTTP GET /reg/ 200  11ms
+2015-05-08 09:15:25.771 - debug: HTTP GET /css/niuwah5.css 304  2ms
+2015-05-08 09:15:25.774 - debug: HTTP GET /imgs/logo.jpg 304  3ms
+2015-05-08 09:15:25.778 - debug: HTTP GET /js/libs/zepto.min.js 304  5ms
+2015-05-08 09:15:25.785 - debug: HTTP GET /imgs/hb50.jpg 304  1ms
+2015-05-08 09:15:25.788 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:15:25.790 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:15:26.788 - error: 调用Web Service失败： Error: connect ECONNREFUSED
+    at errnoException (net.js:905:11)
+    at Object.afterConnect [as oncomplete] (net.js:896:19)
+2015-05-08 09:17:25.792 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:17:25.794 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:17:26.800 - error: 调用Web Service失败： Error: connect ECONNREFUSED
+    at errnoException (net.js:905:11)
+    at Object.afterConnect [as oncomplete] (net.js:896:19)
+2015-05-08 09:19:25.798 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:19:25.799 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:19:26.803 - error: 调用Web Service失败： Error: connect ECONNREFUSED
+    at errnoException (net.js:905:11)
+    at Object.afterConnect [as oncomplete] (net.js:896:19)
+2015-05-08 09:28:27.641 - debug: HTTP GET /reg/ 200  36ms
+2015-05-08 09:28:27.652 - debug: HTTP GET /css/niuwah5.css 304  1ms
+2015-05-08 09:28:27.657 - debug: HTTP GET /imgs/logo.jpg 304  2ms
+2015-05-08 09:28:27.659 - debug: HTTP GET /js/libs/zepto.min.js 304  5ms
+2015-05-08 09:28:27.661 - debug: HTTP GET /imgs/hb50.jpg 304  8ms
+2015-05-08 09:28:27.670 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:28:27.677 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:28:28.679 - error: 调用Web Service失败： Error: connect ECONNREFUSED
+    at errnoException (net.js:905:11)
+    at Object.afterConnect [as oncomplete] (net.js:896:19)
+2015-05-08 09:29:57.953 - debug: HTTP GET /reg/ 200  17ms
+2015-05-08 09:29:57.971 - debug: HTTP GET /css/niuwah5.css 304  2ms
+2015-05-08 09:29:57.978 - debug: HTTP GET /imgs/logo.jpg 304  6ms
+2015-05-08 09:29:57.982 - debug: HTTP GET /js/libs/zepto.min.js 304  13ms
+2015-05-08 09:29:57.985 - debug: HTTP GET /imgs/hb50.jpg 304  1ms
+2015-05-08 09:29:57.988 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:29:57.989 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:29:58.992 - error: 调用Web Service失败： Error: connect ECONNREFUSED
+    at errnoException (net.js:905:11)
+    at Object.afterConnect [as oncomplete] (net.js:896:19)
+2015-05-08 09:30:57.353 - debug: HTTP GET /reg/ 200  7ms
+2015-05-08 09:30:57.368 - debug: HTTP GET /css/niuwah5.css 304  1ms
+2015-05-08 09:30:57.378 - debug: HTTP GET /imgs/logo.jpg 304  2ms
+2015-05-08 09:30:57.380 - debug: HTTP GET /js/libs/zepto.min.js 304  9ms
+2015-05-08 09:30:57.381 - debug: HTTP GET /imgs/hb50.jpg 304  11ms
+2015-05-08 09:30:57.384 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:30:57.385 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:30:58.388 - error: 调用Web Service失败： Error: connect ECONNREFUSED
+    at errnoException (net.js:905:11)
+    at Object.afterConnect [as oncomplete] (net.js:896:19)
+2015-05-08 09:32:57.380 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:32:57.382 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:32:58.386 - error: 调用Web Service失败： Error: connect ECONNREFUSED
+    at errnoException (net.js:905:11)
+    at Object.afterConnect [as oncomplete] (net.js:896:19)
+2015-05-08 09:34:57.387 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:34:57.388 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:34:58.397 - error: 调用Web Service失败： Error: connect ECONNREFUSED
+    at errnoException (net.js:905:11)
+    at Object.afterConnect [as oncomplete] (net.js:896:19)
+2015-05-08 09:36:06.835 - debug: HTTP GET /reg/ 200  6ms
+2015-05-08 09:36:06.844 - debug: HTTP GET /css/niuwah5.css 304  0ms
+2015-05-08 09:36:06.848 - debug: HTTP GET /imgs/logo.jpg 304  1ms
+2015-05-08 09:36:06.850 - debug: HTTP GET /js/libs/zepto.min.js 304  1ms
+2015-05-08 09:36:06.859 - debug: HTTP GET /imgs/hb50.jpg 304  2ms
+2015-05-08 09:36:06.864 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:36:06.865 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:36:06.898 - debug: Finish to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:36:06.900 - debug: Invoke web service result is :  success=true, msg=成功！, radomStr=yIsJ, base64String=/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAjAGQDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+mvv
+x8gUn0PGadUVzcJawmWWSKNAQC0r7FGTgc+5IH40pNRV2BDdG7nhC2E8FvMGG43EDSDHPGA69++S
+ODWAL+485pYfEGgzXDqEIt9OeWV1BJAwk5YgbmPtkn1rVup9M1JBFPbrdoDkbYhOEPr8u7H49efe
+iXVnt42MlrKqg4SSX5A34DLZ+i9SOBms44mm9E73NL1YLol5pfqZUtz4mnQfZJ0dQykyJpJiPBBK
+4muFOCOCQOh4II4l09PGLSJ9puNDSAli+yKZ3U88cvjrxjOB26VF4k1/XNE0h9WSwsDaRIhdHuGM
+mWYLgYXb3Hf1q1okmpataW95er5dpcQLNGI7wlwWAIBCxJ2J/iI9j1G/7xw54x0+X+d/wI9td8kp
+K/lH9bfr8yOSTxLHqsjrLps1pAnzqZWgVsgEFsxyYI+bID9NpwO7hreruMxafpkvOD5N/NJj67bc
+49vXtWqNPsLXzLloVZgfMaWXMjDAHILZPAHaomuLKwtbMahJClwBujVyC7SYw2wdWY7iPlyTu965
+3OfNZ2X4+nYtVaUGouN/vXp1ZVhvvEk24nRNPjUfdL6i43D6eTkfiAasRT68ZkE2m6akRYb2TUHZ
+gO5AMIyfbI+taUcgliSRQwVlDAMpU8+oPIPsazr+/XRoJZE0u4kto0eeSS38oKvJZiQXBJ6k4HOf
+WtHJRjdjlWp2vyJff/madFcvo3iRdW1ae5iguk097WIrJM8aohDzAsRvyNxULwM/LzgYNdFHdwSu
+FifzM/xICyj6sOBRCSmrrYwlOEZKLkru34k1FFFUUVri+gtZAk3mqMbi4hcoo9SwG0fieK5zxl9m
+13wrfWmnGO/vmVRFFbTJv5dR15wvTd0G3IJHUbv9oXX/AEB77/vuH/45XOa14v02Cw869j0q4tt3
+yI115pDYJVW2xsiuRnGWxwcEgE1m27/pYdOr7OaktzgbI6Tr/gTw7YQW1vb3010YL2SztFWXyYVL
+O3mMMKSDCS2cZc9twr07TvClpY2qpZtd6eqNut4orhnW3+9khXLJuO5s8Ec8cjceJ0DTNU1nWNfu
+LCCKytkuGtGgkuH2I/8Ay0UbSSSPl9I+eFP8PV2eh6nf2tpPNq8xttm5ba4czLIrDP7wr5e4c/db
+I464JFXUlr7sd/1+S/zM8U1Urv3bLdLzet27J3V13t66lTxZJZ6b4a1C2bWZJboNGXHlQySRqWTg
+ooQBSODu4O7HO4Cn6DqGtt4dtisFnF/osfkz3EvkIcpwBGu/IGM5+TOcBRg1Q8c3FvZeEb/Sm1HS
+QU8v/QLaIQy8yK3A3nHXd93pn61qeE5ba+0vTIoNXsDNFZws0VqqfaFCqo2uSzcDgH5V5x06Vbwn
+7hTcWtf07/qcLu6/LF2du/m/v/BlPV9U1RdIu57iC/klhjMheLYtipXq2UfzWjwDkEknJ+UHAHL6
+VfPNpP2jRfFZg1OCP/TXj06GO1OckJ/q1UHKhVaRh3xjcQO88UnX9O0K+vNIurm4vIwHhh8uJlI3
+DcNuwHhd2Oece+K4zxZ4ctLhV1LSNM1p/ErzqsWLLyVil3hmkkZEVDgk/vNxBODkqCRFOnZ3W772
+f+R6OFw1Tfn1b35YvbvfZa73/I7zQtUOoWNrB/bVjc3ot0a4WLY0gOAGJCOVBye2Rk+lTa9AU8O6
+nI88srJaSsoYgDIQ9QAAw9jmoIfCtrd6NZ22uCS+uI40M5e6lZGlC4ZgCcdc9h1qLXtA0238O6m9
+rA9qFtJW8u1meGMkIeWRCFY+uQcgAHis6jqKMtjlqUX73Nr83b7tUU/AFtI+jW+ozeWyyQhE45Vl
+lm3EDGANrIOOy46AV2Ncj8O7aVPCljOb2d4mWQC3YJsT943IIXdnjux6n2x1MkPmTwuwjZY8sAyZ
+YPjAZTnjgsDxzu6jnKwrvRjfsvyNMOkqcbK2i/IdDNHcQRzwsHikUOjDuCMg0U+itjY4fwQT4m0u
+8vdb/wBPlW7MarP80agRoRiP7gPJ5Azyeea66/0yx1SFIdQs4LuJH3rHPGHUNgjODxnBP50UVnSX
+uJ+SJpe7GMlvZfkSWlpbWFsltZ28NvAmdsUKBFXJycAcDkk1Kyhhg56g8HFFFaFN31YtFFFAFDUL
+iWC90qON9qz3TRyDAO5fJkbHtyqn8KuoixjCAKPQdKKKS3ZpNK0fT9WOrxPw7cS23gzxVJC21ilv
+GTgH5WdlYc+oJFFFebj3acGu0/8A0k87FfFH0l+R6v4Zjji8LaUsaKim0iYhRgZKgk/Ukk/jWhau
+0lpC7nLNGpJ9Tiiiu6l8MfQ64fCiWiiitSj/2Q==, msgType=info, global=false
+2015-05-08 09:36:06.903 - debug: HTTP GET /pla/generatecaptcha?=1430808552 200  54ms
+2015-05-08 09:37:03.078 - debug: HTTP GET /reg/ 304  10ms
+2015-05-08 09:37:03.104 - debug: HTTP GET /css/niuwah5.css 304  1ms
+2015-05-08 09:37:03.116 - debug: HTTP GET /imgs/logo.jpg 304  4ms
+2015-05-08 09:37:03.117 - debug: HTTP GET /js/libs/zepto.min.js 304  9ms
+2015-05-08 09:37:03.119 - debug: HTTP GET /imgs/hb50.jpg 304  9ms
+2015-05-08 09:37:03.123 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:37:03.123 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:37:04.124 - error: 调用Web Service失败： Error: connect ECONNREFUSED
+    at errnoException (net.js:905:11)
+    at Object.afterConnect [as oncomplete] (net.js:896:19)
+2015-05-08 09:39:03.125 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:39:03.127 - debug: Invoke web service data is :  sessionid=AUwVaj5hrdXCO_dur0cxDwRPgG44MdbZ
+2015-05-08 09:39:03.547 - debug: Finish to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 09:39:03.557 - debug: Invoke web service result is :  success=true, msg=成功！, radomStr=sjga, base64String=/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAjAGQDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+mby
+Pvrjk8g5GM8fpT6yLL/TL2N7T9xpdj5lvHEnyiWRTsPyjGETa6gHgkk4G1GMyTa912Y0jVBLMrKy
+mPByMZJPGOc/X/I5UDBPJOf0qGe0juMFjKpHeOVk/PaRn8aydUtY1tvs97fXptpO6xg+XtIIYybD
+tIOCHLAgjOcjNZSqypq8lfzX+W/3XBXcrW/z/T8zccFkZQxUkYDDGR780tYWi3uoahpsLvf6e9wo
+8uby4t4LjqQVkxg9R0OCMgHgMXxNamFni1HSLxUYJugu/mZmyVUIocljg4UEk44HatKVRVY80NV9
+/wCQpXhLlkv6+R0FMMsYmWEyKJWUsqE/MQMAkD0G4fmPWuTuPE1xcqSrmztUDGeW2CzSRYYj5y+F
+gA25PmKeCQQhU4W31OysJ1jszaWjXipJHcTM95NdqfuElSSw5IUmRuBgDBGKcorR7g7R1np66HR6
+rdPY6PfXcQQyQW8kq7wSuVUkZxzjiq+i3OnmwtbPT52uIYIERZNpIwoAAZsYDYxleD7Vz2sywShb
+e5jvLh/OjeOfUVEcJCESMNoA6hWXd5ZOWAzgir9lcTy372SalZ28U2ZkW2ImcMSS6q7cdcN8yfxs
+B93Iy9p7y1Vn/X9fIwdWCq6a9Pn8/l+B0tUZNZ09JGiW5WaZCQ8VuDM6465VASMHjJHWm/2NaS83
+vmXzd/tTb1z2IThAccZCg9fU5vRxpFGscaKkaAKqqMBQOgArfQ099+RDaXQu0dhFJFtbbiTAJGAQ
+cA5GQRw2D6gUVYopFK9tSjqNte3SeRBcLDDIyCRlysioCS+1gerDCjG0rksCSAKqa1f2vhbQbnU1
+t2MVtCkaW8TbUAB2oAv3VGW5IGcAdcAVp3N3BZxiS4lVATtUHqzdlUdST2A5Nc94k8SGx8PaheJp
+Ms9vEuxjdp5aSbsLjY3zMMsMggAgNz61TadRK19Vp/X5jnzezbTsrblBdY8XXPhGDXLD+x72WSMS
+m0hgkJC85Ct5nzOO64HIIGSBnV/tuz0/RdLudVkgsZFgjlmgClTDuQrjZ94AMdvt0rzrXvsWk+c3
+hfUZ4NUnnRZobRjEjsc/u1gyZA43A8jaPmXIb5K9J0PRDaQW13OGhvHUSTW8ZCwxsy/MiomF4PAY
+7mwMFiK2xtNummo2TenR7rS21vO5z0Ur2crtW2d1637+VvQxLy6vnvf7ZsNGaCOdUjZtQtJJHR8s
+DIsMSs+dg2tuKbgIxuAXnC8LeGLLxTaXeoRa/fArK9lJLY2cVitxGApOVAZiDkc7lOMcDGa9Vryv
+4SRarJ4UujYXlnBF9ucFZ7RpWLbI+ciReOnGPxqaeCoVaNSpLRqyv5O/ZX6Hc8VUTSj/AFb1Jtb8
+F6R4asodQjtodQuIpFWAavcBwpyWAV2dNo+823DAnsMk1Jq+q6/oX2PTI7TRk/tGUpFHYpLEDICn
+8YdOu5RkehB9Kl+IF1qx0OO2ubLSxNPcL9niW4e4kZumI0MKgnnqc9cdStZ1/r2padqFu2raBLb+
+TtjjudSu3nt0YDcrApEQ0nH3uW6g98ebOjXptqFRJK28kvxT/RHoYdKSjUlDmbv016fr21Oohi1g
+3GmG6eeJ41J23Fv9ojWYqFyhiO4KAzjMrdCDyckVdYuPEskE7ahZ6Vb2NnKGEs5X9+RIdrLmQBAR
+tBDHOGOM5xW9Y6nqzziG60K7RCceeZIAB65USsR6cZribOSPRdY1DU/FFm+p6pHKCJIpo5IbJC25
+ABI4MZ3EkZHTGD1r1KNpqVOta/Z2u79mna/zfpc8fES5nZRVne/RbeWv4mz4K1q28SQ3EM+nxWt9
+bkF5LENHG6Hphgcj6E84yM9ur/s6NeYp7qN+zfaGfH4MSD+IrzrwfrgsvFniF5rDU5IL+5MkM0Vj
+I4VA0hBYAbudygcH3xXp0UizQpKocK6hgHQq2D6g4IPseaMXhvZT1jbb77a2/rQww6vTXMtf6/r9
+SO0B+zqxmmlDgMDMgRgCOhAUY+hGaKmGcDIAPfBornR0+gtZviG6msfDOq3ds+yeCzmljfAO1lQk
+HB4PIooq6avJAzSoooqACvOfgv8A8idd/wDYQf8A9Fx0UV20f91q+sf1JfxIs/FT/RdK0vVIflvL
+W+XyZOu3KljweDyinkdvrWP8b7y4g0Wxhik2oRPMRgffRV2n8NzcdDnmiivBr6Op/wBu/me9g1dU
+L/3/AMj1IwxNOk5jQzIrIshUblUkEgHsCVXI9h6U4gMMEAj0NFFeg0mrM8MZNBDcIEmiSRQcgOoI
+z+NSUUUwCiiigD//2Q==, msgType=info, global=false
+2015-05-08 09:39:03.574 - debug: HTTP GET /pla/generatecaptcha?=1430808552 200  444ms
+2015-05-08 10:44:14.203 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 10:44:14.203 - debug: Invoke web service data is :  sessionid=O3hYmTOsMTb_tQiRtf6BFl97JCu5zWIm
+2015-05-08 10:44:14.243 - debug: Finish to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 10:44:14.243 - debug: Invoke web service result is :  success=true, msg=成功！, radomStr=HQMb, base64String=/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAjAGQDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3HULu
+8tXt/stktysjEOPMZWGBn5flK5IB+8yDOBnmsi/8Qanayb49KnA2f8ek1tIWJ5+cTQCVPbYQD3yB
+jPRySJFG0kjqkaAszMcBQOpJrI1jxXo2gHGp3UkK5ClxbyOgYjIUsqkBsDO3Occ4waqnGUpcsFd9
+txNPcwrTx7NcTeVNptrbMYxKN1/5wCcEuxhRxGoDKSz7Rg5zwcb1rcalqVsl3aahpXkSZ2+VG1yv
+BwcSB1Dcg/wjHTnGaxdc8R6RGqPqGhX93p0jbnludP2xRyAYGfN2lScqoYgKd33uGrIttCGum4vt
+H0t9HlnxF9tGoXUE8K/KQvlGMKQAFGxW2/LgMMAjSOHk1+9XL81+T1/F2M1GV7Sf42Owlm1OGYQv
+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
+RRRSAKKKKAP/2Q==, msgType=info, global=false
+2015-05-08 10:44:14.253 - debug: HTTP GET /pla/generatecaptcha?=1431053054 200  50ms
+2015-05-08 10:44:15.303 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 10:44:15.303 - debug: Invoke web service data is :  sessionid=O3hYmTOsMTb_tQiRtf6BFl97JCu5zWIm
+2015-05-08 10:44:15.333 - debug: Finish to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 10:44:15.353 - debug: Invoke web service result is :  success=true, msg=成功！, radomStr=Ymoa, base64String=/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAjAGQDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3W4S5
+MMzLM+Qd0a26KHIC/dJfKkk55+XqB2JOLrPiS38OzRQ6lq0UHmKTGz2Er7wOPvIdpPTOMdRwMitu
+4nuYJAY7NriIj/llIocN9GwMe+7Pt3rmPGMmla14avbe6WRZrXMqxyo6ESqudgb7pcqxAwWHIOGA
+opSouolVbS+789DGtWlCDcLXXdGlqPiI6PYx3d9EiW7qD5xScADjG9REfLJyOGOc8c4q7bapLc26
+zJpl6A2fvKqdDjo5VsccZAyOcVxkesf8JhN4f0uZWSNcXWpwzuiu20fuwy8BldsErt6FThQRXola
+1aShFK7v8tunT+kKhiFWbcbW+d7/AHlP+0Yhw8N0rDqv2aQ4P1AIP4Eij+1tO/6CFr/3+X/GrDtF
+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, msgType=info, global=false
+2015-05-08 10:44:15.353 - debug: HTTP GET /pla/generatecaptcha?=1431053055 200  60ms
+2015-05-08 10:44:19.997 - debug: HTTP GET /reg/ 304  15ms
+2015-05-08 10:44:20.007 - debug: HTTP GET /css/niuwah5.css 304  0ms
+2015-05-08 10:44:20.008 - debug: HTTP GET /imgs/logo.jpg 304  1ms
+2015-05-08 10:44:20.009 - debug: HTTP GET /js/libs/zepto.min.js 304  1ms
+2015-05-08 10:44:20.016 - debug: HTTP GET /imgs/hb50.jpg 304  1ms
+2015-05-08 10:44:20.019 - debug: Start to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 10:44:20.020 - debug: Invoke web service data is :  sessionid=pwgyk5VdwdLVDj04q5MykyHiVWE1z4tR
+2015-05-08 10:44:20.047 - debug: Finish to invoke web service :  http://192.168.101.151:8080/niuwa-p2ps/verifyCode/genVerifyCode
+2015-05-08 10:44:20.049 - debug: Invoke web service result is :  success=true, msg=成功！, radomStr=Gk3e, base64String=/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAjAGQDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD35iQp
+IUsQOg6mqlw01xbSwLBcwtIhQSK6KUJGMg5OCOvQ/Q1crF8Qaza+FtHvNVlDyszgrCZv9ZIQFCru
+OFGFyQo4AZsE5yKMpNKL/Ilxb2Zct11OLcspgmXjYWch/fJC4P4Afj1qbN43HlwR/wC1vL4/DAz+
+dclrN/4q0PQ5dbSHTikSyPLpkULEoHOQ5kB+ZlOGbAUEF+eAa6bRL2TUtA06/mVFlubWKZwgIUMy
+gnGe3NVKjNwVVvR+n+SIUGtHJ/18ifZef894P+/J/wDiqrXsdwEikedMpMm0xx4ILMEPUkdGPasS
+LxHp2o+I7qwsb7ULS7gtvtVwbiEpCoG0AMkoDLwwJ2hcg53Z6TavPewxSwzSW7zNCVAt7jZJKDkA
+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, msgType=info, global=false
+2015-05-08 10:44:20.066 - debug: HTTP GET /pla/generatecaptcha?=1430808552 200  52ms

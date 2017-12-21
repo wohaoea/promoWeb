@@ -1,0 +1,58 @@
+<% include ../header.html %>
+<!--demo展示所用css，不用关心 begin-->
+<link rel="stylesheet" type="text/css" href="/css/assets/reset.css" />
+<!--demo展示所用css end-->
+<!--组件依赖css begin-->
+<link rel="stylesheet" type="text/css" href="/css/assets/widget/gotop/gotop.css" />
+<!--组件依赖css end-->
+<style type="text/css">
+    .clause p{
+        padding-bottom: 5px;
+    }
+</style>
+<body >
+<div class="page-head">
+    <a href="javascript:window.history.go(-1)" class="back">返回</a>
+    <div class="tit">活动细则</div>
+</div>
+
+<div class="clause" >
+    <p>1、本次活动仅限牛娃新注册用户及宽途用户。</p>
+    <p>2、本次活动每人仅限兑换一次。</p>
+    <p>3、扫描活动二维码后按照提示填写手机验证，验证通过后将获得50元牛娃互联网金融平台红包及40元宽途洗车金兑换码，并默认注册为牛娃互联网金融平台用户。</p>
+    <p>4、客户通过手机验证登陆宽途洗车APP软件后，点击app首页菜单的“优惠/兑换”处，按照提示输入短信收到的洗车金兑换码方可兑换使用。</p>
+    <p>5、本次活动提供的宽途洗车代金券可在宽途汽车服务网点5000余家通用。（登陆宽途App即可查看网点信息）。</p>
+    <p>6、本次活动提供的宽途洗车代金券只能用于洗车，不能提取现金，支付金额不开具发票。</p>
+    <p>7、本次活动提供的牛娃互联网金融平台红包将直接进入用户手机号注册的账户红包中，通过实名即可全部领取使用。</p>
+    <p>8、宽途汽车洗车代金券有效期至2015年12月31日，请及时使用。</p>
+    <p>9、本活动限量2500份，先到先得，送完即止。</p>
+    <p>10、本次活动最终解释权归牛娃互联网金融所有。</p>
+
+</div>
+<div id="gotop"></div>
+
+<!--组件依赖js begin-->
+<script type="text/javascript" src="/js/libs/dist/zepto.js"></script>
+<script type="text/javascript" src="/js/libs/src/core/gmu.js"></script>
+<script type="text/javascript" src="/js/libs/src/core/event.js"></script>
+<script type="text/javascript" src="/js/libs/src/core/widget.js"></script>
+<script type="text/javascript" src="/js/libs/src/extend/fix.js"></script>
+<script type="text/javascript" src="/js/libs/src/extend/throttle.js"></script>
+<script type="text/javascript" src="/js/libs/src/extend/event.scrollStop.js"></script>
+<script type="text/javascript" src="/js/libs/src/extend/event.ortchange.js"></script>
+<script type="text/javascript" src="/js/libs/src/extend/matchMedia.js"></script>
+<script type="text/javascript" src="/js/libs/src/widget/gotop/gotop.js"></script>
+<script type="text/javascript">
+    $('#gotop').gotop();
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+</body>
+
+</html>
+
+
+

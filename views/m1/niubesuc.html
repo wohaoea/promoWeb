@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<!-- build:css /css/niubereg.min.css --> 
+<link rel="stylesheet" type="text/css" href="/css/niubereg.css" />
+<!-- /build -->
+</head>
+<body>
+	<div id="box" style="display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-pack:center;">
+		 <div class="niubelogo"></div>
+		 <div class="niuberegbody">
+
+		 	<%if(os=="else"){%>
+			<div class="sucload" style="margin:24px auto 24px;"></div>
+			<%}else{%>
+			<div class="sucload"></div>
+			<%}%>
+			<%if(os=="ios"){%>
+				<div class="iosloadbtn" onclick="window.location.href='<%= url%>';"></div>	
+			<%}else if(os=="android"){%>
+				<div class="anzloadbtn" onclick="window.location.href='<%= url%>';"></div>
+			<%}else{%>
+				<div class="iosloadbtn" onclick="window.location.href='<%= iosurl%>';"></div>
+				<div class="anzloadbtn" onclick="window.location.href='<%= androidurl%>';"></div>	
+			<%}%>
+			<%if(os=="else"){%>
+			<div class="sucloadtip" style="margin:24px auto 0;"></div>
+			<%}else{%>
+			<div class="sucloadtip"></div>
+			<%}%>
+			
+  		 </div>
+  </div>
+ <script type="text/javascript" src="/js/libs/zepto.min.js"></script>
+ <script type="text/javascript">
+ 	$("#box").height($(window).height());
+ </script>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+</body>
+</html>

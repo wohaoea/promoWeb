@@ -1,0 +1,165 @@
+﻿/*福袋 begin*/
+.diaodi{
+    position: fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    height: 200px;
+    background:url(/imgs/fudai/diaodibg.png) repeat-x;
+    z-index:10000;
+}
+.fudai-body{
+    position:relative;
+    width:1000px;
+    height:271px;
+    margin:0 auto;
+}
+.fudai-body .houzi{
+    float:left;
+    width:210px;
+    height:271px;
+    margin-top:-70px;
+}
+.fudai-body .jp{
+    float:left;
+    width:544px;
+    height:186px;
+    margin-left:5px;
+}
+.fudai-body .jp img{
+    position: absolute;
+    top: -30px;
+    left: -20px
+}
+.fudai-body .fudai-btn1{
+    display:block;
+    float:right;
+    width:240px;
+    height:80px;
+    margin-top:70px;
+    background:url(/imgs/fudai/btn.png) no-repeat 0 0;
+}
+#fudai-btn2{
+    background:url(/imgs/fudai/guoqing_yilingqu.png) no-repeat 0 0;
+}
+.fudai-float{
+    display:none;
+    position:fixed;
+    left:-180px;
+    bottom:50px;
+    width:180px;
+    height:198px;    
+    cursor:pointer;
+    z-index:1000;
+}
+.fudai-body .fudai-close{
+    position:absolute;
+    top:10px;
+    right:0px;
+    display:block;
+    width:42px;
+    height:42px;
+    background:url(/imgs/fudai/btn.png) no-repeat 0 -299px;
+    transition:all 300ms;
+    -webkit-transition: all 300ms;
+}
+.fudai-body .fudai-close:hover{
+    transform:rotate(180deg);
+    -webkit-transform:rotate(180deg)
+}
+
+.fudai-have{
+    position:relative;
+    width:654px;
+    height:654px;    
+    z-index:1;
+}
+.fudai-btn2,.fudai-btn3{
+    position:absolute;
+    left:257px;
+    bottom:65px;
+    display:block;
+    width:140px;
+    height:60px;    
+    background:url(/imgs/fudai/btn.png) no-repeat 0 -215px;
+}
+.fudai-btn2{
+    /*left:257px;
+    bottom:100px;*/
+    background-position: 0 -112px;
+}
+.fudai-libao{
+    width: 654px;
+    height:654px;
+    /*background: url(/imgs/fudai/fudai1.png) no-repeat center;    */
+}
+.fudai-img1{
+    position:relative;
+    top:46px;
+    left:67px;
+    width:650px;
+    height:650px;
+
+}
+.fudai-img1 img{
+    position:absolute;
+    left:0;
+    top:50px;
+    width:560px;
+    height:560px;
+}
+.fudai-have .guang,.fudai-have .fudai-liping{
+    position:absolute;
+    top:0;
+    left:0;
+    width:654px;
+    height:654px;
+}
+.fudai-have .fudai-liping img{
+    width:554px;
+    height:554px;
+    position:absolute;
+    left:50px;
+    top:50px; 
+}
+.fudai-errtip{
+    position:absolute;
+    left:0;
+    bottom:30px;
+    width:100%;
+    height:30px;
+    line-height:30px;
+    text-align: center;
+    color:#fff!important;  
+}
+.fudai-have .fudai-list{
+    position:absolute;
+    top:240px;
+    left:175px;
+    width:304px;
+
+}
+.fudai-have .fudai-list li{
+    float:left;
+    width:132px;
+    height:71px;    
+    line-height:70px;
+    margin-left:20px;
+    margin-top:20px;
+    font-size:22px;
+    color:#fff;
+    text-align: center;
+    opacity:0;
+}
+.fudai-have .fudai-list .redpack{
+    background:url(/imgs/fudai/listbg.png) no-repeat 0 0;
+}
+.fudai-have .fudai-list .jxq{
+    width:92px;
+    padding-left:40px;
+    background:url(/imgs/fudai/listbg.png) no-repeat 0 -91px;
+}
+.gift_img2{position: absolute;left:70px;}
+.gift_img1{position: absolute;left:176px;z-index: 5;top: 60px}
+.light_ul li{width:132px ;height:71px;background: url(/imgs/fudai/guoqing6.png);float: left;margin-right:20px;margin-bottom:10px;padding: 25px 0 0 55px;box-sizing:border-box; color: white;font-size: 24px}
+/*福袋 end*/

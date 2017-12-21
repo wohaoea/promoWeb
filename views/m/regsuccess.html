@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta charset="utf-8"/>
+    <title>加入牛呗 - 体验理财生活新方向</title>
+    <meta name="description" content="活动细则"/>
+    <meta name="keywords" content="活动细则"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="email=no" name="format-detection"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <!-- build:css /css/toh5reg.min.css -->
+    <link href="/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="/promo/css/toh5reg.css" rel="stylesheet" type="text/css"/>
+    <!-- /build -->
+
+    <script>
+        if (top != self) {
+            location.href = "about:blank";
+        }
+        function isWeiXin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return 'no';
+            } else {
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr, rem, scale, docEl = document.documentElement, fontEl = document.createElement("style"), metaEl = document.querySelector('meta[name="viewport"]');
+        var docWidth = docEl.clientWidth;
+        var u = (window.navigator.appVersion.match(/android/gi), window.navigator.appVersion.match(/iphone/gi));
+        function reDo() {
+            dpr = window.devicePixelRatio || 1;
+            if (u && window.devicePixelRatio >= 3) {
+                dpr = 3;
+            } else if (window.devicePixelRatio >= 2) {
+                dpr = 2;
+            } else {
+                dpr = 1;
+            }
+            rem = docWidth * dpr / 10;
+            scale = 1 / dpr;
+            metaEl.setAttribute("content", "width=" + dpr * docWidth + ",initial-scale=" + scale + ",maximum-scale=" + scale + ", minimum-scale=" + scale + ",user-scalable=" + weixing);
+            docEl.setAttribute("data-dpr", dpr);
+            docEl.firstElementChild.appendChild(fontEl);
+            fontEl.innerHTML = "html{font-size:" + rem + "px!important;}";
+            window.rem2px = function (a) {
+                a = parseFloat(a);
+                return a * rem
+            };
+            window.px2rem = function (a) {
+                a = parseFloat(a);
+                return a / rem
+            };
+        }
+        reDo()
+    </script>
+</head>
+<body>
+    <div style="width: 8.66666666rem;margin: 3rem auto;">
+        <img src="imgs/toh5reg/icon/success.png" style="width: 100%;">
+    </div>
+<div style="position: fixed;bottom: 0;width: 100%;" class="download">
+    <div style="position: absolute;right: 0;top: 0;width: 0.6rem;height: 0.6rem;" class="dlclose"></div>
+    <img src="imgs/toh5reg/icon/download.png" style="width: 100%;display: block;">
+</div>
+    <%include ./../common/footer.html%>
+</body>
+<!-- Google Tag Manager -->
+
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+    var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-5H47RG');</script>
+
+<!-- End Google Tag Manager -->
+</html>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+
+    wx.config({
+        debug: false,
+        appId: 'wx1c31a58272c4dd10',
+        timestamp: '<%=timespan%>',
+        nonceStr: '<%=noncestr%>',
+        signature: '<%=signature%>',
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ']
+    });
+
+    wx.ready(function () {
+
+        wx.onMenuShareTimeline({
+            title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            link: window.location.href
+        });
+
+        wx.onMenuShareAppMessage({
+            title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            link: window.location.href
+        });
+
+        wx.onMenuShareQQ({
+            title: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            desc: '财富不仅是钱，更是一种生活态度！和我一起来牛娃，多种投资方案自由选择，100%本息保障计划全程护航。让投资更简单，让财富更安心！',
+            link: window.location.href
+        });
+
+    });
+
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.sha256.min.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+
+<script src="/js/g.js"></script>
+<script type="text/javascript">
+    $(".download").bind("click",function () {
+        openApp();
+    });
+    $(".dlclose").bind("click",function () {
+        $(this).parent().remove();
+    })
+    function openApp() {
+        function openUrl(url) {
+            var timeout;
+            var try_to_open_app = (function() {
+                if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                    if (!/MicroMessenger/i.test(navigator.userAgent)) {
+                        timeout = setTimeout(function() {
+                            window.location.href = url;
+                            //console.log(22)
+                        }, 2000);
+                        //return
+                    }
+                }
+                timeout = setTimeout(function() {
+                    window.location.href = url;
+                    //console.log(22)
+                }, 10);
+            }())
+        }
+        if (/android/i.test(navigator.userAgent)) {
+            if (/MicroMessenger/i.test(navigator.userAgent)) {
+                openUrl('http://a.app.qq.com/o/simple.jsp?pkgname=com.niuwa.niubei.android&g_f=991653');
+            } else {
+                openUrl('https://ms.i-niuwa.com/file/downLoad?path=pl_niubei.apk');
+            }
+        }
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            if (/MicroMessenger/i.test(navigator.userAgent)) {
+                window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.niuwa.niubei.android&g_f=991653';
+            } else {
+                window.location.href = 'https://itunes.apple.com/us/app/niu-bei-da-xue-sheng-she-jiao/id998444014?ls=1&mt=8';
+            }
+        }
+    }
+</script>

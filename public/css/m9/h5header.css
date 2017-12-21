@@ -1,0 +1,56 @@
+.h5header {
+    background: white;
+    font-size: 0.3rem;
+    text-align: center;
+    color: black;
+    height: 0.88rem;
+    line-height: 0.88rem;
+}
+
+.goback {
+    position: absolute;
+    z-index: 111;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    margin: 0.25rem 0.4rem;
+    height: 0.35rem;
+    width: 0.23rem;
+    background: url(/imgs/m9/arrow.png) center no-repeat;
+}
+
+.h5title {
+    text-align: center;
+    display: inline-block;
+    float: left;
+    width: 8.7rem;
+}
+#goback_text{
+    font-size: 0.3rem;
+    color: black;
+    position: absolute;
+    top: 0.24rem;
+    left: 0.8rem;
+
+}
+.hidden{
+	display: none;
+}
+
+.repay{width: 0.8rem;height: 0.4rem;box-sizing: border-box;border: 2px solid #E0E0E0;text-align: center;line-height: 0.4rem;font-size: 0.24rem;color: white;position: absolute;right: 0.3rem;top: 0.25rem;border-radius:0.1rem ;}
+a:hover{text-decoration: none;}
+#red_circle{width: 0.15rem;height: 0.15rem;border-radius: 50%;background: red;position: absolute;top: -0.075rem;right: -0.075rem;display: block;z-index: 500;}
+
+
+.goback2 {
+    position: absolute;
+    z-index: 111;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    margin: 0.25rem 0.4rem;
+    height: 0.48rem;
+    width: 0.48rem;
+    background: url(/imgs/m9/niubeiarrow.png) center no-repeat;
+    border-radius:0.2rem
+}

@@ -1,0 +1,195 @@
+body
+{
+    background-color: #e9ecef;
+    color: black;
+}
+.com_bd
+{
+    width: 7.5rem;
+    margin: auto;
+    margin-top:0.65rem;
+}
+.h_lg {
+    text-align: center;
+    margin-bottom: 0.55rem;
+}
+.h_lg img {
+    width: 1.2rem;
+}
+.h_lg p {
+    margin-top: 0.34rem;
+    font-size: 0.32rem;
+}
+.com_c
+{	width: 6.9rem;
+	margin: 0 auto;
+    line-height: 1rem;
+    position: relative;
+    height: 1rem;
+    border: 1px solid #dddddd;
+    border-bottom-width: 0;
+    background-color: #fff;
+    font-size: 0.28rem;
+    overflow: hidden;
+}
+.com_c label {
+    width: 1.666rem;
+    padding: 0 0.222rem;
+}
+.picon
+{
+    position: absolute;
+    top: 0.29333333333333333rem;
+    left: 0.48rem;
+}
+.txt
+{
+    font-size: 0.28rem;
+    border:none;
+    
+}
+.forgetpwd{
+	font-size: 0.3466666666666667rem;
+    text-align: right;
+    margin-top: 0.26666666666666666rem;
+}
+.txtreg{
+	margin: auto;
+    height: 1.0666666666666667rem;
+    width: 6.9rem;
+    font-size: 0.36rem;
+    margin-top: 0.5333333333333333rem;
+    background-color: #ffffff;
+    line-height: 1.0666666666666667rem;
+    text-align: center;
+    border-radius: 0.13333333333333333rem;
+    border:1px solid #0096fa;
+    color: #0096fa;
+}
+.txtreg[disabled]{
+    background: #dddddd;
+    color:#9a9a9a;
+    border:1px solid #9a9a9a;
+}
+.forget {
+    font-size: 0.26rem;
+    text-align: right;
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+    
+}
+.forget a{color: #0096fa;}
+.reg{color: #0096fa}
+/*.txt_verifycode,.img_verifycode{
+	width: 1.6666666666666665rem;
+}*/
+.txt_js{
+    position: absolute;
+    width: 1.8666666666666665rem;
+    height: 0.766666666666666rem;
+    right: 0.2rem;
+    top: 0.15rem;
+    border: none;
+    border-radius: 0.10666666666666667rem;
+    background-color: #0096fa;
+    color: #fff;
+    font-size: 0.3466666666666667rem;
+}
+.reg_check{margin-top: 0.26666666666666666rem}
+.reg_check input{
+	position: relative;
+    width: 0.3466666666666667rem;
+    height: 0.3466666666666667rem;
+    margin-right: 0.13333333333333333rem;
+    background-color: #FFFFFF;
+    display: inline-block;
+    -webkit-appearance: none;
+    border:none;
+        vertical-align: text-bottom;
+}
+.reg_check input:checked {
+    background-color:none;
+    background-image: url('/imgs/gou.png');
+    background-repeat: no-repeat;
+    background-size:0.3466666666666667rem 0.3466666666666667rem;
+}
+.pmarg{
+	width:0.3466666666666667rem;height:0.5066666666666667rem;
+}
+.pwmarg{width: 0.3466666666666667rem;height: 0.44rem;}
+.btnshare{
+    margin: auto;
+    height: 1.0666666666666667rem;
+    width: 100%;
+    font-size: 0.5333333333333333rem;
+    margin-top: 1.32rem;
+    background-color: #ff6464;
+    line-height: 1.0666666666666667rem;
+    text-align: center;
+    border-radius: 0.13333333333333333rem;
+    border: none;
+    color: #fff;
+}
+.niuwa_share {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    top: 0;
+}
+.niuwa_sharesub{
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    z-index:1000000;
+    background-color: #fff;
+    width: 100%;
+    height: 2.6rem;
+    border-top: 1px solid #ccc;
+}
+.niuwa_sharesub div{
+    float: left;
+    margin-top: 40px;
+    width: 33%;
+    text-align: center;
+}
+.niuwa_sharesub div img{width:1.3333333333333333rem}
+
+#imgcode{
+    position: absolute;
+    width: 1.4rem;
+    height: 0.7rem;
+    right: 0.2rem;
+    top: 0.15rem;
+    border: none;
+    border-radius: 0.1rem;
+}
+
+
+
+.custom_service{text-align: center;margin-top: 2rem;color: gray;font-size: 0.26rem;}
+.online{padding-right: 0.55rem;}
+.call{padding-left: 0.55rem;}
+.phonecode{
+	position: absolute;
+    width: 1.2rem;
+    height: 0.7rem;
+    top: 0.15rem;
+    border: none;
+    border-radius: 0.1rem;
+    background: #0096fa;
+    line-height: 0.7rem;
+    font-size: 0.24rem;
+    color: white;
+    text-align: center;
+}
+.voice{
+    right: 0.2rem;
+}
+.msg{
+    right: 1.5rem;
+}

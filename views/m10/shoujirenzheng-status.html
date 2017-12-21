@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/shoujirenzheng-status.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/m9/shoujirenzheng-status.css">
+    <!-- /build -->
+    <%include ./h5script.html %>
+</head>
+
+<body>
+        <%if(status==1){%>
+            <img class="error-img" src="/imgs/m9/error-icon.png">
+            <div class="error-text">
+                <p>抱歉，您的手机号<%=phone%></p>
+                <p>暂不支持认证</p>
+                <p>如需帮助请致电400-8846-898</p>
+                <div class="btn-group">
+                    <button class="btn btn-m btn-back btn-gotoindex">返回</button>
+                    <button class="btn btn-default btn-contact">联系客服</button>
+                </div>
+            </div>
+            <%}else if(status==2){%>
+                <img class="error-img" src="/imgs/m9/success-icon.png">
+                <div class="error-text">
+                    <p>点击下一步或等待页面自动跳转</p>
+                    <p>继续分期服务申请</p>
+                    <div class="btn-group">
+                        <button class="btn btn-long btn-next" id="btn-2">下一步</button>
+                    </div>
+                </div>
+            <%}else if(status==3){%>
+                <img class="error-img" src="/imgs/m9/error-icon.png">
+                <div class="error-text">
+                    <p>很抱歉，您的手机号<%=phone%></p>
+                    <p>暂不支持认证，请下次再试</p>
+                    <div class="btn-group">
+                        <button class="btn btn-long btn-next btn-gotoindex">确定</button>
+                    </div>
+                </div>
+            <%}else if(status==4){%>
+                <img class="error-img" src="/imgs/m9/watting-icon.png">
+                <div class="error-text">
+                    <p>通信认证进行中</p>
+                    <p>请耐心等候</p>
+                    <div class="btn-group">
+                        <button class="btn btn-long btn-next btn-gotoindex">确定</button>
+                    </div>
+                </div>
+            <%}%>
+            <br>
+            <br>
+            <br>
+            <br>
+</body>
+
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<!-- build:js /js/m9/shoujirenzheng-status.min.js -->
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src='/js/m9/shoujirenzheng-status.js'></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>

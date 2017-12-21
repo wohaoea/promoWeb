@@ -1,0 +1,51 @@
+<%if(pageResult.length){%>
+<div class="hxsh_xsqg">
+	<div class="hxsh_xsqg_wrap">
+		<div class="hxsh_xsqg_wrap_left"></div>
+		<div class="hxsh_xsqg_wrap_right">
+			<a href="/m7/xsqgdetail/<%=pageResult[0].prodCode%>" class="hxsh_title" title="<%=pageResult[0].productName%>"><%=utils.subString(pageResult[0].productName,40)%></a>
+			<p class="hxsh_subtitle"><%if(pageResult[0].subTitle){%><%=utils.subString(pageResult[0].subTitle,140)%><%}else{%>&nbsp;<%}%></p>
+			<div class="hxsh_xsqg_wrap_right_box clearfix">
+				<div class="hxsh_xsqg_wrap_right_img" >
+					<%if (pageResult[0].bannerFileId){%>
+					<a href="/m7/xsqgdetail/<%=pageResult[0].prodCode%>"><img src="/getimg/<%=pageResult[0].bannerFileId%>" class="<%if(!(utils.isNormal(pageResult[0].startSellTime,pageResult[0].prodStatus,pageResult[0].endSellTime).status)){%>togrey<%}%>"/></a>
+					<%}else{%>
+					<a href="/m7/xsqgdetail/<%=pageResult[0].prodCode%>"><img src="/imgs/m7/ex.png"  class="<%if(!(utils.isNormal(pageResult[0].startSellTime,pageResult[0].prodStatus,pageResult[0].endSellTime).status)){%>togrey<%}%>"/>/></a>
+					<%}%>
+				</div>
+				<div class="hxsh_xsqg_wrap_right_invest">
+					<a href="/m7/xsqglist" class="morexsqg">更多产品 ></a>
+					<%if((utils.isNormal(pageResult[0].startSellTime,pageResult[0].prodStatus,pageResult[0].endSellTime,pageResult[0].investFlag).status)&&(utils.isNormal(pageResult[0].startSellTime,pageResult[0].prodStatus,pageResult[0].endSellTime,pageResult[0].investFlag).limit)==true){%>
+					<div class="xsqg_tip"></div> 
+					<%}%>
+					
+						<div class="clearfix">
+							<div class="hxsh_xsqg_wrap_right_invest1">
+								<p>年化收益</p>
+								<p class="xsqg_red mt20">
+									<span style="font-size: 23px"><%=pageResult[0].yearRate%></span>%
+									<% if( pageResult[0].addYield != 0 ){ %>
+									<span>+</span>
+									<span style="font-size: 23px"><%=pageResult[0].addYield%></span>%
+									<% } %>
+								</p>
+							</div>
+							<div class="hxsh_xsqg_wrap_right_invest2">
+								<p>投资期限</p>
+								<p class="xsqg_gray mt20"><span><%=pageResult[0].investTerm%></span><%=utils.investType(pageResult[0].termType)%></p>
+							</div>
+							<div class="hxsh_xsqg_wrap_right_invest3">
+								<p>收益方式</p>
+								<p class="xsqg_gray mt20">本息<%if(pageResult[0].incomeMethod){%>+<span><%=pageResult[0].incomeMethod%></span><%}%></p>
+							</div>
+						</div>
+					<a href="/m7/xsqgdetail/<%=pageResult[0].prodCode%>" class="<%if(!(utils.isNormal(pageResult[0].startSellTime,pageResult[0].prodStatus,pageResult[0].endSellTime,pageResult[0].investFlag).status)){%>masjr_grey<%}else{%>masjr<%}%>" ><%=utils.isNormal(pageResult[0].startSellTime,pageResult[0].prodStatus,pageResult[0].endSellTime,pageResult[0].investFlag).text%></a>
+					<%if((utils.isNormal(pageResult[0].startSellTime,pageResult[0].prodStatus,pageResult[0].endSellTime,pageResult[0].investFlag).status)&&(utils.isNormal(pageResult[0].startSellTime,pageResult[0].prodStatus,pageResult[0].endSellTime,pageResult[0].investFlag).limit)==true){%>
+					<div class="shijian"><span class="qsqg_clock cd" data-cd='<%- JSON.stringify(utils.DistanceTime2(pageResult[0].endSellTime))%>' id="cd-0">还剩: <%=utils.DistanceTime2(pageResult[0].endSellTime)._d%>天<%=utils.DistanceTime2(pageResult[0].endSellTime)._h%>小时<%=utils.DistanceTime2(pageResult[0].endSellTime)._m%>分<%=utils.DistanceTime2(pageResult[0].endSellTime)._m%>.0秒</span></div>
+					<%}%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<%}%>

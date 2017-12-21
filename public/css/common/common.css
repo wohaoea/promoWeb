@@ -1,0 +1,108 @@
+*{margin: 0;padding: 0}
+body{
+    font-size: 0.26rem;
+    background-color: #efeff4;
+}
+select, option,input,textarea,button {
+    border: none;
+    outline: none;
+    color: #afafaf;
+    /*-webkit-appearance: none;*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: #fff;
+}
+a{
+    text-decoration: none;
+}
+.microsoft{
+    font-family: '微软雅黑';
+}
+.font18{
+    font-size:0.18rem;
+}
+.font20{
+    font-size:0.18rem;
+}
+.font24{
+    font-size:0.24rem;
+}
+.font26{
+    font-size:0.26rem;
+}
+.font28{
+    font-size:0.28rem;
+}
+.font34{
+    font-size:0.34rem;
+}
+.font36{
+    font-size:0.36rem;
+}
+.font60{
+    font-size:0.6rem;
+}
+.font80{
+    font-size:0.8rem;
+}
+.colswhite{
+    color:#d0e3fe;
+}
+.colwhite{
+    color:#fff;
+}
+.col000{
+    color:#000;
+}
+.bgcolblue{
+    background-color:#3296fa;
+}
+.colblue{
+    color:#3296fa;
+}
+.col666{
+    color:#666;
+}
+.col999{
+    color:#999;
+}
+.colred{
+    color:#ff1e00;
+}
+.font-w600{
+    font-weight: 600;
+}
+.text-center{
+    text-align: center;
+}
+/**锯齿分割线点**/
+.partition{
+    height: 0.25rem;
+    background: url('/imgs/infoclt/partition.png');
+    background-size: 6.88rem 0.25rem;
+}
+.info{
+    position: relative;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.label{
+    display: inline-block;
+    width: 2.5rem;
+}
+.right-arrows{
+    width: 0.12rem;
+    height: 0.22rem;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    z-index: 1;
+}
+.border-top{
+    border-top: 1px solid #dfdfdf;
+}
+.border-bottom{
+    border-bottom: 1px solid #dfdfdf;
+}

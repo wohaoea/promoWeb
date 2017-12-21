@@ -1,0 +1,19 @@
+<%if(goback){%>
+	<div class="h5header"><%=title%></div>
+	<%if(repayStatus==true){%>
+		<span class="repay">还款
+		<span id="red_circle"></span>
+		</span>
+	<%}%>
+	<%if(goback==true){%>
+	<a href="javascript:history.go(-1);" class="goback"></a>
+	<%}else{%>
+	<a href="<%=goback%>" class="goback"></a>
+	<a href="<%=goback%>" id="goback_text">返回</a>
+	<%}%>
+	<!-- <div class="h5header"><span class="h5title"><%=title%></span><a href="javascript:history.go(-1);" class="goback"></a></div> -->
+<%}else{%>
+<div class="h5header"><%=title%></div>
+<%}%>
+
+<div style="clear: both;"></div>

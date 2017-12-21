@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>牛呗借款</title>
+    <!-- build:css /css/fullpage.min.css -->
+    <link rel="stylesheet" href="/css/fullpage/global.css">
+    <link rel="stylesheet" href="/fullpage/zepto.fullpage.css">
+    <!-- /build -->
+	<style>
+		.background{
+			background: url('/imgs/fullpage/fullpageBg.png') 0 0 no-repeat;
+			background-size: cover;
+			-webkit-background-size: cover;
+			-ms-background-size: cover;
+			-o-background-size: cover;
+			-moz-background-size: cover;
+		}
+	</style>
+</head>
+<body>
+    <div class="wp background" style="">
+        <div class="wp-inner">
+            <div class="page page1 cover"></div>
+            <div class="page page2 cover"></div>
+            <div class="page page3 cover"></div>
+            <div class="page page4 cover"></div>
+        </div>
+    </div>
+    <span class="start"><b></b></span>
+    <!-- build:js /js/fullpage.min.js -->
+    <script src="/js/zepto.js"></script>
+    <script src="/fullpage/zepto.fullpage.js"></script>
+    <!-- /build -->
+    <script>
+        $('.wp-inner').fullpage({
+            drag: true,
+            afterChange: function(){
+                var page = $.fn.fullpage.getCurIndex();
+                if(page == 3){
+                    $('.start').remove();
+                }else if($('.start').length == 0){
+                    $('body').append('<span class="start"><b></b></span>')
+                }
+            }
+        });
+    </script>
+</body>
+</html>

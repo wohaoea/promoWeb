@@ -1,0 +1,1169 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+<title>牛娃金融</title>
+<!-- build:css /css/earlybird.min.css -->
+<link rel="stylesheet" href="css/jquery.fullPage.css"/>
+<link rel="stylesheet" href="css/earlybird.css" />
+<link rel="stylesheet" href="css/idialog.css" />
+<!-- /build -->
+<script src="js/libs/jquery-1.8.3.min.js"></script>
+<script src="js/libs/jquery-ui-1.10.3.min.js"></script>
+<script type="text/javascript" src="js/libs/jquery.fullPage.min.js"></script> 
+<script type="text/javascript" src="js/libs/jquery.sha256.min.js"></script>
+<script type="text/javascript" src="js/libs/jquery.iDialog.js"></script>
+
+<script type="text/javascript">
+!function(a){"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?module.exports=a:a(jQuery)}(function(a){function b(b){var g=b||window.event,h=i.call(arguments,1),j=0,l=0,m=0,n=0,o=0,p=0;if(b=a.event.fix(g),b.type="mousewheel","detail"in g&&(m=-1*g.detail),"wheelDelta"in g&&(m=g.wheelDelta),"wheelDeltaY"in g&&(m=g.wheelDeltaY),"wheelDeltaX"in g&&(l=-1*g.wheelDeltaX),"axis"in g&&g.axis===g.HORIZONTAL_AXIS&&(l=-1*m,m=0),j=0===m?l:m,"deltaY"in g&&(m=-1*g.deltaY,j=m),"deltaX"in g&&(l=g.deltaX,0===m&&(j=-1*l)),0!==m||0!==l){if(1===g.deltaMode){var q=a.data(this,"mousewheel-line-height");j*=q,m*=q,l*=q}else if(2===g.deltaMode){var r=a.data(this,"mousewheel-page-height");j*=r,m*=r,l*=r}if(n=Math.max(Math.abs(m),Math.abs(l)),(!f||f>n)&&(f=n,d(g,n)&&(f/=40)),d(g,n)&&(j/=40,l/=40,m/=40),j=Math[j>=1?"floor":"ceil"](j/f),l=Math[l>=1?"floor":"ceil"](l/f),m=Math[m>=1?"floor":"ceil"](m/f),k.settings.normalizeOffset&&this.getBoundingClientRect){var s=this.getBoundingClientRect();o=b.clientX-s.left,p=b.clientY-s.top}return b.deltaX=l,b.deltaY=m,b.deltaFactor=f,b.offsetX=o,b.offsetY=p,b.deltaMode=0,h.unshift(b,j,l,m),e&&clearTimeout(e),e=setTimeout(c,200),(a.event.dispatch||a.event.handle).apply(this,h)}}function c(){f=null}function d(a,b){return k.settings.adjustOldDeltas&&"mousewheel"===a.type&&b%120===0}var e,f,g=["wheel","mousewheel","DOMMouseScroll","MozMousePixelScroll"],h="onwheel"in document||document.documentMode>=9?["wheel"]:["mousewheel","DomMouseScroll","MozMousePixelScroll"],i=Array.prototype.slice;if(a.event.fixHooks)for(var j=g.length;j;)a.event.fixHooks[g[--j]]=a.event.mouseHooks;var k=a.event.special.mousewheel={version:"3.1.12",setup:function(){if(this.addEventListener)for(var c=h.length;c;)this.addEventListener(h[--c],b,!1);else this.onmousewheel=b;a.data(this,"mousewheel-line-height",k.getLineHeight(this)),a.data(this,"mousewheel-page-height",k.getPageHeight(this))},teardown:function(){if(this.removeEventListener)for(var c=h.length;c;)this.removeEventListener(h[--c],b,!1);else this.onmousewheel=null;a.removeData(this,"mousewheel-line-height"),a.removeData(this,"mousewheel-page-height")},getLineHeight:function(b){var c=a(b),d=c["offsetParent"in a.fn?"offsetParent":"parent"]();return d.length||(d=a("body")),parseInt(d.css("fontSize"),10)||parseInt(c.css("fontSize"),10)||16},getPageHeight:function(b){return a(b).height()},settings:{adjustOldDeltas:!0,normalizeOffset:!0}};a.fn.extend({mousewheel:function(a){return a?this.bind("mousewheel",a):this.trigger("mousewheel")},unmousewheel:function(a){return this.unbind("mousewheel",a)}})});
+</script>
+
+<script type="text/javascript">
+var regDevice ="";
+var regOs=function detectOS() { 
+		var sUserAgent = navigator.userAgent; 
+		var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows"); 
+		var isMac = (navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh") || (navigator.platform == "MacIntel"); 
+		if (isMac) return "Mac"; 
+		var isUnix = (navigator.platform == "X11") && !isWin && !isMac; 
+		if (isUnix) return "Unix"; 
+		var isLinux = (String(navigator.platform).indexOf("Linux") > -1); 
+
+		var bIsAndroid = sUserAgent.toLowerCase().match(/android/i) == "android";
+		if (isLinux) {
+		if(bIsAndroid) return "Android";
+		else return "Linux"; 
+		}
+		if (isWin) { 
+			return "Windows"
+		} 
+		return "else"; 
+		}();
+
+function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) >=0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+
+function GetRequest() { 
+var url = location.search; //获取url中"?"符后的字串 
+var theRequest = new Object(); 
+if (url.indexOf("?") != -1) { 
+	var str = url.substr(1); 
+	strs = str.split("&"); 
+	for(var i = 0; i < strs.length; i ++) { 
+		theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); 
+		} 
+	} 
+return theRequest; 
+} 
+if(!IsPC()){
+	if(GetRequest()["s"]){
+		window.location.href = "/reg/"+GetRequest()["s"]
+	}else{
+		window.location.href = "/reg/";
+	}
+}
+if(IsPC()){
+	 var userAgentInfo = navigator.userAgent;
+	 var Agents = ["ipad"];
+	for (var v = 0; v < Agents.length; v++) {  
+	if(userAgentInfo.indexOf(Agents[v]) > 0){
+			regDevice="IPAD";
+		}else{
+			regDevice="PC";
+		}
+	}
+}
+</script>
+
+<SCRIPT TYPE="text/javascript">
+$(function() {
+	var name = $("#uname").val();
+	var psd = $("#psd").val();
+	var apsd = $("#apsd").val();
+	var pcode = $("#pcode").val();
+	var phoneflag = 0;
+	function checkName(name) {
+		var reg =/^([a-zA-Z\d-_]){6,20}$/;
+		var regN= /^[0-9]*$/;
+		if (reg.test(name)) {
+			if(regN.test(name)){
+				return false;
+			}else{
+			return true;
+		    } 
+	 	}else {
+			return false;
+			}
+	}
+
+	function checkPassword(password) {
+		var reg = /^.{6,20}$/;
+		if (reg.test(password)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function checkPhone(phone) {
+		var reg = /^[1][3-8]\d{9}$/;
+		if (reg.test(phone)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+
+
+	$('.input-text').each(function() { //开始遍历
+		var $val = $(this).val();
+		$(this).focus(function() {
+			if ($(this).val() == $val) {
+				$(this).val("");
+				$(this).css({
+					color: "#111111"
+				});
+				$(this).addClass("input-black");
+			}
+		})
+		$(this).blur(function() {
+			if ($(this).val().length == 0) {
+				$(this).removeClass("input-black");
+				$(this).css({
+					color: "#c8c8c8"
+				});
+				$(this).val($val)
+			}
+		})
+	});
+
+	
+
+	$.fn.fullpage({
+		//slidesColor: ['#eaeaea', '#eaeaea', '#eaeaea', '#eaeaea'],
+		anchors: ['page1', 'page2', 'page3', 'page4'],
+		//menu: '#menu',
+		afterRender: function(anchorLink, index) {
+		$(".nlogo").animate({
+			opacity: 'show'
+		},2000,function(){
+			$(".nlogo").animate({
+				opacity: 'hide'
+			},2000,function(){
+				$(".signOne").animate({
+				opacity: 'show'
+					},2000,function(){
+						$(".signOne").animate({
+						opacity: 'hide'
+							},2000,function(){
+								$(".border1").animate({
+								width: '100%'
+									}, 1000, function() {
+										$(".border2").animate({
+											left: "0"
+										}, 1000, function() {
+											$(".pageinside").show('slow', function() {
+												$(".greet").animate({
+													left: "-40px",
+													opacity: 'show'
+												}, 1000, function() {
+
+												});
+											});
+										});
+									});
+							});
+					});
+			});		
+		});
+		
+		},
+		afterLoad: function(anchorLink, index) {
+		$(".pageboxtwo .disp1").hide();
+		$(".pageboxone .disp").hide();
+		$(".pageboxthree .disp2").hide();
+		$(".pagebg").hide();
+		if(index == 2){
+				$(".signTwo").stop().animate({
+				opacity: 'show'
+			  	},2000,function(){
+				$(".signTwo").stop().animate({
+				opacity: 'hide'
+				},2000,function(){
+					$(".pagebg").show();
+					$(".disp").show("fast",function(){
+					
+					});
+				});
+			});
+			}else if(index ==3){
+				
+				$(".signThree").stop().animate({
+				opacity: 'show'
+			  	},2000,function(){
+				$(".signThree").stop().animate({
+				opacity: 'hide'
+				},2000,function(){
+					$(".disp1").show("fast",function(){
+						
+					});
+				});
+				});
+			}else{
+			
+				$(".signFour").stop().animate({
+					opacity: 'show'
+				  },2500,function(){
+					$(".signFour").stop().animate({
+					opacity: 'hide'
+					},2500,function(){
+						$(".disp2").show("fast",function(){
+							
+						});
+					});
+				});
+			}
+		}/*,
+		onLeave: function(index, direction) {
+		 if(index==1){
+		 	$(".border1").animate({
+				width: '0'
+					}, 1000, function() {
+						$(".border2").animate({
+							left: "100%"
+						}, 1000, function() {
+							$(".pagebox").hide();
+							$(".greet").hide();
+						});
+					});
+			$(".signOne").hide()
+		 }else if(index == 2){
+				$(".disp").hide();
+				$(".signTwo").hide()
+			}else if(index ==3){
+				$(".disp1").hide();
+				$(".signThree").hide()
+			}else{
+				$(".disp2").hide();
+				$(".signFour").hide()
+			}
+		}*/
+	});
+
+	function GetRTime() {
+		var EndTime = new Date('2015/05/30 00:00:00');
+		var NowTime = new Date();
+		var t = EndTime.getTime() - NowTime.getTime();
+		var d = 00;
+		var h = 00;
+		var m = 00;
+		var s = 00;
+		if (t >= 0) {
+			d = Math.floor(t / 1000 / 60 / 60 / 24) < 10 ? ("0" + Math.floor(t / 1000 / 60 / 60 / 24)) : Math.floor(t / 1000 / 60 / 60 / 24);
+			h = Math.floor(t / 1000 / 60 / 60 % 24) < 10 ? ("0" + Math.floor(t / 1000 / 60 / 60 % 24)) : Math.floor(t / 1000 / 60 / 60 % 24);
+			m = Math.floor(t / 1000 / 60 % 60) < 10 ? ("0" + Math.floor(t / 1000 / 60 % 60)) : Math.floor(t / 1000 / 60 % 60);
+			s = Math.floor(t / 1000 % 60);
+		}
+		$("#t_d").html(d + "天");
+		$("#t_h").html(h + "时");
+		$("#t_m").html(m + "分");
+		//$("t_s").html(s + "秒");
+	}
+	setInterval(GetRTime, 0);
+
+	//验证码倒计时
+
+
+	$(".sendmessage").click(function() {
+		if(phoneflag==1){
+			var phonenumber = $("#phone").val();
+			var _this = $(this);
+			var val = _this.text();
+			//var code_wait = 5;
+			var code_wait = 60;
+			var timetext = '';
+			$.ajax({
+				type: "POST",
+				url: "/pla/generatemobilecode",
+				data: {
+					pnumber: phonenumber
+				},
+				success: function(msg) {
+					//curtime=curtime;
+					if(msg.result!="success"){
+				 		$.dialog({
+								title: '提示',
+								lock: true,
+								opacity: .5,
+								width: 400,
+								height: 200,
+								content: msg.resultMessage,
+								init: function() {
+
+								}
+							});
+				 		$(".sendmessage").hide();
+				 		$(".sendmessage").prop("disabled", false);
+				 		$(".sendmessage1").show();
+					}
+				}
+			});
+			function time(btn) {
+				if (code_wait == -1) {
+					btn.removeClass("btnactive");
+					btn.prop("disabled", false);
+					btn.text(val);
+					//code_wait =5;
+					code_wait = 60;
+				} else {
+					btn.addClass("btnactive");
+					btn.prop("disabled", true);
+					timetext = "正在发送(" + code_wait + ")"
+					btn.text(timetext);
+					code_wait--;
+					setTimeout(function() {
+							time(btn);
+						},
+						1000);
+				}
+			}
+			time(_this);
+		}else{
+			$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请先输入正确的手机号',
+					init: function() {	
+					}
+				});
+		}
+	});
+
+	var error = "<div class='error'></div>";
+	var right = "<div class='right'></div>";
+	var errormassage ="<div class='errormassage'></div>"
+	$("#uname").blur(function() {
+		var _this = $(this);
+		var that = $(this).val();
+		if (that == "" || that == name || !checkName(that)||that.toLowerCase().indexOf("niuwa")>=0) {
+			_this.parent().find(".right").remove();
+			_this.parent().find(".error").remove();
+			_this.parent().find(".errormassage").remove();
+			_this.parent().append(error);
+		}else {
+			$.ajax({
+				type: "POST",
+				url: "/pla/checkloginname",
+				data: {
+					uname: that
+				},
+				success: function(msg) {
+					if(msg.result=="fail"){
+						_this.parent().find(".right").remove();
+						_this.parent().find(".error").remove();
+						_this.parent().find(".errormassage").remove();
+						_this.parent().append(errormassage);
+						_this.parent().find(".errormassage").text(msg.resultMessage)
+
+					}else{
+						_this.parent().find(".right").remove();
+						_this.parent().find(".error").remove();
+						_this.parent().find(".errormassage").remove();
+						_this.parent().append(right);
+						showBtn();
+					}
+				}
+			});
+		}
+	});
+	$(".inputpassword").focus(function(){
+		$(this).hide();
+		$(this).next("input").show().focus();
+	})
+
+
+		$(".passw").blur(function() {
+			var _this = $(this);
+			var that = $(this).val();
+			if (that == "" || that == psd){
+				_this.val("");
+				_this.hide();
+				_this.prev("input").show();
+				_this.parent().find(".right").remove();
+				_this.parent().find(".error").remove();
+				_this.parent().append(error);
+			}
+			if (that == "" || that == psd || !checkPassword(that)) {
+				//_this.val("");
+				//_this.hide();
+				//_this.prev("input").show();
+				_this.parent().find(".right").remove();
+				_this.parent().find(".error").remove();
+				_this.parent().append(error);
+				
+			} else {
+				_this.parent().find(".right").remove();
+				_this.parent().find(".error").remove();
+				_this.parent().append(right);
+				showBtn();
+			}
+		});
+
+		$(".apassw").blur(function() {
+			var _this = $(this);
+			var that = $(this).val();
+			if (that == "" || that == apsd){
+				_this.val("");
+				_this.hide();
+				_this.prev("input").show();
+				_this.parent().find(".right").remove();
+				_this.parent().find(".error").remove();
+				_this.parent().append(error);
+			}
+			if (!checkPassword(that)) {
+				/*_this.val("");
+				_this.hide();
+				_this.prev("input").show();*/
+				_this.parent().find(".right").remove();
+				_this.parent().find(".error").remove();
+				_this.parent().append(error);
+				
+			} else {
+				if(that==$(".passw").val()){
+				_this.parent().find(".right").remove();
+				_this.parent().find(".error").remove();
+				_this.parent().append(right);
+				showBtn();
+				}else{
+					/*_this.val("");*/
+					//_this.hide();
+					//_this.prev("input").show();
+					_this.parent().find(".right").remove();
+					_this.parent().find(".error").remove();
+					_this.parent().append(error);
+				}
+			}
+		});
+	
+		$("#phone").keyup(function() {
+			var _this = $(this);
+			var that = $(this).val();
+			if (that == "" || that == name || !checkPhone(that)) {
+				phoneflag=0;
+				_this.parent().find(".right").remove();
+				_this.parent().find(".error").remove();
+				_this.parent().append(error);
+				return 
+			}else if(that.length==11){
+					$.ajax({
+						type: "POST",
+						url: "/pla/validatebindphoneno",
+						data: {
+							pnumber: that
+						},
+						success: function(msg) {
+						  if(msg.result=="fail"){
+						  		phoneflag=0;
+								_this.parent().find(".right").remove();
+								_this.parent().find(".error").remove();
+								_this.parent().find(".errormassage").remove();
+								_this.parent().append(errormassage);
+								_this.parent().find(".errormassage").text(msg.resultMessage)
+								}else{
+									_this.parent().find(".right").remove();
+									_this.parent().find(".error").remove();
+									_this.parent().find(".errormassage").remove();
+									_this.parent().append(right);
+									phoneflag=1;
+									showBtn();
+								}
+							}
+					});
+			}else{
+				phoneflag=0;
+				_this.parent().find(".right").remove();
+				_this.parent().find(".error").remove();
+				_this.parent().append(error);
+			}
+		});
+	
+	$("#pcode").keyup(function(){
+		var pnumber = $("#phone").val();
+		var _this =$(this);
+		var that = $(this).val();
+	 	if(that.length==6){
+	 			$.ajax({
+						type: "POST",
+						url: "/pla/validatephonecode",
+						data: {
+							pnumber: pnumber,
+							pcode: that
+						},
+						success: function(msg) {
+						  if(msg.result=="fail"){
+								_this.parent().find(".right").remove();
+								_this.parent().find(".error").remove();
+								_this.parent().find(".errormassage").remove();
+								_this.parent().append(errormassage);
+								_this.parent().find(".errormassage").text(msg.resultMessage)
+								}else{
+									_this.parent().find(".right").remove();
+									_this.parent().find(".error").remove();
+									_this.parent().find(".errormassage").remove();
+									_this.parent().append(right);
+									showBtn();
+								}
+							}
+					});
+	 	}else{
+
+	 	}
+	});
+
+	$("#deal").click(function(){
+		if($(this).is(":checked")){
+			showBtn();
+		}else{
+
+		}
+	});
+	
+	function showBtn() {
+		var isrightCount = $(".right").length== 5 ? true : false;
+		var ischeck = $("#deal").is(":checked");
+		if (isrightCount && ischeck) {
+			$("#unbindclick").hide();
+			$("#bindclick").show();
+		} else {
+			$("#unbindclick").show();
+			$("#bindclick").hide();
+		}
+	};
+	$("#unbindclick").click(function(){
+		var _this = $(this);
+			var uname =$("#uname").val();
+			var psd = $("#psd").val();
+			var apsd =$("#apsd").val();
+			var phone=$("#phone").val();
+			var deal = $("#deal").is(":checked");
+			var pcode =$("#pcode").val();
+			if($.trim(uname).length==0){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请填写用户名',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if($.trim(uname).length<6 ||$.trim(uname).length>20){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '用户名需为6-20个字符',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(/^\d+$/.test(uname)){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '用户名不能为纯数字',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(!/^([a-zA-Z\d-_]){6,20}$/.test(uname)){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '用户名请输入6-20位字符，可包含字母、数字及下划线',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(uname.toLowerCase().indexOf("niuwa")>=0){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '用户名已注册',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if($.trim(psd).length==0){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请填写登录密码',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if($.trim(apsd).length==0){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请再次输入密码确认',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			
+			if(psd.length<6 ||psd.length>20 || apsd.length>20 || apsd.length<6){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '密码必须为6-20位字符',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(psd!=apsd){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '两次输入的密码不一致,请重新输入',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(!/^[1][3-8]\d{9}$/.test(phone)){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请输入您本人的11位有效的手机号码',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(pcode.length==0||pcode=="请输入短信收到的验证码"){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请输入验证码',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(pcode.length!=6){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '只能输入6位验证码',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(!deal){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请勾选服务协议',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+		 var isrightCount = $(".right").length== 5 ? true : false;	
+		  if(isrightCount){	
+				$.ajax({
+					type: "POST",
+					url: "/pla/birdreg",
+					data: {
+						loginname: $("#uname").val(),
+						loginpassword: $.sha256($("#psd").val()),
+						aloginname:$.sha256($("#apsd").val()),
+						pnumber:$("#phone").val()
+					},
+					success: function(msg) {
+					 		 if(msg.result=="fail"){
+					 		 	$.dialog({
+								title: '提示',
+								lock: true,
+								opacity: .5,
+								width: 400,
+								height: 200,
+								content: msg.resultMessage,
+								init: function() {	
+								}
+							});
+							}else{
+								window.location.href="/regpc2";
+							}
+						}
+				});
+		}
+	});
+
+	
+
+
+	$("#bindclick").click(function() {
+			var _this = $(this);
+			var uname =$("#uname").val();
+			var psd = $("#psd").val();
+			var apsd =$("#apsd").val();
+			var phone=$("#phone").val();
+			var deal = $("#deal").is(":checked");
+			var pcode =$("#pcode").val();
+			if($.trim(uname).length==0){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请填写用户名',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if($.trim(uname).length<6 ||$.trim(uname).length>20){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '用户名需为6-20个字符',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+
+			if(/^\d+$/.test(uname)){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '用户名不能为纯数字',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(!/^([a-zA-Z\d-_]){6,20}$/.test(uname)){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '用户名请输入6-20位字符，可包含字母、数字及下划线',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(uname.toLowerCase().indexOf("niuwa")>=0){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '用户名已注册',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if($.trim(psd).length==0){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请填写登录密码',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if($.trim(apsd).length==0){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '密码不为空',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			
+			if(psd.length<6 ||psd.length>20 || apsd.length>20 || apsd.length<6){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '密码必须为6-20位字符',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(psd!=apsd){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '两次输入的密码不一致,请重新输入',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(!/^[1][3-8]\d{9}$/.test(phone)){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请输入您本人的11位有效的手机号码',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(pcode.length==0||pcode=="请输入短信收到的验证码"){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请输入验证码',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(pcode.length!=6){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '只能输入6位验证码',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+			if(!deal){
+				$.dialog({
+					title: '提示',
+					lock: true,
+					opacity: .5,
+					width: 400,
+					height: 200,
+					content: '请勾选服务协议',
+					init: function() {	
+					}
+				});
+				return false;
+			}
+	  var isrightCount = $(".right").length== 5 ? true : false;	
+		  if(isrightCount){
+			$.ajax({
+				type: "POST",
+				url: "/pla/birdreg",
+				data: {
+					loginname: $("#uname").val(),
+					loginpassword: $.sha256($("#psd").val()),
+					aloginname:$.sha256($("#apsd").val()),
+					pnumber:$("#phone").val(),
+					regDevice:regDevice,
+					regOs:regOs
+				},
+				success: function(msg) {
+				 		 if(msg.result=="fail"){
+							$.dialog({
+								title: '提示',
+								lock: true,
+								opacity: .5,
+								width: 400,
+								height: 200,
+								content: msg.resultMessage,
+								init: function() {	
+								}
+							});
+						}else{
+							window.location.href="/regpc2";
+						}
+					}
+			});
+		  }
+	});
+
+$("#ireg").click(function(){
+	$.fn.fullpage.moveTo(4);
+	
+});
+$(".nextpbox").click(function(){
+	$.fn.fullpage.moveSectionDown()
+})
+$(".uppage").click(function(){
+	$.fn.fullpage.moveTo(3);
+})
+
+
+/*
+moveSectionUp()	向上滚动
+moveSectionDown()	向下滚动
+moveTo(section, slide)	滚动到
+*/
+$("#dealpage").click(function(){
+	$.ajax({
+		  type: "GET",
+		   url: "/pl/getDeal",
+		   success: function(msg){
+		     $.dialog({
+					title: '平台注册协议',
+					lock: true,
+					opacity: .5,
+					width: 800,
+					height: 400,
+					content: msg,
+					init: function() {
+						$(".clauseDesc").mousewheel(function(events){
+							events.stopPropagation();
+						});
+						
+					}
+			});
+		  }
+
+	})
+})	
+});
+
+
+  $(document).ready(function () {
+  	$(".roundline").height($(window).height());
+  	
+  	/*var deg = 1;
+
+    var round_times=setInterval(function(){
+    	deg +=1;
+    	 if(deg>10) deg=0;
+    	$(".left-round1").css("background-position","0 "+deg+"px");
+    	
+    	if(deg==2){
+    		$(".left-round1").hide();
+    		$(".left-round2").show();
+    		$(".right-round1").hide();
+    		$(".right-round2").show();
+    		deg =1;
+    	}else{
+    		$(".left-round1").show();
+    		$(".left-round2").hide();
+    		$(".right-round1").show();
+    		$(".right-round2").hide();
+    		deg=2;
+    	}
+    },400);*/
+ 
+  });
+  
+</SCRIPT>
+</head>
+
+<body>
+<!-- WPA Button Begin -->
+<!-- <iframe style="position:fixed;top:100px;width:480px;height:300px;right:0px;z-index:10000000000;border:0;background:none" src="/qq">
+</iframe> -->
+<!-- WPA Button End -->
+<a class="aboutus" href="/aboutus" target="_self"></a>
+<a class="kefuus" href="javascript:;"></a>
+<a class="qqmsg" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODAwNzc4MF8yNzEyOTJfNDAwODg0Njg5OF8yXw" target="_bank" ></a>
+<div class="left-round1"></div>
+<!-- <div class="left-round2"></div> -->
+<div class="right-round1"></div>
+<!-- <div class="right-round2"></div>
+ -->
+<div class="section">
+	<div class="nlogo"><img src="../imgs/nlogo.gif" /></div>
+	<div class="signOne"><img src="../imgs/page1.gif" /></div>	
+	<!-- <div class="pagebg"><img src="imgs/pagenormal.png" /></div>  -->
+	<div class="pagebox">
+		<div class="border1"></div>
+		<div class="border2"></div>
+		<div class="pageinside">
+		<div class="logo"></div>
+		<div class="greet"></div>
+		<div class="showtimebox">
+			<div class="hh"></div>
+			<div class="countdown">
+				<span id="t_d"></span>
+				<span id="t_h"></span>
+				<span id="t_m"></span>
+			</div>
+			<div class="regbtn"><a href="javascript:"  id="ireg" >&nbsp;</a></div>
+		</div>
+		<div class="roundline">
+		</div>
+		<div class="content">
+		</div>
+		<div class="nextpbox"><a href="javascript:;" class="nextpage"></a></div>
+	</div>
+	</div> 
+</div>
+
+<div class="section">
+	  <div class="pageboxone">
+	  			<div class="signTwo"><img src="../imgs/page2.gif" /></div>
+	  			<div class="disp">
+		 			<div class="ebirdheader ebplan"></div>
+		 			<div class="ebplancontent"></div>
+		 			<div class="nextpbox"><a href="javascript:;" class="nextpage"></a></div>
+	 			</div>
+	 			
+	 	</div>
+	<!-- <div class="pagebg"><img src="imgs/pagenormal.png" /></div>  -->
+</div>
+
+<div class="section">
+
+	<div class="pageboxtwo">
+		<div class="signThree"><img src="../imgs/page3.gif" /></div>
+		<div class="disp1">
+		 	<div class="ebirdheader ebabout" style="top:40px;"></div>
+		 	<div class="ebaboutpower"></div>
+		 	<div class="ebaboutreliable"></div>
+		 	<div class="ebaboutmajor"></div>
+		 	<div class="nextpbox"><a href="javascript:;" class="nextpage"></a></div>
+	 	</div>
+	 	
+	 </div>
+	 <!-- <div class="pagebg"><img src="imgs/pagenormal.png" /></div>  -->
+</div>
+<div class="section">
+	<div class="pageboxthree">
+		<div class="signFour"><img src="../imgs/page4.gif" /></div>
+		<div class="disp2">
+		<div class="ebirdheader ebreg"></div>
+		<div class="leftrefer">
+			<div class="inputdiv"><div class="leftinputtitle">用&nbsp;&nbsp;户&nbsp;&nbsp;名</div><input type="text" value="6-20位字符，可包含字母、数字及下划线" class="input-text" id="uname"/></div>
+			<div class="inputdiv">
+				<div class="leftinputtitle">输入密码</div><input type="text" value="6-20位字符，可包含字母（分大小写）、数字或符号" class="input-text inputpassword "/>
+				<input type="password" value="" class="input-text passw" style="margin-left:-5px" id="psd"/>
+			</div>
+			<div class="inputdiv">
+				<div class="leftinputtitle">确认密码</div><input type="text" value="请再次输入密码" class="input-text inputpassword "/>
+				<input type="password" value="" class="input-text apassw" style="margin-left:-5px" id="apsd"/>
+			</div>
+			<div class="inputdiv"><div class="leftinputtitle">手机号码</div><input type="text" value="请输入手机号码" class="input-text" id="phone" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/></div>
+			<div class="inputdiv"><div class="leftinputtitle">验&nbsp;&nbsp;证&nbsp;&nbsp;码</div><input type="text" value="请输入短信收到的验证码" class="input-text" style="width:200px;" id="pcode"/><button class="sendmessage">发送验证码</button><button class="sendmessage1">发送验证码</button></div>
+			<div class="inputdiv" style="color:#969696;font-size:14px"><div class="leftinputtitle" style="height:40px;line-height:40px;float:left"></div>
+				<label style="color:#969696;font-size:14px;float:left" >
+					<input name="" type="checkbox" value=""  id="deal"/>我已阅读并同意
+				</label>
+				《<span style="color:#ff4b4b;font-size:14px;cursor:pointer;" id="dealpage">服务协议（个人会员版）</span>》
+			</div>
+			<div style="clear:both"></div>
+			<div style="text-align:left;margin-left:96px;">
+				<div class="btn grey" style="*margin-left:0;text-align:center" id="unbindclick">提交注册</div>
+				<div class="btn" style="*margin-left:0;text-align:center" id="bindclick">提交注册</div>
+			</div>
+		</div>
+		<div class="seeyou"></div>
+		<div class="rightcode"></div> 
+		<div class="uppbox"><a href="" class="uppage"></a></div>
+	</div>
+	
+	</div>
+	<!--  <div class="pagebg"><img src="imgs/pagenormal.png" /></div> -->
+	
+</div>
+
+<!-- Google Tag Manager -->
+ 
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ 
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+ 
+<!-- End Google Tag Manager -->
+</body>
+</html>

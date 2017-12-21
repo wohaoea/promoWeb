@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>风险测评</title>
+    <meta name="description" content="风险测评" />
+    <meta name="keywords" content="风险测评" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- build:css /css/common/reset.min.css -->
+    <link rel="stylesheet" type="text/css" href="/css/common/reset.css"/>
+    <!-- /build -->
+    <script type="text/javascript" src="/js/libs/h5rem.js"></script>
+    <style>
+        body{
+            background-color: #f1f1f1;
+        }
+        .head{
+            position: fixed;
+            width: 100%;
+            top:0;
+            left: 0;
+            z-index: 1;
+        }
+        .head .title{
+            position: relative;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            font-size: 0.34rem;
+            color: #333;
+            text-align: center;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+        .head img{
+            position: absolute;
+            width: 0.22rem;
+            height: 0.44rem;
+            left: 0.3rem;
+            bottom: 0.2rem;
+        }
+        .belong-type{
+            position: relative;
+            display: none;
+            height: 1.3rem;
+            line-height: 1.3rem;
+            text-indent: 0.7rem;
+            font-size: 0.34rem;
+            color:#333;
+            background-color: #f1f1f1;
+            box-sizing: border-box;
+        }
+        .belong-type:before{
+            position: absolute;
+            top:0.51rem;
+            left: 0.3rem;
+            content: '';
+            width: 0.25rem;
+            height: 0.25rem;
+            border-radius: 50%;
+            background-color: #eb4b4b;
+        }
+        .problem-container{
+            display: none;
+            width: 6.9rem;
+            margin: 0 auto;
+            font-size: 0.3rem;
+            padding-bottom: 0.4rem;
+            background-color: #fff;
+            border-radius: 0.1rem;
+        }
+        .problem-container .line{
+            display: flex;
+            width: 6.3rem;
+            height: 1.28rem;
+            margin: 0 auto;
+            background-color: #fff;
+            border-bottom: 1px solid #dadada;
+            box-sizing: border-box;
+            flex-direction: row;
+            align-items: center;
+        }
+        .radio{
+            position: relative;
+            width: 0.42rem;
+            height: 0.42rem;
+            margin-right: 0.25rem;
+            border-radius: 50%;
+            border:1px solid #a1a1a1;
+        }
+        .radio:before{
+            content: '';
+            display: none;
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 0.25rem;
+            height: 0.25rem;
+            background-color: #eb4b4b;
+            border-radius: 50%;
+        }
+        .selected:before{
+            display: block;
+        }
+        .option{
+            max-width: 5.6rem;
+        }
+        .problem-block{
+            display: block;
+        }
+        .test-result{
+            display: none;
+            position: fixed;
+            width: 6rem;
+            height: 7.72rem;
+            left: 0;
+            right: 0;
+            top:0;
+            bottom: 0;
+            margin:25% auto;
+            text-align: center;
+            color: #fff;
+            background: url('/imgs/i_niuwa/test-result-bg.png') no-repeat;
+            background-size: 6rem 7.72rem;
+            z-index: 1;
+        }
+        .test-result h3{
+            font-size: 0.48rem;
+            margin-top: 1.5rem;
+        }
+        .test-result .result-type{
+            font-size: 0.56rem;
+            margin-top: 0.7rem;
+        }
+        .test-result .result-desc{
+            width: 4.85rem;
+            margin: 0.4rem auto 0;
+            text-indent: 0.45rem;
+            font-size: 0.28rem;
+            text-align: left;
+        }
+        .test-result a{
+            display: block;
+            width: 2.9rem;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            margin: 0.8rem auto 0;
+            font-size: 0.34rem;
+            color: #fff;
+            text-decoration:none;
+            border: 0.03rem solid #fff;
+            border-radius: 0.4rem;
+        }
+        .start-test{
+            position: fixed;
+            width: 6rem;
+            height: 7.6rem;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 20% auto;
+            padding: 1.1rem 0.22rem;
+            font-size: 0.28rem;
+            color: #333;
+            background-color: #fff;
+            border-radius: 0.2rem;
+            box-shadow:0 0 0.1rem #ddd;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+        .start-test p{
+            line-height: 0.4rem;
+        }
+        .start-test p:last-of-type{
+            margin-top: 0.4rem;
+        }
+        .start-test .start-btn{
+            width: 4.48rem;
+            height: 0.96rem;
+            margin: 1.2rem auto 0;
+            line-height: 0.96rem;
+            font-size: 0.34rem;
+            text-align: center;
+            color: #fff;
+            border-radius: 0.48rem;
+            background: linear-gradient(to right, #f67c58 0%,#ee5052 100%);
+            background: -moz-linear-gradient(to right, #f67c58 0%,#ee5052 100%);
+            background: -webkit-linear-gradient(to right, #f67c58 0%,#ee5052 100%);
+            background: -o-linear-gradient(to right, #f67c58 0%,#ee5052 100%);
+            background: -ms-linear-gradient(to right, #f67c58 0%,#ee5052 100%);
+        }
+        .start-test img{
+            position: absolute;
+            width: 1.9rem;
+            height: 1.5rem;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        .btn-group{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .btn-group div{
+            width: 2.5rem;
+            height: 0.8rem;
+            margin: 0.4rem auto 0;
+            line-height: 0.8rem;
+            font-size: 0.3rem;
+            color:#fff;
+            border-radius: 0.04rem;
+            text-align: center;
+            background: linear-gradient(to right, #f67c58 0%,#ee5052 100%);
+            background: -moz-linear-gradient(to right, #f67c58 0%,#ee5052 100%);
+            background: -webkit-linear-gradient(to right, #f67c58 0%,#ee5052 100%);
+            background: -o-linear-gradient(to right, #f67c58 0%,#ee5052 100%);
+            background: -ms-linear-gradient(to right, #f67c58 0%,#ee5052 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="belong-type" belong-type="<%=problemCollection[0].belong.type%>"><%=problemCollection[0].belong.desc%></div>
+    <% for( var i = 0; i < problemCollection.length; i++ ){%>
+        <% var item = problemCollection[i]; %>
+        <div class="problem-container" data-pno="<%=item.No%>" data-accomplish="0" belong-type="<%=item.belong.type%>" belong-desc="<%=item.belong.desc%>">
+            <div class="line"><%= item.No + '.' + item.describe %></div>
+            <% for( var j = 0; j < item.options.length; j++ ){ %>
+            <div class="line">
+                <div class="radio" data-score="<%=item.options[j].score%>"></div>
+                <div class="option"><%=item.options[j].desc%></div>
+            </div>
+            <% } %>
+            <div class="btn-group">
+                <div class="prev-problem">上一题</div>
+                <div class="next-problem"><%= i < problemCollection.length-1 ? '下一题' : '提交' %></div>
+            </div>
+        </div>
+    <% } %>
+
+    <% if( ( !again && testScore == null ) || ( again && testScore!=null ) ){ %>
+        <div class="start-test">
+            <p style="text-indent: 0.55rem">本问卷旨在了解您可承受的风险程度、以及您的投资经验，借此协助您选择合适的投资产品类别，以达到您的投资目标。</p>
+            <p><span style="color: #eb4b4b">声明：</span>本投资风险评估问卷的准确性视乎您所填写的答案而定，您有任何疑问，可以对投资产品是否合适进行独立评估。投资有风险，牛娃会尽最大努力保障您的资金安全。</p>
+            <div class="start-btn">开始测评</div>
+            <img class="" src="/imgs/i_niuwa/start-test-bg.png">
+        </div>
+    <% }%>
+    <div class="test-result">
+        <h3>您的投资类型</h3>
+        <p class="result-type"></p>
+        <p class="result-desc"></p>
+        <a id="again" href="/niuwa/riskRating?again">重新测评</a>
+    </div>
+    <script>
+        var lastNo = parseInt('<%= problemCollection.length %>');
+        var again = '<%= again %>';
+        var testScore = '<%= testScore %>';
+        var times = Number('<%= times %>');
+    </script>
+    <script type="text/javascript" src="/js/libs/jquery-1.8.3.min.js"></script>
+    <!-- build:js /js/i_niuwa/risk_rating.min.js -->
+    <script type="text/javascript" src="/js/i_niuwa/risk_rating.js"></script>
+    <!-- /build -->
+
+</body>
+</html>
+

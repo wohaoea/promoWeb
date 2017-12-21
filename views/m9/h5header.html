@@ -1,0 +1,24 @@
+<%if(goback){%>
+	<div class="h5header"><%=title%></div>
+
+	<%if(!!projiect_info.repayStatus&&((projiect_info.repayStatus!='SETTLED')(projiect_info.repayStatus!='EARLY_REPAY'))){%>
+		<span class="repay"><a href="/m9/repay_list/r1">还款</a>
+		<span id="red_circle"></span>
+		</span>
+
+	<%}%>
+	<%if(goback==true){%>
+	<a href="javascript:history.go(-1);" class="goback">
+		
+	</a>
+	
+	<%}else{%>
+	<a href="<%=goback%>" class="goback"></a>
+	<a href="<%=goback%>" id="goback_text">返回</a>
+	<%}%>
+	<!-- <div class="h5header"><span class="h5title"><%=title%></span><a href="javascript:history.go(-1);" class="goback"></a></div> -->
+<%}else{%>
+<div class="h5header"><%=title%></div>
+<%}%>
+
+<div style="clear: both;background: #E0E0E0;height: 0.1rem"></div>

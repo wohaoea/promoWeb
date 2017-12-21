@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= decodeURIComponent(message)%></title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+        *{margin: 0;padding: 0}
+        body{background: white;}
+        .content{-webkit-box-sizing: border-box;box-sizing: border-box;padding: 0.48rem 0.54rem 1rem 0.54rem;width: 100%;height: 8rem;overflow: hidden;}
+        img{width: 1.2rem;height: 1.2rem;margin-left: 2.6rem;}
+        .p1{font-size: 0.36rem;margin-top: 0.52rem;width: 100%;height: 0.36rem;line-height: 0.36rem;text-align: center;margin-bottom: 0.28rem;}
+        .p2{font-size: 0.24rem;color: #dadada;text-align: center;}
+        .p3{width: 6.4rem;height: 1rem;background: #3296fa;font-size: 0.36rem;color: white;text-align: center;line-height: 1rem;margin-top: 0.86rem;border-radius: 0.1rem;}
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <%if(code=='000'){%>
+    <img src="/imgs/account/callback_success.png"/>
+    <p class="p1"><%= decodeURIComponent(message)%></p>
+    <%}else{%>
+    <img src="/imgs/infoclt/ico-renzheng-shibai.png"/>
+    <p class="p1">
+        <%if(code=='001'){%>
+        <%= decodeURIComponent(message)%>
+        <%}else{%>
+        未知错误
+        <%}%>
+    </p>
+    <%}%>
+    <p class="p3">返回</p>
+</div>
+</body>
+
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src='/js/libs/rem.js' type="text/javascript"></script>
+<script type="text/javascript">
+    var url = '<%=defaultUrl%>';
+    $('.p3').click(function(){
+        window.location.replace(url)
+    })
+</script>
+</html>

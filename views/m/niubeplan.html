@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<meta charset="utf-8"/> 
+		<meta content="yes" name="apple-mobile-web-app-capable"/> 
+		<meta content="yes" name="apple-touch-fullscreen"/> 
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+		<title>懒牛计划详情</title>
+		<script type="text/javascript">
+			var dpr, rem, scale;
+			var docEl = document.documentElement;
+			var fontEl = document.createElement('style');
+			var metaEl = document.querySelector('meta[name="viewport"]');
+			dpr = window.devicePixelRatio || 1;
+			scale = 1 / dpr;
+			rem = docEl.clientWidth * dpr / 10;
+			// 设置viewport，进行缩放，达到高清效果
+			metaEl.setAttribute('content', 'width=' + dpr * docEl.clientWidth + ',initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale + ',user-scalable=yes');
+			// 设置data-dpr属性，留作的css hack之用
+			docEl.setAttribute('data-dpr', dpr);
+			// 动态写入样式
+			docEl.firstElementChild.appendChild(fontEl);
+			fontEl.innerHTML = 'html{font-size:' + rem + 'px!important;}';
+			// 给js调用的，某一dpr下rem和px之间的转换函数
+			window.remTopx = function(v) {
+			    v = parseFloat(v);
+			    return v * rem;
+			};
+			window.pxTorem=function(v) {
+			    v = parseFloat(v);
+			    return v / rem;
+			};
+			window.dpr = dpr;
+			window.rem = rem;
+		</script>
+		 <!-- build:css /css/niubeplan.min.css -->
+	    	<link rel="stylesheet" type="text/css" href="/css/base.css">
+			<link rel="stylesheet" type="text/css" href="/css/niubeplan.css">
+	    <!-- /build -->
+	
+	</head>
+	<body>
+		<h3>计划介绍</h3>
+		<div class="planarea">
+			<div class="planarealeft"></div>
+			<div class="planarearight">
+				<ul>
+					<li><i class="personico"></i>用户投资懒牛计划</li>
+					<li><i class="niuwa"></i>牛娃金融分散匹配优质项目</li>
+					<li><i class="jiekuan"></i>借款方偿还借款本金和利息</li>
+				</ul>
+			</div>
+		</div>
+		 <p>懒牛计划是牛娃金融推出的便捷高效的自动投标工具，懒牛计划自动投标于通过牛娃金融千挑万选、层层审核的优质借款项目，并自动进行分散投资，最大限度的保障投资者的资金安全。</p>
+		<h3 style="margin-top:0.3rem">投资范畴</h3>
+		<div class="fangchou clearfix">
+			<div class="fangchoubox" style="margin-left:0.4rem;">
+				<div class="danbaojiekuan"></div>
+				担保借款
+			</div>
+			<div class="fangchoubox" style="margin-left:0.6rem;">
+				<div class="rongzizhuling"></div>
+				融资租赁
+			</div>
+			<div class="fangchoubox" style="margin-left:0.6rem;">
+				<div class="liudongzijin"></div>
+				流动资金
+			</div>
+			<div class="fangchoubox" style="margin-left:0.6rem;">
+				<div class="xinyongjiekuan"></div>
+				信用借款
+			</div>
+			<div class="fangchoubox" style="margin-left:0.4rem;">
+				<div class="banquanjiaoyi"></div>
+				版权交易
+			</div>
+			<div class="fangchoubox" style="margin-left:0.6rem;"> 
+				<div class="yingshoubaoli"></div>
+				应收保理
+			</div>
+			<div class="fangchoubox" style="margin-left:0.6rem;">
+				<div class="chengduihuipiao"></div>
+				承兑汇票
+			</div>
+		</div>
+		<h3 style="margin-top:0.3rem">计划历程</h3>
+		<div class="licheng"></div>
+		<h3>加入条件</h3>
+		<div class="tiaojianbox">
+			<div class="bix">1000元起</div>
+			<div class="bix">投资金额为1000的整数倍</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/libs/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript">
+	
+</script>

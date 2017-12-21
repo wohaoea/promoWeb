@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>注册</title>
+    <meta name="description" content="注册" />
+    <meta name="keywords" content="注册" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no"/>
+
+    <!-- build:css /css/account.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/account.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+
+    <style>
+        body{
+            background: linear-gradient(to right, #f77a55 0%,#ee5052 100%);
+            background: -moz-linear-gradient(to right, #f77a55 0%,#ee5052 100%);
+            background: -webkit-linear-gradient(to right, #f77a55 0%,#ee5052 100%);
+            background: -o-linear-gradient(to right, #f77a55 0%,#ee5052 100%);
+            background: -ms-linear-gradient(to right, #f77a55 0%,#ee5052 100%);
+        }
+        ::-webkit-input-placeholder { /* WebKit browsers */
+            color:    #afafaf;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    #afafaf;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:    #afafaf;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color:    #afafaf;
+        }
+        .input-item{
+            width: 6rem;
+            height: 0.9rem;
+            margin: 0.3rem auto 0;
+            line-height: 0.9rem;
+        }
+        .input-item input{
+            width: 4.8rem;
+        }
+        .input-item-container{
+            margin: 0.3rem auto 0;
+        }
+        .input-ico{
+            width: 0.36rem;
+            height: 0.42rem;
+            background: url(/imgs/account/sprite3.png) 0 0 no-repeat;
+            background-size: 0.36rem 2.24rem;
+        }
+        .password-ico{
+            background-position-y:-0.48rem;
+        }
+        .identifying-code-ico{
+            background-position-y:-1.8rem;
+        }
+        .sms-ico{
+            background-position-y:-0.92rem;
+        }
+        .recommend-ico{
+            background-position-y:-1.38rem;
+        }
+        .input-item-small{
+            width: 3.8rem;
+            margin-left: 0.2rem;
+        }
+        .input-item-small input{
+            width: 2.5rem;
+        }
+        .get-code{
+            position: relative;
+            left: -0.2rem;
+            background-color: #c2494a;
+            border: none;
+        }
+        .identifying-code{
+            position: relative;
+            left: -0.2rem;
+            border-radius: 4px;
+        }
+        .protocol{
+            width: 6rem;
+            color: #fff;
+        }
+        .protocol a{
+            color: #74b2fc;
+        }
+        .control-btn{
+            width: 6rem;
+            height: 0.9rem;
+            line-height: 0.9rem;
+            background-color: #fbc033;
+        }
+        footer{
+            padding: 0.3rem 0 0.35rem 0;
+            font-size: 0.24rem;
+            color: #fff;
+        }
+        footer p{
+            text-align: center;
+            margin-bottom: 0.2rem;
+        }
+        footer a{
+            color: #76b6ff!important;
+            text-decoration:none
+        }
+        .fixed{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1.14rem;
+            background: url("/imgs/generalize/niuwa-ba-header.png");
+            background-size: cover;
+            z-index: 1;
+        }
+        .fixed .btn{
+            position: absolute;
+            top:0.28rem;
+            right: 0.8rem;
+            width: 1.4rem;
+            height: 0.6rem;
+            text-align: center;
+            line-height: 0.6rem;
+            font-size: 0.24rem;
+            color: #fff;
+            border: 1px solid #fff;
+            box-sizing: border-box;
+        }
+        .shade{
+            /*display: block;*/
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.5;
+            z-index: 2;
+        }
+        .hint{
+            display: none;
+            position: fixed;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            padding-top: 0.6rem;
+            width: 5rem;
+            height: 4.85rem;
+            line-height: 0.5rem;
+            font-size: 0.24rem;
+            color: #999;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 0.1rem;
+            box-sizing: border-box;
+            z-index: 3;
+        }
+        .hint h3{
+            font-size: 0.32rem;
+            font-weight: 500;
+            color: #333;
+        }
+        .hint-content{
+            line-height: 0.5rem;
+        }
+        .close{
+            position: absolute;
+            top:0.36rem;
+            right: 0.36rem;
+            width: 0.26rem;
+            height: 0.26rem;
+            background: url("/imgs/account/close.png");
+            background-size: 0.26rem 0.26rem;
+        }
+        .folde{
+            position: absolute;
+            width: 3.29rem;
+            height: 2.42rem;
+            left: 0.85rem;
+            top:-2.1rem;
+        }
+        .download{
+            position: absolute;
+            left: 0.5rem;
+            bottom: 0.55rem;
+            width: 4rem;
+            height: 0.78rem;
+            line-height: 0.78rem;
+            text-align: center;
+            font-size: 0.3rem;
+            border-radius: 0.08rem;
+            color: #fff!important;
+            background-color: #f76e5c;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+<section class="fixed">
+    <a href="<%=downloadurl%>" class="btn">立即投资</a>
+</section>
+<div class="shade"></div>
+<section class="hint">
+    <img class="folde" src="/imgs/account/hint-bg.png" alt="">
+    <h3 class="hint-title">手机号码已被注册</h3>
+    <div class="hint-content">
+        <!--<p>您的手机号码已注册牛呗app账号</p>-->
+        <!--<p>如是本人操作请下载牛呗app申请借款</p>-->
+        <!--<p>非本人操作请联系客服</p>-->
+        <!--<a style="color: #76b6ff" href="tel:4008846898">400-8846-898</a>-->
+    </div>
+    <a href="<%=downloadurl%>" class="download">立即下载</a>
+    <div class="close"></div>
+</section>
+<img width="100%" src="/imgs/generalize/niuwa-bg1.png" alt="">
+<div class="input-item" style="margin-top: 0.1rem">
+    <div class="input-ico"></div>
+    <input id="phonenum" type="tel" placeholder="请输入手机号码" >
+</div>
+<div class="input-item">
+    <div class="input-ico password-ico"></div>
+    <input id="password" type="password" placeholder="密码（可包含字母、数字或符号）" >
+</div>
+
+<div class="input-item-container">
+    <div class="input-item-small">
+        <div class="input-ico identifying-code-ico"></div>
+        <input id="imgcode" type="url" placeholder="图片验证码" >
+    </div>
+    <img id="refreshimg" class="identifying-code" src="<%= '/pla/generatecaptchareg?' + Date.now()%>" alt="">
+</div>
+<div class="input-item-container">
+    <div class="input-item-small">
+        <div class="input-ico sms-ico"></div>
+        <input id="phonevalidation" type="url" placeholder="短信验证码" >
+    </div>
+    <button id="btnvalidation" class="get-code">获取验证码</button>
+</div>
+
+<div class="input-item">
+    <div class="input-ico recommend-ico"></div>
+    <% if( inviterId ){ %>
+    <span id="pcode"  style="color: #999;margin-left: 0.33rem" ><%=inviterId%></span>
+    <% }else{ %>
+    <input id="pcode" type="url" placeholder="推荐人用户名或手机号（选填）" >
+    <% } %>
+</div>
+
+<div class="protocol">
+    <!--<span class="agreement active"></span>-->
+    <img class="agreement agreed" src="/imgs/gou.png" alt="">
+    <span>我已阅读并同意</span>
+    <a href="/clause">《平台注册协议》</a>
+</div>
+<button id="regbtn" class="control-btn">注册</button>
+<img width="100%" src="/imgs/generalize/niuwa-bg2.png" alt="">
+<footer>
+    <p class="">客服电话：<a href="tel:4008846898">400-8846-898</a></p>
+    <p class="">工作日09:00-21:00节假日09:00-18:00</p>
+</footer>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.sha256.min.js"></script>
+<script src="/js/libs/h5rem.js"></script>
+<%include ./../account/share.html %>
+</body>
+</html>
+
+
+<!-- build:js /js/generalize.niuwa.min.js -->
+<script src="/js/g.js"></script>
+<script src="/js/generalize/niuwa.js"></script>
+<!-- /build -->

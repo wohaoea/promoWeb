@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>牛呗推广系统</title>
+    <meta name="description" content="牛呗推广系统" />
+    <meta name="keywords" content="牛呗推广系统" />
+    <% include header.html %>
+</head>
+<body>
+<% include diaoding.html%>
+<div class="container1">
+    <!--推广大使-->
+    <%if(myPop.roleType==1){%>
+    <ul class="spr-ulbox1">
+        <li>当前角色<span>推广大使</span></li>
+        <li>我的上级<span><%if(typeof(myPop.higherLevelName)!='undefined'){%><%=myPop.higherLevelName%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><%=myPop.higherLevelTelx%></span></li>
+        <li>下属人数<span><%=myPop.belongPeopleCount%>人</span></li>
+        <li>本周业绩<span><%=myPop.weekAchievement%>个</span></li>
+    </ul>
+
+    <!--兼职 代理-->
+    <%}else if(myPop.roleType==2 || myPop.roleType==3){%>
+    <ul class="spr-ulbox1">
+        <li>当前角色<span><%if(myPop.roleType==2){%>代理<%}else{%>兼职<%}%></span></li>
+        <li>我的上级<span><%if(myPop.higherLevelName){%><%=myPop.higherLevelName%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><%=myPop.higherLevelTelx%></span></li>
+        <li>本周业绩<span><%=myPop.weekAchievement%>个</span></li>
+    </ul>
+
+    <!--全职-->
+    <%}else if(myPop.roleType==4){%>
+    <ul class="spr-ulbox1">
+        <li>当前角色<span>全职</span></li>
+        <li>下属人数<span><%=myPop.belongPeopleCount%>人</span></li>
+        <li>本周业绩<span><%=myPop.weekAchievement%>个</span></li>
+    </ul>
+    <%}%>
+    <ul class="spr-ulbox1 spr-ulbox2">
+        <%if(myPop.roleType==4){%>
+        <li><a href="/spread/p/tlist">管理推广大使 <i class="link2"></i></a></li>
+        <li><a href="/spread/p/jlist">管理兼职 <i class="link2"></i></a></li>
+        <%}%>
+        <li><a href="/spread/p/mycount">业绩统计 <i class="link2"></i></a></li>
+        <li><a href="/spread/p/detail">业绩明细 <i class="link2"></i></a></li>
+    </ul>
+
+</div>
+<%if(myPop.roleType==1){%><div class="tdi" id="delMy" data="1">解除推广身份</div><%}%>
+<%if(myPop.roleType==2){%><div class="tdi" id="delMy" data="2">解除推广身份</div><%}%>
+<%if(myPop.roleType==3){%><div class="tdi" id="delMy" data="3">解除推广身份</div><%}%>
+</body>
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.iDialog.js"></script>
+
+<!-- build:js /js/spread.min.js -->
+<script src="/js/g.js"></script>
+<script type="text/javascript" src="/js/spread.js"></script>
+<!-- /build -->

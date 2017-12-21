@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>摇一摇</title>
+    <!-- build:css /css/thanksgivingday.min.css -->
+    <link rel="stylesheet" href="/css/common/base.css">
+    <link rel="stylesheet" href="/css/thanksGiving_active.css">
+    <!-- /build -->
+    <script src="/js/libs/rem.js"></script>
+</head>
+<body>
+    <input type="hidden" id="isLogin" value="<%=isLogin%>">
+    <input type="hidden" id="val" name="" value="<%=activityInfo.ingotsCount%>">
+    <input type="hidden" id="freeCount" name="" value="<%= activityInfo.freeDrawTimes %>">
+    <input type="hidden" id="awardCount" name="" value="<%= activityInfo.awardDrawTimes %>">
+    <div class="getmoney">
+        <h1 class="textcenter" style="margin-bottom: .44rem;font-size:.36rem">恭喜您获得</h1>
+        <p class="font32 textcenter"><img src="/imgs/thanksgiving/niu_money.png" alt="" style="width:.39rem;height:.24rem"> 牛元宝<span class="YBcount"></span>个</p>
+    </div>
+    <div class="nologin">
+        <div class="hidebox">
+            <p class="textcenter" id="tips" style="font-size:.24rem">请登录后参与活动</p>
+        </div>
+    </div>
+    <div class="boxShadow">
+        <div class="activeRules">
+            <div class="close" onclick="$('.activeRules,.boxShadow').hide();"></div>
+            <h1 class="title">活动规则</h1>
+            <p>1. 资金开户用户每日登录可获得 3 次免费摇奖机会，未开户用户每日登录可获得 1 次免费摇奖机会;</p>
+            <p>2. 新用户完成注册当日可获得 1 次奖励摇奖机会;</p>
+            <p>3. 用户完成资金开户当日可获得 2 次奖励摇奖机会;</p>
+            <p>4. 单笔投资懒牛计划每满 2000 元即可获得 1 次奖励摇奖机会;</p>
+            <p>5. 活动期间分享活动内容即可获得 1 次奖励摇奖机会;</p>
+            <p>6. 免费摇奖机会当日有效，不累计;奖励摇奖机会活动期内有效;</p>
+            <p>7. 2017 年 9 月 1 日前注册且累计投资懒牛计划满 5 万元的用户赠送 1000 牛元宝;</p>
+            <p>8. 牛元宝兑换奖品截止日期为2017-12-24;</p>
+            <p>9. 实物奖励将于活动结束后 5 个工作日内联系中奖人员并进行发放;</p>
+            <p>10. 中奖后请保持手机畅通，如在活动结束后10个工作日内未能联系上，将视为放弃奖励;</p>
+            <p>11. 本活动最终解释权归上海牛娃互联网金融信息服务有限公司所有。</p>
+            <p>12. 本活动与苹果公司无关</p>
+        </div>
+        <div class="drawing">
+            <div class="hand"></div>
+        </div>
+        <div class="drawresult hasmoney">
+            <div class="pic2"></div>
+            <h1 class="font32 textcenter" style="margin-bottom: .44rem">恭喜您获得</h1>
+            <p class="font32" style="margin-bottom: .3rem">
+                <span style="display:inline-block;width:1.6rem">牛元宝：</span>
+                <img src="/imgs/thanksgiving/niu_money.png" style="width:.57rem;" alt=""> 
+                <span class="YBcount">100</span>个</p>
+            <div class="entity font32" style="margin-bottom: .22rem">
+                <span class="alignTop">实物奖励：</span>
+                <ul class="inline">
+                </ul> 
+            </div> 
+            <p class="font24" style="margin-bottom: .65rem">活动结束后 5 个工作日内客服将联系您发放奖品，请保持电话畅通。</p>
+            <div class="submit" onclick="$('.hasmoney,.boxShadow').hide()">确定</div>
+        </div>
+        <div class="drawresult hasnomoney">
+            <div class="pic2"></div>
+            <h1 class="font32 textcenter" id="getAwardName" style="margin-bottom: .44rem">恭喜您获得</h1>
+            <p class="font24" style="margin-bottom: .45rem;text-align:left">活动结束后 5 个工作日内客服将联系您发放奖品，请保持电话畅通。</p>
+            <img id="awardImage">
+            <div class="submit" onclick="$('.hasnomoney,.boxShadow').hide()">确定</div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="absolute rules" onclick="$('.activeRules,.boxShadow').show();">活动规则</div>
+        <div class="absolute share">分享</div>
+        <div class="official"></div>
+        <div class="activeTime">活动时间：2017.11.23-12.20</div>
+        <div class="pic">
+            <div class="chance">
+                <span class="free" id="free">免费机会：<%= activityInfo.freeDrawTimes %></span>
+                <span class="award" id="award" data-awardDrawTimes="<%= activityInfo.awardDrawTimes %>">奖励机会：<%= activityInfo.awardDrawTimes>99?'99+':activityInfo.awardDrawTimes %></span>
+            </div>
+        </div>
+        <div class="convert">
+            <div class="fl niu_money">
+                <img src="/imgs/thanksgiving/niu_money.png" alt="">
+                <span>牛元宝：</span>
+                 <span class="counter" data-ingotsCount="<%= activityInfo.ingotsCount %>"><%= activityInfo.ingotsCount>9999?'9999+':activityInfo.ingotsCount %></span> 
+            </div>
+            <div class="fr btn" onclick="window.location.href='/thanksGiving/conversion'">兑换</div>
+        </div>
+        <div class="draw">
+            <div class="once btn fl"></div>
+            <div class="ten btn fr"></div>
+        </div>
+        <div class="title">
+            <span class="line fl"></span>
+            活动奖品
+            <span class="line fr"></span>
+        </div>
+        <ul class="prize">
+            <li class="category fl">
+                <div class="top">
+                    <div class="yuanbao"></div>
+                </div>
+                <div class="bottom">牛元宝</div>
+            </li>
+            <li class="category fl">
+                <div class="top">
+                    <div class="award228"></div>
+                </div>
+                <div class="bottom">228大礼包</div>
+            </li>
+            <li class="category fl">
+                <div class="top">
+                    <div class="award428"></div>
+                </div>
+                <div class="bottom">428大礼包</div>
+            </li>
+            <li class="category fl">
+                <div class="top">
+                    <div class="award828"></div>
+                </div>
+                <div class="bottom">828大礼包</div>
+            </li>
+        </ul>
+        <div class="title">
+            <span class="line fl"></span>
+            中奖名单
+            <span class="line fr"></span>
+        </div>
+        <div class="bigbox">
+            <ul class="awardList" id="awardList">
+            </ul>
+        </div>
+        <footer>
+            本活动最终解释权归上海牛娃互联网金融信息服务有限公司所有
+        </footer>
+    </div>
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+    <script src="/js/libs/jquery.waypoints.min.js"></script>
+    <script src="/js/libs/jquery.countup.js"></script>
+    <!-- build:js /js/thanksgiving.min.js -->
+    <script src="/js/thanksgiving.js"></script>
+    <!-- /build -->
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- build:css /css/m11/yibao_bankcard.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />   
+    <link rel="stylesheet" type="text/css" href="/css/m11/yibao_bankcard.css"> 
+    <!-- /build -->
+    <%include ./h5script10.html%>
+
+</head>
+
+<body>
+    <div class="bind"><span class="_left">已绑定银行卡</span> <span class="_right"><%=bindCards%></span></div>
+    <% if(!!card1){%>
+    <div class="bind1"><span class="_left">银行卡认证1</span> <span class="_right card"><%=cardNo1%></span></div>
+    <%}else{%>
+    <div class="bind1"><span class="_left">银行卡认证1</span> <input type="tel"  placeholder="请输入银行卡号" class="_right put1" onkeyup="value=value.replace(/[^\d]/g,'') "></div>
+    <%}%>
+    
+    <% if(!!card2){%>
+    <div class="bind2"><span class="_left">银行卡认证2</span> <span class="_right card"><%=cardNo2%></span></div>
+    <%}else{%>
+    <div class="bind2"><span class="_left">银行卡认证2</span> <input type="tel"  placeholder="请输入银行卡号" class="_right put2" onkeyup="value=value.replace(/[^\d]/g,'') "></div>
+    <%}%>
+    <div class="_container">
+        <p class="pp">1.已绑定提现银行卡及两张新认证的银行卡需为不同银行的三张</p>
+        <p class="p">银行卡</p>
+        <p class="pp">2.用于安全升级认证的银行卡须为银行借记卡，不支持存折、信</p>
+        <p class="p">用卡认证</p>
+        <p class="pp">3.支持认证银行：中国银行、工商银行、建设银行、 民生银行、</p>
+   
+  
+        <p class="p">光大银行、兴业银行、浦发银行、邮储银行、</p>
+        <p class="p">农业银行、浦发银行、华夏银行、招商银行、</p>
+        <p class="p">交通银行、中信银行、广发银行、农业银行</p>
+    </div>
+    <div class="div">提交</div>
+    <div class="loading" >
+        
+    </div>
+    <div class="load">银行卡认证中...</div>
+</body>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<!-- build:js /js/m11/yibao_bankcard.min.js -->
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src='/js/m11/yibao_bankcard.js'></script> 
+<!-- /build -->
+</html>

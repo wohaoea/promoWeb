@@ -1,0 +1,40 @@
+ <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/spread.min.css -->
+    <link href="/css/spread.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/idialog.css">
+    <!-- /build -->
+
+    <script>
+        if(top != self){
+            location.href = "about:blank";
+        }
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return 'no';
+            }else{
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr,rem,scale,docEl=document.documentElement,fontEl=document.createElement("style"),metaEl=document.querySelector('meta[name="viewport"]');
+        var u = (window.navigator.appVersion.match(/android/gi),window.navigator.appVersion.match(/iphone/gi));
+        dpr=window.devicePixelRatio||1;
+        if(u && window.devicePixelRatio>=3){
+            dpr=3;
+        }else if(window.devicePixelRatio>=2){
+            dpr=2;
+        }else{
+            dpr=1;
+        };
+        var calcWidth=docEl.clientWidth;
+        if(calcWidth>540){
+            calcWidth=540;
+        }
+        rem=calcWidth*dpr/10;scale=1/dpr;metaEl.setAttribute("content","width="+dpr*calcWidth+",initial-scale="+scale+",maximum-scale="+scale+", minimum-scale="+scale+",user-scalable="+ weixing);docEl.setAttribute("data-dpr",dpr);docEl.firstElementChild.appendChild(fontEl);fontEl.innerHTML="html{font-size:"+rem+"px!important;}";
+        window.rem2px=function(a){a=parseFloat(a);return a*rem};window.px2rem=function(a){a=parseFloat(a);return a/rem};
+    </script>
+

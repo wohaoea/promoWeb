@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>牛娃合伙人</title>
+    <meta name="description" content="牛娃合伙人" />
+    <meta name="keywords" content="牛娃合伙人" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- build:css /css/common/reset.min.css -->
+    <link rel="stylesheet" type="text/css" href="/css/common/reset.css"/>
+    <!-- /build -->
+    <script type="text/javascript" src="/js/libs/h5rem.js"></script>
+    <style>
+        .join{
+            padding: 0.2rem 0 0.1rem;
+            color: #fff;
+            background-color: #eb4b4b;
+            text-align: center;
+        }
+        .join p{
+            font-size: 0.3rem;
+            font-weight: 600;
+        }
+        .join p:last-of-type{
+            margin-top: 0.08rem;
+            font-size: 0.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <img width="100%" src="/imgs/i_niuwa/partner.png" alt="">
+    <div class="join">
+        <p>加入牛娃合伙人</p>
+        <p>您的待收本金需要>=<span>5000</span>元</p>
+    </div>
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+    <script src="/js/libs/h5dialog.js"></script>
+    <script>
+        $(function(){
+            /**弹出提示消息**/
+            function tipMsg(msg, time) {
+                new window.idialog().show({
+                    time: time ? time : 2000,
+                    content: msg
+                });
+            }
+            var diabled = true;
+            $('.join').click(function(){
+                if( !diabled )return;
+                diabled = false;
+                $.get('/m5/pra/savePartner',{
+
+                },function(result){
+                    diabled = true;
+                    if(result.result == 'fail')return tipMsg(result.resultMessage);
+                    tipMsg(result.msg);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

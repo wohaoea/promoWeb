@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <meta charset="utf-8" />
+        <title>牛呗借款</title>
+        <meta name="description" content="牛呗是一款提供大学生信用借贷的优质APP,提供大学生信用贷款.自动审批,贷款飞速到账,信用借款想怎么花就怎么花.牛呗APP,最好的大学生信用借贷APP." />
+        <meta name="keywords" content="牛呗,牛呗官网,牛呗APP,大学生信用借贷" />
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="email=no" name="format-detection"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <!-- build:css /css/h5reg_new.min.css -->
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5reg_new.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+        <style>
+            .footer2{
+                position: static;
+                width: 100%;
+                font-size: 0.24rem;
+                line-height: inherit;
+                color: white;
+                background-color: #f49f2a;
+                z-index: 100;
+            }
+        </style>
+        <% if( typeof sid !='undefined'  ){ %>
+            <style>
+                .reglist{margin-top:0.3rem !important;}
+                button.yellow{margin-top:0.3rem;}
+                .niubei_zhuce{margin-top:0.3rem }
+            </style>
+        <% } %>
+    </head>
+<body style="background-color:#f49f2a;">
+    <%include ./rem.html%>
+    <div class="shade" ></div>
+    <img class="loading" src="/imgs/langdon/loading.gif" alt="">
+    <% if( typeof sid !='undefined'  ){ %>
+    <img src="/imgs/m3/zhuoluye_new.jpg" alt="" style="width:7.5rem;">
+    <% }else{ %>
+    <img src="/imgs/m3/zhuoluye4.png" alt="" style="width:7.5rem;">
+    <% } %>
+    <img src="/imgs/niubeiloan.png" alt="" style="width:7.5rem;height: 1.2rem;z-index: 9999"  class="niubeiloan">
+    <!-- start -->
+    <div class="regbodyh5 container">
+        <div class="reglist" style="margin-top:0 !important ">
+            <input type="tel" placeholder="请输入手机号" id="phonenum" onkeyup="this.value=this.value.replace(/\D/g,'')">
+            <div class="phoneico"></div>
+        </div>
+        <div class="reglist">
+            <input type="password" placeholder="请设置6－18位密码" id="password">
+            <input type="hidden" id="pwdhide">
+            <div class="mimaico"></div>
+        </div>
+
+        <div class="rlist clearfix" style="width: 6rem;margin: 0">
+            <div class="reglist small">
+                <input type="tel" placeholder="短信验证码" id="phonevalidation" onkeyup="this.value=this.value.replace(/\D/g,'')">
+                <div class="duanxinico"></div>
+            </div>
+            <button class="yellow" id="btnvalidation" data-ca="btnvalidation">获取验证码</button>
+        </div>
+        <div class="reglist" style="display: <%= typeof sid !='undefined'  ? 'block' : 'none' %>">
+            <input type="text" placeholder="邀请码(推荐人用户名或手机号)" id="invite-code">
+            <div class="invite-code"></div>
+        </div>
+        <div class="reglist clearfix" style="background:none;height:0.4rem;line-height:0.4rem;">
+            <div class="agree agreed"></div>
+            <div class="yuedu">我已阅读并同意<span onclick="javascript:window.location.href='/clause'">《平台注册协议》</span></div>
+        </div>
+        <img src="/imgs/m3/niubei_zhuce.png" alt="" class="niubei_zhuce">
+    </div>
+    <div class="registered phone_used">
+        <div class="content">
+
+            <p>您的手机号码已注册牛呗app账号</p>
+            <p>如是本人操作请下载牛呗app申请借款</p>
+            <p>非本人操作请联系客服</p>
+            <p><a id="kefu_number">400-8864-898</a></p>
+            <img src="/imgs/m3/niubei_down.png" alt="" class="niubei_down">
+        </div>
+        <p class="title">手机号码已被注册</p>
+        <img src="/imgs/m3/niubei_closeico.png" alt="" class="niubei_closeico">
+    </div>
+    <div class="registered success" >
+        <div class="content">
+            <p>您已获得千元借款额度</p>
+            <p>赶快下载牛呗APP申请借款吧</p>
+            <img src="/imgs/m3/niubei_down.png" alt="" class="niubei_down">
+        </div>
+        <p class="title">恭喜您注册成功</p>
+        <img src="/imgs/m3/niubei_closeico.png" alt="" class="niubei_closeico" id="reload">
+    </div>
+    <div class="registered tuxing">
+        <div class="content">
+            <p>请输入右图中的验证码</p>
+            <div class="rlist clearfix" style="width: 5rem !important">
+            <div class="reglist small">
+                <input type="text" placeholder="图形验证码" id="imgcode" style="border:2px solid #bfbfbf;width: 4.28rem;height: 0.84rem;padding-left:0;margin-left:0.3rem;text-indent: 0.3rem ">
+            </div>
+            <img  style=" cursor: pointer; float: right;width: 1.1rem;height: 0.5rem; border-radius: 0.12rem;position: absolute;top: 0.58rem;right:0.5rem;z-index: 100" id="refreshimg" class="fl"/> 
+        </div>
+            <img src="/imgs/m3/niubei_cancle.png" alt="" class="niubei_cancle">
+            <img src="/imgs/m3/niubei_confirm.png" alt="" class="niubei_confirm">
+        </div>
+        <p class="title">请输入验证码</p>
+        <img src="/imgs/m3/niubei_closeico.png" alt="" class="niubei_closeico" id="closeicn">
+    </div>
+    <!-- end -->
+    <div class="footer2">
+        <p class="phone2" style="padding-bottom: 0.05rem">
+            客服电话: <span>400-8846-898</span>
+        </p>
+        <p class="time" style="padding-bottom: 0.05rem">工作日09:00-21:00 节假日09:00-18:00</p>
+        <p style="padding-bottom: 0.1rem">上海牛娃互联网金融信息服务有限公司</p>
+    </div>
+</body>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.sha256.min.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<!-- build:js /js/niubei_new.min.js -->
+<script type="text/javascript" src="/js/niubei_new.js"></script>
+<!-- /build -->
+<script>
+    var urlAndroid = "<%=urlAndroid%>"
+    var urlIOS = "<%=urlIOS%>"
+
+</script>
+</html>

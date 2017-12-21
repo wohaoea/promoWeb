@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>签到有奖</title>
+    <!-- build:css /css/nwusersign.min.css -->
+    <link rel="stylesheet" href="/css/userSignCommon.css">
+    <link rel="stylesheet" href="/css/nwUserSign/usersign.css">
+    <link rel="stylesheet" href="/css/animate.css"> 
+    <!-- /build -->
+    <script src="/js/libs/rem.js"></script>
+</head>
+<body>
+    <div class="shadow">
+        <div class="pop-up">
+            <div class="tipsInfo">
+                <p>您还有奖励未领取不要错过哦~</p>
+            </div>
+            <div class="btn">
+                <div class="btn1 fl">放弃奖励</div>
+                <div class="btn2 fl">再看看</div>
+            </div>
+        </div>
+    </div>
+    <div class="toast">
+        <p class="success">恭喜您已领取成功</p>
+    </div>
+    <div class="sign">
+        <h1 class="days">您已累计签到</h1>
+        <div class="dayNo" data-dayNo="<%= signCount %>">
+            <div class="border fl">
+                <div class="ten" data-ten="<%= parseInt(signCount/10) %>"><%= parseInt(signCount/10) %></div>
+                <div class="ten"></div>
+            </div>
+            <div class="border fr" id="bits">
+                <div class="bits" data-bits="<%= signCount%10 %>"><%= signCount%10 %></div> 
+                <div class="bits"></div>
+            </div>
+        </div>
+        <div class="signAward">
+            <div class="niu"></div>
+            <% for(var i = 0;i < dayArr.length;i++){ %>
+                <% if(data[awardArr[i]]=='HAD_DRAW'){ %>
+                    <div class="day<%= dayArr[i] %> award getDay<%= dayArr[i] %>" data-date="day<%= dayArr[i] %>" data-isDraw='<%= data[awardArr[i]] %>'>
+                        <div class="getAward" data-award='<%= awardArr[i] %>'></div>
+                        <div class="tips"></div>
+                    </div>
+                <% }else{ %>
+                    <div class="day<%= dayArr[i] %> award" data-date="day<%= dayArr[i] %>" data-isDraw='<%= data[awardArr[i]] %>'>
+                        <div class="getAward" data-award='<%= awardArr[i] %>'></div>
+                        <% if(data[awardArr[i]]=='NO_DRAW'){ %>
+                            <div class="tips" style="display:block"></div>
+                        <% }else{ %>
+                            <div class="tips"></div>
+                        <% } %>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+        <% if(url){ %>
+            <% if(url=='toast'){ %>
+                <div class="toast1 submit"></div>
+            <% }else{ %>
+                <a class="tologin submit" href="<%= url %>"></a>
+            <% } %>
+        <% }else{ %>
+            <% if(isTodaySign){ %>
+                <div class="hasSign submit" data-isTodaySign="<%= isTodaySign %>"></div>
+            <% }else{ %>
+                <div class="signBtn submit" data-isTodaySign="<%= isTodaySign %>"></div>
+            <% } %>
+        <% } %>
+        <div class="signtips">
+            <h1 style="font-size:.3rem;line-height:.3rem;margin-bottom:.12rem">签到说明</h1>
+            <p>1. 累计签到满足条件即可点击领取相应的奖励;</p>
+            <p>2. 通过账户的奖励管理可查看获得奖励的情况;</p>
+            <p>3. 本活动最终解释权归上海牛娃互联网金融信息服务有限公司所有。</p>
+            <p>4. 本活动与苹果公司无关</p>
+        </div>
+    </div>
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+    <!-- build:js /js/nwusersign.min.js -->
+    <script src="/js/nwusersign.js"></script>
+    <!-- /build -->
+    
+</body>
+</html>

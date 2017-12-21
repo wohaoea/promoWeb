@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>注册</title>
+    <meta name="description" content="注册" />
+    <meta name="keywords" content="注册" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no"/>
+
+    <!-- build:css /css/account.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/account.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+
+</head>
+<body>
+    <img width="100%" src="/imgs/account/login-banner.png" alt="">
+    <div class="input-item">
+        <div class="input-ico"></div>
+        <input id="phonenum" type="tel" placeholder="请输入手机号码" >
+    </div>
+    <div class="input-item">
+        <div class="input-ico password-ico"></div>
+        <input id="password" type="password" placeholder="密码（可包含字母、数字或符号）" >
+    </div>
+    <div class="input-item-container">
+        <div class="input-item-small">
+            <div class="input-ico identifying-code-ico"></div>
+            <input id="imgcode" type="text" placeholder="图像验证码" >
+        </div>
+        <img id="refreshimg" class="identifying-code" src="<%= '/pla/generatecaptchareg?' + Date.now()%>" alt="">
+    </div>
+
+    <div class="input-item-container">
+        <div class="input-item-small">
+            <div class="input-ico sms-ico"></div>
+            <input id="phonevalidation" type="text" placeholder="短信验证码" >
+        </div>
+        <button id="btnvalidation" class="get-code">获取验证码</button>
+    </div>
+
+    <div class="input-item">
+        <div class="input-ico recommend-ico"></div>
+        <input id="pcode" type="text" placeholder="推荐人用户名或手机号（选填）" >
+    </div>
+
+    <div class="protocol">
+        <!--<span class="agreement active"></span>-->
+        <img class="agreement agreed" src="/imgs/gou.png" alt="">
+        <span>我已阅读并同意</span>
+        <a href="/clause">《平台注册协议》</a>
+    </div>
+    <button id="regbtn" class="control-btn">注册</button>
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+    <script src="/js/libs/jquery.sha256.min.js"></script>
+    <script src="/js/libs/h5rem.js"></script>
+    <%include ./share.html %>
+</body>
+</html>
+
+
+<!-- build:js /js/register.min.js -->
+<script src="/js/g.js"></script>
+<script src="/js/account/register.js"></script>
+<!-- /build -->

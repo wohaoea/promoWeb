@@ -1,0 +1,74 @@
+body {
+    background: #ef2933;
+}
+.jiaxipc-banner {
+    height: 398px;
+    width: 100%;
+    background: url(/imgs/m8/jiaxibanner.jpg) center center no-repeat;
+}
+
+/* .jiaxipc-invest-left{
+    width: 680px;
+    height: 100%;
+    background-color: #f13233;
+}
+.jiaxipc-invest-jine{
+    width: 430px;
+    margin-left: 22px;
+    display: inline-block;
+}
+.jiaxipc-invest-shouyi{
+    width: 200px;
+    display: inline-block;
+}
+.jiaxipc-touzijine{
+    font-size: 20px;
+}
+.jiaxipc-qujian{
+
+}
+
+ */
+.jiaxipc-invest-div {
+    color: #ffffff;
+    margin: auto;
+    width: 921px;
+    margin-top: 60px;
+    height: 99px;
+    background: url(/imgs/m8/invest-item.png);
+}
+.jiaxipc-invest-div1 {
+    background-position: 0 0;
+}
+.jiaxipc-invest-div4 {
+    background-position: 0 100px;
+}
+.jiaxipc-invest-div3 {
+    background-position: 0 200px;
+}
+.jiaxipc-invest-div2 {
+    background-position: 0 300px;
+}
+.jiaxipc-invest-btn {
+    width: 160px;
+    height: 60px;
+    background: url(/imgs/m8/invest-btn.png) center center no-repeat;
+    border-radius: 15px;
+    position: relative;
+    right: 40px;
+    top: 20px;
+    float: right;
+}
+.jiaxipc-desc {
+    color: #ff9090;
+    font-size: 20px;
+    line-height: 40px;
+}
+.jiaxipc-desc-div {
+    padding: 40px;
+    margin: 40px auto;
+    border-radius: 15px;
+    width: 920px;
+    height: 200px;
+    background: #c31226;
+}

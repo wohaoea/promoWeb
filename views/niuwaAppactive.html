@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>活动中心</title>
+    <link rel="stylesheet" href="/css/common/base.css">
+    <style>
+        body{
+            background-color: #f1f1f1
+        }
+        .activeList li{
+            width: 6.9rem;
+            height: 2.8rem;
+            margin: .22rem auto 0;
+            position: relative;
+        }
+        .activeList li a {
+            width: 100%;
+            height: 100%;
+        }
+        .activeList li img{
+            width: 100%;
+            height: 100%;
+            vertical-align: bottom
+        }
+        .boxShadow{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            position: absolute;
+            left: 0;
+            top: 0;       
+        }
+        .fontStyle{
+            width: 100%;
+            height: 100%;
+            display: flex;
+    	    justify-content:center;
+            align-items:center;
+            font-size: .28rem;
+            font-weight: 600;
+            color: #fff; 
+        }
+        .activeList .line{
+            width: 1rem;
+            height: .02rem;
+        }
+        .tips{
+            margin: 0 .4rem;
+        }
+        .noactive{
+            /* text-align: center; */
+            width: 100%;
+            height: 100%;
+            display: flex;
+    	    justify-content:center;
+            align-items:center;
+            position: absolute;
+            left: 0;
+            top: 0
+        }
+    </style>
+    <script src="/js/libs/rem.js"></script>
+</head>
+<body>
+    
+        <% if(list.length !== 0){ %>
+            <% for(var i = 0;i < list.length;i++) { %>
+                <ul class="activeList">
+                    <li>
+                        <% if(list[i].openStatus == 'OPENING') { %>
+                            <div class="fontStyle" onclick="getActiveInfo('<%= list[i].id %>')">
+                                <img src="<%= list[i].imageURL %>" alt="" width="100%">
+                            </div>
+                        <% }else if(list[i].openStatus == 'WAIT_OPEN') { %>
+                            <div class="boxShadow fontStyle" onclick="getActiveInfo('<%= list[i].id %>')">
+                                <img class="line" src="/imgs/activeline.png" alt="">
+                                <span class="tips">敬请期待</span>
+                                <img class="line" src="/imgs/activeline.png" alt="">
+                            </div>
+                            <img src="<%= list[i].imageURL %>" alt="" width="100%">
+                        <% }else if(list[i].openStatus == 'CLOSED'){ %>
+                            <div class="boxShadow fontStyle" onclick="getActiveInfo('<%= list[i].id %>')">
+                                <img class="line" src="/imgs/activeline.png" alt="">
+                                <span class="tips">已结束</span>
+                                <img class="line" src="/imgs/activeline.png" alt="">
+                            </div>
+                            <img src="<%= list[i].imageURL %>" alt="" width="100%">
+                        <% } %>
+                        
+                    </li>
+                </ul>
+            <% } %>
+        <% }else{ %>
+            <p class="noactive">暂无活动</p>
+        <% } %>
+    
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+    <script>
+        function getActiveInfo(activeId){
+            $.post('/niuwaApp/getActiveInfo',{activeId: activeId},function(data){
+                if(data && data.linkURL){
+                    window.location.href = data.linkURL;
+                }
+            })
+        }
+    </script>
+</body>
+</html>

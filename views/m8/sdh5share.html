@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>和讯牛娃商城纳新</title>
+    <meta name="description" content="和讯牛娃商城纳新" />
+    <meta name="keywords" content="和讯牛娃商城纳新" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/nx.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/nx.css">
+    <!-- /build -->
+
+    <script>
+    if(top != self){  
+        location.href = "about:blank";
+    }
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return 'no';
+            }else{
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr,rem,scale,docEl=document.documentElement,fontEl=document.createElement("style"),metaEl=document.querySelector('meta[name="viewport"]');
+        var u = (window.navigator.appVersion.match(/android/gi),window.navigator.appVersion.match(/iphone/gi));
+        dpr=window.devicePixelRatio||1;
+        if(u && window.devicePixelRatio>=3){
+            dpr=3;
+        }else if(window.devicePixelRatio>=2){
+            dpr=2;
+        }else{
+            dpr=1;
+        };
+        rem=docEl.clientWidth*dpr/10;scale=1/dpr;metaEl.setAttribute("content","width="+dpr*docEl.clientWidth+",initial-scale="+scale+",maximum-scale="+scale+", minimum-scale="+scale+",user-scalable="+ weixing);docEl.setAttribute("data-dpr",dpr);docEl.firstElementChild.appendChild(fontEl);fontEl.innerHTML="html{font-size:"+rem+"px!important;}";
+        window.rem2px=function(a){a=parseFloat(a);return a*rem};window.px2rem=function(a){a=parseFloat(a);return a/rem};
+    </script>
+</head>
+<body>
+    <div class="topheader"></div>
+    <section class="title">历史活期收益6.6%就在牛天利！</section>
+    <section class="redpacketbox">
+        <div class="redpacketbg">
+            <div class='yuan'><%- utils.Money(dataMoney)%><span>元</span></div>
+        </div>
+        <p>赶快分享到朋友圈</p>
+        <p>和您的小伙伴一起来抢红包吧！</p>
+    </section>
+    <div class="btnshare"></div>
+</body>
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<!-- build:js /js/nxhd.min.js -->
+<script type="text/javascript" src='/js/nxhd.js'></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<!-- -->
+<script type="text/javascript">
+    var shareRedId='<%= typeof(shareRedId)=='undefined'?'':shareRedId%>';
+    //alert();
+   // alert('<%=wxShareOpt.timespan%>'+'---------'+'<%=wxShareOpt.noncestr%>'+'-----'+'<%=wxShareOpt.signature%>');
+      wx.config({
+        debug: false,
+        appId: '<%=wxShareOpt.nwwxappid%>',
+        timestamp:'<%=wxShareOpt.timespan%>' , 
+        nonceStr: '<%=wxShareOpt.noncestr%>', 
+        signature: '<%=wxShareOpt.signature%>',
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ']
+    });
+
+    wx.ready(function(){
+        wx.onMenuShareTimeline({
+            imgUrl: '<%= config.base.wxshareurl%>/imgs/nx/nwhb.jpg', // 分享图标
+            title: '小伙伴们来抢吧~',
+            desc: '我在和讯牛娃商城为你抢的200元红包已打包好，快来领取吧~',
+            link: '<%= config.base.wxshareurl%>/m8/sdh5lq/'+shareRedId
+        });
+
+
+        wx.onMenuShareAppMessage({
+            imgUrl: '<%= config.base.wxshareurl%>/imgs/nx/nwhb.jpg', // 分享图标
+            title: '小伙伴们来抢吧~',
+            desc: '我在和讯牛娃商城为你抢的200元红包已打包好，快来领取吧~',
+            link: '<%= config.base.wxshareurl%>/m8/sdh5lq/'+shareRedId
+        });
+
+        wx.onMenuShareQQ({
+            imgUrl: '<%= config.base.wxshareurl%>/imgs/nx/nwhb.jpg', // 分享图标
+            title: '小伙伴们来抢吧~',
+            desc: '我在和讯牛娃商城为你抢的200元红包已打包好，快来领取吧~',
+            link:'<%= config.base.wxshareurl%>/m8/sdh5lq/'+shareRedId
+        });
+    });
+</script>

@@ -1,0 +1,10 @@
+ <% peopleHelpDetails.listData.forEach(function(v,k){%>
+    <li class="clearfix">
+        <div class="wximg"><img src='<%= v.headPic%>' /></div>
+        <div class="wxinfo">
+            <p><%= utils.subString(v.nickName,16)%><span><%= v.addRateTime.split(' ')[0]%></span><span><%= (v.addRateTime.split(' ')[1]).split(':')[0]+'：'+(v.addRateTime.split(' ')[1]).split(':')[1]%></span></p>
+            <p><span style='padding-left:0;line-height:0.6rem'><%= tishiyu(Math.random())%></span></p>
+        </div>
+        <div class="moneylist">+<%=v.redAmount%>%</div>
+    </li> 
+<%})%>     

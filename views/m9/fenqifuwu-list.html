@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/fenqifuwu-list.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/m9/fenqifuwu-list.css">
+    <!-- /build -->
+    <%include ./h5script.html%>
+    <style>
+        .h5header {
+            background: white;
+            font-size: 0.38rem;
+            text-align: center;
+            color: black;
+            height: 1.05rem;
+            line-height: 1.05rem;
+        }
+
+        .goback {
+            position: absolute;
+            z-index: 111;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            margin: 0.25rem 0.4rem;
+            height: 0.35rem;
+            width: 0.23rem;
+            background: url(/imgs/m9/arrow.png) center no-repeat;
+        }
+
+        .h5title {
+            text-align: center;
+            display: inline-block;
+            float: left;
+            width: 8.7rem;
+        }
+        #goback_text{
+            font-size: 0.3rem;
+            color: #FFFFFF;
+            position: absolute;
+            top: 0.24rem;
+            left: 0.8rem;
+
+        }
+        .hidden{
+            display: none;
+        }
+        .shop-pannel{
+            width: 100%;
+            padding: 0;
+            background-color: #e9ecef;
+            text-align: center;
+        }
+        .shop-pannel img{
+            width: 94%;
+        }
+
+        .repay{width: 0.8rem;height: 0.4rem;box-sizing: border-box;border: 3px solid #E0E0E0;text-align: center;line-height: 0.4rem;font-size: 0.3rem;color: white;position: absolute;right: 0.3rem;top: 0.35rem;border-radius:0.1rem ;}
+        a:hover{text-decoration: none;}
+        #red_circle{width: 0.15rem;height: 0.15rem;border-radius: 50%;background: red;position: absolute;top: -0.075rem;right: -0.075rem;display: block;z-index: 500;}
+    </style>
+</head>
+
+<body>
+    <%for(var i=0; i < shopList.length; i++){var shop = shopList[i];%>
+    <div class="shop-pannel" data-prodType="<%=shop.prodType%>">
+        <img src="<%=shop.shopImg%>">
+    </div>
+    <%}%>
+</body>
+
+</html>
+<script type="text/javascript">
+    var custId = "<%=user.custId%>";
+    var h5domain = "<%=config.base.h5domain%>";
+    var promodomain = "<%=config.base.promodomain%>";
+    var comes_from = "<%=comes_from%>";
+    var token='<%=token%>';
+    var version = "<%=version%>";
+    var versionFlag = "<%=versionFlag%>";
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<!-- build:js /js/m9/fenqifuwu-list.min.js -->
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src='/js/m9/fenqifuwu-list.js'></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>

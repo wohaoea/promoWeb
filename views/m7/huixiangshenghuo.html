@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=1000, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>惠享生活-牛娃互联网金融</title>
+    <!-- build:css /css/huixiangshenghuo.min.css -->
+    <link href="/css/huixiangshenghuo.css" rel="stylesheet" type="text/css" />
+    <link href="/css/idialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/sjkh.css" rel="stylesheet" type="text/css" />
+    <link href="/css/head-foot.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+    <link href="/css/jquerygray/gray.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#BFBFBF">
+    <%include ../tmp_head_hxsh.html%>
+        <!-- slider -->
+        <div class="niuwa-slider-wrap" style="">
+            <div class="niuwa-slider">
+                <ul id="banner_ul" class="clearfix" style="width:100%;height:301px">
+                    <%if(banner){%>
+                        <%for(var i=0; i < banner.list.length; i++){%>
+                            <li data-name="#DE852B" style="width:100%;background:url(<%=banner.list[i].imageURL%>) no-repeat center center; <%if(i==0){%>display:list-item;<%}%>">
+                                <%if (banner.list[i].linkURL){%>
+                                    <a class="shop <%=(banner.list[i].linkURL ? 'active' : '')%>" data-url="<%=banner.list[i].linkURL%>" data-code=""></a>
+                                    <%}%>
+                            </li>
+                            <%}}%>
+                </ul>
+            </div>
+        </div>
+        <div class="sliderbg">
+            <!-- slider控制器 点点-->
+            <div class="slider-nav">
+                <ul>
+                    <%if(banner){%>
+                        <%if(banner.list.length>1){%>
+                            <%for (i=0; i<banner.list.length; i++){%>
+                                <%if(i==0){%>
+                                    <li class="active"></li>
+                                    <%}else{%>
+                                        <li></li>
+                                        <%}}}}%>
+                </ul>
+            </div>
+        </div>
+        <%
+        function showTime(time){if (!time) return "";
+            if (!time.indexOf) return "";
+            if (time.indexOf(" ") < 0) return "";
+            var time = time.split(" ");
+            if (!time.length) return "";
+            time = time[0].split("-");
+            if (!time || !time.length) return "";
+            return "活动截止：" + time.join(".");
+        };
+        %>
+        <%include tmp_xsqg.html%>
+        <div class="hsh_meishi">
+            <div style="margin:auto;width: 1000px;">
+                <div class="meishi"><img src="/imgs/meishi.png" /></div>
+                <div class="wapp">
+                    <%if(shoplist && shoplist.CHANNEL_FOOD){%>
+                        <%for(var i=0;i<3;i++){
+                            if(shoplist.CHANNEL_FOOD[i]){
+                                var shop = shoplist.CHANNEL_FOOD[i];
+                            %>
+                            <div class="shop wapp<%=i+1%> <%=(shop.status === 'RELEASED' ? 'active' : '')%>" data-url="" data-code="<%=shop.commerceCode%>">
+                                <div class="wappimg"><img class="shop_logo <%=(shop.status==='RELEASED' ? 'active' : 'grayscale')%>" src="/getimg/<%=shop.commerceLogo%>" /><div class="solerout"></div></div>
+                                <div class="wappname"><%=(shop.commerceName ? shop.commerceName : "")%></div>
+                                <div class="wappopr"><%=(shop.giftDesc ? shop.giftDesc : "")%></div>
+                                <div class="expiration"><%=showTime(shop.endTime?shop.endTime : "")%></div>
+                            </div>
+                        <%}else{%>
+                            <div class="wapp<%=i+1%>"></div>
+                        <%}}%>
+                    <%}else{%>
+                        <div class="wapp1">
+                        </div>
+                        <div class="wapp2">
+                        </div>
+                        <div class="wapp3">
+                        </div>
+                    <%}%>
+                    <a class="more" href="/m7/channel/CHANNEL_FOOD">更多优惠&nbsp;></a>
+                </div>
+            </div>
+        </div>
+        <div class="hsh_shenghuo">
+            <div style="margin:auto;width: 1000px;">
+                <div class="shenghuo"><img src="/imgs/shenghuo.png"></div>
+                <div class="wapp">
+                    <%if(shoplist && shoplist.CHANNEL_LIFE){%>
+                        <%for(var i=0;i<3;i++){
+                            if(shoplist.CHANNEL_LIFE[i]){
+                                var shop = shoplist.CHANNEL_LIFE[i];
+                            %>
+                            <div class="shop wapp<%=i+1%> <%=(shop.status==='RELEASED' ? 'active' : '')%>" data-code="<%=shop.commerceCode%>">
+                                <div class="wappimg"><img class="shop_logo <%=(shop.status==='RELEASED' ? 'active' : 'grayscale')%>" src="/getimg/<%=shop.commerceLogo%>" /><div class="solerout"></div></div>
+                                <div class="wappname"><%=(shop.commerceName ? shop.commerceName : "")%></div>
+                                <div class="wappopr"><%=(shop.giftDesc ? shop.giftDesc : "")%></div>
+                                <div class="expiration"><%=showTime(shop.endTime?shop.endTime : "")%></div>
+                            </div>
+                        <%}else{%>
+                            <div class="wapp<%=i+1%>"></div>
+                        <%}}%>
+                    <%}else{%>
+                        <div class="wapp1">
+                        </div>
+                        <div class="wapp2">
+                        </div>
+                        <div class="wapp2">
+                        </div>
+                    <%}%>
+                    <a class="more" href="/m7/channel/CHANNEL_LIFE">更多优惠&nbsp;></a>
+                </div>
+            </div>
+        </div>
+        <div class="hsh_yule">
+            <div style="margin:auto;width: 1000px;">
+                <div class="yule"><img src="/imgs/yule.png"></div>
+                <div class="wapp">
+                    <%if(shoplist && shoplist.CHANNEL_RECREATION){%>
+                        <%for(var i=0;i<3;i++){
+                            if(shoplist.CHANNEL_RECREATION[i]){
+                                var shop = shoplist.CHANNEL_RECREATION[i];
+                            %>
+                            <div class="shop wapp<%=i+1%> <%=(shop.status==='RELEASED' ? 'active' : '')%>" data-code="<%=shop.commerceCode%>">
+                                <div class="wappimg"><img class="shop_logo <%=(shop.status==='RELEASED' ? 'active' : 'grayscale')%>" src="/getimg/<%=shop.commerceLogo%>" /><div class="solerout"></div></div>
+                                <div class="wappname"><%=(shop.commerceName ? shop.commerceName : "")%></div>
+                                <div class="wappopr"><%=(shop.giftDesc ? shop.giftDesc : "")%></div>
+                                <div class="expiration"><%=showTime(shop.endTime?shop.endTime : "")%></div>
+                            </div>
+                        <%}else{%>
+                            <div class="wapp<%=i+1%>"></div>
+                        <%}}%>
+                    <%}else{%>
+                        <div class="wapp1">
+                        </div>
+                        <div class="wapp2">
+                        </div>
+                        <div class="wapp2">
+                        </div>
+                    <%}%>
+                    <a class="more" href="/m7/channel/CHANNEL_RECREATION">更多优惠&nbsp;></a>
+                </div>
+            </div>
+        </div>
+        <div class="hsh_auto">
+            <div style="margin:auto;width: 1000px;">
+                <div class="auto"><img src="/imgs/auto.png" /></div>
+                <div class="wapp">
+                    <%if(shoplist && shoplist.CHANNEL_CAR){%>
+                        <%for(var i=0;i<3;i++){
+                            if(shoplist.CHANNEL_CAR[i]){
+                                var shop = shoplist.CHANNEL_CAR[i];
+                            %>
+                            <div class="shop wapp<%=i+1%> <%=(shop.status==='RELEASED' ? 'active' : '')%>" data-code="<%=shop.commerceCode%>">
+                                <div class="wappimg"><img class="shop_logo <%=(shop.status==='RELEASED' ? 'active' : 'grayscale')%>" src="/getimg/<%=shop.commerceLogo%>" /><div class="solerout"></div></div>
+                                <div class="wappname"><%=(shop.commerceName ? shop.commerceName : "")%></div>
+                                <div class="wappopr"><%=(shop.giftDesc ? shop.giftDesc : "")%></div>
+                                <div class="expiration"><%=showTime(shop.endTime?shop.endTime : "")%></div>
+                            </div>
+                        <%}else{%>
+                            <div class="wapp<%=i+1%>"></div>
+                        <%}}%>
+                    <%}else{%>
+                        <div class="wapp1">
+                        </div>
+                        <div class="wapp2">
+                        </div>
+                        <div class="wapp2">
+                        </div>
+                    <%}%>
+                    <a class="more" href="/m7/channel/CHANNEL_CAR">更多优惠&nbsp;></a>
+                </div>
+            </div>
+        </div>
+        <%include ../tmp_foot.html%>
+</body>
+
+</html>
+<script type="text/javascript">
+    var _custId = "<%=_custId%>";
+    var domain = "<%=domain%>";
+    var promodomain = "<%=promodomain%>";
+</script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/jquerygray/gray.min.js"></script>
+<!-- build:js /js/huixiangshenghuo.min.js -->
+<script type="text/javascript" src="/js/huixiangshenghuo.js"></script>
+<script type="text/javascript" src="/js/huixiangshenghuoslider.js"></script>
+<script type="text/javascript" src="/js/head.js"></script>
+<script type="text/javascript" src="/js/readmsg.js"></script>
+<script type="text/javascript" src="/js/gototop.js"></script>
+<!-- /build -->

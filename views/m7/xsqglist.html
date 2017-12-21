@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=1000, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>牛娃金融-活动产品</title>
+    <!-- build:css /css/xsqglist.min.css -->
+    <link href="/css/idialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/sjkh.css" rel="stylesheet" type="text/css" />
+    <link href="/css/head-foot.css" rel="stylesheet" type="text/css" />
+    <link href="/css/xsqg.css" rel="stylesheet" type="text/css" />
+    <link href="/css/jquerygray/gray.min.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+<script type="text/javascript">
+    var haslist=<%=data.pageResult.length%>;
+    var goUrl = "<%=config.base.promodomain%>";
+    var pageDate = <%-JSON.stringify(paging)%>
+    if(!haslist){
+        window.location.href= goUrl+'m7/huixiangshenghuo';
+    }
+</script>
+<style type="text/css">
+/*右侧快捷导航*/
+.shortcut{
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    width: 50px;
+    height: 270px;
+    z-index: 8888;
+}
+
+.shortcut a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: url(../imgs/floaticon.png);
+
+}
+
+.shortcut a.gotop{
+    background-position: 0 0;
+}
+.shortcut a.gotop:hover{
+    background-position: -68px 0;
+}
+    </style>
+</head>
+<% if(isChristmasDay){ %>
+    <body style="background:url('/imgs/activity/christmas2017/flake.png') 0 0;background-size:1920px 1941px">
+<% }else{ %>
+    <body style="background-color:#f2f4f6">
+<% } %>
+    <%include ../tmp_head_hxsh.html%>
+    <%include temp_list_header.html%>
+    <div class="xsqgwrap">
+        <%include tmp_xsqglist.html%>
+    </div>
+    <%include ../tmp_foot.html%>
+</body>
+
+</html>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<!-- build:js /js/xsqg.min.js -->
+<script type="text/javascript" src="/js/gray.min.js"></script>
+<script type="text/javascript" src="/js/head.js"></script>
+<script type="text/javascript" src="/js/readmsg.js"></script>
+<script type="text/javascript" src="/js/xsqg.js"></script>
+<script type="text/javascript" src="/js/gototop.js"></script>
+<!-- /build -->
+

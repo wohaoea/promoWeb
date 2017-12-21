@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>欢乐暑期_牛娃金融</title>
+<!-- build:css /css/niubereg.min.css --> 
+<link rel="stylesheet" type="text/css" href="/css/niubereg.css" />
+<!-- /build -->
+</head>
+<body>
+	<div id="box" style="display:-webkit-box; -webkit-box-orient:vertical;-webkit-box-pack:center;">
+	<div class="niubelogo"></div>
+	<div class="niuberegbody">
+		<div class="regdiv">
+			<div>填写手机号</div><input value="" type="number" maxlength="11" id="phoneNumber" placeholder="请输入11位手机号"/>
+			<div id="phonetips" class="tips"></div>
+		</div>
+		<div class="regdiv">
+			<div class="">手机验证码</div><input  value=""  class="small " type="number" maxlength="6" id="validcode" placeholder="请输入手机验证码"/><input type="button" id="sendvalid" value="获取验证码"/>
+			<div id="validcodetips" class="tips"></div>
+		</div>
+		<div class="regdiv">
+			<div>请输入密码</div><input type="password" onpaste="return false" value="" maxLength=20 id="userPwd" placeholder="请输入6-20位密码"/>
+			<div id="userPwdtips" class="tips"></div>
+		</div>
+		<div class="regdiv">
+			<div>请确认密码</div><input type="password" onpaste="return false" value=""  maxLength=20 id="againuserPwd" placeholder="请确认密码"/>
+			<div id="againuserPwdtips" class="tips"></div>
+		</div>
+		<div class="regdiv" style="display:none">
+			<div>邀<i style="margin-left:1em"></i>请<i style="margin-left:1em"></i>码</div><% if(/^0?(13|15|18|14|17)[0-9]{9}$/.test(loginName)){%><input type="text" value="<%=loginName.replace(/(\d{3})(\d{6})(\d{2})/,'$1******$3')%>"  readonly="true"/><input type="hidden" style="display:none" value="<%=loginName%>" id="inviteCode"><%}else if(loginName == ""){%><input type="text" class="input-text" onkeyup="this.value=this.value.replace(/[\u0391-\uFFE5]/gi,'')"  placeholder="邀请码(非必填)" id="inviteCode"/><%}else{%><input type="text" value="<%=loginName.replace(/^(.{2}).*(.{2})$/,'$1****$2')%>"  readonly="true"/><input type="hidden" value="<%=loginName%>" style="display:none" id="inviteCode"/><%}%>
+			<div id="inviteCodetips" class="tips"></div>
+		</div>
+		<div class="regdiv" style="margin-bottom:10px">
+			<div class="">图片验证码</div><input type="text" maxlength="4" value="" id="captchacode" class="small"  placeholder="图片验证码"/>
+			<img src="" class="imgcode" id="imgCode">
+			<div id="imgcodetips" class="tips"></div>
+		</div>
+		 <fieldset class="checkboxes">
+	        <label for="checkbox-01" class="label_check">
+	            <input type="checkbox" value="1" id="checkbox-01" name="sample-checkbox-01" /> 
+	        </label>
+  		</fieldset>
+		<div class="shuoming" style="margin-left:5px;width:266px;white-space:nowrap;">阅读并同意《<span onclick="window.location.href='/clause'">平台注册协议</span>》《<span id="huodong">活动详情</span>》</div>
+		<div style="clear:both"></div>
+		<div id="checkboxestips" class="tips"></div>
+		<div class="niubebtn" id="regsubmit"></div>
+  </div>
+  </div>
+ 
+  <div class="dialog" style="overflow:hidden">
+            <div class="rc">
+                <div class="rcx"></div>
+            </div>
+            <div style="clear:both"></div>
+                <div class="srcoll" >
+                    <div style="padding:10px;color:#3296e1;font-size:16px;">
+                        <div><span class="ftitle">活动时间：</span> 7月1日——8月30日</div><br>
+                        <div><span class="ftitle">活动对象：</span>在校大学生</div><br>
+                        <div>
+                            <div><span class="ftitle">活动规则：</span></div>
+                            <div>1. 邀请好友注册牛呗APP并完成学籍认证，赢取免费手机流量。每成功邀请一名好友，邀请人可获得30M流量，好友可获得最高100元红包，同时也可继续邀请其他人。</div>
+                            <div>2. 好友通过邀请链接注册，并在牛呗APP中登录，点击信用修炼术完成学籍认证则视为邀请成功。</div>
+                            <div>3. 工作人员将于每天17:00统一对邀请人的手机号进行流量充值，并向被邀请人赠送红包。</div><br>
+                            <div><span class="ftitle">活动说明：</span></div>
+                            <div>1. 邀请人须为牛呗或牛娃注册用户，被邀请人须为在校大学生，非牛呗用户可下载注册牛呗APP立即成为邀请人。</div>
+                            <div>2. 被邀请人必须完成学籍认证才视为邀请成功，邀请人才能获得手机流量，被邀请人才可获得红包。</div>
+                            <div>3. 为保障手机流量充值成功，邀请人手机号若为联通号码，则每邀约5名好友才能充值一次，移动、电信号码不限。</div>
+                            <div>4. 为提高邀请人流量的使用，每月20号以后赢取的流量将于下月初充到邀请人手机上。</div><br>
+                            <div>如有问题，请拨打客服热线：400-8846-898</div>
+                            <div>本活动最终解释权归牛娃互联网金融所有</div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+ <div class="layerbox">
+    <div class="jiazai">正在提交.....</div>
+    <div class="fixed"></div>
+  </div>
+
+ <script type="text/javascript" src="/js/libs/zepto.min.js"></script>
+ <script type="text/javascript">
+	(function(f){var m=8;var k=function(q,t){var s=(q&65535)+(t&65535);var r=(q>>16)+(t>>16)+(s>>16);return(r<<16)|(s&65535)};var e=function(r,q){return(r>>>q)|(r<<(32-q))};var g=function(r,q){return(r>>>q)};var a=function(q,s,r){return((q&s)^((~q)&r))};var d=function(q,s,r){return((q&s)^(q&r)^(s&r))};var h=function(q){return(e(q,2)^e(q,13)^e(q,22))};var b=function(q){return(e(q,6)^e(q,11)^e(q,25))};var p=function(q){return(e(q,7)^e(q,18)^g(q,3))};var l=function(q){return(e(q,17)^e(q,19)^g(q,10))};var c=function(r,s){var E=new Array(1116352408,1899447441,3049323471,3921009573,961987163,1508970993,2453635748,2870763221,3624381080,310598401,607225278,1426881987,1925078388,2162078206,2614888103,3248222580,3835390401,4022224774,264347078,604807628,770255983,1249150122,1555081692,1996064986,2554220882,2821834349,2952996808,3210313671,3336571891,3584528711,113926993,338241895,666307205,773529912,1294757372,1396182291,1695183700,1986661051,2177026350,2456956037,2730485921,2820302411,3259730800,3345764771,3516065817,3600352804,4094571909,275423344,430227734,506948616,659060556,883997877,958139571,1322822218,1537002063,1747873779,1955562222,2024104815,2227730452,2361852424,2428436474,2756734187,3204031479,3329325298);var t=new Array(1779033703,3144134277,1013904242,2773480762,1359893119,2600822924,528734635,1541459225);var q=new Array(64);var G,F,D,C,A,y,x,w,v,u;var B,z;r[s>>5]|=128<<(24-s%32);r[((s+64>>9)<<4)+15]=s;for(var v=0;v<r.length;v+=16){G=t[0];F=t[1];D=t[2];C=t[3];A=t[4];y=t[5];x=t[6];w=t[7];for(var u=0;u<64;u++){if(u<16){q[u]=r[u+v]}else{q[u]=k(k(k(l(q[u-2]),q[u-7]),p(q[u-15])),q[u-16])}B=k(k(k(k(w,b(A)),a(A,y,x)),E[u]),q[u]);z=k(h(G),d(G,F,D));w=x;x=y;y=A;A=k(C,B);C=D;D=F;F=G;G=k(B,z)}t[0]=k(G,t[0]);t[1]=k(F,t[1]);t[2]=k(D,t[2]);t[3]=k(C,t[3]);t[4]=k(A,t[4]);t[5]=k(y,t[5]);t[6]=k(x,t[6]);t[7]=k(w,t[7])}return t};var j=function(t){var s=Array();var q=(1<<m)-1;for(var r=0;r<t.length*m;r+=m){s[r>>5]|=(t.charCodeAt(r/m)&q)<<(24-r%32)}return s};var n=function(s){var r="0123456789abcdef";var t="";for(var q=0;q<s.length*4;q++){t+=r.charAt((s[q>>2]>>((3-q%4)*8+4))&15)+r.charAt((s[q>>2]>>((3-q%4)*8))&15)}return t};var o=function(s,v){var u=j(s);if(u.length>16){u=c(u,s.length*m)}var q=Array(16),t=Array(16);for(var r=0;r<16;r++){q[r]=u[r]^909522486;t[r]=u[r]^1549556828}var w=c(q.concat(j(v)),512+v.length*m);return c(t.concat(w),512+256)};var i=function(q){q=typeof q=="object"?f(q).val():q.toString();return q};f.extend(f,{sha256:function(q){q=i(q);return n(c(j(q),q.length*m))},sha256hmac:function(q,r){q=i(q);r=i(r);return n(o(q,r))},sha256config:function(q){m=parseInt(q)||8}});f.fn.sha256=function(r){f.sha256config(r);var q=i(f(this).val());var s=f.sha256(q);f.sha256config(8);return s}})(Zepto);
+</script>
+<!-- build:js /js/niubereg.min.js --> 
+<script type="text/javascript" src="/js/niubereg.js"></script>
+<!-- /build -->
+ 
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+</body>
+</html>

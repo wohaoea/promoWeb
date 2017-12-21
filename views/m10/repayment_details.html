@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	    <meta charset="utf-8" />
+	    <title><%=title%></title>
+	    <meta name="description" content="<%=title%>" />
+	    <meta name="keywords" content="<%=title%>" />
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	    <meta name="format-detection" content="telephone=no" />
+	    <!-- build:css /css/m9/repayment_details.min.css -->
+	    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+	    <link href="/css/niubeih5.css" rel="stylesheet" type="text/css" />
+	    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+	    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+	    <link rel="stylesheet" type="text/css" href="/css/m9/repayment_details.css">
+	    <!-- /build -->
+    	<%include ./h5script10.html %>
+	</head>
+	<body>
+		<section>
+			<p>[<%=term%>/<%=loanTerm%>期] <%=projectName%></p>
+			<p><%=change%>时间：<%=repayDate.substring(0,10)%></p>
+		</section>
+		<div class="main">
+			<div class="pay_money">
+				应还本金（元）              <span><%=parseFloat(capital).toFixed(2)%></span>
+			</div>
+			<div class="get_money" id="center">
+				应收利息（元）              <span><%=parseFloat(interest).toFixed(2)%></span>
+			</div>
+			<div class="over_time">
+				费用逾期（元）              <span><%=parseFloat(overdueFee).toFixed(2)%></span>
+			</div>
+			<div class="platformFee" id="platformFee">
+				借款服务费（元）             <span><%=parseFloat(platformFee).toFixed(2)%></span>
+			</div>
+			<%if(id!="r1"){%>
+				<div class="earlyRepayProcedureFee" id="earlyRepayProcedureFee">
+					提前还款手续费（元）     <span><%=parseFloat(earlyRepayProcedureFee).toFixed(2)%></span>
+				</div>
+			<%}%>
+		</div>
+		
+		<footer class="main main2">
+			<div class="total">
+				还款总额（元）              <span id="blue_font"><%=parseFloat(amount).toFixed(2)%></span>
+			</div>
+		</footer>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>
+
+
+
+
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<!-- build:js /js/m9/repayment_details.min.js -->
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src="/js/palert.js"></script>
+<script type="text/javascript" src='/js/m9/repayment_details.js'></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>

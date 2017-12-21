@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>财富日历</title>
+    <meta name="description" content="财富日历" />
+    <meta name="keywords" content="财富日历" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- build:css /css/common/reset.min.css -->
+    <link rel="stylesheet" type="text/css" href="/css/common/reset.css"/>
+    <!-- /build -->
+    <script type="text/javascript" src="/js/libs/h5rem.js"></script>
+    <style type="text/css">
+        body{
+            background-color: #f1f1f1;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul, li {
+            list-style: none;
+        }
+        #week {
+            width: 6.9rem;
+            margin: 0 auto;
+        }
+        #week h6 {
+            display: flex;
+            height: 1rem;
+            color: #fff;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #week h6 {
+            font-size:0.28rem;
+        }
+        #week .prev {
+            position: relative;
+            display: flex;
+            width: 15%;
+            height: 100%;
+            padding-left: 0.3rem;
+            align-items: center;
+            box-sizing: border-box;
+            font-size: 0.24rem;
+        }
+        #week .prev:before {
+            position: absolute;
+            content: '';
+            width: 0.12rem;
+            height: 0.22rem;
+            top: 0.39rem;
+            left: 0;
+            background: url(/imgs/i_niuwa/arrow-group.png) no-repeat;
+            background-size: 0.26rem 0.22rem;
+        }
+        #week .next {
+            position: relative;
+            display: flex;
+            font-size: 0.24rem;
+            width: 15%;
+            height: 100%;
+            padding-right: 0.3rem;
+            align-items: center;
+            flex-direction: row-reverse;
+            box-sizing: border-box;
+        }
+        #week .next:before {
+            position: absolute;
+            content: '';
+            width: 0.12rem;
+            height: 0.22rem;
+            top: 0.39rem;
+            right: 0;
+            background: url(/imgs/i_niuwa/arrow-group.png) no-repeat;
+            background-size: 0.26rem 0.22rem;
+            background-position-x: -0.14rem;
+        }
+        .calendar-container{
+            width: 6.9rem;
+            padding: 1.5%;
+            font-size: 0.24rem;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        .calendar-container .rlTitle{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-top: 1px solid  #eee;
+            border-left: 1px solid  #eee;
+            box-sizing: border-box;
+        }
+        .rlTitle span{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 16%;
+            height: 1rem;
+            border-bottom: 1px solid  #eee;
+            border-right: 1px solid  #eee;
+            box-sizing: border-box;
+        }
+        .calendar-container .rlCenter{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            border-left: 1px solid  #eee;
+            box-sizing: border-box;
+        }
+        .calendar-container .rlCenter li{
+            position: relative;
+            width: 14.285%;
+            height: 1rem;
+            padding-top: 0.18rem;
+            text-indent: 0.18rem;
+            border-bottom: 1px solid  #eee;
+            border-right: 1px solid  #eee;
+            box-sizing: border-box;
+        }
+        .calendar-container .rlCenter li img{
+            display: none;
+            position: relative;
+            top:-0.05rem;
+            width: 80%;
+            margin-top: 0.05rem;
+            margin-left: 10%;
+        }
+        .calendar-container .rlCenter li .bubbling{
+            display: none;
+            position: absolute;
+            width: 231%;
+            height: 1.02rem;
+            top: -0.92rem;
+            left: -66%;
+            color: #333;
+            font-size: 0.24rem;
+            text-align: center;
+            border: 1px solid #cfcfcf;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 4px;
+            opacity: 0.9;
+        }
+        .earnings img{
+            display: block!important;
+        }
+        .bubbling p:first-of-type{
+            margin-top: 0.2rem;
+        }
+        .calendar-container .rlCenter li .bubbling:before{
+            content: '';
+            position: absolute;
+            width: 0.16rem;
+            height: 0.1rem;
+            left: 1rem;
+            top:0.985rem;
+            background: url("imgs/i_niuwa/bubbling.png");
+            background-size: 0.16rem 0.1rem;
+        }
+        .wrap{
+            padding-bottom: 0.2rem;
+            background: linear-gradient(to right, #f88350 0%,#eb4b4b 100%);
+            background: -moz-linear-gradient(to right, #f88350 0%,#eb4b4b 100%);
+            background: -webkit-linear-gradient(to right, #f88350 0%,#eb4b4b 100%);
+            background: -o-linear-gradient(to right, #f88350 0%,#eb4b4b 100%);
+            background: -ms-linear-gradient(to right, #f88350 0%,#eb4b4b 100%);
+        }
+        .expect-collecting{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 1rem;
+            margin-top: 0.02rem;
+            padding: 0 0.3rem ;
+            font-size: 0.28rem;
+            background-color: #fff;
+        }
+        .expect-collecting img{
+            position: relative;
+            top:0.08rem;
+            width: 0.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="week"></div>
+    </div>
+    <div class="expect-collecting">
+        <div>
+            <img src="/imgs/i_niuwa/ico-1.png" alt="">
+            <span><span id="month">3</span>月预计待收款(元)</span>
+        </div>
+        <div id="agency-fund"></div>
+    </div>
+    <script type="text/javascript" src="/js/libs/jquery-1.8.3.min.js"></script>
+    <!-- build:js /js/i_niuwa/treasure_calendar.min.js -->
+    <script type="text/javascript" src="/js/i_niuwa/treasure_calendar.js"></script>
+    <!-- /build -->
+</body>
+</html>
+<!-- <input type="text" id="ele" onfocus="currentWeek(this)"/> -->

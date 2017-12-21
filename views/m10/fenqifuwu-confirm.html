@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/fenqifuwu-confirm.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/niubeih5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/m9/fenqifuwu-confirm.css">
+    <!-- /build -->
+    <%include ./h5script.html %>
+</head>
+
+<body>
+	
+    <div class="shop-pannel">
+        <div class="shop-info shop-p">
+            <div class="shop-name"><%=shop.shopName%></div>
+            <div class="request-date">申请日期：<%=utils.formatDate2(new Date(),'yyyy-MM-dd')%></div>
+        </div>
+         <div class="shop-info line-gap-top">
+        <% if(shop.prodType=='ygjs_p2'){%>
+        <p class="input-item" id="choose_product" >
+        	<span class="label">选择产品</span>
+        	<select class="input-area input-appAmount"  id="selectProduct">
+        		<option class="option option1">请选择您需要的产品</option>
+        	<%var arr=['iphone 5c 16G 黑色','iphone 5c 16G 白色','iphone 5s 16G 深空灰色','iphone 5s 16G 银色','iphone 5s 16G 金色','iphone 6 16G 深空灰色','iphone 6 16G 银色','iphone 6 16G 金色','iphone 6 64G 深空灰色','iphone 6 64G 银色','iphone 6 64G 金色','iphone 6 Plus 16G 深空灰色','iphone 6 Plus 16G 银色','iphone 6 Plus 16G 金色','iphone 6 Plus 64G 深空灰色','iphone 6 Plus 64G 银色','iphone 6 Plus 64G 金色'];
+        		
+        	var arr2=[960.00,960.00,1450.00,1450.00,1450.00,2950.00,2950.00,2950.00,3450.00,3450.00,3450.00,3400.00,3400.00,3400.00,3950.00,3950.00,3950.00]	
+        	%>
+        	<%for(var i=0;i<arr.length;i++){%>
+        		
+        		<option class="option" value="<%=i%>"><%=arr[i]%></option>
+        		
+        	<%}%>
+        	</select>
+            
+           <!--  <i style="line-height: 0.32rem;display: block;font-style: normal;color: black;width: 2.18rem;">选择数量</i>
+            <input type="number" placeholder="请输入1-10" style="display: inline-block;height: "> -->
+        </p>
+      
+        <%}%>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         </div>
+        <div class="shop-info line-gap-top">
+          <% if(shop.prodType=='ygjs_p2'){%>
+             <p class="input-item"><span class="label">选择数量</span><input class="input-area " type="number" placeholder="请输入1-10的整数" id="choose_number"/></p>
+        	<%}%>
+            <p class="input-item"><span class="label">服务总价(元)</span><input class="input-area input-appAmount" type="number" placeholder="请输入选择服务的总价" id="total_price" value="<%=shop.prodType=='ygjb_p1'?'12000':''%>" readonly="readonly"/></p>
+            
+            
+            <p class="input-item"><span class="label">分期期数(<%=shop.prodType=='ygjs_p2'?'天':'期'%>)</span>
+            	<input class="input-area input-appTerm" type="number" placeholder="<%=shop.prodType=='ygjs_p2'?'1-30天':''%>" id="choose_period" value="<%=shop.prodType=='ygjb_p1'?'12':''%>" <%=shop.prodType=='ygjb_p1'?'readonly':''%>/>
+            </p>
+            <p class="input-item input-item-last"><span class="label">服务代码</span><input class="input-area input-code" type="password" placeholder="请线下工作人员输入" id="code"/></p>
+        </div>
+        <div class="shop-info line-gap-top">
+     	<p class="input-item" id="repay_plan"><span class="label" ">还款计划</span> <img src="/imgs/m9/right_arrow.png" id="right_arrow"/></p>
+    	</div>
+        <div class="xieyi">
+            <span><img class="ico-check" src="/imgs/m9/ico-check_01.png"></span>我已同意并阅读
+            <span>
+            <a class="agreement" href="/agreement/getCost/<%=shop.prodType%>">
+            《资费标准及说明》</a>
+            <a class="agreement" href="/agreement/getLoan/<%=shop.prodType%>">《借款协议》</a>
+            <%if (intermediary==false){%>
+                <a class="agreement" href="/agreement/getIntermediary/<%=shop.prodType%>">
+               	 《借款居间协议》</a>
+                
+                </span>
+            <%}%>
+        </div>
+    </div>
+    
+    
+    
+    <br><br><br><br><br><br><br><br><br><br>
+    <table class="div-shanghudaima div-shanghudaima-validate">
+        <tr class="watting"><td><span><img class="watting-img" src="/imgs/m9/shenqingzhong.gif"></span><span class="watting-text">审核中</span></td></tr>
+        <tr class="validate"><td class="btn-shanghudaima">确认申请</td></tr>
+    </table>
+</body>
+
+</html>
+<script type="text/javascript">
+
+var prodType = "<%=shop.prodType%>";
+var h5domain = "<%=config.base.h5domain%>";
+var promodomain = "<%=config.base.promodomain%>";
+var shopCode = "<%=shopCode%>";
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<script type="text/javascript" src='/js/common/validation.js'></script>
+<!-- build:js /js/m9/fenqifuwu-confirm.min.js -->
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src="/js/palert.js"></script>
+<script type="text/javascript" src='/js/m9/fenqifuwu-confirm.js'></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    function HTMLDeCode(str) {
+        var s = "";
+        if (!str || !str.length) {
+            return "";
+        }
+        s = str.replace(/&lt;/g, "<");
+        s = s.replace(/&gt;/g, ">");
+        s = s.replace(/&amp;/g, "&");
+        return s;
+    }
+    $(".shop-content").html(HTMLDeCode($("#shop-content").html()));
+    $(".shop-desc").html(HTMLDeCode($("#shop-desc").html()));
+</script>
+

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>服务详情</title>
+    <meta name="description" content="服务详情" />
+    <meta name="keywords" content="服务详情" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- build:css /css/langdon/langdon.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+
+    <style>
+        .block{
+            width: 6.9rem;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        .ptb24{
+            overflow: auto;
+            padding-top: 0.24rem;
+            padding-bottom: 0.24rem;
+            border-bottom: 1px solid #eee;
+        }
+        .ptb20{
+            padding: 0.2rem 0;
+        }
+        .col-blue{
+            font-size: 0.34rem;
+            color: #3f68b0;
+        }
+        .cut-off{
+            height: 0.15rem;
+            background-color: #eee;
+        }
+        .langdon-ico{
+            float: left;
+            width: 2.4rem;
+            height: 2rem;
+            /*margin-right: 0.3rem;*/
+            background: url("/imgs/langdon/langdon-ico.png");
+            background-size: cover;
+        }
+        .langdon-explain{
+            float: right;
+            width: 4.2rem;
+        }
+        .langdon-explain p{
+            font-size: 0.3rem;
+            color: #333;
+            margin-top: -0.08rem;
+        }
+        .langdon-explain p:last-of-type{
+            font-size: 0.24rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+        .price{
+            height: 0.67rem;
+            line-height: 0.67rem;
+            font-size: 0.3rem;
+            color: #333;
+        }
+        .installment-item{
+            display: inline-block;
+            font-size: 0.24rem;
+            padding: 0 0.12rem;
+            margin-left: 0.18rem;
+            background-color: #eee;
+            border-radius:4px;
+        }
+        .installment-item.active{
+            background-color: #3f68b0;
+            color: #fff;
+        }
+        .langdon-detail{
+            margin-bottom: 1.2rem;
+        }
+        .langdon-detail p{
+            line-height: 0.4rem;
+            font-size: 0.28rem;
+            color:#666;
+        }
+        .langdon-detail p:first-of-type{
+            padding: 0.3rem 0;
+            font-size: 0.3rem;
+            color:#333;
+        }
+        .control{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            width: 100%;
+            height:0.98rem ;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: #3f68b0;
+        }
+        .control input{
+            float: left;
+            width: 4.2rem;
+            padding-left: 0.3rem;
+            height: 0.8rem;
+            font-size: 0.28rem;
+            color:#333;
+            margin-left: 0.3rem;
+            border: none;
+            box-sizing: border-box;
+        }
+        .apply{
+            position: relative;
+            top:0.02rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 0.8rem;
+            color: #fff;
+            font-size: 0.3rem;
+        }
+        .trace{
+            font-size: 0.34rem;
+            color: #fff;
+        }
+        .hint{
+            height: 0.62rem;
+            line-height: 0.62rem;
+            font-size: 0.28rem;
+            color: #666;
+            text-align: center;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            background-color: #f6f0ae;
+            box-sizing: border-box;
+        }
+        .shade{
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgb(0,0,0);
+            opacity: 0.5;
+        }
+        .authentication{
+            position: fixed;
+            display: none;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin:3rem auto;
+            width: 5rem;
+            height: 4.5rem;
+            text-align: center;
+            font-size: 0.28rem;
+            color: #666;
+            border-radius:6px;
+            background-color: #fff;
+        }
+        .authentication img{
+            width: 2rem;
+            height: 2rem;
+            margin-top: 0.45rem;
+            margin-bottom: 0.15rem;
+        }
+        .authentication .btn-group{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            border-top: 1px solid #eee;
+        }
+        .authentication .btn-group div{
+            float: left;
+            width: 50%;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            font-size: 0.3rem;
+            box-sizing: border-box;
+        }
+        .authentication .btn-group div:last-of-type{
+            border-left: 1px solid #eee;
+            color: #1a82dd;
+        }
+    </style>
+</head>
+
+<body>
+    <% if( isSettle && jumpUrl ){ %>
+    <div class="hint">您已提交服务申请</div>
+    <% } %>
+    <div class="block ptb24 ">
+        <div class="langdon-ico"></div>
+        <div class="langdon-explain">
+            <p>助理国际财务管理师(AIFM)培训证书</p>
+            <p>AIFM职业资格认证助理级课程/证书，<span style="color:#999">适用于财经、会计、管理相关专业人士报考。</span></p>
+        </div>
+    </div>
+    <div class="block ptb20">
+        <p class="price">
+            <span>课程价格：</span>
+            <span class="col-blue">¥</span>
+            <span class="col-blue">3580</span>
+        </p>
+        <p class="price">
+            <span>选择分期：</span>
+            <span class="installment-item active" data-term="12">343元X12期</span>
+            <span class="installment-item" data-term="9">443元X9期</span>
+            <span class="installment-item" data-term="6">642元X6期</span>
+        </p>
+    </div>
+    <div class="cut-off"></div>
+    <div class="block langdon-detail">
+        <p>服务详情：</p>
+        <p>1.培训包含《财务管理职业道德》、《财务分析工具》《全面预算管理》和《内部控制与风险管理》4个模块。</p>
+        <p>2.培训模式采取在线课程+考前集中现场培训方式。</p>
+        <p>3.学员通过AIFM职业资格，可获得由国际财务管理协会签发的职业资格证书，该证书与国家职业资格证书具有同等效力，可在国家职业资格工作网www.osta.org.cn查询。</p>
+        <p>4.课程价格3580元人民币/人（含报名费、培训费、考试费和认证费）</p>
+        <p>5.本服务由中青朗顿（北京）教育科技股份有限公司提供，课程培训费支付给中青朗顿。</p>
+        <p>6.课程培训费付款成功后不支持退款。</p>
+        <p>7.用户每期在牛呗还款，逾期还款将会影响后续培训及证书发放。</p>
+    </div>
+
+
+    <div class="control">
+        <% if( isSettle && jumpUrl  ){ %>
+        <p class="trace" id="trace">追踪服务</p>
+        <% }else{ %>
+        <input id="code" type="text" placeholder="请输入商户代码">
+        <span class="apply">申请分期</span>
+        <% } %>
+    </div>
+
+    <div class="shade"></div>
+    <div class="authentication">
+        <img src="/imgs/m9/download-app.png" alt="">
+        <p>申请本服务须至牛呗APP</p>
+        <p>完善基础修炼术</p>
+        <div class="btn-group">
+            <div class="cancel">看看再说</div>
+            <div class="jump">前往修炼术</div>
+        </div>
+    </div>
+
+    <script>
+        var isSettle = '<%=isSettle%>';
+        var isLogin = '<%=isLogin%>';
+        var jumpUrl = '<%=jumpUrl%>';
+
+//        setTimeout(function(){
+//            window.location.href='/m9/repay_list/r1';
+//        },1000);
+    </script>
+
+    <script src="/js/libs/h5rem.js"></script>
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+    <!-- build:js /js/langdon/langDon.min.js -->
+    <script src="/js/langdon/langDon.js"></script>
+    <!-- /build -->
+
+</body>
+</html>

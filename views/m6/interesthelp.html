@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>众人帮加息</title>
+    <meta name="description" content="众人帮加息" />
+    <meta name="keywords" content="众人帮加息" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/sdhd.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/sdhd.css">
+    <!-- /build -->
+
+    <script>
+    if(top != self){  
+        location.href = "about:blank";
+    }
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return 'no';
+            }else{
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr,rem,scale,docEl=document.documentElement,fontEl=document.createElement("style"),metaEl=document.querySelector('meta[name="viewport"]');
+        var u = (window.navigator.appVersion.match(/android/gi),window.navigator.appVersion.match(/iphone/gi));
+        dpr=window.devicePixelRatio||1;
+        if(u && window.devicePixelRatio>=3){
+            dpr=3;
+        }else if(window.devicePixelRatio>=2){
+            dpr=2;
+        }else{
+            dpr=1;
+        };
+        rem=docEl.clientWidth*dpr/10;scale=1/dpr;metaEl.setAttribute("content","width="+dpr*docEl.clientWidth+",initial-scale="+scale+",maximum-scale="+scale+", minimum-scale="+scale+",user-scalable="+ weixing);docEl.setAttribute("data-dpr",dpr);docEl.firstElementChild.appendChild(fontEl);fontEl.innerHTML="html{font-size:"+rem+"px!important;}";
+        window.rem2px=function(a){a=parseFloat(a);return a*rem};window.px2rem=function(a){a=parseFloat(a);return a/rem};
+    </script>
+</head>
+<body>
+    <div class="topheader"></div>
+    <section class="title">历史活期收益6.6%就在牛天利！</section>
+    <section class="redpacketbox" style="height:auto">
+        <div class="jies clearfix">
+            <div class="wxheader"><img src='<%=investRecordDetail.headPic%>' /></div>
+            <div class="wxjxmessage"></div>
+        </div>
+        <div class="lilvbox">
+            <div class="leftlilv clearfix">
+                <h4>原标收益</h4>
+                <div class="yuanshouyi"><%=investRecordDetail.yearRate%>%</div>
+            </div>
+            <div class="rightlilv clearfix">
+                <h4>已加收益</h4>
+                <div class="yijiashouyi"><span><%=investRecordDetail.addRate%></span>%</div>                
+            </div>
+        </div>
+        <h3>——加息倒计时——</h3>
+        <% if(investRecordDetail.isOver){%>
+            <div class="countdownbox1" style="color:#969696">已结束</div>
+           <p class="mytip">加息完成，恭喜<%if(investRecordDetail.isSelf){%>您<%}else{%> <%=investRecordDetail.nickName%> <%}%>获得<%=investRecordDetail.addRate%>%加息</p>
+        <%}else{%>
+        <div class="countdownbox" data-cd='<%- JSON.stringify(utils.DistanceTime(investRecordDetail.investTime))%>' id="countdownbox"><%- (utils.DistanceTime(investRecordDetail.investTime))._h%>：<%- (utils.DistanceTime(investRecordDetail.investTime))._m%>：<%- (utils.DistanceTime(investRecordDetail.investTime))._s%></div>
+        <p class="mytip"><% if(investRecordDetail.isSelf){%>还不赶紧让小伙伴来帮忙加息？<%}else{%>赶快为他的收益加把劲吧！<%}%></p>
+        <%}%>
+    </section>
+    <% if(investRecordDetail.isOver==false){%>
+        <% if(investRecordDetail.isAddRate ==true){%>
+             <% if(investRecordDetail.isHaveRedEnvelope==false){%>
+                    <div class="jxbtnhelplqhb"></div>
+             <%}else{%>
+                <% if(investRecordDetail.isRegister){%>
+                        <div class="jxbtnhelplqhbed"></div>
+                <%}else{%>
+                        <div class="jxbtnhelplqhbedother" data-moblie='<%= investRecordDetail.mobile%>'></div>
+                <%}%>
+                    
+             <%}%>
+        <%}else{%>
+            <div class="jxbtnhelp"></div>
+        <%}%>
+    <%}else{%>
+         <% if(investRecordDetail.isAddRate ==true){%>
+             <% if(investRecordDetail.isHaveRedEnvelope==false){%>
+                    <div class="jxbtnhelplqhb"></div>
+             <%}%>
+         <%}%>   
+    <%}%>
+    <section class="liebiaowrap clearfix" <% if(investRecordDetail.isOver==true){%>style="margin-top:0.5rem"<%}%>>
+        <h4>—— 看看大家的手气如何 ——</h4>
+        <ul>
+            <% if(peopleHelpDetails.listData.length==0){%>
+            <li class="clearfix">
+                <div class="nulllq">还没有朋友帮加息，赶紧分享让朋友加息吧！</div>
+            </li>
+            <%}else{%>
+                <% peopleHelpDetails.listData.forEach(function(v,k){%>
+                    <li class="clearfix">
+                        <div class="wximg"><img src='<%= v.headPic%>' /></div>
+                        <div class="wxinfo">
+                            <p><%= utils.subString(v.nickName,16)%><span><%= v.addRateTime.split(' ')[0]%></span><span><%= (v.addRateTime.split(' ')[1]).split(':')[0]+'：'+(v.addRateTime.split(' ')[1]).split(':')[1]%></span></p>
+                            <p><span style='padding-left:0;line-height:0.6rem'><%= tishiyu(Math.random())%></span></p>
+                        </div>
+                        <div class="moneylist">+ <%= v.redAmount%>%</div>
+                    </li> 
+                <%})%>       
+          <%}%>
+        </ul>
+    </section>
+
+</body>
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<script type="text/javascript">
+    var ishare = 1,recordNo='<%=recordNo%>',isSelf=<%=investRecordDetail.isSelf%>,h5domin='<%=config.base.h5domain%>',mydomin='<%=config.base.wxshareurl%>',investRecordDetail=<%-JSON.stringify(investRecordDetail)%>,myinfo=<%-JSON.stringify(myinfo)%>,totalPage = <%=Math.ceil(parseInt(peopleHelpDetails.total)/parseInt(peopleHelpDetails.rows))%>,userinfo=<%-JSON.stringify(info)%>;
+</script>
+<!-- build:js /js/sdhdhelp.min.js -->
+<script type="text/javascript" src='/js/sdhdhelp.js'></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    var recordNo='<%= typeof(recordNo)=='undefined'?'':recordNo%>';
+    var h5url='<%=config.base.h5domain%>';
+    var userinfo = <%-JSON.stringify(info)%>;
+    //alert();
+   // alert('<%=wxShareOpt.timespan%>'+'---------'+'<%=wxShareOpt.noncestr%>'+'-----'+'<%=wxShareOpt.signature%>');
+      wx.config({
+        debug: false,
+        appId: '<%=wxShareOpt.nwwxappid%>', 
+        timestamp:'<%=wxShareOpt.timespan%>' , 
+        nonceStr: '<%=wxShareOpt.noncestr%>', 
+        signature: '<%=wxShareOpt.signature%>',
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ']
+    });
+
+    wx.ready(function(){
+        wx.onMenuShareTimeline({
+            imgUrl: '<%= config.base.wxshareurl%>/imgs/sdhd/jxqtip.jpg', // 分享图标
+            title: '快来加息，收益涨涨涨',
+            desc: '众人拾柴火焰高，大家快来帮<%=investRecordDetail.nickName%>加息吧~~', 
+            link: '<%= config.base.wxshareurl%>/m6/interesthelp/'+recordNo
+        });
+
+
+        wx.onMenuShareAppMessage({
+            imgUrl: '<%= config.base.wxshareurl%>/imgs/sdhd/jxqtip.jpg', // 分享图标
+            title: '快来加息，收益涨涨涨', 
+            desc: '众人拾柴火焰高，大家快来帮<%=investRecordDetail.nickName%>加息吧~~', 
+            link: '<%= config.base.wxshareurl%>/m6/interesthelp/'+recordNo
+        });
+
+        wx.onMenuShareQQ({
+            imgUrl: '<%= config.base.wxshareurl%>/imgs/sdhd/jxqtip.jpg', // 分享图标
+            title: '快来加息，收益涨涨涨', 
+            desc: '众人拾柴火焰高，大家快来帮<%=investRecordDetail.nickName%>加息吧~~', 
+            link:'<%= config.base.wxshareurl%>/m6/interesthelp/'+recordNo
+        });
+    });
+</script>

@@ -1,0 +1,53 @@
+body {
+    background-color: #e9ecef;
+}
+.shop-pannel {
+	position: relative;
+    display: block;
+    clear: both;
+    width: 9rem;
+    background-color: #FFFFFF;
+    background-size: cover;
+    margin: 0.26rem auto;
+    padding: 0.26rem;
+}
+.shop-img {
+    display: inline-block;
+    width: 2.88rem;
+    height: 2.4rem;
+    float: left;
+}
+.shop-img img {
+    width: 2.88rem;
+    height: 2.4rem;
+}
+.shop-info {
+    display: inline-block;
+    height: 2.4rem;
+    width: 5.5rem;
+    margin-left: 0.26rem;
+}
+.shop-name {
+    color: #333333;
+    font-size: .37rem;
+    margin-top: 0.1rem;
+}
+.shop-desc {
+	margin-top: 0.1rem;
+	font-size: 0.30rem;
+    color: #bababa;
+}
+.shop-tag {
+	width: 1.33rem;
+	height: 0.66rem;
+	padding-bottom: 0.1rem;
+	font-size: 0.26rem;
+	text-align: center;
+	line-height: 0.56rem;
+	color:#ffffff;
+    background: url(/imgs/m9/tag-bg.png) center no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    right: -0.15rem;
+    bottom: 0.1rem;
+}

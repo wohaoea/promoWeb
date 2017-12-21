@@ -1,0 +1,356 @@
+body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,button,textarea,p,blockqoute,th,td{margin:0;padding:0;}
+body,button {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-size: 14px;
+  font-family:"微软雅黑";
+  font-weight:normal;
+}
+::-webkit-input-placeholder {
+  font-size: 14px;
+  font-family:"微软雅黑";
+   color:#ccc; }
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+-webkit-appearance: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0; 
+}
+label:focus,a:focus,input:focus{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-user-modify:read-write-plaintext-only;
+}
+
+label:focus;input:focus, textarea:focus {
+    outline: none;
+}
+a{
+	text-decoration: none;
+}
+a:link { text-decoration: none;color:#585858}
+a:active { text-decoration:none;color:#585858}
+a:hover { text-decoration:underline;;color:#585858} 
+a:visited { text-decoration: none;;color:#585858}
+li,dd,dt{ list-style:none;}
+
+
+
+.fl{ float: left !important;}
+.fr{ float: right !important;}
+.a2{text-decoration: underline!important;
+  color: #3296e1!important;}
+.a2:hover{
+  text-decoration: underline!important;
+  color: #3296e1!important;
+}
+body{
+  background:#c8e1fa;
+}
+.niubelogo{
+  width:300px;
+  height:120px;
+  background:url(../imgs/niube/niube-logo.png);
+  background-origin:content;                
+  background-position:50% 50%;             
+  background-size:contain;                 
+  background-repeat:no-repeat;             
+  margin:0 auto;
+}
+.niuberegbody{
+  width:300px;
+  margin:5px auto;
+}
+.niuberegbody .regdiv{
+  position: relative;
+  width:300px;
+  height:40px;
+  margin-top:15px;
+}
+.niuberegbody .regdiv div{
+  line-height:36px;
+  width:70px;
+  height:36px;
+  margin-right:10px;
+  color:#3296e1;
+  display: inline-block;
+  vertical-align:top;
+  font-size: 14px;
+}
+.niuberegbody input[type="text"],.niuberegbody input[type="password"],.niuberegbody input[type="number"]{
+  display: inline-block;
+  border:2px solid #3296e1;
+  border-radius:4px;
+  background:#fff;
+  width:204px;
+  height:32px;
+  
+  padding-left:7px;
+  vertical-align:top;
+  box-shadow:none;
+  -webkit-appearance: none;
+}
+.niuberegbody input.small{
+  display: inline-block;
+  border:2px solid #3296e1;
+  border-radius:4px;
+  background:#fff;
+  width:120px;
+  height:32px;
+  
+  padding-left:7px;
+  vertical-align:top;
+  box-shadow:none;
+  -webkit-appearance: none;
+}
+input[type="button"]{
+  width:75px;
+  height:36px;
+  display: inline-block;
+  border:2px solid #3296e1;
+  border-radius:4px;
+  background:#fff;
+  margin-left:10px;
+  line-height:36px;
+  color:#3296e1;
+  vertical-align:top
+}
+.imgcode{
+  width:75px;
+  height:36px;
+  display: inline-block;
+  border-radius:4px;
+  background:#fff;
+  margin-left:5px;
+  line-height:32px;
+  color:#3296e1;
+  vertical-align:top
+}
+
+ form { 
+}
+fieldset { 
+    border: 0; 
+    width: 21px;
+    height:21px;
+    margin:0 auto;
+    color:#3296e1;
+    font-size:14px;
+    float: left;
+}
+.shuoming{ float: left;color:#3296e1;
+    font-size:14px;margin-top:3px;}
+.shuoming span{
+  text-decoration:underline;
+
+}
+label { 
+    display: block; 
+    cursor: pointer; 
+    line-height: 20px; 
+    width: 21px;
+    height:21px;
+}
+.radios { 
+    padding-top: 18px;
+    border-top: 1px solid #049CDB;
+}
+.label_check input,
+.label_radio input { 
+    margin-right: 10px; 
+}
+
+.has-js .label_check,
+.has-js .label_radio { 
+     margin-right: 5px; 
+    line-height:22px;
+}
+
+.has-js .label_radio, 
+.has-js .label_check{ 
+    background: url(../imgs/niube/checkbox-radio-bg.png) no-repeat; 
+}
+.has-js .label_radio { 
+    background-position: 0 0; 
+}
+.has-js .label_check {
+    background-position: 0 -50px
+}
+.has-js label.c_on { 
+    background-position: 0 0px;
+}
+.has-js label.r_on { 
+    background-position: 0 -50px; 
+}
+.has-js .label_check input,
+.has-js .label_radio input { position: absolute; left: -9999px; }
+.niubebtn{
+  width:280px;
+  height:80px;
+  background:url(../imgs/niube/niubebtn.png);
+  background-origin:content;                
+  background-position:50% 50%;             
+  background-size:contain;                 
+  background-repeat:no-repeat;             
+  margin:0px auto;
+}
+#phonetips{
+  position: absolute;
+  top:35px;
+  left:80px;
+  color:#ff6464;
+  width:200px;
+  height:20px;
+  line-height:20px;
+  white-space:nowrap
+}
+#validcodetips{
+   position: absolute;
+  top:35px;
+  left:80px;
+  color:#ff6464;
+  width:200px;
+  height:20px;
+  line-height:20px;
+  white-space:nowrap
+}
+#userPwdtips{
+  position: absolute;
+  top:35px;
+  left:80px;
+  color:#ff6464;
+  width:200px;
+  height:20px;
+  line-height:20px;
+  white-space:nowrap
+}
+#againuserPwdtips{
+   position: absolute;
+  top:35px;
+  left:80px;
+  color:#ff6464;
+  width:200px;
+  height:20px;
+  line-height:20px;
+  white-space:nowrap
+}
+#inviteCodetips{
+   position: absolute;
+  top:35px;
+  left:80px;
+  color:#ff6464;
+  width:200px;
+  height:20px;
+  line-height:20px;
+  white-space:nowrap
+}
+#imgcodetips{
+   position: absolute;
+  top:35px;
+  left:80px;
+  color:#ff6464;
+  width:200px;
+  height:20px;
+  line-height:20px;
+  white-space:nowrap
+}
+#checkboxestips{
+  margin-left:80px;
+  color:#ff6464;
+  width:200px;
+  height:20px;
+  line-height:20px;
+  white-space:nowrap
+}
+ input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button{
+            -webkit-appearance: none !important;
+            margin: 0; 
+        }
+.regsubmit{
+  background:none!important;
+  color:#3296e1;
+}
+.sucload{
+  width:175px;
+  height:57px;
+  background:url(../imgs/niube/sucdownload.png);
+  background-origin:content;                
+  background-position:50% 50%;             
+  background-size:contain;                 
+  background-repeat:no-repeat;             
+  margin:64px auto 24px;
+}
+.sucloadtip{
+  width:239px;
+  height:33px;
+  background:url(../imgs/niube/downloadtip.png);
+  background-origin:content;                
+  background-position:50% 50%;             
+  background-size:contain;                 
+  background-repeat:no-repeat;             
+  margin:64px auto 0;
+}
+.anzloadbtn{
+  width:267px;
+  height:87px;
+  background:url(../imgs/niube/androidload.png);
+  background-origin:content;                
+  background-position:50% 50%;             
+  background-size:contain;                 
+  background-repeat:no-repeat;             
+  margin:0px auto;
+}
+.iosloadbtn{
+  width:267px;
+  height:87px;
+  background:url(../imgs/niube/iosload.png);
+  background-origin:content;                
+  background-position:50% 50%;             
+  background-size:contain;                 
+  background-repeat:no-repeat;             
+  margin:10px auto;
+}
+.dialog{display: none; height: 90%;width: 90%; background-color:#ffffff;  border-radius: 8px; border: solid 4px #3296e1;}
+.rc{float: right;width: 100px;  width: 40px; margin-top: 13px; margin-bottom: 15px}
+.rcx{background:url(/imgs/m1/close.png);background-size: contain;width: 28px;height: 28px;}
+.srcoll{overflow: auto; height: 80%;margin-right: 5%;base-color:#3296e1}
+.srcoll::-webkit-scrollbar{width:2px;}
+    .srcoll::-webkit-scrollbar-thumb {
+          background-color: #64afff;
+          -webkit-border-radius: 2em;
+          border-radius: 2em;
+        }
+    .srcoll::-webkit-scrollbar-track {
+         background-color:#c8e1fa;
+         -webkit-border-radius: 2em;
+         border-radius:2em;
+        }
+.layerbox{
+     display: none;
+
+
+  }
+.fixed{
+  width:100%;
+  height:100%;
+  top:0;left:0;
+  position: absolute;
+  z-index:100000000;
+  background:rgba(0,0,0,0.5);
+}
+.jiazai{
+  width:120px;
+  height:40px;
+  line-height:40px;
+  top:50%;left:50%;
+  margin-top:-20px;
+  margin-left:-60px;
+  position: absolute;
+  z-index:100000001;
+  color:#ccc;
+  text-align: center;
+}

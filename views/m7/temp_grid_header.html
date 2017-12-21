@@ -1,0 +1,56 @@
+<%if(channel=="CHANNEL_FOOD"){%>
+<div class="listheader" style="background:url(/imgs/m7/meishi_banner_bg.jpg)">
+	<div class="listwrap">
+		<h3>美食频道</h3>
+		<div class="tab_list">
+			<a class="ml0" <%if(productCount){%>href="/m7/xsqglist"<%}else{%>style="cursor:default;"<%}%>>活动产品</a>
+			<a href="/m7/channel/CHANNEL_LIFE">生活服务</a>
+			<a href="/m7/channel/CHANNEL_RECREATION">娱乐休闲</a>
+			<a href="/m7/channel/CHANNEL_CAR">汽车频道</a>
+		</div>
+	</div>
+</div>
+<%}%>
+
+<%if(channel=="CHANNEL_LIFE"){%>
+<div class="listheader" style="background:url(/imgs/m7/shenghuo_banner_bg.jpg)">
+	<div class="listwrap">
+		<h3>生活服务</h3>
+		<div class="tab_list">
+			<a class="ml0" <%if(productCount){%>href="/m7/xsqglist"<%}else{%>style="cursor:default;"<%}%>>活动产品</a>
+			<a href="/m7/channel/CHANNEL_FOOD">美食频道</a>
+			<a href="/m7/channel/CHANNEL_RECREATION">娱乐休闲</a>
+			<a href="/m7/channel/CHANNEL_CAR">汽车频道</a>
+		</div>
+	</div>
+</div>
+<%}%>
+
+<%if(channel=="CHANNEL_CAR"){%>
+<div class="listheader" style="background:url(/imgs/m7/auto_banner_bg.jpg)">
+	<div class="listwrap">
+		<h3>汽车频道</h3>
+		<div class="tab_list">
+			<a class="ml0" <%if(productCount){%>href="/m7/xsqglist"<%}else{%>style="cursor:default;"<%}%>>活动产品</a>
+			<a href="/m7/channel/CHANNEL_FOOD">美食频道</a>
+			<a href="/m7/channel/CHANNEL_LIFE">生活服务</a>
+			<a href="/m7/channel/CHANNEL_RECREATION">娱乐休闲</a>
+		</div>
+	</div>
+</div>
+<%}%>
+
+<%if(channel=="CHANNEL_RECREATION"){%>
+<div class="listheader" style="background:url(/imgs/m7/yule_banner_bg.jpg)">
+	<div class="listwrap">
+		<h3>娱乐休闲</h3>
+		<div class="tab_list">
+			<a class="ml0" <%if(productCount){%>href="/m7/xsqglist"<%}else{%>style="cursor:default;"<%}%>>活动产品</a>
+			<a href="/m7/channel/CHANNEL_LIFE">生活服务</a>
+			<a href="/m7/channel/CHANNEL_FOOD">美食频道</a>
+			<a href="/m7/channel/CHANNEL_CAR">汽车频道</a>
+		</div>
+	</div>
+</div>
+<%}%>
+

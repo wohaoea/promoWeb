@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幸运大抽奖</title>
+    <!-- build:css /css/luckDraw.min.css -->  
+    <link rel="stylesheet" type="text/css" href="css/luckDraw.css">
+    <!-- /build -->
+</head>
+
+<body>
+    <script src="/js/libs/rem.js"></script>
+    <div class="luckDraw clearfix">
+        <div id="recording" class="recording">
+            <div class="record">获奖记录</div>
+            <ul class="award">
+                <% if(data.length == 0){ %>
+                    <li class="norecord">暂无获奖记录哦~</li>
+                    <% }else{ %>
+                        <% for(var i = 0;i < data.length;i++){ %>
+                            <li class="clearfix">
+                                <div class="fl">
+                                    <p>
+                                        <% if(data[i].prizeName == 'cup'){ %>
+                                            返利网水杯1个
+                                            <span style="font-size: .2rem;color: #aaaaaa;">兑换码: <%= data[i].recordNo %></span>
+                                        <% }else{ %>
+                                            <%= data[i].prizeName%>
+                                        <% } %>
+                                    </p>
+                                    <% if(data[i].available){ %>
+                                        <p class="time">中奖时间:
+                                            <% if(data[i].prizeName == 'cup'){ %>
+                                                <%= data[i].winningTime%>
+                                            <% }else{ %>
+                                                <%= data[i].winningTime.substring(0,data[i].winningTime.length-5)%>
+                                            <% } %>
+                                        </p>
+                                    <% }else{ %>
+                                        <p class="time">领取时间:                                         
+                                            <%= data[i].acceptTime.substring(0,data[i].winningTime.length-5)%> 
+                                        </p>
+                                    <% } %>
+                                </div>
+                                <div class="fr">
+                                    <% if(data[i].available){ %>
+                                        <% if(data[i].prizeName == 'cup'){ %>
+                                            <% if(isEnd){ %>
+                                                <input type="button" value="活动结束" class="already" disabled>
+                                            <% }else{ %>
+                                                <input type="button" value="兑换" class="receive" onclick="window.location.href='http://passport.fanli.com/mark?c=j8zi8s1hhf'">
+                                            <% } %>
+                                            
+                                        <% }else{ %>
+                                            <input type="button" value="领取" class="receive" data-record="<%= data[i].recordNo%>" data-name="<%= data[i].prizeName%>">
+                                        <% } %>
+                                    <% }else{ %>
+                                        <input type="button" value="已领取" class="already" disabled>
+                                    <%}%>
+                                </div>
+                            </li>
+                            <% } %>
+                                <% } %>
+            </ul>
+        </div>
+        <!--领取成功弹出框-->
+        <div id="success" class="mask hidden">
+            <div class="pop-up">
+                <div class="close">
+                </div>
+                <h1 class="Congratulations">领取成功～</h1>
+                <p>工作人员将在3个工作日内发放奖励！</p>
+                <div class="success">
+                    <img src="/imgs/luckDraw/alert3.png" alt="">
+                </div>
+                <input type="button" value="朕知道了">
+            </div>
+        </div>
+        <!--领取失败弹出框-->
+        <div id="fail" class="mask hidden">
+            <div class="pop-up">
+                <div class="close">
+                </div>
+                <h1 class="Congratulations">领取失败</h1>
+                <p style="font-family:auto;font-size:.3rem;margin-bottom:.5rem">领取失败</p>
+                <div class="success" style="text-align:center">
+                    <img src="/imgs/luckDraw/alert4.png" alt="" style="width:auto;height:100%">
+                </div>
+                <input type="button" value="朕知道了">
+            </div>
+        </div>
+        <div id="tixiansuccess" class="mask hidden">
+
+            <div class="pop-up">
+                <div class="close">
+                </div>
+                <h1 class="Congratulations">领取成功～</h1>
+                <p>工作人员将在3个工作日内发放现金券</p>
+                <p class="mgb">请到[奖励管理]页面查收</p>
+                <div class="success">
+                    <img src="/imgs/luckDraw/alert3.png" alt="">
+                </div>
+                <input type="button" value="朕知道了">
+            </div>
+        </div>
+        <!--领取免本金、免利息奖励-->
+        <div id="receive" class="mask hidden">
+
+            <div class="pop-up">
+                <div class="close">
+                </div>
+                <h1 class="Congratulations">领取奖励</h1>
+                <p class="prizeName"></p>
+                <ul class="reward">
+                    <li>选择期款</li>
+                    <li>
+                    </li>
+                </ul>
+                <div class="free">领取</div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+    <!-- build:js /js/award.min.js -->  
+    <script src="/js/award.js"></script>
+    <!-- /build -->
+</body>
+
+</html>

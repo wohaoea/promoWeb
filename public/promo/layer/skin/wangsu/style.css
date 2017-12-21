@@ -1,0 +1,24 @@
+﻿/** 
+ @Name: layer皮肤--wangsu
+ @Date: 2015.05.25
+ @Author: 隐
+ @blog: eyinchao.com
+ @remark:
+    1.新增flat风格图标，替换layer默认图标，新图标大小为48px;
+    2.更改按钮位置，右对齐
+    3.添加title的底部border
+**/
+html #layui_layer_skinwangsustylecss{display:none; position: absolute; width:1989px;}
+body .layer-ext-wangsu{background:#ff9600;  }
+body .layer-ext-wangsu .layui-layer-title{background:#ff9600; color:#ffe100; border:0px #e7e7e7 solid;}
+body .layer-ext-wangsu .layui-layer-content{position:relative; padding:40px;  background:#ff9600; /* color:#ffe100; */}
+body .layer-ext-wangsu .layui-layer-content h1{ font-size:16px; text-align:center;  color:#ffe100; font-weight:bold; }
+body .layer-ext-wangsu .layui-layer-content p{ font-size:14px; }                                             
+body .layer-ext-wangsu .layui-layer-content .layui-layer-ico{width:48px; height:48px;}
+
+body .layer-ext-wangsu .layui-layer-setwin{ background:#fff; }
+body .layer-ext-wangsu .layui-layer-setwin .layui-layer-close2 {width: 16px; height: 16px; background:url(cloce_03.png) no-repeat;}
+body .layer-ext-wangsu .layui-layer-btn{  color:#ff9600; font-size:16px;  background:#ff9600; text-align:center;  border-top:0px ;}
+body .layer-ext-wangsu .layui-layer-padding{padding-top:18px;padding-left:40px;padding-bottom: 30px;}
+body .layer-ext-wangsu .layui-layer-btn{padding:18px 0;}
+body .layer-ext-wangsu .layui-layer-btn .layui-layer-btn0{ background:#ffe100; padding:10px 20px 10px 20px; color:#ff9600; font-size:18px; border-radius:10px; }

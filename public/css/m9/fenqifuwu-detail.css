@@ -1,0 +1,102 @@
+body {
+    position: relative;
+}
+.shop-pannel {
+    position: relative;
+    display: block;
+    clear: both;
+    width: 9rem;
+    background-color: #FFFFFF;
+    background-size: cover;
+    margin: 0.5rem;
+    padding: 0 0 0.7rem 0;
+    color: #999999;
+    font-size: 0.32rem;
+    border-bottom:1px solid #cccccc;
+}
+.shop-img {
+    display: inline-block;
+    width: 3.2rem;
+    height: 2.66rem;
+    float: left;
+}
+.shop-img img {
+    width: 3.2rem;
+    height: 2.66rem;
+}
+.shop-info {
+    display: inline-block;
+    height: 2.4rem;
+    width: 5.2rem;
+    margin-left: 0.26rem;
+}
+.shop-name {
+    color: #333333;
+    font-size: .37rem;
+    margin-top: 0.1rem;
+}
+.shop-desc {
+    margin-top: 0.1rem;
+    height: 1.3rem;
+    font-size: .32rem;
+}
+.shop-price {
+    color: #3296fa;
+    font-size: 0.53rem;
+}
+.div-shanghudaima {
+    border-spacing:0;
+    position: absolute;
+    bottom: 1px;
+    height: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.div-input-shanghudaima {
+    padding-left: 0.5rem;
+    width: 68%;
+    border-top: 1px solid #cccccc;
+    border-right: 1px solid #3296fa;
+}
+.input-shanghudaima {
+    border-style: none;
+    outline: medium;
+    height: 1rem;
+    width: 100%;
+    font-size: 0.32rem;
+}
+.btn-shanghudaima {
+    border: 1px solid #3296fa;
+    font-size: 0.48rem;
+    color: #FFFFFF;
+    background: #3296fa;
+    text-align: center;
+}
+.fuwu-title {
+    padding: 0rem 0 0 0.5rem;
+    font-size: 0.38rem;
+    color: #333333;
+}
+.shop-content {
+    padding: 0.5rem;
+    font-size: 0.32rem;
+    line-height: 0.6rem;
+    color: #999999;
+}
+
+.shenqingzhong{
+    background: #3296fa;
+}
+
+.watting{
+    background: #3296fa;
+}
+
+.div-shanghudaima-validate .watting{
+    display: none;
+}
+
+.div-shanghudaima-watting .validate{
+    display: none;
+}

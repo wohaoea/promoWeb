@@ -1,0 +1,116 @@
+body {
+    position: relative;
+    background: #e9ecef;
+}
+.shop-pannel {
+    position: relative;
+    display: block;
+    clear: both;
+    width: 100%;
+    padding: 0 0 0.7rem 0;
+    color: #999999;
+    font-size: 0.32rem;
+}
+.shop-info {
+    background-color: #FFFFFF;
+}
+.shop-p {
+    padding: 0.2rem 0;
+}
+.shop-name {
+    color: #333333;
+    font-size: 0.37rem;
+    line-height: 0.54rem;
+    padding: 0.2rem 0.4rem;
+}
+.request-date {
+    color: #999999;
+    font-size: 0.32rem;
+    line-height: 0.5rem;
+    padding: 0.2rem 0.4rem;
+}
+.line-gap-top {
+    margin-top: 0.4rem;
+}
+.label {
+    display: inline-block;
+    width: 2.18rem;
+    font-size: 0.32rem;
+    color: #333333
+}
+.input-area {
+    border: none;
+    outline: medium;
+    font-size: 0.32rem;
+}
+.input-item {
+    height: 1.32rem;
+    line-height: 1.32rem;
+    padding: 0.2rem 0.4rem;
+    border-bottom: 1px solid #cccccc;
+}
+.input-item-last {
+    border-bottom: 0px;
+}
+.xieyi {
+    padding: 0.4rem 0.4rem;
+    color: #999999;
+}
+.shenqingzhong {
+    background: #3296fa;
+}
+.validate {
+    width: 100%;
+    background: #3296fa;
+    text-align: center;
+    font-size: 0.48rem;
+    color: #ffffff;
+}
+.watting {
+    width: 100%;
+    background: #3296fa;
+    text-align: center;
+    color: #ffffff;
+}
+.watting-img {
+    width: 0.53rem;
+    margin-bottom: -0.1rem;
+    margin-right: 0.1rem;
+}
+.watting-text{
+    display: inline-block;
+    font-size: 0.48rem;
+    height: 0.53rem;
+    line-height: 0.53rem;
+}
+.div-shanghudaima {
+    width: 100%;
+    height: 1.33rem;
+    position: absolute;
+    bottom: 0;
+}
+.div-shanghudaima-validate .watting {
+    display: none;
+}
+.div-shanghudaima-watting .validate {
+    display: none;
+}
+.ico-check {
+    margin: 0 10px;
+    display: inline-block;
+    width: 0.32rem;
+    height: 0.32rem;
+}
+.blue {
+    color: #3296fa;
+}
+.agreement{
+    display: inline;
+    color: #3296fa!important;
+}
+#choose_product{margin-bottom: 20px;overflow: hidden;}
+
+#right_arrow{padding-left: 6.72rem;}
+
+.option{font-size:0.18rem ;}
+select{color: #999999;background: white;}

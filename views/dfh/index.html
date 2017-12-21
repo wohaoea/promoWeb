@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=1000, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <title>金猴财富之旅</title>
+    <!-- build:css /css/dfh.min.css -->
+    <link href="/css/idialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/sjkh.css" rel="stylesheet" type="text/css" />
+    <link href="/css/dfh.css" rel="stylesheet" type="text/css" />
+    <link href="/css/head-foot.css" rel="stylesheet" type="text/css" />
+   <!-- /build -->
+
+</head>
+<body style="background-color:#f2f4f6">
+    <%include ../tmp_head.html%>
+    <div class="dfh_top"><div class="dfh_cont">
+       
+    </div></div>
+    <div class="dfh_w">
+        <div class="dfh_cont">
+          <div class="dfh_board"></div> 
+          <div style="position: relative;height:209px;">
+            <%if(user&&user.custId &&dfh.sign==true){%>
+                <div class="dfh_signed"></div>
+            <%}else{%>
+                <div class="dfh_sign"></div>
+            <%}%>
+            <a href="<%=domain%>invest" class="dfh_invest"></a>
+            <div class="clear"></div>
+            <div class="dfh_s1">*活动期间每日签到可获得骰子1枚</div>
+            <div class="dfh_s2">*活动期间投资每满2000元可获骰子1枚</div>
+          </div>
+          <div class="dfh_yun1"></div>
+          <div class="dfh_yun2"></div>
+          <div class="dfh_yun3"></div>
+          <div class="dfh_yun4"></div>
+          <div class="dfh_yun5"></div>
+          <div class="dfh_opr">
+            <div style="position: relative;">
+                <div class="dfh_sz"><img src="/imgs/dfh/sz1.png"/></div>
+                <div class="dfh_cs">
+
+                  <%if(user&&user.custId){%>
+                    X<%=dfh.times%>
+                  <%}else{%>
+                    <a href="<%=domain%>login/?hxsh=<%=originalUrl%>" style="color: #DBB300;">请登录</a>
+                  <%}%>
+                    
+                </div>
+                <div class="dfh_zsj"></div>
+            </div>
+          </div>
+          <div class="curtpoints"><img src="/imgs/dfh/monkey0.png"/></div>
+            <div class="dfh_r1"></div>
+            <div class="dfh_r2"></div>
+        </div>
+    </div>
+    <div class="dfh_w2">
+        <div class="dfh_cont">
+            <div class="dfh_desc">
+               <div style="line-height:40px;"> 活动规则：</div>
+               <ul class="dfh_descul">
+                    <li>1. 实名认证用户每日签到可获得一次投掷骰子的机会；</li>
+                    <li>2. 用户活动期间内在PC端单笔投资每满2000元获得一次投掷骰子的机会（牛天利除外）；</li>
+                    <li>3. 每日投掷骰子次数不限；</li>
+                    <li>4. 投掷骰子后，金猴会根据骰子显示的点数走相应的步数，若金猴停止在有奖品的格子中，<br/>&nbsp;&nbsp;&nbsp;&nbsp;用户将自动获得该格子对应的奖品；</li>
+                    <li>5. 活动获得的红包、现金券、加息券有效期为1个月，请至我的账户->奖励管理中查看；</li>
+                    <li>6. 活动所获得的奖品将在活动结束后的五个工作日内予以寄送；</li>
+                    <li>7. 活动最终解释权归上海牛娃互联网金融信息服务有限公司所有。</li>
+               </ul>
+            </div>
+            <div class="dfh_desc_img"></div>
+        </div>
+    </div>
+    <%include ../tmp_foot.html%>
+    <div style="display:none"><img src="/imgs/dfh/zhuan.gif"></div>
+</body>
+
+<script type="text/javascript">
+
+    var times=<%=dfh?dfh.times:0%>;
+    var curpoint=<%=dfh?dfh.place:0%>;//获取当前步数
+    if(top != self){
+        location.href = "about:blank";
+    }
+    var domain = '<%=domain%>';
+    var originalUrl='<%=originalUrl%>';
+</script>
+<!-- build:js /js/dfh.min.js -->
+<script type="text/javascript" src="/js/head.js"></script>
+<script type="text/javascript" src="/js/gotop.js"></script>
+<script type="text/javascript" src="/js/dfh.js"></script>
+<script type="text/javascript" src="/js/readmsg.js"></script>
+<!-- /build -->
+
+</html>

@@ -1,0 +1,60 @@
+body {
+    position: relative;
+    background: #e9ecef;
+}
+.shop-pannel {
+    position: relative;
+    display: block;
+    clear: both;
+    width: 100%;
+    padding: 0 0 0.7rem 0;
+    color: #999999;
+    font-size: 0.32rem;
+}
+
+
+.shop-info {
+    background-color: #FFFFFF;
+}
+.shop-p {
+    padding: 0.2rem 0;
+}
+.shop-name {
+    color: #333333;
+    font-size: 0.37rem;
+    line-height: 0.54rem;
+    padding: 0.2rem 0.4rem;
+}
+.request-date {
+    color: #999999;
+    font-size: 0.32rem;
+    line-height: 0.5rem;
+    padding: 0.2rem 0.4rem;
+}
+
+
+table{font-size: 0.32rem;box-sizing: border-box;padding:0 0.45rem;margin-left: 0.4rem;}
+table td{padding:0  0.4rem 0.42rem 0.8rem;color: #999999;font-size: 0.32rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

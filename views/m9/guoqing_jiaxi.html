@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>国庆加息券活动</title>
+    <meta name="description" content="国庆加息券活动" />
+    <meta name="keywords" content="国庆加息券活动" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    
+    <link href="/css/m9/guoqing_jiaxi.css"rel="stylesheet" type="text/css" >
+    
+    <%include ./h5script10.html%>
+    
+<body>
+    
+    <img src="/imgs/m9/mobile_guoqingjiaxi1.png" class="jiaxi_paisong">
+    
+    
+    <%if(login=='no'){%>
+        <img src="/imgs/m9/mobile_guoqingjiaxi2.png" class='no_get_1'>
+    <%}else if(addCouponFlag=='2'){%>
+        <img src="/imgs/m9/mobile_guoqingjiaxi3.png" class='get'>
+    <%}else{%>
+        <img src="/imgs/m9/mobile_guoqingjiaxi2.png" class='no_get'>
+    <%}%>
+   
+    
+    
+    
+    <img src="/imgs/m9/confirm.png" class="confirm"> 
+    <img src="/imgs/m9/mobile_guoqingjiaxi4.png" class="gift"> 
+    
+</body>
+<script>
+var addCouponFlag='<%=addCouponFlag%>';
+var login='<%=login%>'
+var index='<%=index%>'
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src='/js/m9/guoqing_jiaxi.js'></script>
+</html>

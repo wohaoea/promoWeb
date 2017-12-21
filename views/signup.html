@@ -1,0 +1,174 @@
+<% include header.html %>
+
+<body>
+<div class="container">
+	<div class="page-head">
+    	<div class="content">
+        	<a href="#" class="back">返回</a>
+            <h1 class="tit">报名一日CEO助理</h1>
+        </div>
+    </div>
+    <div class="content">
+    	<div class="sign-form">
+        	<ul class="form-list">
+                <li class="select-figure"><label>你最想成为谁的助理?</label>
+                    <select name="figure" id="figure" class="form-sel">
+                    	<option value="">请选择</option>
+                        <option value="CEO">CEO</option>
+                        <option value="CIO">CIO</option>
+                    </select>
+                </li>
+                <li class="form-reason">
+                	<textarea class="textare" name="reason" id="reason" placeholder="理由..."></textarea>
+                </li>
+                <li class="beizhu">每月抽取报名理由最有特色的一位送出神秘大奖</li>
+                <li class="sign-formbox">
+                	<ul>
+                    	<li><label>姓名</label><input type="text" name="username" id="username" value="" placeholder="请输入姓名"></li>
+                        <li><label>学校</label><input type="text" name="school" id="school" value="" placeholder="请输入学校名称"></li>
+                        <li><label>手机</label><input type="tel" name="phone" id="phone" maxlength="11" value="" placeholder="请输入手机号"></li>
+                        <li style="border-bottom:none;"><label>地址</label><input name="address" id="address" type="text" value="" placeholder="请输入地址"></li>
+                    </ul>
+                </li>
+                <li class="tip-str">信息为奖品寄送信息,请确保信息填写正确</li>
+                <li class="form-but"><button type="button" name="form_but" id="form_but" value="提交" class="button" >提交</button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="/js/libs/zepto.min.js"></script>
+<script>
+	Zepto(function($){
+		var msg = {
+				main:'信息为奖品寄送信息,请确保信息填写正确',
+				figure:'请选择"你最想成为谁的助理?"',
+				reason:'请填写您的理由,6~40个文字!',
+				username:'请填写您的真实姓名!',
+				school:'请填写您的学校!',
+				phone:'您的手机号码填写不正确!',
+				phone_code:'您的手机号码已申请,同一号码只能申请一次!',
+                phone_error:'手机号码验证失败!',
+				address:'请填写您的地址!',
+                error:'报名失败'
+			};
+		$("#form_but").click(function(){
+
+			var start = true;
+			var figure = $("#figure option").not(function(){ return !this.selected }).val();
+			var reason = $("#reason").val();
+			var username = $("#username").val();
+			var school = $("#school").val();
+			var phone = $("#phone").val();
+			var address = $("#address").val();
+			
+			var tip = $(".tip-str");
+			tip.html(msg.main);
+			//验证是否选择成为谁的助理
+			if(figure==""){
+				//$(".select-figure").addClass("error");	
+				tip.html(msg.figure);
+				start = false;
+				return;
+			}
+			//验证理由
+			reason = trim(reason);
+			if(reason.length<=6){
+				tip.html(msg.reason);
+				//$("#reason").addClass("error");
+				return;	
+			}
+			if(reason.length>40){
+				tip.html(msg.reason_max);	
+				return;
+			}
+			
+			//验证姓名
+			var user_reg = /^[\u4E00-\u9FA5]{2,4}$/;
+			if(!user_reg.test(username)){
+				tip.html(msg.username);
+				start = false;
+				//$("#username").addClass("error");
+				return;
+			}
+			
+			//验证学校
+			school = trim(school);
+			if(school.length<=0){
+				tip.html(msg.school);
+				start = false;
+				//$("#school").addClass("error");
+				return;
+			}
+			
+			//验证手机号码
+			var phone_reg = /^1\d{10}$/;
+			if(!phone_reg.test(phone)){
+				tip.html(msg.phone);
+				start = false;
+				//$("#phone").addClass("error");
+				return;	
+			}
+			
+			//验证地址
+			address = trim(address);
+			if(address.length<=0){
+				tip.html(msg.address);
+				start = false;
+				//$("#address").addClass("error");
+				return;	
+			}
+
+            //验证手机是否已被报名
+            if(start){
+                $.ajax({
+                    url:'/mobilecheck',
+                    data:{phone:phone},
+                    type:"GET",
+                    dataType:"json",
+                    success:function(wsresult){
+
+                        if(wsresult.success) {
+                            $.ajax({
+                                url:'/signupsave',
+                                data:{figure:figure,reason:reason,username:username,school:school,phone:phone,address:address},
+                                type:"POST",
+                                dataType:"json",
+                                success:function(wsresult){
+                                    if(wsresult.success){
+                                        window.location.href="/succesign";
+                                    }else{
+                                        tip.html(msg.error);
+                                    }
+                                },
+                                error:function(e){
+                                    tip.html(msg.error);
+                                }
+                            });
+                        }else{
+                            start = false;
+                            tip.html(msg.phone_code);
+                        }
+                    },
+                    error:function(e){
+                        tip.html(msg.phone_error);
+
+                    }
+
+                });
+            }
+		});
+	});
+	
+	function trim(str){
+		return 	str.replace(/(^\s*)|(\s*$)/g,'');
+	}
+    ;
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+
+</body>
+</html>

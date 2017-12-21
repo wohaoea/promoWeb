@@ -1,0 +1,574 @@
+/*浮动*/
+body{
+    color: #000;
+}
+.fr{
+    float: right
+}
+.fl{
+    float: left
+}
+.absolute{
+    position: absolute;
+    top: 0;
+    right: 0.17rem;
+}
+.awardNameStyle{
+    color: #d3444b;
+    margin-right: .5rem
+}
+.body{
+     background: url('/imgs/thanksgiving/bg.png') 0 0 no-repeat; 
+     height: 17.74rem;
+     background-size: 100% 100%;
+     padding-top: 1.1rem;
+     box-sizing: border-box;
+}
+.font32{
+    font-size: .32rem
+}
+.font24{
+    font-size: .24rem;
+}
+.textcenter{
+    text-align: center
+}
+.official{
+    width: 5.95rem;
+    height: 1.66rem;
+    background: url('/imgs/thanksgiving/wenan.png') 0 0 no-repeat; 
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+
+.activeTime{
+    width: 100%;
+    height: .48rem;
+    line-height: .48rem;
+    color: #fff;
+    font-size: .2rem;
+    text-align: right;
+    padding-right: .8rem;
+    box-sizing: border-box
+}
+
+.pic{
+    /* width: 5.1rem; */
+    height: 7.42rem;
+    background: url('/imgs/thanksgiving/pic.png') 0 0 no-repeat; 
+    background-size: 100% 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: -1;
+    margin: -1rem 0 -1.5rem;
+}
+
+.chance{
+    width: 4.1rem;
+    height: .72rem;
+    margin: 5rem auto 0;
+}
+.chance > span{
+    display: block;
+    float: left;
+    width: 50%;
+    height: .72rem;
+    line-height: .72rem;
+    color: #820078;
+    font-size: .26rem;
+    padding-left: .21rem;
+    box-sizing: border-box
+}
+.convert{
+    height: .46rem;
+    width: 4rem;
+    margin: .38rem auto 0;
+    line-height: .46rem;
+    text-align: center;
+    color: #fff;
+}
+.convert > .niu_money{
+    height: 100%;
+    font-size: .28rem
+}
+.convert > .btn{
+    width: .98rem;
+    height: 100%; 
+    font-size: .2rem;
+    background-color: #35bffd;
+    border-radius: .1rem
+}
+.niu_money > img{
+    width: .39rem;
+    height: .24rem;
+}
+.draw{
+    width: 5.06rem;
+    height: .75rem;
+    margin: .6rem auto;
+}
+.draw > .btn{
+    width: 1.94rem;
+    height: .75rem;
+    background-size: 100% 100%;
+}
+.once{
+    background: url('/imgs/thanksgiving/once.png') 0 0 no-repeat;
+}
+.ten{
+    background: url('/imgs/thanksgiving/ten.png') 0 0 no-repeat;
+}
+.title{
+    display: block;
+    width: 3.42rem;
+    height: .32rem;
+    margin: 0 auto;
+    color: #35bffd;
+    text-align: center;
+    font-size: .32rem;
+    line-height: 1
+}
+.line{
+    display: block;
+    width: .9rem;
+    height: .04rem;
+    background-color: #35bffd;
+    margin-top: .14rem
+}
+.prize{
+    width: 5.96rem;
+    height: 1.66rem;
+    margin: .7rem auto .36rem;
+}
+.prize > .category{
+    width: 1.22rem;
+    height: 100%;
+    margin-left: .36rem;
+    
+}
+.prize > .category:nth-child(1){
+    margin-left: 0
+}
+.prize > .category .top{
+    height: 1.13rem;
+    background-color: #556fb5;
+    margin-bottom: .26rem;
+    overflow: hidden
+}
+.prize .category .bottom{
+    color: #fff;
+    text-align: center;
+    font-size: .24rem;
+    line-height: 1
+}
+.bigbox{ 
+    width: 5.5rem;
+    height:2rem;
+    position:relative;
+    margin: .35rem auto .5rem; 
+    overflow:hidden;
+}  
+#awardList{ 
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    left:0;
+    top:0;
+    margin:0;
+    box-sizing: border-box
+}  
+#awardList li{ 
+    height: 20%;
+    color:#fff;
+    line-height: 1;
+    font-size: .24rem
+}  
+.before{
+    width: 2.75rem;
+}
+footer{
+    text-align: center;
+    font-size: .18rem;
+    color: #fff;
+}
+.rules{
+    font-size: .26rem;
+    color: #fff;
+    line-height: .26rem;
+    top: .36rem;
+}
+.rules::after{
+    display: block;
+    float: right;
+    content: "";
+    width: .24rem;
+    height: .22rem;
+    background: url('/imgs/thanksgiving/arrow.png') 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin-top: .02rem;
+    margin-left: .12rem;
+}
+.share{
+    font-size: .24rem;
+    color: #fff;
+    top: .9rem;
+    width: .96rem;
+    height: .46rem;
+    text-align: center;
+    line-height: .46rem;
+    border-radius: .18rem;
+    background-color: #f8b551;
+}
+.activeRules{
+    display: none;
+    width: 6.25rem;
+    /* height: 8.93rem; */
+    color: #000;
+    font-size: .24rem;
+    margin: 1.06rem auto;
+    background-color: #fff;
+    border-radius: .1rem;
+    line-height: .44rem;
+    padding: .54rem .3rem;
+    box-sizing: border-box;
+    position: relative
+}
+.activeRules > .title{
+    text-align: center;
+    font-size: .34rem;
+    color: #000;
+    line-height: 1;
+    margin-bottom: .44rem;
+    font-weight: normal;
+}
+.boxShadow{
+    display: none; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    overflow: scroll;
+}
+
+.close{
+    width: .22rem;
+    height: .22rem;
+    background: url("/imgs/thanksgiving/close.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0.18rem;
+    right: 0.18rem;
+}
+.shake_conversion{
+    
+}
+.center{
+    width: 2.2rem;
+    height: .66rem;
+    background: url("/imgs/thanksgiving/centerBtn.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin: .45rem auto;
+    text-align: center;
+    line-height: .66rem;
+    font-size: .32rem;
+    color: #494949;
+    font-family: "黑体"
+}
+.cash{
+    margin-top: .5rem;
+    padding: 0 1rem;
+}
+.cash .kind,.interest .kind{
+    width: 1.21rem;
+    margin-right: .92rem;
+    color: #fff;
+    font-size: .18rem;
+    margin-bottom: .78rem;
+    text-align: center;
+}
+.interest .kind:nth-child(3n),.cash .kind:nth-child(3n){
+    margin-right: 0;
+}
+.kind .award{
+    width: 100%;
+    height: .75rem;
+    margin-bottom: .3rem;
+    background: url("/imgs/thanksgiving/packet.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    line-height: .75rem;
+    font-size: .32rem;
+}
+.kind .btn{
+    width: 100%;
+    height: .5rem;
+    color: #8b593e;
+    background: url("/imgs/thanksgiving/awardbtn.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    line-height: .5rem;
+}
+.interest{
+    margin-top: .07rem;
+    padding: 0 1rem;
+}
+.interest .kind{
+    width: 1.21rem;
+}
+.interest .award{
+    height: .6rem;
+    margin-bottom: .32rem;
+    background: url("/imgs/thanksgiving/rate.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.award .rate{
+    width: .83rem;
+    height: 100%;
+    display: block;
+    float: right;
+    line-height: .6rem;
+}
+.category .top div{
+    margin: 0 auto;
+}
+.category .top .yuanbao{
+    width: .76rem;
+    height: .39rem;
+    background: url("/imgs/thanksgiving/yuanbao.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin-top: .4rem
+}
+.category .top .award228{
+    width: 1.06rem;
+    height: .7rem;
+    background: url("/imgs/thanksgiving/228.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin-top: .23rem
+}
+.category .top .award428{
+    width: 1.07rem;
+    height: .79rem;
+    background: url("/imgs/thanksgiving/428.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin-top: .2rem
+}
+.category .top .award828{
+    width: 1.12rem;
+    height: .83rem;
+    background: url("/imgs/thanksgiving/828.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin-top: .13rem
+}
+.drawing{
+    display: none;
+    width: 4.8rem;
+    height: 4.8rem;
+    background: url("/imgs/thanksgiving/drawing.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin: 2.9rem auto;
+    position: relative;
+}
+.drawing .hand{
+    width: 2.51rem;
+    height: 2.82rem;
+    background: url("/imgs/thanksgiving/hand.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* transition: all 3s; */
+    transform-origin: 80% 100%;
+    -webkit-transform-origin: 80% 100%;
+    -o-transform-origin: 80% 100%;
+    -ms-transform-origin: 80% 100%;
+    -moz-transform-origin: 80% 100%;
+    animation: drawing 1s infinite;
+    -webkit-animation: drawing 1s infinite;
+    animation-iteration-count: 2;
+    -webkit-animation-iteration-count: 2
+}
+.drawing .count10{
+    animation-iteration-count: 5
+}
+@keyframes drawing{
+    0%{
+        transform: rotate(-10deg)
+    }
+    25%{
+        transform: rotate(10deg)
+    }
+    50%{
+        transform: rotate(-10deg)
+    }
+    75%{
+        transform: rotate(10deg)
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+}
+@-moz-keyframes drawing{
+    0%{
+        transform: rotate(-10deg)
+    }
+    25%{
+        transform: rotate(10deg)
+    }
+    50%{
+        transform: rotate(-10deg)
+    }
+    75%{
+        transform: rotate(10deg)
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+}
+@-o-keyframes drawing{
+    0%{
+        transform: rotate(-10deg)
+    }
+    25%{
+        transform: rotate(10deg)
+    }
+    50%{
+        transform: rotate(-10deg)
+    }
+    75%{
+        transform: rotate(10deg)
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+}
+@-webkit-keyframes drawing{
+    0%{
+        transform: rotate(-10deg)
+    }
+    25%{
+        transform: rotate(10deg)
+    }
+    50%{
+        transform: rotate(-10deg)
+    }
+    75%{
+        transform: rotate(10deg)
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+}
+.hasmoney{
+    display: none;
+}
+.hasnomoney{
+    text-align: center;
+    display: none;
+}
+.drawresult{
+    /* display: none; */
+    width: 5.72rem;
+    background-color: #fff;
+    padding: .92rem .5rem .36rem;
+    box-sizing: border-box;
+    border-radius: .1rem;
+    margin: 3.76rem auto;
+    position: relative
+}
+.drawresult .submit{
+    width: 2.8rem;
+    height: .72rem;
+    border-radius: .36rem;
+    background-color: #e94b4a;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+    line-height: .72rem
+}
+.pic2{
+    width: 1.4rem;
+    height: 1.4rem;
+    background: url("/imgs/thanksgiving/pic2.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: -.7rem;
+    left: 50%;
+    margin-left: -.7rem;
+}
+.awardpacket{
+    width: 2.66rem;
+    height: 1.66rem;
+    background: url("/imgs/thanksgiving/packet.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 1.66rem;
+    font-size: .58rem;
+}
+.successTips{
+    display: none;
+    color: #fff;
+    margin: 3.72rem auto 0;
+    width: 2.66rem;
+    text-align: center
+}
+.successTips p{
+    display: inline-block;
+    font-size: .36rem;
+    margin-bottom: .54rem
+}
+.getmoney{
+    display: none;
+    width: 4.7rem;
+    height: 2.22rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 4.92rem auto 0;
+    position: fixed;
+    top: 4.92rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fff;
+    padding-top: .42rem;
+    box-sizing: border-box
+}
+.alignTop{
+    vertical-align: top;
+}
+.inline{
+    display: inline-block;
+    font-size: .28rem;
+}
+.entity{
+    display: none
+}
+.inline img{
+    width:.57rem;
+    vertical-align: top;
+}
+.hasnomoney img{
+    width: 1.5rem;
+    margin-bottom: .3rem
+}
+.hidebox{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    color: #fff;
+    top: 0;
+    left: 0;
+    justify-content: center;
+}
+#tips{
+    padding: .2rem .3rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: .1rem;
+}
+.nologin{
+    display: none;
+}

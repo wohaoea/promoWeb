@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>借款协议</title>
+    <meta name="description" content="注册" />
+    <meta name="keywords" content="注册,牛娃p2p" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/niuwah5.min.css -->
+    
+    <!-- /build -->
+	<style type="text/css">
+	/* ------------------- reset CSS ------------------- */
+	body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,button,textarea,p,blockqoute,th,td{margin:0;padding:0;}
+	body,button {
+	  margin: 0;
+	  padding: 0;
+	  background: #ffffff;
+	  font-size: 14px;
+	  font-family:"微软雅黑";
+	  font-weight:normal;
+	}
+	input[type="button"], input[type="submit"], input[type="reset"] {
+	-webkit-appearance: none;
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button{
+		-webkit-appearance: none !important;
+		margin: 0; 
+	}
+	
+	a{
+		text-decoration: none;
+	}
+	a:link { text-decoration: none;color:#585858}
+	a:active { text-decoration:none;color:#585858}
+	a:hover { text-decoration:underline;;color:#585858} 
+	a:visited { text-decoration: none;;color:#585858}
+	li,dd,dt{ list-style:none;}
+	
+	.container {
+	  min-width: 320px;
+	  height: 100%;
+	  width: 100%;
+	  background: #fbfdfc;
+	  margin: auto;
+	}
+	.a1:link { text-decoration: none;color:#59aedf}
+	.a1:active { text-decoration:none;color:#59aedf}
+	.a1:hover { text-decoration:underline;;color:#59aedf} 
+	.a1:visited { text-decoration: none;;color:#59aedf}
+
+	/*借款协议*/
+	.agree{
+		padding:10px;
+		font-size: 16px;
+		font-family:黑体;
+		color:#000;
+		line-height: 180%;
+	}
+	.agree .agree-name{
+		font-size: 18px;
+		text-align: center;
+	}
+	.agree .agree-id{
+		padding-right: 10px;
+		font-size: 16px;
+		text-align: right;
+	}
+	.agree .agree-number{
+	
+		color:#ff8400;
+	}
+	.agree .agree-desc{
+		padding:10px 0;
+	}
+	.agree .agree-A,.agree .agree-B{
+		padding-bottom:20px;
+	}
+	.agree .agree-inst{
+		text-indent: 2em;
+	}
+	.agree .agree-tab{
+		width: 100%;
+	}
+	.agree .agree-tab th{
+		font-weight: normal;
+	}
+	.agree .agree-tab,.agree .agree-tab th,.agree .agree-tab td{
+		border: 1px solid #000;
+		border-collapse: collapse;
+		line-height: 150%;
+		text-algin: center;
+	}
+	.agree .agree-terms{
+		padding-top: 20px;
+	}
+	.agree .agree-terms .agree-terms-title{
+		font-weight: bold;
+		padding-bottom: 20px;
+	}
+	.agree .agree-zhu{
+		padding: 20px 0 40px 0;
+	}
+	.agree .agree-foot{
+		min-height: 100px;
+		padding-bottom: 20px;
+	}
+	.agree .q-year,.agree .q-month,.agree .q-day{
+		display: inline-block;
+		min-width: 50px;
+		text-align: right;
+	}
+	.agree .q-month,.agree .q-day{
+		min-width: 30px;
+	}
+	</style>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="agree">
+        <h1 class="agree-name">借款协议</h1>
+        <h2 class="agree-id">编号：<span class="agree-number">xxxxxx</span></h2>
+        <div class="agree-head">
+            <div class="agree-desc">本《借款协议》 （ “本协议”） 由以下两方签署：</div>
+            <div class="agree-A">
+                <ul>
+                    <li><b>甲方（借款人）：</b><span><%= username%></span></li>
+                    <li>身份证号码：<span><%= usercard%></span></li>
+                    <li>住所：<span>银河系地球亚洲中华人民共和国上海市浦东新区１８８８号ＸＸＸＸＸ小区３３３室</span></li>
+                    <li>法定代表人：刘玮</li>
+                </ul>
+            </div>
+            <div class="agree-B">
+                <div>乙方（ 投资人或出借人） ：上海牛娃互联网金融有限公司</div>
+                <table class="agree-tab">
+                    <tr>
+                        <th>用户名</th>
+                        <th>投资款/出借款(元)</th>
+                        <th>借款到期日</th>
+                        <th>预期收益</th>
+                        <th>借款确认日期</th>
+                    </tr>
+                    <tr>
+                        <td>上海牛娃金融</td>
+                        <td>200万</td>
+                        <td>2222年</td>
+                        <td>100万</td>
+                        <td>2015年11月11日</td>
+                    </tr>
+                </table>
+                <div>住所：</div>
+                <div>法定代表人：</div>
+            </div>
+        </div>
+        <div class="agree-content">
+            <p class="agree-inst">本协议就甲方通过由上海牛娃互联网金融信息服务有限公司（“牛娃金融公司”）运营管理的牛娃金融（域名为www.    ，“牛娃金融”）平台向乙方借款事宜达成协议内容如下：</p>
+    
+            <!--第一条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">一、	借款项目明细</h3>
+                <table class="agree-tab">
+                    <tr>
+                        <th style="width: 45%">项目信息</th>
+                        <th>编号</th>
+                    </tr>
+                    <tr>
+                        <td>借款人</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>身份证号
+    
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>借款用途
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>借款金额
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>借款到期日
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>收益率（ 年化）
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>收益起算日</td>
+                        <td></td>
+                    </tr>
+                </table>
+    
+    
+                <table class="agree-tab MT20">
+                    <tr>
+                        <th style="width: 45%">还款日</th>
+                        <th>还款金额</th>
+                    </tr>
+                    <tr>
+                        <td>a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>b</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>c</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>d</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>e</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+    
+            <!--第二条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">二、	借款流程</h3>
+                <p>2.1 本协议成立：乙方按照牛娃金融的规则，通过在牛娃金融上对甲方发布的借款需求点击“投标”按钮确认，本协议自动成立。</p>
+                <p>2.2 出借资金冻结：乙方点击“投标”按钮即视为其已经向牛娃金融公司发出不可撤销的授权指令，授权牛娃金融公司委托相应的第三方支付机构将乙方牛娃金融用户名项下虚拟账户（“乙方牛娃金融账户”）中资金冻结，冻结金额等同于其拟“出借金额或投资金额”的资金。上述冻结在本协议生效时或本协议确定失效时解除。出借人在第三方支付平台上的资金是在自己的名下，而非“牛娃”名下。</p>
+                <p>2.3 本协议生效：本协议在甲方发布的借款需求全部得到满足且甲方借款需求所对应的资金已经全部冻结时立即生效。</p>
+                <p>2.4 出借资金划转：本协议生效的同时，乙方即不可撤销地授权牛娃金融公司委托相应的第三方支付机构，将其拟对甲方出借的资金划转至甲方的账户中，划转完毕即视为借款发放成功。</p>
+                </p>
+            </div>
+    
+            <!--第三条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">三、	借款资金来源保证</h3>
+                <p>乙方保证其所用于出借的资金来源合法，乙方是该资金的合法所有人，如果第三方对资金归属、合法性问题发生争议，由乙方自行负责解决。如乙方未能解决，则放弃享有其所出借款项所带来的利息收益。</p>
+            </div>
+    
+            <!--第四条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">四、	本息偿还方式</h3>
+                <p>4.1 甲方必须按照本协议的约定按时、足额偿还对乙方的本金和利息。</p>
+                <p>4.2 甲方应在每月还款日当日（不得迟于24:00）或之前，通过向其第三方支付账户充值进而以转账的方式支付金额等同于本协议第一条所列的“还款数额”的资金。</p>
+                <p>4.3 如果还款日遇到法定假日或公休日，还款日期不进行顺延。</p>
+            </div>
+    
+            <!--第五条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">五、	提前还款</h3>
+                <p>5.1甲方可在借款期间任何时候通过牛娃金融的“提前还款”功能提前偿还剩余借款。</p>
+                <p>5.2若甲方提前偿还全部剩余借款，则甲方须在偿还最后一期剩余借款时，按照平台规则支付一定的提前还款的平台手续费，牛娃金融公司再根据其与乙方之间的约定向乙方支付该等资金。但甲方仍应向乙方支付全部借款利息。</p>
+                <p>5.3若甲方提前偿还部分剩余借款，处理方式参照5.2。</p>
+            </div>
+    
+            <!--第六条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">六、	逾期还款</h3>
+                <p>6.1每月还款日24:00前，甲方未足额支付当月应还款的，则视为逾期。</p>
+                <p>6.2发生逾期，则由甲方向投资人或担保人或其他继受权利人支付罚息，具体根据牛娃金融风控规则确定。罚息率：X%每月，罚息利率=未偿还的合同金额的余额X罚息率。</p>
+                <p>6.3借款期间内，如遇本协议项下借款利率调整，逾期罚息利率自借款利率调整之日起相应调整。</p>
+                <p>6.4逾期款项中的利息、逾期罚息不计利息。</p>
+                <p>6.5若甲方对任何一期应还款逾期达到下一个还款日时，则本协议项下全部借款全部提前到期；该期借款逾期未达到下一个还款日但已届最终借款到期日的，仍以最终借款到期日为全部借款到期日。</p>
+            </div>
+    
+            <!--第七条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">七、	违约</h3>
+                <p>7.1 如果甲方擅自改变本协议第一条规定的借款用途或严重违反还款义务，或未经乙方同意擅自转让本协议项下借款债务的，乙方有权或授权牛娃金融代为提前终止本协议；同时，甲方应向乙方支付借款本金总额30%的金额作为违约金。甲方须在乙方提出终止本协议要求的三日内，向指定账户一次性支付余下的所有本金、利息和违约金。</p>
+                <p>7.2 甲方保证其提供的信息和资料的真实性，不得提供虚假资料或隐瞒重要事实。甲方提供虚假资料或者故意隐瞒重要事实，构成违约，应承担违约责任，乙方有权或授权牛娃金融代为要求解除本协议；同时，甲方应向乙方支付借款本金总额30%的金额作为违约金。甲方须在乙方要求解除本协议后三日内，向指定账户一次性支付余下的所有本金、利息和违约金。构成犯罪的，乙方将有权或授权牛娃金融代为向相关国家机关报案，追究甲方刑事责任。</p>
+                <p>7.3 发生下列任何一项或几项情形的，视为甲方违约：<br>
+                    (1)	甲方的任何财产遭受没收、征用、查封、扣押、冻结等可能影响其履约能力的不利事件，且不能及时提供有效补救措施的；<br>
+                    (2)	甲方的财务状况出现影响其履约能力的不利变化，且不能及时提供有效补救措施的。<br></p>
+                <p>7.4 若因本条第3款所述情形而导致甲方违约，或根据乙方合理判断甲方可能发生本条第3款所述的违约事件的，乙方有权自行或委托牛娃金融公司采取下列任何一项或几项救济措施：<br>
+                    (1)	立即暂缓、取消发放全部或部分借款；<br>
+                    (2)	宣布已发放借款全部提前到期，甲方应立即偿还所有应付款；<br>
+                    (3)	解除本协议；<br>
+                    (4)	采取法律、法规以及本协议约定的其他救济措施。</p>
+                <p>7.5 乙方保留将甲方违约失信的相关信息在媒体披露的权利。因甲方未还款而带来的调查及诉讼费用将由甲方承担。</p>
+            </div>
+    
+            <!--第八条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">八、	保障措施</h3>
+                <p>8.1 甲方出现逾期或其他违约情形，由其他主体进行资金垫付或担保的，其他主体有权基于其资金垫付或担保行为向甲方主张债权。具体按照牛娃金融公布的风控规则执行。</p>
+            </div>
+    
+            <!--第九条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">九、	变更通知</h3>
+                <p>9.1 本协议签订之日起至借款全部清偿之日止，甲方有义务在其向乙方提供的任何信息变更3天内通过牛娃金融提供更新后的信息给乙方并提交相应的证明文件，包括但不限于甲方身份证号码、住所等基本信息、其他信息等的变更。</p>
+                <p>9.2 若因甲方不及时提供上述变更信息而带来的调查及诉讼费用将由甲方承担。</p>
+            </div>
+    
+            <!--第十条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">十、	债权转让</h3>
+                <p>10.1 甲乙双方同意并确认，乙方可将本协议项下的全部借款债权转让予第三方，但该第三方必须为牛娃金融的注册用户或征得牛娃金融同意的其他第三方。</p>
+                <p>10.2 乙方转让其借款债权的，乙方自行或委托牛娃金融公司在转让完成后以向甲方发出电子邮件等方式通知甲方，不需要征求甲方的同意，甲方对任何符合10.1条件的债权转让行为均无异议。</p>
+                <p>10.3 乙方根据本协议转让借款债权的，除本协议项下的提供借款的一方变更为债权受让人外，本协议项下其他条款不受影响，且变更内容对甲方仍有约束力，甲方需对债权受让人在剩余借款期限继续履行本协议下其对乙方的还款义务。</p>
+            </div>
+    
+            <!--第十一条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">十一、	本协议的转让</h3>
+                <p>未经乙方事先书面（包括但不限于电子邮件等方式）同意，甲方不得将本协议项下的任何权利义务转让给任何第三方。</p>
+            </div>
+    
+            <!--第十二条-->
+            <div class="agree-terms">
+                <h3 class="agree-terms-title">十二、	其他</h3>
+                <p>12.1 甲方发布的相应借款需求未在规定时间内被全部满足并已经适当冻结相应拟出借资金的，自规定期满日24：00起，本协议自动终止，乙方资金解除冻结；或者甲方将本协议下全部本金、利息、逾期罚息、滞纳金、违约金及其他相关费用全部偿还完毕之时，本协议自动终止。</p>
+                <p>12.2 本协议的任何修改、补充均须以牛娃金融平台电子文本形式作出，一旦做出，对各方均有效，各方不得以未签署纸质协议或其他理由提出反对意见。</p>
+                <p>12.3 双方均确认，本协议的签订、生效和履行以不违反法律为前提。如果本协议中的任何一条或多条违反适用的法律，则该条将被视为无效，但该无效条款并不影响本协议其他条款的效力。</p>
+                <p>12.4 如果三方在本协议履行过程中发生任何争议，应友好协商解决；如协商不成，则须提交牛娃金融所在地人民法院进行诉讼。</p>
+                <p>12.5 双方方委托牛娃金融保管所有与本协议有关的书面文件或电子信息。</p>
+            </div>
+    
+    
+            <div class="agree-zhu">各方确认签署协议前已充分阅读、 理解并接受本协议的全部内容， 各方同意自愿达成本协议。</div>
+            <div class="agree-foot">
+                签署日期：<span class="q-year">2003</span>年<span class="q-month">12</span>月<span class="q-day">12</span>日
+            </div>
+    
+    
+    
+    
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5H47RG');</script>

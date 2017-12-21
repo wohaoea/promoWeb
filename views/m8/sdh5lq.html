@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>和讯牛娃商城纳新</title>
+    <meta name="description" content="和讯牛娃商城纳新" />
+    <meta name="keywords" content="和讯牛娃商城纳新" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/nx.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/nx.css">
+    <!-- /build -->
+
+    <script>
+        if(top != self){
+            location.href = "about:blank";
+        }
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return 'no';
+            }else{
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr,rem,scale,docEl=document.documentElement,fontEl=document.createElement("style"),metaEl=document.querySelector('meta[name="viewport"]');
+        var u = (window.navigator.appVersion.match(/android/gi),window.navigator.appVersion.match(/iphone/gi));
+        dpr=window.devicePixelRatio||1;
+        if(u && window.devicePixelRatio>=3){
+            dpr=3;
+        }else if(window.devicePixelRatio>=2){
+            dpr=2;
+        }else{
+            dpr=1;
+        };
+        rem=docEl.clientWidth*dpr/10;scale=1/dpr;metaEl.setAttribute("content","width="+dpr*docEl.clientWidth+",initial-scale="+scale+",maximum-scale="+scale+", minimum-scale="+scale+",user-scalable="+ weixing);docEl.setAttribute("data-dpr",dpr);docEl.firstElementChild.appendChild(fontEl);fontEl.innerHTML="html{font-size:"+rem+"px!important;}";
+        window.rem2px=function(a){a=parseFloat(a);return a*rem};window.px2rem=function(a){a=parseFloat(a);return a/rem};
+    </script>
+</head>
+<body>
+<div class="topheader"></div>
+<section class="title">历史活期收益6.6%就在牛天利！</section>
+<section class="redpacketbox">
+    <div class="jies clearfix">
+        <div class="wxheader"><img src='<%= shareperson.headPic%>' /></div>
+        <div class="wxmessage"></div>
+    </div>
+    <div class="lqhongbao"></div>
+    <p>点击马上领取抢夺红包</p>
+    <p>再不下手就没啦！</p>
+</section>
+<% if(shareperson.ReceiveFlag==1){%>
+<% if(shareperson.telVali=='1'){%>
+<div class="vedbtnlq"></div>
+<%}else{%>
+<div class="vbtnlq" data-amount='<%=shareperson.amount%>' data-tel='<%=shareperson.tel%>' data-overtime='<%=(shareperson.overTime).split(' ')[0]%>'></div>
+<%}%>
+<%}else{%>
+<div class="btnlq"></div>
+<%}%>
+
+<section class="liebiaowrap clearfix">
+    <h4>—— 看看大家的手气如何 ——</h4>
+    <ul>
+        <% if(wxList.length==0){%>
+        <li class="clearfix">
+            <div class="nulllq">还没有朋友领取，赶紧领取吧！</div>
+        </li>
+        <%}else{%>
+        <% wxList.forEach(function(v){%>
+        <li class="clearfix">
+            <div class="wximg"><img src='<%= v.headPic%>' /></div>
+            <div class="wxinfo">
+                <p><%= utils.subString(v.nickName,20)%><span><%= (v.receiveTime).split(' ')[0]%></span><span><%= ((v.receiveTime).split(' ')[1]).split(':')[0]%>:<%= ((v.receiveTime).split(' ')[1]).split(':')[1]%></span></p>
+                <p><span style='padding-left:0;line-height:0.6rem'><%= tishiyu(Math.random())%></span></p>
+            </div>
+            <div class="moneylist"><%= v.redAmount%>元红包</div>
+        </li>
+        <%})%>
+        <%}%>
+    </ul>
+</section>
+
+</body>
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<!-- build:js /js/nxhd.min.js -->
+<script type="text/javascript" src='/js/nxhd.js'></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    var shareRedId='<%= typeof(shareRedId)=='undefined'?'':shareRedId%>';
+    var h5url='<%=config.base.h5domain%>';
+    var userinfo = <%-JSON.stringify(info)%>;
+    var myinfo = userinfo;
+    //alert();
+    // alert('<%=wxShareOpt.timespan%>'+'---------'+'<%=wxShareOpt.noncestr%>'+'-----'+'<%=wxShareOpt.signature%>');
+    wx.config({
+        debug: false,
+        appId: '<%=wxShareOpt.nwwxappid%>',
+        timestamp:'<%=wxShareOpt.timespan%>' ,
+        nonceStr: '<%=wxShareOpt.noncestr%>',
+        signature: '<%=wxShareOpt.signature%>',
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ']
+    });
+
+    wx.ready(function(){
+        wx.onMenuShareTimeline({
+            imgUrl: '<%= config.base.wxshareurl%>/imgs/nx/nwhb.jpg', // 分享图标
+            title: '小伙伴们来抢吧~',
+            desc: '和讯牛娃商城纳新红包来袭，快来领取和我一起享受投资之旅~',
+            link: '<%= config.base.wxshareurl%>/m8/sdh5lq/'+shareRedId
+        });
+
+
+        wx.onMenuShareAppMessage({
+            imgUrl: '<%= config.base.wxshareurl%>/imgs/nx/nwhb.jpg', // 分享图标
+            title: '小伙伴们来抢吧~',
+            desc: '和讯牛娃商城纳新红包来袭，快来领取和我一起享受投资之旅~',
+            link: '<%= config.base.wxshareurl%>/m8/sdh5lq/'+shareRedId
+        });
+
+        wx.onMenuShareQQ({
+            imgUrl: '<%= config.base.wxshareurl%>/imgs/nx/nwhb.jpg', // 分享图标
+            title: '小伙伴们来抢吧~',
+            desc: '和讯牛娃商城纳新红包来袭，快来领取和我一起享受投资之旅~',
+            link:'<%= config.base.wxshareurl%>/m8/sdh5lq/'+shareRedId
+        });
+    });
+</script>

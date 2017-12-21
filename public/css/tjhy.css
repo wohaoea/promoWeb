@@ -1,0 +1,108 @@
+.rf-bg{height: 402px;background: url(../imgs/tuijianbg.jpg) no-repeat top center;}
+.rf-bg2{height: 237px;background: url(../imgs/tuijianbg2.jpg) no-repeat top center;width: 1000px;margin: auto;}
+.rf-share{
+	background-color: #f2f4f6;
+    width: 950px;
+    margin: auto;
+    height: 190px;
+    margin-top: 50px;
+}
+.rf-sharebg{
+	background: url(../imgs/shares.jpg) no-repeat;
+    width: 221px;
+    height: 112px;
+    position: relative;
+    float: left;
+    margin-top: 30px;
+    margin-left: 115px;
+}
+.share-qq{
+	position: absolute;
+    width: 60px;
+    height: 79px;
+    left: 0px;
+    top: 31px;
+    cursor: pointer;
+}
+.share-wx{
+	position: absolute;
+    width: 60px;
+    height: 79px;
+    left: 80px;
+    top: 31px;
+    cursor: pointer;
+}
+
+.share-sina{
+	position: absolute;
+    width: 60px;
+    height: 79px;
+    left: 160px;
+    top: 31px;
+    cursor: pointer;
+}
+.rf-sharer{    
+	float: left;
+    margin-left: 160px;
+    margin-top: 32px}
+.rf-st{background: url(../imgs/t_links.jpg) no-repeat;width: 147px;height: 22px}
+.rf-links{
+	width: 310px;
+    height: 37px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding-left: 24px;
+    line-height: 37px;
+    text-transform: uppercase;
+    border: solid 1px #ddd;
+}
+.rf-button{
+	width: 160px;
+	height: 42px;
+	background-color: #ff4b4b;
+	border-radius: 4px;
+	margin-top: 10px;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+	line-height: 42px;
+	font-size: 18px;
+}
+.rf-hx{
+	width: 950px;
+    margin: auto;
+    margin-top: 60px;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+.rf-desc{
+	margin-top: 26px;
+	margin: auto;
+	width: 950px;
+}
+.rf-desc ul{margin-top: 10px;}
+.rf-desc ul li{font-size: 12px;line-height: 30px}
+.friend-showQcode {
+    top: 150px;
+    left: 30px;
+}
+.showQcode {
+        display: none;
+    position: absolute;
+    top: 114px;
+    left: 8px;
+    width: 200px;
+    height: 200px;
+    z-index: 10000000;
+    border: 1px solid #DADADA;
+}
+.toptip {
+    position: absolute;
+    z-index: 100000001;
+    top: -6px;
+    left: 90px;
+    width: 15px;
+    height: 6px;
+    background: url(../imgs/niuwaIco.png) -7px -1962px;
+}

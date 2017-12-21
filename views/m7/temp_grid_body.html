@@ -1,0 +1,18 @@
+<% if(data.listData.length==0){%>
+	<div style="min-height:100;background:#fff;color:#bcbcbc;line-height:100px;text-align:center">暂无活动产品</div>
+<%}else{%>
+<div class="wapp">
+		<%data.listData.forEach(function(shop,k){%>
+				<div class="wappitem <%=(shop.status==='RELEASED' ? 'active' : '')%> shop" data-url="" data-code="<%=shop.commerceCode%>">
+                <div class="wappimg">
+                	<img src="/getimg/<%=shop.commerceLogo%>" class="<%=(shop.status==='RELEASED' ? 'active' : 'grayscale')%>" /><div class="solerout"></div>
+                </div>
+                <div class="wappname"><%=(shop.commerceName ? shop.commerceName : "")%></div>
+                <div class="wappopr"><%=(shop.giftDesc ? shop.giftDesc : "")%></div>
+                <!-- <div class="expiration"><%=(shop.endTime?shop.endTime : "")%></div> -->
+            </div>
+		<%})%>
+</div>
+<div style="clear:both;"></div>
+<%include temp_pagination.html%>
+<%}%>

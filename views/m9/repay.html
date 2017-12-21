@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>还款</title>
+    <meta name="description" content="还款" />
+    <meta name="keywords" content="还款" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/repay.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/m9/repay.css">
+    <!-- /build -->
+    <%include ./h5script.html%>
+   
+</head>
+
+<body>
+    
+    <div class="rest_money_use">
+    	<p class="restmoney">可用余额</p>
+    	<p class="moneynumber">2000.00元</p>
+    	<span class="recharge">充值</span>
+    </div>
+    
+    <div class="container">
+    	<ul class="container_top">
+    		<%if(active_tab=='r1'){%>
+    		<li class="active" id="r1" >按期还款</li>
+    		<%}else{%>
+    		<li id="r1" data-type="r1">按期还款</li>
+    		<%}%>
+    		<%if(active_tab=='r2'){%>
+    		<li class="active" id="r2" >按期还款</li>
+    		<%}else{%>
+    		<li id="r2" data-type="r2">按期还款</li>
+    		<%}%>
+    		<%if(active_tab=='r3'){%>
+    		<li class="active" id="r3" >按期还款</li>
+    		<%}else{%>
+    		<li id="r3" data-type="r3">按期还款</li>
+    		<%}%>
+    		
+    		
+    		
+    	</ul>
+    	
+    	<!--按期还款-->
+    	<%if(active_tab=='r1'){%>
+    	<div class="Repayment" >
+    		<ul class="u1">
+    			<li>
+    				<img src="/imgs/m9/check.png" class="sfleft"/>
+    				<div class="detail">
+    					<p ><span id="Repayment_p"><%=list[0].shopDesc.substring(0,10)%></span></p>
+    					<p><span>[3/12期] 易换机：iPhone 6s 以旧换新</span> </p>
+    					
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				<span class="time_detail red">逾期三天</span>
+    			</li>
+    			<li>
+    				<img src="/imgs/m9/uncheck.png" class="sfleft"/>
+    				<div class="detail">
+    					<p ><span id="Repayment_p">3.192元</span></p>
+    					<p><span>[2/6期] 国宾体检：白领一族体检套餐</span> </p>
+    					
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				<span class="time_detail">还剩7天</span>
+    			</li>
+    			<li>
+    				<img src="/imgs/m9/uncheck.png" class="sfleft"/>
+    				<div class="detail">
+    					<p ><span id="Repayment_p">3.192元</span></p>
+    					<p><span>[1/3期] 朗阁雅思：5月精品学习班</span> </p>
+    					
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				<span class="time_detail">还剩12天</span>
+    			</li>
+    			<li>
+    				<img src="/imgs/m9/unable_check.png" class="sfleft"/>
+    				<div class="detail">
+    					<p><span id="Repayment_p">3.192元</span></p>
+    					<p><span>[4/12期] 易换机：iPhone 6s 以旧换新</span> </p>
+    					
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				<span class="time_detail">还剩12天</span>
+    			</li>
+    			<li>
+    				<img src="/imgs/m9/unable_check.png" class="sfleft"/>
+    				<div class="detail">
+    					<p ><span id="Repayment_p">3.192元</span></p>
+    					<p><span>[4/12期] 易换机：iPhone 6s 以旧换新</span> </p>
+    					
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				<span class="time_detail">还剩12天</span>
+    			</li>
+    			<li>
+    				<img src="/imgs/m9/unable_check.png" class="sfleft"/>
+    				<div class="detail">
+    					<p ><span id="Repayment_p">3.192元</span></p>
+    					<p><span>[4/12期] 易换机：iPhone 6s 以旧换新</span> </p>
+    					
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				<span class="time_detail">还剩12天</span>
+    			</li>
+    			<li>
+    				<img src="/imgs/m9/unable_check.png" class="sfleft"/>
+    				<div class="detail">
+    					<p ><span id="Repayment_p">3.192元</span></p>
+    					<p><span>[4/12期] 易换机：iPhone 6s 以旧换新</span> </p>
+    					
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				<span class="time_detail">还剩12天</span>
+    			</li>
+    			<li>
+    				<img src="/imgs/m9/unable_check.png" class="sfleft"/>
+    				<div class="detail">
+    					<p ><span id="Repayment_p">3.192元</span></p>
+    					<p><span>[4/12期] 易换机：iPhone 6s 以旧换新</span> </p>
+    					
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				<span class="time_detail">还剩12天</span>
+    			</li>
+    		</ul>
+    	</div>
+    	<%}%>
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	<!--提前还款-->
+    	
+    	<%if(active_tab=='r2'){%>
+    	<div class="main1" >
+    		<ul class="u1">
+    			<li>
+    				<img src="/imgs/m9/check.png" class="sfleft"/>
+    				<div class="detail">
+    					<p><span class="sfleft">2433.33元</span> <span class="sfright">到期时间</span></p>
+    					<p><span class="sfleft">易换机：iPhone 6s 以旧换新</span> <span class="sfright">2016-12-5</span></p>
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				
+    			</li>
+    		
+    			<li>
+    				<img src="/imgs/m9/uncheck.png" class="sfleft"/>
+    				<div class="detail">
+    					<p><span class="sfleft">2433.33元</span> <span class="sfright">到期时间</span></p>
+    					<p><span class="sfleft">易换机：iPhone 6s 以旧换新</span> <span class="sfright">2016-12-5</span></p>
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				
+    			</li>
+    			<li>
+    				<img src="/imgs/m9/uncheck.png" class="sfleft"/>
+    				<div class="detail">
+    					<p><span class="sfleft">2433.33元</span> <span class="sfright">到期时间</span></p>
+    					<p><span class="sfleft">易换机：iPhone 6s 以旧换新</span> <span class="sfright">2016-12-5</span></p>
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				
+    			</li>
+    			
+    		</ul>
+    	</div>
+    	<%}%>
+    	<!--还款记录-->
+    	<%if(active_tab=='r3'){%>
+    	<div class="main1" >
+    		<ul class="u1 u3">
+    			
+    			
+    			<%for(var i=0;i<list.length;i++){%>
+    				
+    				<li><%=list[i].shopDesc.substring(0,10)%>
+    					<span></span>
+    				</li>	
+    			<%}%>
+    			
+    			<!--<li>
+    				<div class="detail">
+    					<p ><span id="Repayment_p">[2/12期] 易换机：iPhone 6s 以旧换新 </span></p>
+    					<p><span>2015-02-12 11:56</span> </p>
+    					
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				<span class="time_detail red">299.92元</span>
+    			</li>
+    			<li>
+    				<div class="detail">
+    					<p ><span id="Repayment_p">[2/12期] 易换机：iPhone 6s 以旧换新 </span></p>
+    					<p><span>2015-02-12 11:56</span> </p>
+    					
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				<span class="time_detail red">299.92元</span>
+    			</li>
+    			<li>
+    				<div class="detail">
+    					<p ><span id="Repayment_p">[2/12期] 易换机：iPhone 6s 以旧换新 </span></p>
+    					<p><span>2015-02-12 11:56</span> </p>
+    					
+    				</div>
+    				
+    				<img src="/imgs/m9/right.png" class="sfright"/>
+    				<span class="time_detail red">299.92元</span>
+    			</li>-->
+    		</ul>
+    	</div>
+    	<%}%>
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="footer">
+    	<div class="sfleft footer_choose">
+    		<img src="/imgs/m9/uncheck.png" class="sfleft"/>
+    		<p class="sfleft">已选<span>2433.33</span>元</p>
+    	</div>
+    	<div class="sfright footer_topay">
+    		立即还款
+    	</div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+   
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<!-- build:js /js/m9/repay.min.js -->
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src='/js/m9/repay.js'></script>
+
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+
+
+ <!--uncaughtException: Unexpected token ILLEGAL date=Wed Apr 27 2016 16:31:55 GMT+0800 (中国标准时间), pid=8092, uid=null, gid=null, cwd=E:\niuwa\trunk\niuwa-p2pweb\niuwap2p_promo, execPath=F:\软件\node。js\node.exe, version=v4.4.3, argv=[F:\软件\node。js\node.exe, E:\niuwa\trunk\niuwa-p2pweb\niuwap2p_promo\bin\www.5000], rss=65757184, heapTotal=56906064, heapUsed=31338304, loadavg=[0, 0, 0], uptime=10778.1659396, trace=[column=16, file=vm.js, function=exports.runInThisContext, line=53, method=runInThisContext, native=false, column=25, file=module.js, function=Module._compile, line=373, method=_compile, native=false, column=10, file=module.js, function=Object.Module._extensions..js, line=416, method=Module._extensions..js, native=false, column=32, file=module.js, function=Module.load, line=343, method=load, native=false, column=12, file=module.js, function=Function.Module._load, line=300, method=Module._load, native=false, column=17, file=module.js, function=Module.require, line=353, method=require, native=false, column=17, file=internal/module.js, function=require, line=12, method=null, native=false, column=10, file=E:\niuwa\trunk\niuwa-p2pweb\niuwap2p_promo\app.js, function=, line=28, method=null, native=false, column=26, file=module.js, function=Module._compile, line=409, method=_compile, native=false, column=10, file=module.js, function=Object.Module._extensions..js, line=416, method=Module._extensions..js, native=false, column=32, file=module.js, function=Module.load, line=343, method=load, native=false, column=12, file=module.js, function=Function.Module._load, line=300, method=Module._load, native=false, column=17, file=module.js, function=Module.require, line=353, method=require, native=false, column=17, file=internal/module.js, function=require, line=12, method=null, native=false, column=11, file=E:\niuwa\trunk\niuwa-p2pweb\niuwap2p_promo\bin\www.5000, function=, line=7, method=null, native=false, column=26, file=module.js, function=Module._compile, line=409, method=_compile, native=false], stack=[SyntaxError: Unexpected token ILLEGAL,     at exports.runInThisContext (vm.js:53:16),     at Module._compile (module.js:373:25),     at Object.Module._extensions..js (module.js:416:10),     at Module.load (module.js:343:32),     at Function.Module._load (module.js:300:12),     at Module.require (module.js:353:17),     at require (internal/module.js:12:17),     at Object.<anonymous> (E:\niuwa\trunk\niuwa-p2pweb\niuwap2p_promo\app.js:28:10),     at Module._compile (module.js:409:26),     at Object.Module._extensions..js (module.js:416:10),     at Module.load (module.js:343:32),     at Function.Module._load (module.js:300:12),     at Module.require (module.js:353:17),     at require (internal/module.js:12:17),     at Object.<anonymous> (E:\niuwa\trunk\niuwa-p2pweb\niuwap2p_promo\bin\www.5000:7:11),     at Module._compile (module.js:409:26)]
+-->

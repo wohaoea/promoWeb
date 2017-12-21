@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <meta charset="utf-8" />
+        <title>产品推荐</title>
+        <meta name="description" content="产品推荐" />
+        <meta name="keywords" content="产品推荐" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+        <meta name="format-detection" content="telephone=no"/>
+        <script src="/js/libs/h5rem.js"></script>
+        <style>
+            *{padding: 0;margin: 0}
+            a{
+                text-decoration:none
+            }
+            body{
+                background-color: #fafafc;
+            }
+            .introduction{
+                height: 2.25rem;
+                padding-top: 0.75rem;
+                box-sizing: border-box;
+                background-color: #e1e1e2;
+            }
+            .introduction p{
+                font-size: 0.32rem;
+                color: #999;
+                text-align: center;
+            }
+            .introduction p img{
+                position: relative;
+                top: 0.08rem;
+                width: 0.4rem;
+                margin-right: 0.15rem;
+            }
+            .nav a{
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                height: 2.0rem;
+                margin-bottom: 0.24rem;
+                background-color: #fff;
+            }
+            .nav a:before{
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 0.08rem;
+                bottom: 0;
+                background: linear-gradient(to bottom, #f3f3f5 0%,#f7f7f9 100%);
+                background: -moz-linear-gradient(to bottom, #f3f3f5 0%,#f7f7f9 100%);
+                background: -webkit-linear-gradient(to bottom, #f3f3f5 0%,#f7f7f9 100%);
+                background: -o-linear-gradient(to bottom, #f3f3f5 0%,#f7f7f9 100%);
+                background: -ms-linear-gradient(to bottom, #f3f3f5 0%,#f7f7f9 100%);
+            }
+            .platform-ico{
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-left: 0.4rem;
+                margin-right: 0.3rem;
+                background: url(/imgs/generalize/trench.png) no-repeat;
+                background-size: 5.1rem 1.2rem;
+            }
+            .center{
+                width: 5.2rem;
+            }
+            .title{
+                font-size: 0.32rem;
+                color: #3f68b0;
+            }
+            .desc{
+                margin-top: 0.3rem;
+                font-size: 0.28rem;
+                color: #999;
+            }
+            .desc span{
+                margin-right: 0.18rem;
+            }
+            .nav a img{
+                width: 0.1rem;
+                height: 0.19rem;
+            }
+            .ico2{background-position-x: -1.3rem;}
+            .ico3{background-position-x: -2.6rem;}
+            .ico4{background-position-x: -3.9rem;}
+            .h3{
+                padding: 0.3rem 0 0.3rem 0.4rem;
+                font-size: 0.28rem;
+                font-weight: 500;
+                color: #3f68b0;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="introduction">
+            <p><img src="/imgs/generalize/notice-grey.png">很抱歉，您没有通过牛呗风控审核</p>
+            <p>牛呗为您推荐以下产品</p>
+        </section>
+        <h3 class="h3">合作方产品：</h3>
+        <section class="nav">
+            <!--<a href="https://at.umeng.com/bmCOTv">-->
+                <!--<div class="platform-ico"></div>-->
+                <!--<div class="center">-->
+                    <!--<p class="title">信而富现金贷</p>-->
+                    <!--<p class="desc">-->
+                        <!--<span>不查征信</span>-->
+                        <!--<span>小额借款</span>-->
+                        <!--<span>3分钟到账</span>-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<img src="/imgs/generalize/arrow-right.png" alt="">-->
+            <!--</a>-->
+            
+            <!--<a href="https://at.umeng.com/0rameC">-->
+                <!--<div class="platform-ico ico2"></div>-->
+                <!--<div class="center">-->
+                    <!--<p class="title">用钱宝</p>-->
+                    <!--<p class="desc">-->
+                        <!--<span>最高5000元</span>-->
+                        <!--<span>新用户3天免息</span>-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<img src="/imgs/generalize/arrow-right.png" alt="">-->
+            <!--</a>-->
+
+            <!--<a href="https://at.umeng.com/zimqay">-->
+                <!--<div class="platform-ico ico3"></div>-->
+                <!--<div class="center">-->
+                    <!--<p class="title">魔法现金</p>-->
+                    <!--<p class="desc">-->
+                        <!--<span>线上申请</span>-->
+                        <!--<span>3000额度</span>-->
+                        <!--<span>秒下秒用</span>-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<img src="/imgs/generalize/arrow-right.png" alt="">-->
+            <!--</a>-->
+            <a href="https://at.umeng.com/nCmKLD">
+                <div class="platform-ico ico4"></div>
+                <div class="center">
+                    <p class="title">新浪有借</p>
+                    <p class="desc">
+                        <span>手机申请</span>
+                        <span>凭借身份证可借5000元</span>
+                    </p>
+                </div>
+                <img src="/imgs/generalize/arrow-right.png" alt="">
+            </a>
+        </section>
+    </body>
+</html>

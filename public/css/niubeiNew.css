@@ -1,0 +1,91 @@
+*
+{
+    padding: 0px;
+    margin: 0px;
+}
+body{font-family: "微软雅黑", helvetica, arial}
+h1, h2, h3, h4, h5, h6
+{
+    padding: 0px;
+    margin: 0px;
+}
+img
+{
+    border: none;
+}
+dl, dt
+{
+    padding: 0px;
+    margin: 0px;
+}
+a
+{
+    text-decoration: none;
+    font-family: 微软雅黑;
+}
+.cl
+{
+    clear: both;
+    font-family: 微软雅黑;
+}
+.fl
+{
+    float: left;
+    font-family: 微软雅黑;
+}
+.fr
+{
+    float: right;
+    font-family: 微软雅黑;
+}
+ul, li
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 微软雅黑;
+}
+body{font:14px/22px "微软雅黑","宋体",Arial,'\5b8b\4f53',Helvetica,sans-serif;color:#666; overflow:auto;background:#F2F4F7}
+a{color:#666;text-decoration:none; cursor:pointer; outline:none;}
+
+/*global CSS*/
+.niuwa-wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.clearfix:after { 
+  clear: both; 
+} 
+.section1{height: 30px;background: #28323c;line-height: 30px;color:#8c96a0;font-size: 12px }
+.section1 .top{height:30px;position: relative}
+.section1 img{float:left}
+.section1 p{float: left;display: block;height: 30px;width: 370px}
+.section1 .niubei_weixin_logo{margin-left: 470px}
+#weixinhao{color: #0096fa}
+.section2{height:80px;background: white}
+.container2{height: 80px}
+.section3{height:400px;background:url("/imgs/niube/niubei_blue_bg.png");background-size: cover}
+.container3{height: 400px;position: relative}
+.niubei_iphone,.niubei_erweima,.niubei_andriod{position: absolute;cursor: pointer}
+.niubei_7{position: absolute}
+.niubei_niubei_word{position: absolute;top: 80px;left: 243px}
+.niubei_blue_mob{position: absolute;top: 80px;left: 0}
+.niubei_iphone{top: 292px;left: 470px}
+.niubei_erweima{left: 850px;top: 292px}
+.niubei_andriod{top:292px;left:660px }
+.section4,.section6,.section8{height: 400px;background: white}
+.container4,.container5,.container6,.container7,.container8{height: 400px;}
+.section5.section7{background: #f3f6f9}
+.section9{height: 90px;background:#28323c}
+.container9{height: 90px;position: relative }
+.p1{width: 445px;height: 14px;position: absolute;top: 21px;left: 288px}
+.p1 span,.p2 span {color: #666;line-height:14px;font-size: 14px;}
+.p1 span{float: left;margin-right: 14px}
+.p2{width: 100%;height: auto;overflow: hidden;position: absolute;bottom: 17px;left: 0}
+.p2 span{float: left; }
+.p2 .mid{margin: 0 33px 0 33px}
+#niubei_erweima_show{position: absolute;top: 30px;right: 0;display: none}
+.niubei_app{position: absolute;top:110px ;right:0 ;display: none}
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta charset="utf-8"/>
+    <title>找回密码</title>
+    <meta name="description" content="牛娃"/>
+    <meta name="keywords" content="牛娃"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="email=no" name="format-detection"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+	<!-- build:css /css/m11/tobind.min.css -->
+	<link href="/css/base.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+	<link href="/css/m11/tobind.css" rel="stylesheet" type="text/css"/>
+	<!-- /build -->
+    <%include ./h5script10.html %>
+	</head>
+	<body>
+		<div style="" class="">
+		    <div class="com_bd">
+		        <div class="h_lg">
+		            <img src="/imgs/m11/lock.png">
+		            <p>找回密码</p>
+		        </div>
+		       
+		        <div class="com_c">
+		            <label for="userphone">手机号码</label>
+		            <span id="userphone"><%=starTel%></span>
+		        </div>
+		        <div class="com_c">
+		            <label for="textcode">短信验证</label>
+		            <input type="number" placeholder="请输入验证码"  maxlength="6" class="txt img_verifycode" id="textcode">
+		           	<div class="phonecode msg">短信验证</div>
+		           	<div class="phonecode voice">语音验证</div>
+		        </div>
+				<%if(certAuth=='Y'){%>
+					<div class="com_c">
+						<label for="userid">身份证号</label>
+						<input type="text" placeholder="请输入本人的身份证号码"   class="txt img_verifycode" id="userid">
+					</div>
+				<%}%>
+				<%if(safeProblem=='Y'){%>
+					<div class="com_c">
+						<input type="hidden" value="<%=safeProblemObj.key%>" id="dictcode">
+						<label for="answer">安全问题</label>
+						<span id="answer"><%=safeProblemObj.value%></span>
+					</div>
+					<div class="com_c">
+						<label for="checkanswer">验证答案</label>
+						<input type="text" placeholder="请输入答案"   class="txt img_verifycode" id="checkanswer">
+					</div>
+				<%}%>
+		        <div style="margin:auto;text-align: center;"><input type="button" value="下一步" id="pwdProblemCheck" class="txtreg"></div>
+		    </div>
+		</div>
+		<script src="/js/libs/jquery-1.8.3.min.js"></script>
+		<!-- build:js /js/m11/findpwd.min.js -->
+		<script src="/js/g.js"></script>
+		<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+		<script type="text/javascript" src='/js/common/validation.js'></script>
+		<script src="/js/m11/findpwd.js"></script>
+		<!-- /build -->
+	</body>
+</html>

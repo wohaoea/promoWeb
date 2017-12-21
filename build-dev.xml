@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="niuwap2p" default="test.build" basedir=".">	
+	<property name="src" value="${basedir}" />	
+	<property name="dist.dir" value="dist" />
+	<property name="release" value="${dist.dir}/release" />
+	
+	<target name="test.build" depends="clean, init, copy" />
+	
+	<target name="clean">
+		<echo message="removing old directory structure..." />		
+		<delete dir="${dist.dir}"/>
+	</target>
+	
+	<target name="init">
+		<echo message="mkdir directory structure..." />		
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${release}" />	
+	</target>
+	
+	<target name="copy">		
+		<copy todir="${release}">
+			<fileset dir="${src}">	
+				<exclude name="dist" />
+				<exclude name="dist/**,*.*" />		
+				<exclude name=".project" />
+				<exclude name="build.xml" />
+				<exclude name="config.js" />				
+			</fileset>
+		</copy>			
+		<copy file="${src}\config-dev.js" tofile="${release}\config.js" />
+	</target>	
+</project>

@@ -1,0 +1,40 @@
+﻿<script src="/js/libs/jquery.cookie.js"></script>
+<%if(guoqing){%>
+<%if(guoqing.guoqingTime.now > guoqing.guoqingTime.start && guoqing.guoqingTime.now<guoqing.guoqingTime.end){%>
+<!-- build:css /css/guoqing.min.css?v=20160113 -->
+<link rel="stylesheet" href="/css/guoqing.css" />
+<!-- /build -->
+<!--福袋 begin-->
+<!--吊底-->
+
+<div class="diaodi" style="display: none;">
+    <div class="fudai-body">
+        
+        <div class="jp"><img src="/imgs/fudai/jiaxi1.png" width="717" height="232" alt></div>
+        <%if(guoqing.guoqing_jiaxiquan_lingqu!=2){%>
+       
+        <a href="javascript:;" class="fudai-btn1" id="fudai-btn1" data-ca='get_fudai'></a>
+        <%}%>
+        <%if(guoqing.guoqing_jiaxiquan_lingqu==2){%>
+        <a href="javascript:;" class="fudai-btn1" id="fudai-btn2" data-ca='get_fudai'></a>
+        <%}%>
+        <a href="javascript:;" class="fudai-close" id="fudai-close" data-ca='close_fudai'></a>
+    </div>
+</div>
+
+<!--左侧-->
+<div class="fudai-float"><img src="/imgs/fudai/jiaxi2.png" width="180" height="176" alt></div>
+<!--福袋 end-->
+<script>
+var domain = '<%=domain%>';
+var originalUrl = '<%=originalUrl%>';
+var domainPath='<%=config.sessionconfig.cookie.domain%>';
+<%if(user){%>var username ="<%=user.loginname%>";<%}else{%>var username ="null"<%}%></script>
+<!-- build:js /js/guoqing.min.js -->
+<script src="/js/guoqing.js"></script>
+<!-- /build -->
+<%}%>
+<%}%>
+<script type="text/javascript">
+	
+</script>

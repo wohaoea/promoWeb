@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content=" width=1200, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <title>牛娃金融</title>
+    <!-- build:css /css/regmarket.min.css -->
+    <link href="../css/regmarket.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../css/idialog.css" />
+    <!-- /build -->
+    <style type="text/css">
+        .divtop {
+            width: 100%;
+            min-wdith: 1200px;
+            height: 613px;
+            background: url("/imgs/market/top3.png");
+            background-position: center;
+        }
+        .divtop .topbody {
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+            height: 613px;
+            background: url("/imgs/market/top3.png");
+            background-position: center;
+        }
+        .divbg1 {
+            width: 100%;
+            min-wdith: 1200px;
+            height: 702px;
+            background: url("/imgs/market/bg31.png");
+            background-position: center;
+        }
+        .divbg1 .bgbody1 {
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+            height: 702px;
+            background: url("/imgs/market/bg31.png");
+            background-position: center;
+        }
+        .divbg2 {
+            width: 100%;
+            min-wdith: 1200px;
+            height: 533px;
+            background: url("/imgs/market/bg32.png");
+            background-position: center;
+        }
+        .divbg2 .bgbody2 {
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+            height: 533px;
+             background: url("/imgs/market/bg32.png");
+            background-position: center;
+        }
+        .divbg3 {
+            width: 100%;
+            min-wdith: 1200px;
+            height: 259px;
+            background: url("/imgs/market/bg3.png");
+            background-position: center;
+        }
+        .divbg3 .bgbody3 {
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+            height: 259px;
+            background: url("/imgs/market/bg3.png");
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+<div style="width:100%;height:60px;background:#ffffff;">
+    <div style="height:60px;width:1200px;margin:0 auto">
+        <a href="<%=domain%>" style="display: block;width:357px;margin-left:18px;margin-top:3px;height:52px;float: left;"><img src="/imgs/logo.png"></a>
+    </div>
+</div>
+<div class="divtop" id="top">
+    <div class="topbody">
+        <div class="marketregbox">
+            <div class="phoneerror"></div>
+            <div class="passworderror"></div>
+            <div class="phonenumerror"></div>
+            <div class="yanzhengmaerror"></div>
+            <div class="xieyierror"></div>
+            <div class="divzhezao"></div>
+            <div class="labelbar" style="padding-top:40px;margin-top:0">
+                <div class="fl regtitile">手<span style="margin-left: 0.5em">机</span><span style="margin-left: 0.5em">号</span></div><input type="text" id="phonenum" class="fl" style=""/>
+            </div>
+            <div class="labelbar">
+                <div class="fl regtitile">输入密码</div><input type="password" id="password"  class="fl" onpaste="return false"/>
+            </div>
+            <div class=" labelbar">
+                <div class="fl regtitile">验<span style="margin-left: 0.5em">证</span><span style="margin-left: 0.5em">码</span></div><input type="text" id="imgv"  class="short fl"/><img src="/pla/generatecaptcha" style=" cursor:pointer " id="refreshimg" class="fl"/>
+            </div>
+            <div class="clearfix labelbar">
+                <div class="fl regtitile">手机验证</div><input type="text" id="phonevalidation" class="short fl"/><input type="button" value="获取验证码" id="btnvalidation" class="fl"/>
+            </div>
+            
+
+            <div class=" labelbar" >
+                <input type="checkbox" id="checkbox" style="margin-left:19px;"/>我已阅读并同意<span class="pingtaixieyi" id="regdeal">《平台注册协议》</span>
+            </div>
+            <div class="labelbar" style="margin-top:10px;height:55px">
+                <img src="/imgs/market/regbtn.gif"  id="regbtn" data-flag='reg3' style="margin-left:19px;cursor: pointer"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divbg1">
+    <div class="bgbody1">
+        <div class="hongbao"></div>
+    </div>
+</div>
+<div class="divbg2">
+    <div class="bgbody2"></div>
+</div>
+<div class="divbg3">
+    <div class="bgbody3"></div>
+</div>
+
+<div class="footermarket" style="height:80px;width:100%;background:#3c4650;">
+    <div style="margin:0 auto;width:1200px;height:80px;background:#3c4650;">
+        <p style="color:#dddddd;font-size:12px;text-align: center;padding-top:25px;">版权所有©上海牛娃互联网金融信息服务有限公司    沪ICP备15002518号</p>
+        <p style="color:#dddddd;font-size:12px;text-align: center;">Shanghai Niuwa Internet Financial Information Service Co.,Ltd.</p>
+    </div>
+</div>
+</body>
+<script>
+    var domain = '<%= dom%>';
+    if(top != self){  
+        location.href = "about:blank";
+    }
+</script>
+<script src="js/libs/jquery-1.8.3.min.js"></script>
+<script src="js/libs/jquery.sha256.min.js"></script>
+<script type="text/javascript" src="/js/ckplayer/ckplayer.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/libs/jquery.iDialog.js"></script>
+<!--[if lt IE 8 ]><script type="text/javascript" src="js/libs/json2.min.js"></script><![endif]-->
+<!-- build:js /js/pcregformarket.min.js -->
+<script src="/js/pcregformarket.js"></script>
+<!-- /build -->
+<!-- Google Tag Manager -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+
+<!-- End Google Tag Manager -->
+</html>

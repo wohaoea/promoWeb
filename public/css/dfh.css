@@ -1,0 +1,252 @@
+.dfh_top{
+	background: url(../imgs/dfh/dfh_bg.png)  top center;
+	width: 100%;
+    height: 381px;
+    position: relative;
+    
+}
+.dfh_cont{
+	width: 1000px;
+	margin: auto;
+	position: relative;
+}
+.dfh_r1{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+    width: 230px;
+    height: 264px;
+    position: absolute;
+    background-position: 0px 0px;
+    left: 61px;
+    top: -157px;
+}
+
+.dfh_r2{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+    width: 290px;
+    height: 260px;
+    position: absolute;
+    background-position: -267px 0px;
+    right: -23px;
+    top: -157px;
+}
+.dfh_w{width: 100%;background-color: #28B464;    position: relative;
+    z-index: 1;}
+ .dfh_w2{
+ 	width: 100%;background-color: #148C50;    position: relative;
+ }
+.dfh_board{
+	background: url(../imgs/dfh/dfh_board.png) no-repeat top center;
+	width: 100%;
+    height: 880px;
+    display: inline-block;
+    margin-top: 92px;
+}
+.dfh_sign,.dfh_signed{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+	width: 343px;
+    height: 154px;
+    background-position: -552px -272px;
+    float: left;
+    margin-left: 43px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.dfh_signed{
+    background-position: -993px -443px;
+
+}
+.dfh_invest{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+	width: 343px;
+    height: 154px;
+    background-position: -995px -280px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.clear{clear: both;}
+.dfh_s1{
+	position: absolute;
+	font-weight: bold;
+	color: #148C50;
+	    left: 79px;
+    font-size: 18px;
+}
+.dfh_s2{
+	position: absolute;
+	font-weight: bold;
+	color: #148C50;
+	right: 59px;
+    font-size: 18px;
+}
+.dfh_desc{
+	display: inline-block;
+	margin-top: 40px;
+	color: #28B464;
+	margin-left: 40px;
+	margin-bottom: 40px;font-size: 18px;
+}
+.dfh_desc_img{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+    width: 323px;
+    height: 363px;
+    background-position: -9px -422px;
+    right: 0px;
+    position: absolute;
+    top: 42px;
+    font-size: 16px;
+}
+.dfh_descul li{line-height: 36px;font-size: 16px;}
+.dfh_yun1{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+	width: 109px;
+    height: 72px;
+    background-position: -589px -1px;
+    position: absolute;
+    top: 238px;
+    left: 127px;
+}
+.dfh_yun2{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+	width: 98px;
+    height: 58px;
+    background-position: -589px -132px;
+    position: absolute;
+    top: 567px;
+    left: -8px;
+}
+.dfh_yun3{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+	width: 88px;
+    height: 56px;
+    background-position: -740px 0px;
+    position: absolute;
+    top: 247px;
+    right: -3px;
+}
+.dfh_yun4{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+	width: 96px;
+    height: 64px;
+    background-position: -740px -123px;
+    position: absolute;
+    top: 485px;
+    right: 132px;
+}
+.dfh_yun5{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+	width: 78px;
+    height: 49px;
+    background-position: -894px 0px;
+    position: absolute;
+    top: 812px;
+    right: 369px;
+}
+.dfh_opr{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+	width: 356px;
+    height: 271px;
+    position: absolute;
+    top: 398px;
+    background-position: -1000px 0px;
+    left: 317px;
+    
+}
+.dfh_sz{
+	position: absolute;
+	left: 108px;
+    top: 7px;
+}
+
+.dfh_cs{
+	position: absolute;
+    left: 263px;
+    top: 28px;
+    color: #DBB300;
+    font-size: 18px;
+    text-align: center;
+    width: 57px;
+    line-height: 24px;
+    *top: 26px;
+}
+.dfh_zsj{
+	background: url(../imgs/dfh/dbh_split.png) no-repeat;
+	width: 234px;
+    height: 81px;
+    position: absolute;
+    top: 153px;
+    background-position: 11px -308px;
+    left: 55px;
+    cursor: pointer;
+}
+.dfh_zsjno{
+	    background-position: -245px -315px;
+}
+.dialogbody{
+	background-color: #FF644B;
+	height: 245px;
+	width: 360px;
+	border-radius: 10px;
+	position: relative;
+}
+.dialog_closed{
+	float: right;
+    background: url(../imgs/dfh/dbh_split.png) no-repeat;
+    width: 32px;
+    height: 32px;
+    background-position: -494px -333px;
+    margin-right: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.dialog_s1{
+	text-align: center;
+    
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+}
+.dialog_s1_1{
+	font-size: 28px;
+}
+.dialog_s1_2{
+	font-size: 20px;
+    margin-top: 30px;
+}
+.dialog_s1_3{
+	
+    margin-top: 30px;
+}
+.dialog_s1_2 span{
+	
+    color: #FFD91C;
+}
+.dialog_s1_3 a{
+	color: #FFD91C!important;
+	text-decoration: underline;
+}
+.curtpoints{
+	position: absolute;
+	z-index: 99;
+	top: 342px;
+    left: 171px;
+}
+
+.register,.top{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url(../imgs/dfh/dfh_nav.png) no-repeat;
+}
+.right-nav{
+    width: 50px;
+    z-index: 99;
+}
+.register{
+    height: 120px;
+}
+.top{
+    background-position: 0 -125px;
+}

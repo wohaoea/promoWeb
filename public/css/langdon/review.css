@@ -1,0 +1,75 @@
+.review{
+    background: url('/imgs/langdon/background.png') 0 0 no-repeat;
+    height: 13.34rem;
+    overflow: hidden;
+}
+
+.contain{
+    background-size: contain!important;
+    -webkit-background-size: contain!important;
+    -moz-background-size: contain!important;
+    -o-background-size: contain!important;
+    -ms-background-size: contain!important;
+}
+
+.clock{
+    background: url('/imgs/langdon/clock.png') 0 0 no-repeat;
+}
+
+.forbidden{
+    background: url('/imgs/langdon/forbidden.png') 0 0 no-repeat;
+}
+
+.fail{
+    background: url('/imgs/langdon/fail.png') 0 0 no-repeat;
+}
+
+.logo{
+    width: 2.1rem;
+    height: 2.1rem;
+    margin: 1.64rem auto 2.26rem;
+}
+
+.center{
+    text-align: center;
+}
+
+.review-result{
+    font-size: .3rem;
+    color: #000;
+    margin-bottom: 1.24rem;
+}
+
+.button{
+    font-size: .32rem;
+    width: 2.88rem;
+    height: .96rem;
+    border-radius: .15rem;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    text-align: center;
+    color: #000;
+    line-height: .96rem;
+    font-family: 'Microsoft YaHei';
+    box-shadow: 0.04rem 0.04rem .08rem .02rem #f0f0f1;
+    -webkit-box-shadow: 0.04rem 0.04rem .08rem .02rem #f0f0f1;
+    -moz-box-shadow: 0.04rem 0.04rem .08rem .02rem #f0f0f1;
+    -o-box-shadow: 0.04rem 0.04rem .08rem .02rem #f0f0f1;
+    -ms-box-shadow: 0.04rem 0.04rem .08rem .02rem #f0f0f1;
+}
+
+.service-phone{
+    text-align: center;
+    font-size: .3rem;
+    color: #999999;
+    font-size: .3rem;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.phone{
+    color: #3e75c5;
+}

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>牛娃互联网金融</title>
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content=" width=1000, initial-scale=1"/> -->
+    <!-- build:css /css/duanwu.min.css -->  
+	 <link href="/css/duanwu.css" rel="stylesheet" type="text/css" />
+     <link href="/css/idialog.css" rel="stylesheet" type="text/css" />
+   <!-- /build -->
+   
+</head>
+
+<body style="padding:0;margin:0;*overflow:hidden">
+	<% if(user){%>
+		<div class="niuwa-header-wrap">
+		    <div class="niuwa-header-wrapbg">
+		        <div class="niuwa-header clearfix">
+		               <div class="service-phone"><div>客服热线:</div><b>400-8846-898</b></div>
+		               <div class="title-menu">
+		                   <ul>
+		                       <li>欢迎您 <a href="/p/account/my"><%=user.loginname%></a></li>
+		                       <li><a href="<%=domain%>p/myaccount">我的账户</a></li>
+		                       <li><a href="<%=domain%>p/account/recharge">充值</a></li>
+		                       <li><a href="<%=domain%>logout">退出</a></li>
+		                       <li class="nobd"><a href="<%=domain%>help">帮助中心</a></li>
+		                   </ul>
+		               </div>
+		        </div>
+		    </div>
+		</div>
+        
+       <%}else {%>
+           <div class="niuwa-header-wrap" id="niuwheader">
+              <div class="niuwa-header clearfix">
+                    <div class="service-phone"><div>客服热线:</div>400-8846-898</div>
+
+                    <div class="title-menu">
+                       <ul>
+                           <li><a href="<%=domain%>register" class="active">免费注册</a></li>
+                           <li><a href="<%=domain%>login?s=dw">立即登录</a></li>
+                           <li class="nobd"><a href="<%=domain%>help">帮助中心</a></li>
+                       </ul>
+                    </div>
+                </div>
+        </div>
+        <%}%>
+
+       <div class="niuwa-header-menu-wrap">
+		    <div class="niuwa-header-menu-bg">
+		        <div class="niuwa-header-menu clearfix">
+		          <div class="logo">
+		                <a href="/"><img src="/imgs/logo.png" width="357" height="52"> </a>
+		            </div>
+		            <ul>
+		              <li><a href="<%=domain%>" class="activity">首页</a></li>
+		                 <li><a href="<%=domain%>invest">我要投资</a>
+		                     <div class="header-menu-child" style="display: none;">
+		                         <div class="header-menu-icontop"></div>
+		                         <ul>
+		                             <li><a href="<%=domain%>newclient">新牛专享</a></li>
+		                             <li><a href="<%=domain%>plan">懒牛计划</a> </li>
+		                             <li><a href="<%=domain%>featured">智牛精选</a> </li>
+		                             <li><a href="<%=domain%>claim">债权转让</a> </li>
+		                         </ul>
+
+		                     </div>
+		                 </li>
+		                 <li><a href="<%=domain%>society_accept">安全保障</a></li>
+		                 <li><a href="<%=domain%>choose">新手指引</a></li>
+		                 <li><a href="<%=domain%>aboutus">关于我们</a></li>
+		             </ul>
+		        </div>
+		    </div>
+		</div>
+        <div class="bgs"></div>
+        <!-- 	<div class="bgszy"></div>
+        <div class="bgszyr"></div> -->
+        <div class="dwbg1">
+        	<div class="logo"><br>
+        		<div style="float:left;"><img src="/imgs/dw_sm.png" width="800"/></div>
+        		<% if(!user){%>
+        			<div style="float:right"><a href="<%=domain%>register"><img src="/imgs/dw_reg.gif"/></a></div>
+        		<%}%>
+        		
+        	<div>
+        		<div class="clear"></div>
+        	<div style="float:left;position: relative;" id="lottery">
+        			<div class="choujiang">
+		        		<div class="lottery-unit lottery-unit1">
+		        			<img src="/imgs/curjg.png" style="margin-left:10px;margin-top:8px;"/>
+		        		</div>
+		        		<div class="lottery-unit lottery-unit2">
+		        			<img src="/imgs/curjg.png" style="margin-left:-10px;margin-top:8px;"/>
+		        		</div>
+		        		<div class="lottery-unit lottery-unit3">
+		        			<img src="/imgs/curjg.png" style="margin-left:-33px;margin-top:8px;"/>
+		        		</div>
+		        		<div class="clear"></div>
+		        		<div class="lottery-unit lottery-unit4">
+		        			<img src="/imgs/curjg.png" style="margin-left:-33px;"/>
+		        		</div>
+		        		<div class="lottery-unit lottery-unit5">
+		        			<img src="/imgs/curjg.png" style="margin-left: 7px;margin-top: -6px;"/>
+		        		</div>
+		        		<div class="clear"></div>
+		        		<div class="lottery-unit lottery-unit6">
+		        			<img src="/imgs/curjg.png" style="margin-left:-46px;margin-top:-6px;"/>
+		        		</div>
+		        		<div class="lottery-unit lottery-unit7">
+		        			<img src="/imgs/curjg.png" style="  margin-left: -28px;margin-top: 8px;"/>
+		        		</div>
+		        		<div class="lottery-unit lottery-unit8">
+		        			<img src="/imgs/curjg.png" style="  margin-left: -8px; margin-top: -6px;"/>
+		        		</div>
+		        		<div class="lottery-unit9">
+		        			<div class="lottery_ch">
+		        				<%if(user){%>
+		        					<%=chance||0%>次抽奖机会
+		        				<%}%>
+		        			</div>
+		        		</div>
+        			</div>
+        			<div style="position: absolute; left: -130px; top: 150px;"><img src="/imgs/zzyu1.png"></div>
+        	</div>
+        	<div class="ldg">
+        		<div style="color: #f4e684;font-size: 18px;">中奖名单</div>
+        		<div class="hx"></div>
+        			<div class="scroll cl">
+                        <div class="scrollv cl">
+                            <div id="div1">
+                                <ul class="dazhuanpanxls">
+                                	<% if(lotterylist){%>
+                                	<%for(var i=0;i<lotterylist.length;i++){%>
+                                		<% if(lotterylist[i].prizeRange==7){ %>
+                                			<li>用户<%=lotterylist[i].tel%> 抽到了 <span>5元话费</span></li>
+                                		<%}else if(lotterylist[i].prizeRange==6){%>
+                                			<li>用户<%=lotterylist[i].tel%> 抽到了 <span>价值50元的随身WIFI</span></li>
+
+                                		<%}else if(lotterylist[i].prizeRange==5){%>
+                                			<li>用户<%=lotterylist[i].tel%> 抽到了 <span>价值100元的一号店购物卡</span></li>
+
+                                		<%}else if(lotterylist[i].prizeRange==4){%>
+                                			<li>用户<%=lotterylist[i].tel%> 抽到了 <span>价值300元的端午礼盒</span></li>
+
+                                		<%}else if(lotterylist[i].prizeRange==3){%>
+                                			<li>用户<%=lotterylist[i].tel%> 抽到了 <span>价值500元的电子血压计</span></li>
+
+                                		<%}else if(lotterylist[i].prizeRange==2){%>
+                                			<li>用户<%=lotterylist[i].tel%> 抽到了 <span>价值800元的车载净化器</span></li>
+
+                                		<%}else if(lotterylist[i].prizeRange==1){%>
+                                			<li>用户<%=lotterylist[i].tel%> 抽到了 <span>价值1000元的姓氏银条</span></li>
+
+                                		<%}%>
+                                	<%}}%>
+                                 
+                                </ul>
+                            </div>
+                           
+                        </div>
+                    </div>
+	                <div class="sharefb">
+	                	<div style="color: #f4e684;font-size: 18px;" id="shared">分享至</div>
+	        			<div class="hx2"></div>
+		    			<div class="dazhuanpanxlxx cl">
+		                    <span>
+		                        <img src="/promo/img/hezuobaozhang_27.png" id="sinaweibo">
+		                    </span><span>
+		                        <img src="/promo/img/hezuobaozhang_29.png" id="txweibo">
+		                    </span><span>
+		                        <img src="/promo/img/hezuobaozhang_31.png" id="renren">
+		                    </span><span>
+		                        <img src="/promo/img/hezuobaozhang_33.png" id="qqzone">
+		                    </span><span class="wxon">
+		                        <img src="/promo/img/520_35.png">
+		                    </span><span class="weixin" style="display: none;">
+		                        <img src="/getQrcode">
+		                    </span>
+		                </div>
+	                </div>
+	                <div style="position: absolute; left: 420px;top:0px;"><img src="/imgs/zzyu3.png"></div>
+	                <div style="position: absolute; left: 420px;top:350px;"><img src="/imgs/zzyu1.png"></div>
+        	</div>
+        </div>
+	</div>
+	</div>
+	<div class="clear"></div>
+	<div style="background-color:#119581"><div class="dwblx" style="height:23px;"></div></div>
+	<div style="background-color:#037563;height:740px; ">
+		<div class="logo" style=" position: relative;"><br/><br/>
+			<div id="touzi"><img src="/imgs/dw_invest.jpg"/></div>
+			<div class="zz_xn">
+				<div class="zz_xnd"><img src="/imgs/zz_xinniu.jpg"/></div>
+				<a href="<%=domain%>newclient">马上投资</a>
+			</div>
+			<div class="zz_xn">
+				<div class="zz_xnd"><img src="/imgs/zz_lanniu.jpg"/></div>
+				<a href="<%=domain%>plan">马上投资</a>
+			</div>
+			<div class="zz_xn">
+				<div class="zz_xnd"><img src="/imgs/zz_zhiniu.jpg"/></div>
+				<a href="<%=domain%>featured">马上投资</a>
+			</div>
+			<div style="position: absolute; left: -90px;top:500px;"><img src="/imgs/zzyu1.png"></div>
+			<div style="position: absolute; right:-90px; top: 240px;"><img src="/imgs/zzyu3.png"></div>
+		</div>
+	</div>	
+	<div style="background-color:#037563"><br/><br/><div class="dwblx dwblx2"></div></div>
+	<div style="background-color:#076153;margin-top:-1px;height:440px;">
+		<div class="logo" style="position:relative"><br/><br/>
+			<div style="color: #f4e684;font-size: 18px;">活动规则:</div>
+			<div style="color:#65a77c;font-size: 16px; margin-top: 10px; margin-bottom: 10px;">活动时间：2015年6月16日—2015年6月30日</div>
+			<div style="color:#65a77c;font-size: 14px;">
+				<div style="font-size:16px; margin-bottom:10px">1.参与投资赢“双节大礼”</div>
+				<p>1)&nbsp;&nbsp;&nbsp;&nbsp;活动期间任意投资智牛精选或懒牛计划即可获得一次抽奖机会（不可累计），奖品价值5~1000元不等，<span style="color:#f4e684">100%中奖</span>。</p>
+				<p>2)&nbsp;&nbsp;&nbsp;&nbsp;活动期间内累计投资每满5000元获得1次额外抽奖机会，<span style="color:#f4e684">上不封顶</span>，多投多得，奖品可累积获得。</p>
+				<p>3)&nbsp;&nbsp;&nbsp;&nbsp;话费类奖品系统将在5个工作日内自动为该手机号码充值，逾期未收到，请在15天内联系客服，超过15天视为自动放弃。</p>
+				<p>4)&nbsp;&nbsp;&nbsp;&nbsp;实物类奖品，中奖后5个工作日内，客服人员会联系中奖用户确认信息并在活动结束后统一寄送奖品。</p>
+				<div style="font-size:16px;margin-bottom:10px;margin-top:10px">2.已参与过抽奖的用户每推荐一位好友注册并实名认证成功，可额外获得一次“双节大礼”抽奖机会。推荐方式：</div>
+				<p>1)&nbsp;&nbsp;&nbsp;&nbsp;将本活动分享给好友，好友通过用户的分享链接注册成功：<a href="#lottery" style="color:#f4e684">马上推荐好友加入>></a></p>
+				<p>2)&nbsp;&nbsp;&nbsp;&nbsp;好友注册时填写推荐用户的推荐码：推荐用户手机号或用户名<br></p>
+				<div style="font-size:16px;margin-bottom:10px;margin-top:10px">3.本活动规则解释权归牛娃互联网金融所有，如有疑问请拨打400-8846-898（工作日9点到21点，节假日9点到18点）</div>
+				
+			</div>
+			<div style="position: absolute; left: 980px; top: 140px;"><img src="/imgs/zzyu3.png"></div>
+		</div>
+	</div>
+	<div >
+		<div class="logo">
+			<div class="hezuobaozhang">
+		        <div class="home-coop">
+		             <div class="home-coop-head">
+		                 <div class="home-coop-title"><span>合作保障机构</span></div>
+		                 <div class="home-coop-more">&nbsp;</div>
+		             </div>
+
+		             <ul class="home-coop-list clearfix">
+		                 <li><img src="/promo/img/home/coop1.jpg" alt="中锋保理"></li>
+		                 <li><img src="/promo/img/home/coop2.jpg" alt="杰凯保理"></li>
+		                 <li><img src="/promo/img/home/coop3.jpg" alt="东裕保理"></li>
+		                 <li><img src="/promo/img/home/coop4.jpg" alt="信安保理"></li>
+		                 <li><img src="/promo/img/home/coop5.jpg" alt="银恒融资"></li>
+		                 <li><img src="/promo/img/home/coop6.jpg" alt="嘉和汇通"></li>
+		                 <li><img src="/promo/img/home/coop7.jpg" alt="聚永融资租赁"></li>
+		                 <li><img src="/promo/img/home/coop8.jpg" alt="同岳租赁"></li>
+		                 <li><img src="/promo/img/home/coop9.jpg" alt="上海骏合融资担保有限公司"></li>
+		                 <li><img src="/promo/img/home/coop10.jpg" width="178px" alt="银恒投资"></li>
+		             </ul>
+		         </div>
+	    	</div>
+	    	<div class="clear"></div><br>
+	    	<div >
+		        <div class="home-coop">
+		             <div class="home-coop-head">
+		                 <div class="home-coop-title"><span>战略合作伙伴</span></div>
+		             </div>
+		             <div class="clear"></div>
+		             <ul class="home-coop-list">
+		                 <li><img src="/promo/img/home/coop21.jpg" alt="鹏元征信有限公司"></li>
+		                 <li><img src="/promo/img/home/coop22.jpg" alt="上海文化产权交易所"></li>
+		                 <li><img src="/promo/img/home/coop23.jpg" alt="上海信息服务人才培训中心"></li>
+		                 <li><img src="/promo/img/home/coop24.jpg" alt="易宝支付"> </li>
+		                 <li><img src="/promo/img/home/coop28.jpg" alt="上海资信有限公司"></li>
+		             
+		             </ul>
+		         </div>
+		    </div>
+
+		</div>
+	</div>
+	<div class="clear"></div><br>
+	<div class="black clearfix">
+	    <div class="index-footer">
+	        <div class="left-wrap clearfix">
+	            <ul>
+	               <li><a href="<%=domain%>aboutus" class="title">关于我们</a></li>
+	                <li><a href="http://www.niuwacredit.com">牛娃官网</a></li>
+	                <li><a href="<%=domain%>aboutus#leader">团队介绍</a></li>
+	                <li><a href="<%=domain%>aboutus#advantage">平台优势</a></li>
+	            </ul>
+	            <ul>
+	                <li><a href="<%=domain%>invest" class="title">投资方案</a></li>
+	                <li><a href="<%=domain%>newclient">新牛专享</a></li>
+	                <li><a href="<%=domain%>plan">懒牛计划</a></li>
+	                <li><a href="<%=domain%>featured">智牛精选</a></li>
+	            </ul>
+	            <ul>
+	                <li><a href="<%=domain%>society_accept" class="title">安全保障</a></li>
+	                <li><a href="<%=domain%>society_accept">社会认可</a></li>
+	                <li><a href="<%=domain%>project_safeguard">项目安全</a></li>
+	                <li><a href="<%=domain%>fund_safeguard">资金安全</a></li>
+	            </ul>
+	            <ul>
+	                <li><a href="<%=domain%>help" class="title">帮助中心</a></li>
+	                <li><a href="<%=domain%>choose">新手指引</a></li>
+	                <%if(user){%>
+	                <li><a href="<%=domain%>p/account/securitymanage">注册认证</a></li>
+	                <%}else{%>
+	                <li><a href="<%=domain%>register">注册认证</a></li>
+	                <%}%>
+	                
+	                <li><a href="<%=domain%>help_authentication">常见问题</a></li>
+
+	            </ul>
+
+	            <div class="approve">
+	                <!-- <a href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=dov73ne26zbqq0ilcr2gs9w5imthzi7bx5" class="gongshang" 
+	                target="_blank"></a> -->
+	                <a href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20160222121245727" class="gongshang" target="_blank"></a>
+	                <a href="http://www.miitbeian.gov.cn/" class="beian" target="_blank"></a>
+	                <a href="http://www.cfca.com.cn/" class="cfca" target="_blank"></a>
+	                <a href="https://sealsplash.geotrust.com/splash?&amp;dn=www.i-niuwa.com" class="geotrust" target="_blank"></a>
+	            </div>
+
+	        </div>
+	        <div class="right-wrap">
+	            <p>全国客服热线</p>
+	            <p class="font36 colwhite">400-8846-898</p>
+	            <p class="work-time">工作日 9:00-21:00<br>节假日 9:00-18:00</p>
+	            <div class="copyright">
+	                版权所有©上海牛娃互联网金融信息服务有限公司&nbsp;&nbsp;&nbsp;&nbsp;沪ICP备15002518号<br>
+	                Shanghai Niuwa Internet Financial Information Service Co.,Ltd.<br></div>
+	            <div class="foot-weixin"><img src="/imgs/weixinimg2.png" > </div>
+	        </div>
+	    </div>
+	</div>	
+<!-- Google Tag Manager -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+ 
+<!-- End Google Tag Manager -->
+</body>
+<script type="text/javascript" src="/js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript">
+ var iv = 1;
+ var islogin=<%=user?true:false%>;
+ var domain="<%=domain%>";
+ var LotteryChgance=<%=chance||0%>;
+ var urlpramid='<%=user?user.custId:''%>';
+ var phone='<%=user?user.phoneNumber:''%>';
+</script>
+<!-- build:js /js/games/duanwu.min.js -->  
+	<script type="text/javascript" src="/js/games/duanwu.js"></script>
+ <!-- /build -->
+</html>
+

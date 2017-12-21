@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>快速借款</title>
+    <meta name="description" content="快速借款" />
+    <meta name="keywords" content="快速借款" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/niubeih5.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/niubeih5.css">
+    <!-- /build -->
+
+    <script>
+        if(top != self){
+            location.href = "about:blank";
+        }
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return 'no';
+            }else{
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr,rem,scale,docEl=document.documentElement,fontEl=document.createElement("style"),metaEl=document.querySelector('meta[name="viewport"]');
+        var u = (window.navigator.appVersion.match(/android/gi),window.navigator.appVersion.match(/iphone/gi));
+        dpr=window.devicePixelRatio||1;
+        if(u && window.devicePixelRatio>=3){
+            dpr=3;
+        }else if(window.devicePixelRatio>=2){
+            dpr=2;
+        }else{
+            dpr=1;
+        };
+        rem=docEl.clientWidth*dpr/10;scale=1/dpr;metaEl.setAttribute("content","width="+dpr*docEl.clientWidth+",initial-scale="+scale+",maximum-scale="+scale+", minimum-scale="+scale+",user-scalable="+ weixing);docEl.setAttribute("data-dpr",dpr);docEl.firstElementChild.appendChild(fontEl);fontEl.innerHTML="html{font-size:"+rem+"px!important;}";
+        window.rem2px=function(a){a=parseFloat(a);return a*rem};window.px2rem=function(a){a=parseFloat(a);return a/rem};
+    </script>
+</head>
+<body style="background:url(../imgs/niubei/register_bg4.png) no-repeat;background-size: cover;">
+<div style="height: 9.92rem"></div>
+<%if(delectOS=='ios'){%>
+<a href="<%=promodomain%>nbreg?sid=1114" id="open-app" style="width: 100%;" data-ca='borrowbtn'><img style="width: 6.55rem;height: 1.2rem;margin: 2rem auto 0;" src="/imgs/niubei/register_btn4.png" /></a>
+<%}else{%>
+<a href="<%=promodomain%>nbreg?sid=1114" id="open-app" style="width: 100%;" data-ca='borrowbtn'><img style="width: 6.55rem;height: 1.2rem;margin: 2rem auto 0;" src="/imgs/niubei/register_btn4.png" /></a>
+<%}%>
+</body>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/ma.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script type="text/javascript">
+    var promodomain ="<%=promodomain%>";
+</script>
+
+<!-- build:js /js/niubeireg.min.js -->
+<script type="text/javascript" src="/js/niubei.js"></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    wx.config({
+        debug: false,
+        appId: 'wx1c31a58272c4dd10',
+        timestamp:'<%=timespan%>' ,
+        nonceStr: '<%=noncestr%>',
+        signature: '<%=signature%>',
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ']
+    });
+    wx.ready(function(){
+        wx.onMenuShareTimeline({
+            imgUrl: promodomain+'imgs/niubei/borrowtitle.png', // 分享图标
+            title: '懂你的牛呗 圆你的梦想',
+            desc: '我注册了“牛呗”大学生投资借款神器，借款3分钟到账，活期投资利率高达6.6%，快来与我一起享受校园乐子吧~',
+            link: window.location.href
+        });
+
+        wx.onMenuShareAppMessage({
+            imgUrl: promodomain+'imgs/niubei/borrowtitle.png', // 分享图标
+            title: '懂你的牛呗 圆你的梦想',
+            desc: '我注册了“牛呗”大学生投资借款神器，借款3分钟到账，活期投资利率高达6.6%，快来与我一起享受校园乐子吧~',
+            link: window.location.href
+        });
+
+        wx.onMenuShareQQ({
+            imgUrl: promodomain+'imgs/niubei/borrowtitle.png', // 分享图标
+            title: '懂你的牛呗 圆你的梦想',
+            desc: '我注册了“牛呗”大学生投资借款神器，借款3分钟到账，活期投资利率高达6.6%，快来与我一起享受校园乐子吧~',
+            link: window.location.href
+        });
+
+    });
+
+</script>
+</html>

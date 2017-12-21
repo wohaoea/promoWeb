@@ -1,0 +1,73 @@
+*
+{
+    padding: 0px;
+    margin: 0px;
+}
+h1, h2, h3, h4, h5, h6
+{
+    padding: 0px;
+    margin: 0px;
+}
+img
+{
+    border: none;
+}
+dl, dt
+{
+    padding: 0px;
+    margin: 0px;
+}
+a
+{
+    text-decoration: none;
+    font-family: 微软雅黑;
+}
+.cl
+{
+    clear: both;
+    font-family: 微软雅黑;
+}
+.fl
+{
+    float: left;
+    font-family: 微软雅黑;
+}
+.fr
+{
+    float: right;
+    font-family: 微软雅黑;
+}
+ul, li
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 微软雅黑;
+}
+body{font:14px/22px "微软雅黑","宋体",Arial,'\5b8b\4f53',Helvetica,sans-serif;color:#666; overflow:auto;background:#fff}
+a{color:#666;text-decoration:none; cursor:pointer; outline:none;}
+
+.niuwa-header,.niuwa_footer{
+  width:1000px;
+  margin:0 auto;
+  position:relative;
+
+}
+.clearfix:before, 
+
+.clearfix:after { 
+
+  display: table; 
+
+  line-height: 0; 
+
+  content: ""; 
+
+} 
+.clearfix:after { 
+  clear: both; 
+} 
+.clearfix { 
+  *zoom: 1; 
+} 
+

@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%-seo.title%></title>
+    <meta name="Keywords" content="<%-seo.keywords%>" />
+    <meta name="Description" content="<%-seo.description%>" />
+    <!-- build:css /css/article.min.css?v=<%=version%> -->
+    <link href="/css/idialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/article.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+
+</head>
+<body>
+<div class="wrap">
+    <!--header begin-->
+    <div class="header">
+        <a href="<%=domain%>" class="logo" title="牛娃金融"><img style="border:none" src="/imgs/logo.png" width="357" height="52" alt="牛娃金融"></a>
+        <div class="top-login-bar">已有账号？ <a href="<%=domain%>login" class="blue">立即登录</a></div>
+    </div>
+    <!--header end-->
+</div>
+<!--banner begin-->
+<div class="banner">
+    <div class="wrap relative">
+        <div class="banner-kwd">
+            <h1 class="FS30"><%-seo.primaryKeyword%>-牛娃互联网金融100%本息保障</h1>
+            <div class="banner-kwd-info">
+                <%if(seo.longKeyword){%><%-seo.longKeyword%>-<%}%><%-seo.primaryKeyword%><br>
+                最高年化收益14%<br>
+                实缴三亿注册资本<br>
+                注册就送50红包<br>
+            </div>
+        </div>
+        <div class="reg-box">
+            <ul class="reg-ul">
+                <li><label>手&nbsp;机&nbsp;号</label><input type="text" name="username" value="" class="txt w178"><span class="error-tips" id="usernameErr"></span></li>
+                <li><label>输入密码</label><input type="password" name="password" value="" class="txt w178" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false"><span class="error-tips" id="pwdErr"></span></li>
+                <li><label>验&nbsp;证&nbsp;码</label><input type="text" name="code" value="" class="txt w78"><img src="" class="verifi-img"><span class="error-tips" id="codeErr"></span></li>
+                <li><label>手机验证</label><input type="text" name="mbcode" value="" class="txt w78"><button type="button" class="getmbcode">获取验证码</button><span class="error-tips" id="mbcodeErr"></span></li>
+                <li class="agreement"><input type="checkbox" value="1" name="" checked  class="agree-check">我已阅读并同意<a href="javascript:;" class="blue" id="regdeal">《平台注册协议》</a>
+                    <span class="error-tips" id="agreeErr" style="margin-left: 24px"></span>
+                </li>
+                <li><button type="submit" name="" class="reg-btn">注册</button> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--banner end-->
+<!-- content begin-->
+<div class="wrap">
+    <%if(seo.shortContent){%>
+    <div class="txt-box1">
+        <%-seo.shortContent%>
+    </div>
+    <%}%>
+    <!--推广-->
+    <%if(seo_adv){%>
+    <%if(seo_adv.list[0]){%>
+    <div>
+        <%if(seo_adv.list[0].linkURL){%>
+        <a href="<%=seo_adv.list[0].linkURL%>" target="_blank"><img src="<%=seo_adv.list[0].imageURL%>" width="1000" height="100" alt="<%=seo_adv.list[0].title%>"></a>
+        <%}else{%>
+            <img src="<%=seo_adv.list[0].imageURL%>" width="1000" height="100" alt="<%=seo_adv.list[0].title%>">
+        <%}%>
+    </div>
+    <%}}%>
+    <div class="section clearfix">
+        <div class="article-content">
+            <div class="article">
+               
+                <div class="article-info"><%-utils.html_decode(seo.primaryContent)%></div>
+
+            </div>
+            <%if(seo.comments && seo.comments.length>0){%>
+            <div class="article-comment">
+                <ul class="article-comment-list">
+                    <%seo.comments.forEach(function(v,k){%>
+                    <li>
+                        <label class="article-comment-user"><%=v.author%></label>
+                        <div class="article-comment-con"><%-utils.html_decode(v.content)%></div>
+                    </li>
+                    <%})%>
+                </ul>
+            </div>
+            <%}%>
+        </div>
+        <div class="aside">
+            <div class="youshi"><img src="/imgs/seo/youshi.jpg" width="290" height="200" alt="牛娃优势"></div>
+            <div class="weixin"><img src="/imgs/seo/weixin.jpg" width="290" height="200" alt="扫一扫,关注牛娃"></div>
+            <div class="hot-line">
+                <div class="hot-line-head">
+                    <div class="hot-line-txt">全国客服热线</div>
+                    <div class="hot-line-time">
+                        工作日 9:00-21:00<br>
+                        节假日 9:00-18:00
+                    </div>
+                </div>
+                <div class="hot-line-tel">400-8846-898</div>
+            </div>
+            <div class="line-qq"><a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODAwNzc4MF8yNzEyOTJfNDAwODg0Njg5OF8yXw" target="_blank" title="QQ在线联系客服" class="qq">QQ在线联系客服</a></div>
+        </div>
+    </div>
+
+    <!--推广-->
+    <%if(seo_adv){%>
+    <%if(seo_adv.list[1]){%>
+    <div>
+        <%if(seo_adv.list[0].linkURL){%>
+        <a href="<%=seo_adv.list[1].linkURL%>" target="_blank"><img src="<%=seo_adv.list[1].imageURL%>" width="1000" height="100" alt="<%=seo_adv.list[1].title%>"></a>
+        <%}else{%>
+        <img src="<%=seo_adv.list[1].imageURL%>" width="1000" height="100" alt="<%=seo_adv.list[1].title%>">
+        <%}%>
+    </div>
+    <%}}%>
+
+    <div class="ts clearfix">
+        <div class="ts-item">
+            <h1 class="ts-item-h1">超短期</h1>
+            <h2 class="ts-item-h2">100元起投，新手体验 </h2>
+            <div class="ts-param">
+                <div class="ts-nhl">
+                    <div style="height: 20px;">年化利率</div>
+                    <label><span class="fc1">14</span>%</label>
+                </div>
+                <div class="ts-nhl">
+                    投资期限
+                    <label><span class="fc1">15</span>天</label>
+                </div>
+            </div>
+            <a href="<%=domain%>newclient" class="ts-item-btn">查看新牛专享</a>
+        </div>
+        <div class="ts-item ts-item2">
+            <h1 class="ts-item-h1">稳赚钱</h1>
+            <h2 class="ts-item-h2">1000元起投，躺着赚钱</h2>
+            <div class="ts-param">
+                <div class="ts-nhl">
+                    <div style="height: 20px;">年化利率</div>
+                    <label><span class="fc1">8-12</span>%</label>
+                </div>
+                <div class="ts-nhl">
+                    投资期限
+                    <label><span class="fc1">3-12</span>月</label>
+                </div>
+            </div>
+            <a href="<%=domain%>plan" class="ts-item-btn">查看懒牛计划</a>
+        </div>
+        <div class="ts-item">
+            <h1 class="ts-item-h1">最灵活</h1>
+            <h2 class="ts-item-h2">100元起投，每月等额本息</h2>
+            <div class="ts-param">
+                <div class="ts-nhl">
+                    <div style="height: 20px;">年化利率</div>
+                    <label><span class="fc1">6-12</span>%</label>
+                </div>
+                <div class="ts-nhl">
+                    投资期限
+                    <label><span class="fc1">1-12</span>月</label>
+                </div>
+            </div>
+            <a href="<%=domain%>featured" class="ts-item-btn">查看智牛精选</a>
+        </div>
+    </div>
+</div>
+<!--content end-->
+<!--footer begin-->
+<div class="footer">
+    <div class="wrap clearfix">
+        <div class="links">
+            <div class="links-tab">友情链接：</div>
+            <div class="links-list">
+                <%if(seo.links.length>0){%>
+                <%seo.links.forEach(function(v,k){%>
+                <a href="<%=v.url%>" title="<%=v.title%>"><%=v.title%></a>
+                <%})%>
+                <%}%>
+            </div>
+        </div>
+        <div class="foot-kwd">关于牛娃-<%-seo.primaryKeyword%></div>
+    </div>
+    <div class="copyright">
+        版权所有©上海牛娃互联网金融信息服务有限公司    沪ICP备15002518号<br>
+        Shanghai Niuwa Internet Financial Information Service Co.,Ltd.
+    </div>
+</div>
+<!--footer end-->
+<!-- Google Tag Manager -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');var domain="<%=domain%>"</script>
+
+<!-- End Google Tag Manager -->
+</body>
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.sha256.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<!-- build:js /js/article.min.js -->
+<script type="text/javascript" src="/js/article.js?v=<%version%>"></script>
+<!-- /build -->
+

@@ -1,0 +1,226 @@
+body{
+    background-color: #fbc52d;
+}
+
+.hidden{
+    display: none
+}
+
+.sign{
+    width: 100%;
+    height: 13rem;
+    background: url('/imgs/nwusersign/cloud-bulid.png') 0 0 no-repeat;
+    background-size: 7.5rem 11.35rem;
+    background-position-y: .68rem;
+    text-align: center;
+    overflow: hidden;
+}
+.dayNo{
+    width: 2.52rem;
+    height: 1.48rem;
+    margin: 0 auto;
+    margin-top: .32rem;
+    margin-bottom: .5rem
+}
+.days{
+    font-size: .36rem;
+    margin-top: .32rem;
+    line-height: .36rem
+}
+
+.border{
+    width: 1.08rem;
+    height: 1.48rem;
+    border: .04rem solid #000;
+    border-radius: .12rem;
+    color: #fff;
+    line-height: 1.48rem;
+    font-size: .88rem;
+    overflow: hidden
+}
+.signAward{
+    position: relative;
+    width: 6.79rem;
+    height: 4.94rem;
+    margin: 0 auto;
+    background: url('/imgs/nwusersign/signAward.png') 0 0 no-repeat;
+    background-size: 6.79rem 4.94rem;
+    margin-bottom: .5rem;
+}
+
+.award{
+    position: absolute;
+    width: 1.36rem;
+    height: .81rem;
+    background-size: 1.36rem .81rem!important;
+}
+
+.award>.tips{
+    color: #fff;
+    font-size: .22rem;
+    line-height: .5rem;
+    position: absolute;
+    top: -.61rem;
+    left: 0.04rem;
+    background: url(/imgs/nwusersign/tips.png) 0 0 no-repeat;
+    background-size: 1.28rem .61rem;
+    width: 1.28rem;
+    height: .61rem;
+    display: none 
+}
+.getAward{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999
+}
+.day3{
+    left: 1.9rem;
+    top: 1.42rem;
+    background: url('/imgs/nwusersign/iconDay3.png') 0 0 no-repeat
+}
+.day7{
+    left: 3.38rem;
+    top: .32rem;
+    background: url('/imgs/nwusersign/iconDay7.png') 0 0 no-repeat
+}
+.day15{
+    left: 4.98rem;
+    top: 1.85rem;
+    background: url('/imgs/nwusersign/iconDay15.png') 0 0 no-repeat
+}
+.day28{
+    left: 3.28rem;
+    top: 3.5rem;
+    background: url('/imgs/nwusersign/iconDay28.png') 0 0 no-repeat
+}
+
+.niu{
+    position: absolute;
+    left: .84rem;
+    top: .38rem;
+    width: .53rem;
+    height: .65rem;
+    background: url('/imgs/nwusersign/niu.png') 0 0 no-repeat;
+    background-size: .53rem .65rem;
+    z-index: 99;
+    display: none
+}
+.submit{
+    width: 3.28rem;
+    height: .9rem;
+    margin: 0 auto;
+    background-size: 3.28rem .9rem!important;
+    margin-bottom: .65rem;
+}
+.signBtn,.tologin,.toast1{
+    background: url('/imgs/nwusersign/signbtn.png') 0 0 no-repeat;
+}
+.hasSign{
+    background: url('/imgs/nwusersign/hasSign.png') 0 0 no-repeat;
+}
+.resetSign{
+    background: url('/imgs/nwusersign/reset.png') 0 0 no-repeat;
+}
+.signtips{
+    padding: 0 .34rem;
+    text-align: left;
+}
+.getDay3{
+    background-image: url("/imgs/nwusersign/getawardday3.png")!important
+}
+.getDay7{
+    background-image: url("/imgs/nwusersign/getawardday7.png")!important
+}
+.getDay15{
+    background-image: url("/imgs/nwusersign/getawardday15.png")!important
+}
+.getDay28{
+    background-image: url("/imgs/nwusersign/getawardday28.png")!important
+}
+.signtips p,.signtips h1{
+    color: #fff;
+    font-size: .22rem;
+    line-height: .38rem
+}
+
+.bits{
+    width: 100%;
+    height: 100%;
+}
+.bits:nth-child(1){
+     float: left
+}
+
+.ten{
+    width: 100%;
+    height: 100%;
+}
+.ten:nth-child(1){
+     float: left
+}
+
+.toast,.shadow{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.shadow{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pop-up{
+    width: 5.4rem;
+    height: 3.3rem;
+    border-radius: .22rem;
+    overflow: hidden;
+    background: url('/imgs/nwusersign/pop-up.png') 0 0 no-repeat;
+    background-size: 5.4rem 3.3rem;
+    margin: 3.5rem auto 0;
+    color: #fff;
+}
+
+.pop-up>.tipsInfo{
+    width: 100%;
+    height: 2.4rem;
+    text-align: center;
+    overflow: hidden
+}
+.pop-up>.tipsInfo p {
+    width: 2.88rem;
+    font-size: .36rem;
+    color: #fff;
+    margin: .8rem auto 0;
+}
+.pop-up>.btn{
+    width: 100%;
+    height: .9rem;
+}
+.btn .btn1,.btn2{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    font-size: .34rem;
+    line-height: .9rem
+}
+.success{
+    width: 2.8rem;
+    height: 1.6rem;
+    border-radius: .08rem;
+    position: absolute;
+    top: 4.3rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}

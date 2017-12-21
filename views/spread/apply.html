@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>牛呗推广系统</title>
+    <meta name="description" content="牛呗推广系统" />
+    <meta name="keywords" content="牛呗推广系统" />
+    <% include header.html %>
+</head>
+<body>
+<% include diaoding.html%>
+<div class="container2">
+    <div class="section1" id="apply">
+        <ul class="spr-form1">
+            <li>
+                <label>申请的角色</label>
+                <div class="selbox">
+                    <i class="seltxt"></i><cite class="selbtn"><span class="selbtn-icon1"></span></cite>
+                    <input type="hidden" name="roletype" id="roleType" value="">
+                    <ul class="selul">
+                        <li>推广大使</li>
+                        <li>兼职</li>
+                        <li>代理</li>
+                    </ul>
+                </div>
+
+            </li>
+            <li>
+                <label>上级手机号</label>
+                <input type="text" name="mobile" id="mobile" class="form-txt1">
+            </li>
+            <li class="apply-btn"><button type="button" class="btn1" id="applyBtn1">申请</button> </li>
+        </ul>
+    </div>
+
+    <div id="applyback" style="display: none;">
+        <h1 class="applyh1">确认申请</h1>
+        <ul class="applybackbox">
+            <li>您的角色为：<span class="FC3" id="roleName"></span></li>
+            <li>您的上级为：<span class="FC3" id="roleInfo"></span></li>
+        </ul>
+        <div class="applyback-btn">
+            <button class="btn1 btn2" style="float:left;" id="applyHistory">返回修改</button>
+            <button class="btn1 btn2" id="applySuccess" style="float: right;">确认</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+
+<!-- build:js /js/spread.min.js -->
+<script src="/js/g.js"></script>
+<script type="text/javascript" src="/js/spread.js"></script>
+<!-- /build -->

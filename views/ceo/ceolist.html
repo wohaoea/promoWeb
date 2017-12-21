@@ -1,0 +1,128 @@
+<% if(total==0){%>
+	<div style="width:100%;text-align: center;line-height:3rem">还没人报名参加 赶紧报名吧</div>
+<%}else{%>
+	<%if(lastpage){%>
+		<% ceolist.forEach(function(v,k){%>
+			<div class="listtmp clearfix">
+						<div class="dianzan" data-id = "<%= v.id%>">
+								<div class="zanimg"></div><span><%= v.counts%></span>
+						</div>
+						<div class="userleft">
+							<div class="username" >
+								<img src="/getceoimg/<%= v.avatar%>" />
+							</div>
+						</div>
+						<div class="userright clearfix">
+							<div class="name"><%= v.name%></div>
+							<div class="mebo clearfix" style="margin-top:0.35rem">
+								<div class="fl">
+									学校：
+								</div>
+								<div class="fl F6rem">
+									<%- v.school%>
+								</div>
+							</div>
+							<%if(v.job){%>
+							<div class="mebo clearfix">
+								<div class="fl">
+									职务：
+								</div>
+								<div class="fl F6rem">
+									<%- v.job%>
+								</div>
+							</div>
+							<%}%>
+							<div class="mebo clearfix">
+								<div class="fl">
+									荣誉：
+								</div>
+								<div class="fl F6rem">
+									<%- v.honor%>
+								</div>
+							</div>
+							<%if(v.ext1Key){%>
+							<div class="mebo clearfix">
+								<div class="fl">
+									<%=v.ext1Key%>：
+								</div>
+								<div class="fl F6rem">
+									<%- v.ext1Value%>
+								</div>
+							</div>
+							<%}%>
+							<%if(v.ext2Key){%>
+							<div class="mebo clearfix">
+								<div class="fl">
+									<%=v.ext2Key%>：
+								</div>
+								<div class="fl F6rem">
+									<%- v.ext2Value%>
+								</div>
+							</div>
+							<%}%>
+						</div>
+			</div>
+		<% })%>
+		<div class="banquan">活动最终解释权归牛娃互联网金融所有</div>
+	<%}else{%>
+			<% ceolist.forEach(function(v,k){%>
+					<div class="listtmp clearfix">
+								<div class="dianzan" data-id = "<%= v.id%>">
+										<div class="zanimg"></div><span><%= v.counts%></span>
+								</div>
+								<div class="userleft">
+									<div class="username">
+										<img src="/getceoimg/<%= v.avatar%>" />
+									</div>
+								</div>
+								<div class="userright clearfix">
+									<div class="name"><%= v.name%></div>
+									<div class="mebo clearfix"  style="margin-top:0.35rem">
+										<div class="fl">
+											学校：
+										</div>
+										<div class="fl F6rem">
+											<%- v.school%>
+										</div>
+									</div>
+									<div class="mebo clearfix">
+										<div class="fl">
+											职务：
+										</div>
+										<div class="fl F6rem">
+											<%- v.job%>
+										</div>
+									</div>
+									<div class="mebo clearfix">
+										<div class="fl">
+											荣誉：
+										</div>
+										<div class="fl F6rem">
+											<%- v.honor%>
+										</div>
+									</div>
+									<%if(v.ext1Key){%>
+									<div class="mebo clearfix">
+										<div class="fl">
+											<%=v.ext1Key%>：
+										</div>
+										<div class="fl F6rem">
+											<%- v.ext1Value%>
+										</div>
+									</div>
+									<%}%>
+									<%if(v.ext2Key){%>
+									<div class="mebo clearfix">
+										<div class="fl">
+											<%=v.ext2Key%>：
+										</div>
+										<div class="fl F6rem">
+											<%- v.ext2Value%>
+										</div>
+									</div>
+									<%}%>
+								</div>
+					</div>
+				<%})%>
+		<%}%>	
+<%}%>

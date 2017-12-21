@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>牛呗4.0版本全新升级</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .content {
+            padding: .5rem .3rem;
+            font-size: .28rem;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .p1 {
+            text-indent: 2em;
+        }
+        
+        ul>li {
+            margin-bottom: .1rem
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <p class="p1">牛呗在广大用户的厚爱与支持下飞速发展，注册用户已突破百万；届时我们将全新打造牛呗新版本，优化借款流程和操作体验，我们将用最好的产品和服务来回馈用户。</p>
+        <p style="margin-top:.2rem;margin-bottom: .15rem;">功能调整如下：</p>
+        <ul>
+            <li>1、资金账户迁移到新网银行的存管账户，操作简单，安全性更高。</li>
+            <li>2、借款流程更加简单快捷。</li>
+            <li>3、牛呗暂时下架投资及相关功能；投资用户请到牛娃官网进行操作（牛娃投资APP即将上线）</li>
+            <li>4、牛呗暂时下架摇钱树及相关功能；添加签到、抽奖等奖励功能，每天奖励不断、惊喜不停。</li>
+        </ul>
+    </div>
+    <script>
+        //ios10以上禁用用户页面缩放
+        window.onload = function() {
+            document.addEventListener('touchstart', function(event) {
+                if (event.touches.length > 1) {
+                    event.preventDefault();
+                }
+            })
+            var lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                var now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false)
+        }
+
+        function isWeiXin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return 'no';
+            } else {
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr, rem, scale, docEl = document.documentElement,
+            fontEl = document.createElement("style"),
+            metaEl = document.querySelector('meta[name="viewport"]');
+        var u = (window.navigator.appVersion.match(/android/gi), window.navigator.appVersion.match(/iphone/gi));
+        dpr = window.devicePixelRatio || 1;
+        if (u && window.devicePixelRatio >= 3) {
+            dpr = 1;
+        } else if (window.devicePixelRatio >= 2) {
+            dpr = 1;
+        } else {
+            dpr = 1;
+        };
+        rem = docEl.clientWidth * dpr / 7.5;
+        scale = 1 / dpr;
+        metaEl.setAttribute("content", "width=" + dpr * docEl.clientWidth + ",initial-scale=" + scale + ",maximum-scale=" + scale + ", minimum-scale=" + scale + ",user-scalable=" + weixing);
+        docEl.setAttribute("data-dpr", dpr);
+        docEl.firstElementChild.appendChild(fontEl);
+        fontEl.innerHTML = "html{font-size:" + rem + "px!important;}";
+        window.rem2px = function(a) {
+            a = parseFloat(a);
+            return a * rem
+        };
+        window.px2rem = function(a) {
+            a = parseFloat(a);
+            return a / rem
+        };
+    </script>
+</body>
+
+</html>

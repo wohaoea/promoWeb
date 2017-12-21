@@ -1,0 +1,267 @@
+body {
+    min-width: 1000px;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, Arial, "Microsoft Yahei", "微软雅黑", Arial, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.smashingeggs_div {
+    width: 100%;
+    height: auto;
+}
+
+.smashingeggs_header {
+    background: url("../imgs/m6/smashingeggs/header.jpg") no-repeat center;
+    height: 700px;
+}
+
+.smashingeggs_bottom {
+    background: url("../imgs/m6/smashingeggs/bottom2.jpg") no-repeat center;
+    /* background-size: 100% 100%; */
+    height: 620px;
+}
+
+.smashingeggs_eggs_container {
+    position: relative;
+    top: 35%;
+    height: 65%;
+    width: 670px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.smashingeggs_eggs_container>div,
+.smashingeggs_exchange_container>div {
+    display: inline-block;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.smashingeggs_eggs_container_middle {
+    width: 43.28%;
+    margin: auto;
+    text-align: center;
+}
+
+.smashingeggs_eggs_container>div.smashingeggs_eggs_container_left,
+.smashingeggs_eggs_container>div.smashingeggs_eggs_container_right {
+    width: 185px;
+}
+
+.smashingeggs_eggs_container_left>div.smashingeggs_egg_body {
+    background: url(../imgs/m6/smashingeggs/golden_eggs.png);
+}
+
+.smashingeggs_eggs_container_right>div.smashingeggs_egg_body {
+    background: url(../imgs/m6/smashingeggs/silver_eggs.png);
+}
+
+.smashingeggs_eggs_container>div>div {}
+
+.smashingeggs_eggs_container>div>div.smashingeggs_egg_body {
+    width: 100%;
+    height: 74%;
+    /* background-size: 100% 200%; */
+    background-position: 0% 0%;
+    /* background-color: green; */
+}
+
+#smashingeggs_hammer {
+    cursor: pointer;
+    /* z-index: 999999999999; */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    min-width: 113.5px;
+    height: auto;
+    display: none;
+}
+
+.smashingeggs_egg_label {
+    width: 100%;
+    height: 26%;
+    /* background-size: 36.8%; */
+    /* background-color: yellow; */
+    color: #F05150;
+    padding-top: 12%;
+}
+
+.smashingeggs_egg_label>label {
+    width: 36.84%;
+    height: 30%;
+    margin: auto;
+    background: url(../imgs/m6/smashingeggs/suplus_background.png);
+    /* background-size: 100% 100%; */
+    display: block;
+    font-size: 20px;
+    /* background-color: blue; */
+    line-height: 32px;
+}
+
+#invest_now {
+    width: 93%;
+    margin: auto 3.5%;
+    margin-top: 109%;
+    cursor: pointer;
+    /* background-color: blue; */
+}
+
+.dialog_yellow_btn {
+    cursor: pointer;
+}
+
+.smashingeggs_exchange_container {
+    width: 960px;
+    height: 30%;
+    margin: auto;
+    text-align: center;
+}
+
+div.smashingeggs_exchange_container>div {
+    width: 50%;
+}
+
+div.smashingeggs_exchange_container>div>div {
+    width: 100%;
+    height: 50%;
+}
+
+div.smashingeggs_exchange_btn {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    width: 260px;
+    height: 100px;
+    background-image: url(../imgs/m6/smashingeggs/exchange_eggs_up.png);
+    /* background-size: 100% 100%; */
+    margin: auto;
+    line-height: 5.4em;
+    font-size: 1.5em;
+}
+
+div.smashingeggs_exchange_container>div>div.smashingeggs_exchange_text {
+    /* background-color: yellow; */
+    margin-top: 8%;
+    height: 42%;
+}
+
+div.smashingeggs_exchange_text>p {
+    /* background-color: green; */
+    line-height: 37px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #FFC000;
+}
+
+div.smashingeggs_pannel_text {
+    margin: 64px auto 0px;
+    width: 860px;
+    padding: 10px;
+    background: transparent;
+}
+
+div.smashingeggs_pannel_text>ul {
+    padding:0;
+    margin: 14px 11px 14px 31px;
+}
+
+div.smashingeggs_pannel_text>ul>li {
+    height: 24px;
+    font-size: 16px;
+    color:#fff;
+    /* color:white;  */
+}
+
+
+/* dialogs */
+
+div.dialog {
+    background-color: #F04B4A;
+    text-align: center;
+    width: 400px;
+    height: 280px;
+    color: #FFC000;
+    display: none;
+    font-weight: bold;
+}
+
+div.dialog img {
+    margin-top: 20px;
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#smashing_silver_egg_success {
+    height: 400px;
+}
+
+#exchange_silver_egg_success {
+    height: 250px;
+}
+
+div.dialog>div.title {
+    color: white;
+    font-size: 1.5em;
+    margin: 10px auto;
+}
+
+div.dialog>div.dialogtop {
+    height: 30px;
+    padding-top: 10px;
+    width: 100%;
+}
+
+#smashing_golden_egg_success {
+    height: 243px;
+}
+
+#smashingeggs_smashing_eggs_fail {
+    height: 280px;
+}
+
+#exchange_silver_egg_success {
+    height: 300px;
+}
+
+#smashing_silver_egg_success {
+    height: 400px;
+}
+
+div.dialog>div.body {
+    padding: 10px;
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+
+div.dialog>div.dialogtop>div.close {
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    margin-right: 10px;
+    position: relative;
+    background: url(../imgs/m6/smashingeggs/modal_close.png) no-repeat center;
+    /* background-size: 100% 100%; */
+    float: right;
+}
+
+div.dialog_yellow_btn {
+    width: 180px;
+    height: 50px;
+    margin: 30px auto;
+    background-image: url(../imgs/m6/smashingeggs/modal_btn.png);
+    /* background-size: 100% 100%; */
+    font-size: 1.2em;
+    line-height: 2.4em;
+    font-weight: bold;
+    color: white;
+}

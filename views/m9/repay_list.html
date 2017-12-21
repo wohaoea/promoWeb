@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>还款</title>
+    <meta name="description" content="还款" />
+    <meta name="keywords" content="还款" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/repay_list.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/repay_list.css"rel="stylesheet" type="text/css" >
+    <!-- /build -->
+    <style>
+        body{
+            padding-bottom: 1.5rem!important;
+        }
+    </style>
+    <%include ./h5script.html%>
+
+</head>
+
+<body>
+    
+    <div class="rest_money_use">
+        <p class="restmoney">可用余额</p>
+        <p class="moneynumber"><%=parseFloat(remaining).toFixed(2) %>元</p>
+        <span class="recharge">
+            <%if(isAuth){%>
+            <a target="_blank"
+        <%if(come_from=='app'){%> 
+        
+        href='toapp://recharge'
+        <%}else{%>
+        href="<%=h5domain+'account/recharge'%>"
+        <%}%>
+        >充值</a>
+        <%}else if(!versionFlag){%>
+            <a target="_blank"
+            <%if(come_from=='app'){%>
+
+            href='toapp://openaccount'
+            <%}else{%>
+            href="<%=h5domain+'account/recharge'%>"
+            <%}%>
+        >开户</a>
+        <%}%>
+        </span>
+        
+    </div>
+    
+    <div class="container">
+        <ul class="container_top">
+            <%if(active_tab=='r1'){%>
+            <li class="active" id="r1" >按期还款</li>
+            <%}else{%>
+            <li id="r1" data-type="r1">按期还款</li>
+            <%}%>
+            <%if(active_tab=='r2'){%>
+            <li class="active" id="r2" >提前还款</li>
+            <%}else{%>
+            <li id="r2" data-type="r2">提前还款</li>
+            <%}%>
+            <%if(active_tab=='r3'){%>
+            <li class="active" id="r3" >还款记录</li>
+            <%}else{%>
+            <li id="r3" data-type="r3">还款记录</li>
+            <%}%>       
+        </ul>
+        
+        <!--按期还款-->
+        <%if(active_tab=='r1'){%>
+            <!--点进项目时切换到具体项目的还款-->
+                <div class="Repayment" >
+                    <%if(repayList.length>0){%>
+                        <ul class="u1">
+                            <%for(var n=0;n<repayList.length;n++){%>            
+                            <li>                
+                                <img data-loanid="<%=repayList[n].projectNo%>" data-id="<%=repayList[n].id%>" data-repayplanlist="<%=repayList[n].term%>" src="<%=repayList.length==1?'/imgs/m9/check.png':repayList[n].allowcheck==1?'/imgs/m9/uncheck.png':'/imgs/m9/unable_check.png'%>" class="sfleft select-figure <%=repayList.length==1?'ischoosen':''%>"  data-allowpay="<%=repayList[n].allowpay%>" data-allowcheck="<%=repayList[n].allowcheck%>" data-a="<%=repayList[n].bdfPrjType%>" data-b="<%=repayList[n].id%>"/>
+                                <div class="detail">
+                                    <p><span class="sfleft" id="repayAmount"><%=repayList[n].repayAmount%></span> <span class="sfright">到期时间</span></p>
+                                    <p><span class="sfleft">
+                                    <%=repayList[n].projectName%>
+                                    </span> <span class="sfright"><%=repayList[n].repayDate.substring(0,10)%></span></p>
+                                </div>              
+                                <img src="/imgs/m9/right.png" class="sfright gotodetail" data-url="<%=active_tab%>" data-obj="<%=JSON.stringify(repayList[n])%>"/>          
+                            </li>
+                            <%}%>               
+                        </ul>
+                    <%}else{%>
+                        <p class="no-data">暂无借款记录</p>
+                    <%}%>
+                </div>
+        <%}%>           
+        <!--提前还款-->
+        <%if(active_tab=='r2'){%>
+        <div class="main1" >
+            <%if(repayList.length>0){%>
+                <ul class="u1">
+                    <%for(var n=0;n<repayList.length;n++){%>            
+                    <li>                
+                        <img data-loanid="<%=repayList[n].projectNo%>" data-repayplanlist="<%=repayList[n].term%>" src="<%=repayList.length==1?'/imgs/m9/check.png':'/imgs/m9/uncheck.png'%>" class="sfleft select-figure <%=repayList.length==1?'ischoosen':''%>" data-a="<%=repayList[n].bdfPrjType%>" data-b="<%=repayList[n].id%>"/>
+                        <div class="detail">
+                            <p><span class="sfleft" id="repayAmount"><%=repayList[n].repayAmount%></span> <span class="sfright">到期时间</span></p>
+                            <p><span class="sfleft">
+                            <%=repayList[n].projectName%>
+                            </span> <span class="sfright"><%=repayList[n].repayDate.substring(0,10)%></span></p>
+                        </div>              
+                        <img src="/imgs/m9/right.png" class="sfright gotodetail" data-url="<%=active_tab%>" data-obj="<%=JSON.stringify(repayList[n])%>"/>          
+                    </li>
+                    <%}%>               
+                </ul>
+            <%}else{%>
+                <p class="no-data">暂无借款记录</p>
+            <%}%>
+        </div>
+        <%}%>
+        <!--还款记录-->
+        <%if(active_tab=='r3'){%>
+        <div class="main1" >
+         <%if(time_count.length>0){%>
+            <ul class="u1 u3">
+                <%for(var n=0;n<time_count.length;n++){%>
+                <li>
+                    <p>[<%=time_count[n].term%>/<%=time_count[n].loanTerm%>]  
+                    <%=time_count[n].projectName%> </p>
+                    <p><%=time_count[n].actualPayTime.substring(0,10)%></p>
+                    <span class="time_detail"><%=parseFloat(time_count[n].actRepayAmount).toFixed(2)%></span>
+                    
+                    <img src="/imgs/m9/right.png" class="sfright gotodetail" data-url="<%=active_tab%>" data-obj="<%=JSON.stringify(time_count[n])%>"/>
+                </li>
+                <%}%>               
+            </ul>
+            <%}else{%>
+                <p class="no-data" style="margin-bottom: 107%">暂无还款记录</p>
+            <%}%>
+        </div>
+        <%}%>  
+    </div>
+    
+    
+  
+    <%if(active_tab=='r1'||active_tab=='r2'){%>
+    <div class="footer">
+        <div class="sfleft footer_choose">
+            <img src="<%=repayList.length==1?'/imgs/m9/check.png':'/imgs/m9/uncheck.png'%>" class="sfleft"/>
+            <p class="sfleft">已选<span id="choose_topay">
+                <%if(repayList.length==1){%> 
+                    <%=repayList[0].repayAmount%>
+                <%}else{%>
+                    0.00
+                <%}%>     
+            </span>元</p>
+        </div>
+ 
+        <div class="sfright footer_topay">
+            立即还款
+        </div>
+
+    </div>
+    <%}%>
+
+</body>
+
+</html>
+<script type="text/javascript">
+var repayType="<%=active_tab%>";
+var remaining = "<%=remaining%>";//账户余额
+var h5domain = "<%=h5domain%>";
+var productName='<%=productName%>';
+var prodType='<%=prodType%>';
+
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/querystring.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<script src="/js/common/formSubmit.js"></script>
+<!-- build:js /js/m9/repay_list.min.js -->
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src='/js/m9/repay_list.js'></script>
+<!-- /build -->
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>

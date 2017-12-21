@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>牛娃金融</title>
+    <meta name="description" content="注册成功" /> 
+    <meta name="keywords" content="注册,牛娃p2p" /> 
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+    <style type="text/css">
+		    body{
+			font: tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif;
+			background:url(../imgs/bg.png);
+			background-position: -2px 0;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+    	.block{position: absolute;bottom: 0px;left: 80px;z-index:-1; display: none;width:300px;font-size: 28px;color:#969696}
+    	.show1{height:340px; width: 400px;text-align: center;position:absolute;top:50%;left:50%;margin-left:-200px;margin-top:-170px}
+    	.show2{height:340px; width: 450px;text-align: center;position:absolute;top:50%;left:50%;margin-left:-225px;margin-top:-170px}
+    	.show2{display: none;}
+    	.showQcode{
+				display: none;
+			}
+			.show2 img{ border:none;}
+		.showQcode{
+			position: absolute;
+			left:50%;
+			top:222px;
+			z-index:10000;;
+			margin-left: -100px;
+		}
+
+    </style>
+    
+</head>
+
+<body>
+	
+			
+			<div class="show1">
+				<div class="block" >你来我不会空手。</div>
+				<img src="/imgs/git.gif" style="margin-left:40px;"/>
+			</div>
+			<div class="show2">
+				<img src="/imgs/gs.gif"  />
+				<br/>	<br/>	<br/>
+					<a href="javascript:;" class="weibo"><img src="/imgs/weibo.gif" /></a>&nbsp;&nbsp;
+					<a href="javascript:;" class="weixin"><img  src="/imgs/wechat.gif" /></a>&nbsp;&nbsp;
+					<a href="javascript:;" class="QQzone"><img  src="/imgs/qq.gif" /></a>
+					<div class="showQcode">
+					<div class="toptip"></div> 
+					<img src="/getQrcode" width='200' height='200' /> 
+					</div>
+			</div>
+		
+	</div>
+	<script type="text/javascript" src="/js/libs/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			setTimeout(function(){
+				$(".block").animate({bottom: '+350px', opacity:"show"}, "slow",function(){
+					$(".show1").fadeOut(2000,function(){
+						$(".show2").fadeIn(1000);
+					});
+				});
+			},2000);
+
+			//切换
+			$(".weibo>img").hover(function(){
+				$(this).attr("src","/imgs/nweibo.gif")
+			},function(){
+				$(this).attr("src","/imgs/weibo.gif")
+			})
+			$(".weixin>img").hover(function(){
+				$(this).attr("src","/imgs/nwechat.gif")
+					$(".showQcode").show();
+			},function(){
+					$(".showQcode").hide();
+				$(this).attr("src","/imgs/wechat.gif")
+			})
+			$(".QQzone>img").hover(function(){
+				$(this).attr("src","/imgs/nqq.gif")
+			},function(){
+				$(this).attr("src","/imgs/qq.gif")
+			})
+			//分享按钮
+
+			var top = window.screen.height / 2 - 250;
+			var left = window.screen.width / 2 - 300;
+			var urlpramid = "<%= custId%>";
+
+
+			 $(".QQzone").click(function(){
+			 	shareQzone()
+			 });
+
+			 $(".weixin").click(function(e){
+			 	e = e || window.event;  
+			 	if($(".showQcode").is(":hidden")){
+			 		$(".showQcode").show();
+				    if(e.stopPropagation) { 
+				        e.stopPropagation();  
+				    } else {  
+				        e.cancelBubble = true; 
+				    } 
+			 	}else{
+			 		$(".showQcode").hide();
+				    if(e.stopPropagation) { 
+				        e.stopPropagation();  
+				    } else {  
+				        e.cancelBubble = true; 
+				    } 
+			 	};
+
+			 	 
+			 });
+			 $(document).click(function(){
+			 	$(".showQcode").hide();
+			 })
+			 $(".weibo").click(function(){
+			 	shareTSina();
+			 });
+
+			 /*,分享到qq空间*/
+			function shareQzone(title,rLink,summary,site,pic) {
+				 title = "530我想见到你";
+				 rLink = "<%=domain%>?s="+urlpramid;
+				 summary = "我在牛娃网参与了“初练计划”，提前注册可以在5.30牛娃网上线当天享受多重优惠和惊喜，和我一起，享受全新的金融生活！";
+				 pic = "";
+				 site = "";
+				  window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title='+encodeURIComponent(title)+'&url='+encodeURIComponent(rLink)+'&summary='+encodeURIComponent(summary)+ '&site='+encodeURIComponent(site),'_blank','scrollbars=no,width=600,height=450,left=' + left + ',top=' + top + ',status=no,resizable=yes');
+			  
+			}
+
+			/*title是标题，rLink链接，summary内容，site分享来源，pic分享图片路径,分享到新浪微博*/
+			/*function shareTSina(title,rLink,site,pic) {
+			    title = "530我想见到你";
+			    pic = "";
+			    rLink = "<%=domain%>?s="+urlpramid;
+			   
+			    window.open('http://service.weibo.com/share/share.php?title='+encodeURIComponent(title.replace(/&nbsp;/g, '').replace(/<br \/>/g, ''))+'&url=' + encodeURIComponent(rLink),'我在牛娃网参与了“初练计划”，提前注册可以在5.30牛娃网上线当天享受多重优惠和惊喜，和我一起，享受全新的金融生活', "height=500,width=600,top=" + top + ",left=" + left + ",toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no");
+			    
+			}*/
+
+			function shareTSina(title,url,picurl)  
+				{  
+				 title = "我在牛娃网参与了“初练计划”，提前注册可以在5.30牛娃网上线当天享受多重优惠和惊喜，和我一起，享受全新的金融生活！";
+				 url = "<%=domain%>?s="+urlpramid;
+				 var sharesinastring='http://service.weibo.com/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url;  
+				 window.open(sharesinastring,'newwindow','height=500,width=600,top=100,left=100');  
+				}  
+
+		});
+	</script>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+</body>
+

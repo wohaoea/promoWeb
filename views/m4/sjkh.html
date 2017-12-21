@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=1000, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <title>双节狂欢-388超值礼包,8%加息礼包,超值反现</title>
+    <!-- build:css /css/sjkh.min.css -->
+    <link href="/css/idialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/sjkh.css" rel="stylesheet" type="text/css" />
+    <link href="/css/head-foot.css" rel="stylesheet" type="text/css" />
+   <!-- /build -->
+</head>
+<body >
+    <%include ../tmp_head.html%>
+    <div class="sj-banner"></div>
+    <div class="sj-content">
+        <div class="sj-wrap">
+            <div class="sj-box">
+                <div class="sj-box-head"></div>
+                <div class="sj-box-content">
+                    <div class="sj-box-h1"><img src="/imgs/m4/sjkh/h1.png"></div>
+                    <div class="lihe-box">
+                        <div class="lihe-box1">
+                            <h1 class="lihe-name1">388超值礼包</h1>
+                            <div class="lihe-pic lihe-pic1"></div>
+                            <%if(d.drawModel != "0"){%>
+                            <a href="javascript:;" class="lihe-btn1">选择领取</a>
+                            <%}%>
+                        </div>
+                        <div class="lihe-box2"><%if(d.drawModel=="0"){%><span class="cl2" id="orbox">已领取</span><%}else{%><span class="cl1" id="orbox">或</span><%}%></div>
+                        <div class="lihe-box3">
+                            <h1 class="lihe-name1">8%加息礼包</h1>
+                            <div class="lihe-pic lihe-pic2"></div>
+                            <%if(d.drawModel != "0"){%>
+                            <a href="javascript:;" class="lihe-btn2">选择领取</a>
+                            <%}%>
+                        </div>
+                    </div>
+                    <div class="lihe-box-foot">
+                        <h1>活动规则</h1>
+                        <p>
+                            1. 活动期间新用户注册并完成首次充值即可领取双节大礼包一份；<br>
+                            2. 平台已充值的老用户，活动期间首次登录即可领取双节大礼包一份；<br>
+                            3. 用户可以选择领取388元大礼包一份或8%加息礼包一份，两种礼包不可同时领取；<br>
+                            4. 每个账户仅限领取一次；<br>
+                            5. 活动最终解释权归上海牛娃互联网金融信息服务有限公司所有。
+                        </p>
+                    </div>
+                </div>
+                <div class="sj-box-foot"></div>
+            </div>
+
+            <div class="sj-box">
+                <div class="sj-box-head"></div>
+                <div class="sj-box-content">
+                    <div class="sj-box-h1"><img src="/imgs/m4/sjkh/h2.png"></div>
+                    <div class="lihe-box4">
+                        <div class="lihe-item" style="margin-left: 0;">
+                            <h1 class="lihe-name2">返现38元-58元</h1>
+                            <div class="lihe-pic lihe-pic3"></div>
+                            <div class="lihe-foot">
+                                <a href="javascript:;" class="lihe-btn3" data="3">打开宝箱</a><i class="yaoshi1">X <%=d.yaoshi[0].counts%></i>
+                            </div>
+                        </div>
+                        <div class="lihe-item">
+                            <h1 class="lihe-name2">返现88元-118元</h1>
+                            <div class="lihe-pic lihe-pic4"></div>
+                            <div class="lihe-foot">
+                                <a href="javascript:;" class="lihe-btn3" data="4">打开宝箱</a><i class="yaoshi2">X <%=d.yaoshi[1].counts%></i>
+                            </div>
+                        </div>
+                        <div class="lihe-item">
+                            <h1 class="lihe-name2">返现168元-218元</h1>
+                            <div class="lihe-pic lihe-pic5"></div>
+                            <div class="lihe-foot">
+                                <a href="javascript:;" class="lihe-btn3" data="5">打开宝箱</a><i class="yaoshi3">X <%=d.yaoshi[2].counts%></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--懒牛推荐-->
+                    <div class="ts clearfix">
+                        <div class="ts-item">
+                            <h1 class="ts-item-h1">懒牛计划A</h1>
+                            <div class="ts-param">
+                                <div class="ts-nhl">
+                                    <div style="height: 20px;">年化利率</div>
+                                    <label><span class="fc1">8</span>%</label>
+                                </div>
+                                <div class="ts-nhl">
+                                    投资期限
+                                    <label><span class="fc2">3</span>月</label>
+                                </div>
+                            </div>
+                            <a href="<%=domain%>plan/productdetail?productId=CPPP1505270002" class="ts-item-btn">立即投资获取铜钥匙</a>
+                            <div class="yaoshiinfo">单笔每满10000元即可获得一把</div>
+                        </div>
+                        <div class="ts-item">
+                            <h1 class="ts-item-h1">懒牛计划B</h1>
+                            <div class="ts-param">
+                                <div class="ts-nhl">
+                                    <div style="height: 20px;">年化利率</div>
+                                    <label><span class="fc1">10</span>%</label>
+                                </div>
+                                <div class="ts-nhl">
+                                    投资期限
+                                    <label><span class="fc2">6</span>月</label>
+                                </div>
+                            </div>
+                            <a href="<%=domain%>plan/productdetail?productId=CPPP1505270003" class="ts-item-btn">立即投资获取银钥匙</a>
+                            <div class="yaoshiinfo">单笔每满10000元即可获得一把</div>
+                        </div>
+                        <div class="ts-item">
+                            <h1 class="ts-item-h1">懒牛计划C</h1>
+                            <div class="ts-param">
+                                <div class="ts-nhl">
+                                    <div style="height: 20px;">年化利率</div>
+                                    <label><span class="fc1">12</span>%</label>
+                                </div>
+                                <div class="ts-nhl">
+                                    投资期限
+                                    <label><span class="fc2">12</span>月</label>
+                                </div>
+                            </div>
+                            <a href="<%=domain%>plan/productdetail?productId=CPPP1505270004" class="ts-item-btn">立即投资获取金钥匙</a>
+                            <div class="yaoshiinfo">单笔每满10000元即可获得一把</div>
+                        </div>
+                    </div>
+
+                    <div class="lihe-box-foot">
+                        <h1>开启宝箱攻略</h1>
+                        <p>
+                            1. 每个宝霜都需要对应的钥匙才能开启，宝箱等级越高对应的奖励也越高，成功投资懒牛计划即可获得对应的宝箱钥匙具体如下：<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;铜钥匙：投资懒牛计划A单笔每满10000元即可获得一把；<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;银钥匙：投资懒牛计划B单笔每满10000元即可获得一把；<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;金钥匙：投资懒牛计划C单笔每满10000元即可获得一把。<br>
+                            2. 领取现金券以开启宝箱的方式进行，每把钥匙可以开启一次宝箱，宝箱中的现金券金额即返现金额；<br>
+                            3. 投资成功后宝箱钥匙会自动发放，宝箱钥匙可累计，本活动结束未领取的宝箱钥匙作废；<br>
+                            4. 现金券将于领取完成后2个工作日内发放至用户的现金券账户；<br>
+                            5. 活动最终解释权归上海牛娃互联网金融信息服务有限公司所有。
+                        </p>
+                    </div>
+
+                </div>
+                <div class="sj-box-foot"></div>
+            </div>
+        </div>
+    </div>
+    <%include ../tmp_foot.html%>
+</body>
+<script type="text/javascript" src="/js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery.rotate.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+
+
+<!-- build:js /js/sjkh.min.js -->
+<script type="text/javascript" src="/js/head.js"></script>
+<script type="text/javascript" src="/js/sjkh.js"></script>
+<script type="text/javascript" src="/js/readmsg.js"></script>
+<!-- /build -->
+<script type="text/javascript">
+    if(top != self){
+        location.href = "about:blank";
+    }
+
+    var domain = '<%=domain%>';
+    
+</script>
+</html>

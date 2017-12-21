@@ -1,0 +1,63 @@
+<div id="vreg">
+<%if(app!=1){%>
+<div id="header3">
+	<div class="gohistory">
+		<a href="javascript:void(0)" onclick="javascript:$('#vreg').remove()"><img src="/imgs/ceo/gohistory.png" /></a>
+	</div>
+	投票
+</div>
+<%}%>
+<div id="wrapper3" <%if(app==1){%>style='top:0'<%}%>>
+	<div class="scroller">
+		<div class="apply">
+			<div class="headerimg">
+				<%if(app==1){%><div class="gohome"></div><%}%>
+				<a href="/ceo/referral"><img src="/imgs/ceo/banheader.png" /></a>
+			</div>
+			<div class="applyreg" style="margin-top:0.3rem">
+				<div class="list">
+					<div class="pcontent">
+						<div class="pleft">手机号:</div>
+						<div class="pright">
+							<input type='text' id='phonenum' placeholder='请输入手机号' disabled="true" value="<%=tel%>"/>
+						</div>
+					</div>
+				</div>
+				<div class="list">
+					<div class="pcontent">
+						<div class="pleft">密码:</div>
+						<div class="pright">
+							<input type='password' id='password' placeholder='请输入6-20位密码' />
+						</div>
+					</div>
+				</div>
+				<div class="list">
+					<div class="pcontent">
+						<div class="pleft">验证字符:</div>
+						<div class="pright" style="width:4.573333333333333rem;">
+							<input type='text' id='imgcode' placeholder='请输入验证字符' style="width:4.573333333333333rem;"/>
+						</div>
+						<div class="fv">
+							<img src="/pla/generatecaptcha?r=<%=new Date().getTime()%>"  id="refresh"/>
+						</div>
+					</div>
+				</div>
+				<div class="list">
+					<div class="pcontent">
+						<div class="pleft">验证码:</div>
+						<div class="pright" style="width:4.573333333333333rem;">
+							<input type='tel' id='phonevalidation' placeholder='请输入验证码' style="width:4.573333333333333rem;"/>
+						</div>
+						<div class="fv">
+							<div class="btt" id="btnvalidation">获取验证码</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="inputbox">
+				<div class="baoming" id="regbtn">投票领红包</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

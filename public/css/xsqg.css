@@ -1,0 +1,427 @@
+.listheader{
+	width:100%;
+	height:160px;
+	position: relative;
+}
+.listwrap{
+	width:1000px;
+	height:160px;
+	margin:0 auto;
+}
+.listwrap h3{
+	color:#fff;
+	font-size:36px;
+	line-height:96px;
+	text-align: center;
+	font-weight:normal;
+}
+.tab_list{
+	width:460px;
+	height:40px;
+	margin:0 auto;
+
+}
+.tab_list a{
+	float: left;
+	display: block;
+	width:100px;
+	height:40px;
+	text-align:center;
+	line-height:40px;
+	color:#fff;
+	font-size:18px;
+	background:url(../imgs/m7/abg.png);
+	margin-left:20px;
+}
+.ml0{
+	margin-left:0px !important;
+}
+.xsqgwrap{
+	width:1000px;
+	margin:0 auto;
+}
+.xsqglist{
+	width:1000px;
+	margin:0 auto;
+	margin-top:9px;
+}
+.xsqglist ul{
+
+}
+.xsqglist ul li{
+	display: block;
+	background:#fff;
+	margin-top:2px;
+ 	height:200px;
+ 	width:1000px;
+ 	float: left;
+ 	width:100%;
+}
+/* .xsqglist ul li:hover .xsqgleft,.xsqglist ul li:hover .xsqgright{ transform: translate(3px,0px); -webkit-transform: translate(3px,0px);transition: all 0.2s ease-out; -webkit-transition: all 0.2s ease-out;} */
+.xsqgleft{
+	float: left;
+	margin-top:20px;
+	margin-left:20px;
+	width:280px;
+	height:160px;
+}
+.xsqgleft a img{
+	width:280px;
+	height:160px;
+	border:0;
+}
+.xsqgright{
+	float: left;
+	margin-left:40px;
+	margin-top:23px;
+	width:610px;
+	height:157px;
+}
+.xsqgright a{
+	display: block;
+}
+.xsqgright a:hover span{
+	color:#ff4b4b !important
+}
+.xsqgright a span{
+	color:#000000;
+	font-size:22px;
+	float: left;
+	line-height:30px;
+}
+.xsqgright a i.xianshi{
+	float: left;
+	display: block;
+	background:url(../imgs/m7/xsqgico.png);
+	width:93px;
+	height:25px;
+	background-position:0 0 ;
+	margin-right:10px;
+	margin-top:1px;
+}
+.xsqgright p{
+	font-size:14px;
+	color:#969696;
+	line-height:30px;
+}
+.xsqgright p.subtitle{
+	line-height:16px !important;
+	margin-top:5px;
+}
+.investbox{
+	margin-top:16px;
+}
+.investbox p{
+	 white-space:nowrap;
+	 text-align: center;
+}
+.investbox .investw1{
+	float: left;
+	width:84px;
+	height:70px;
+}
+.investbox .investw1 p{
+	text-align: left !important;
+}
+.investbox .investw1 p span{
+    font-size:28px;
+    color:#ff4b4b;
+}
+.investbox .investw2{
+	float: left;
+	width:107px;
+	height:70px;
+}
+.investbox .investw2 p span{
+    font-size:28px;
+    color:#646464;
+}
+.investbox .investw3{
+	float: left;
+	width:118px;
+	height:70px;
+}
+.investbox .investw3 p span{
+    font-size:18px;
+    color:#fff;
+    background:#ffa200;
+    line-height:25px;
+    padding:4px;
+    border-radius:2px;
+}
+.investbox .investw4{
+	float: left;
+	margin-left:60px;
+	width:240px;
+	height:70px;
+}
+.investbox .investw4 p{
+	color:#ff4b4b;
+}
+.investbox .investw4 p span i.clock{
+	float: left;
+	display: block;
+	width:15px;
+	height:15px;
+	
+
+}
+.investbox .investw4 p span{
+	text-align: center;
+	background:url(../imgs/m7/xsqgico.png) no-repeat;
+	background-position:-99px 2px;
+	padding-left:25px;
+}
+.investbox .investw4 a{
+	color:#fff;
+	background:#ff4b4b;
+	width:240px;
+	height:50px;
+	line-height:50px;
+	text-align: center;
+	border-radius:3px;
+	font-size:18px;
+}
+.investbox .investw4 a:hover{
+	background:#FA7373
+}
+.investbox .investw4 a.btngray{
+	cursor: text;
+	background:#cccccc !important;
+}
+.investbox .investw4 a.btngray:hover{
+	background:#cccccc !important;
+}
+.ooo{
+	color:#000 !important;
+}
+.pt10{
+	padding-top:10px
+}
+.pt15{
+	padding-top:15px !important
+}
+/* 限时优惠详情页 */
+.xsqgdetail-warp{
+	padding:39px 19px;
+	border:1px solid #e1e1e1;
+	background:#fff;
+	width:960px;
+	margin:0 auto;
+	margin-top:20px;
+}
+.xsqgdetail-left{
+	float: left;
+	width:640px;
+	height:220px;
+}
+.xsqgdetail-right{
+	float: left;
+	width:280px;
+	height:220px;
+	margin-left:40px;
+	background:#f2f4f6;
+}
+.xsqgdetail-warp img{
+	width:100%;
+	margin:0;
+	padding:0;
+}
+.xsqgdtitle{
+	cursor: text;
+	font-size:18px;
+	color:#323232;
+	text-indent:10px;
+	display: block;
+}
+.xsqgdetail-left p{
+	text-indent:10px;
+	color:#969696;
+	font-size:14px;
+	line-height:40px;
+}
+.clockwrap{
+	background:#fb4b4b;
+	color:#fff;
+	height:40px;
+	line-height:40px;
+	width:100%;
+}
+.clockwrap .w{
+	text-align:center;
+	color:#fff;
+	font-size:18px;
+	line-height:40px;
+	font-weight:normal;
+	width:220px;
+	float: left;
+}
+.clockwrap .d{
+	float: left;
+	width:418px;
+	height:36px;
+	margin-top:2px;
+	background:#fff;
+	color:#fb4b4b;
+	text-align: center;
+	line-height:36px;
+	position:relative;
+}
+.clockwrap .d span{
+	height:36px;
+	line-height:36px;
+	background:url(../imgs/m7/xsqgdetailico.png) no-repeat;
+	background-position:-153px -55px;
+	padding-left:32px;
+	text-align:center;
+	display: inline-block;
+}
+.xsqgd-wrap{
+	width:100%;
+	margin-top:30px;
+	position: relative;
+	height:64px;
+}
+.xsqgd1,.xsqgd2,.xsqgd3,.xsqgd4{
+	float: left;
+	text-align:center;
+	width:160px;
+	height:64px;
+
+}
+.xsqgd1 p,.xsqgd2 p,.xsqgd3 p,.xsqgd4 p{
+	color:#646464;
+	line-height:14px;
+	font-size:14px;
+	
+}
+.xsqgd1 p.x,.xsqgd2 p.x,.xsqgd3 p.x,.xsqgd4 p.x{
+	margin-top:33px;
+	*margin-top:26px;
+	*line-height:30px;
+	white-space: nowrap;
+}
+.xsqgd1 p.x span{
+	font-size:36px;
+	color:#fb4b4b;
+	white-space: nowrap;
+}
+.xsqgd2 p.x span{
+	font-size:36px;
+	color:#646464;
+	white-space: nowrap;
+}
+.xsqgd3 p.x span{
+	color:#fff;
+	background:#ffa200;
+	padding:4px;
+	border-radius:2px;
+	font-size:18px;
+	white-space: nowrap;
+}
+.xsqgd-wrap .xsqgdbar{
+	width:1px;
+	height:40px;
+	background:#cccccc;
+	position: absolute;
+	z-index:1;
+}
+.abone{
+  top:28px;
+  left:159px
+}
+.abtwo{
+	top:28px;
+	left:319px;
+}
+.abthree{
+	top:28px;
+	left:490px
+}
+.xsqgdetail-right {
+	padding:22px 20px;
+	width:240px;
+	height:176px;
+	position: relative;
+}
+.xsqgdetail-right a{
+	color:#5274ac;
+}
+.uinfo a{
+	float: right
+}
+.xsqginvest-box{
+	width:180px;
+	height:34px;
+	line-height:34px;
+	text-align:center;
+	color:#000000;
+	background:url(../imgs/m7/xsqgdetailico.png);
+	background-position:0 0;
+	margin-top:11px;
+	cursor: pointer;
+}
+.no-check{
+	background-position:-183px 0;
+}
+p.shouyi{
+	color:#909090;
+	margin-top:5px;
+}
+p.shouyi span{
+	color:#e60012
+}
+.dealbox{
+	margin-top:15px;
+	width:100%;
+}
+.dealbox div{
+	float: left
+}
+.dealbox .dealboxone{
+	width:18px;
+	padding-top:2px;
+}
+.dealbox .dealboxtwo{
+	
+}
+.dealbox .dealboxtwo span{
+	color:#5274ac;
+	cursor: pointer
+}
+.investbtn{
+	width:100%;
+	height:40px;
+	color:#fff;
+	background:#fb4b4b;
+	text-align:center;
+	font-size:14px;
+	line-height:40px;
+	margin-top:5px;
+	border-radius:3px;
+	cursor: pointer
+}
+.investbtn:hover{
+	background:#FA7373
+}
+.btngray{
+	width:100%;
+	height:40px;
+	color:#fff;
+	text-align:center;
+	font-size:14px;
+	line-height:40px;
+	margin-top:5px;
+	border-radius:3px;
+	background:#cccccc;
+	cursor: default;
+}
+.blue {
+    color: #0077d2 !important;
+}
+.xieyipopoup,.xieyipopoup div,.xieyipopoup p{
+	font-family:'微软雅黑' !important;
+	line-height:26px !important;
+	font-weight:normal !important;
+	font-size:14px !important; 
+}

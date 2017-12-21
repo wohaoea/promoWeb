@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=1000, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <title>推荐好友</title>
+    <!-- build:css /css/tjhy.min.css -->
+    <link href="/css/idialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/tjhy.css" rel="stylesheet" type="text/css" />
+    <link href="/css/sjkh.css" rel="stylesheet" type="text/css" />
+    <link href="/css/head-foot.css" rel="stylesheet" type="text/css" />
+   <!-- /build -->
+</head>
+<body style="background-color:#f2f4f6">
+    <%include ../tmp_head.html%>
+    <div class="rf-bg"></div><br>
+    <div style="width:1000px;margin:auto;background-color:#fff">
+        <br><br>
+        <div class="rf-bg2"></div>
+        <div class="rf-share">
+            <div class="rf-sharebg">
+               <div class="share-qq"></div>
+               <div class="share-wx"></div>
+               <div class="share-sina"></div>
+                <div class="showQcode friend-showQcode">
+                    <div class="toptip"></div>
+                    <img src="/getQrcode2" width="200" height="200">
+                </div>
+            </div>
+            <div class="rf-sharer">
+                <div class="rf-st"></div>
+                <div class="rf-links" ><%=nohdomain%><%=user?'s/'+user.custId:'register'%></div>
+                <% if(user){%>
+                    <div class="rf-button" id="copy-button" data-clipboard-text="<%=domain%>s/<%=user.custId%>">复制链接</div>
+                <%}else{%>
+                    <div class="rf-button" id="copy-button" data-clipboard-text="<%=domain%>register">复制链接</div>
+                <%}%>
+            </div>
+        </div>
+        <div class="rf-hx"></div>
+        <div class="rf-desc">&nbsp;
+            <div style="font-size:18px;">活动规则：</div>
+            <ul>
+                <li>1. 当被推荐人通过点击推荐人分享的推广链接进入牛娃平台注册，或者被推荐人注册时在“推荐人”一栏中填写了推荐人的用户名或手机号，推荐关系都将自动绑定。</li>
+                <li>2. 活动期内，好友成功注册，推荐人立享60元红包奖励。好友完成首次投资，推荐人立享128元红包奖励。好友再次投资，推荐人及好友均可获得1%加息券一张。</li>
+                <li>3. 投资奖励将在完成投资后的1个工作日内由系统自动发放至用户账户中。</li>
+                <li>4. 本活动奖励与牛娃合伙人特权不可同时享受。</li>
+                <li>5. 恶意刷奖、冒用他人身份证、银行卡者一经核实，取消活动资格，所得奖励不予承兑。</li>
+                <li>6. 老用户使用推荐码的形式推荐新用户，请注册时务必提醒新用户填写推荐码，活动期间不受理因“漏填”“错填”提出的人工补录申请。</li>
+                <li>7. 活动最终解释权归上海牛娃互联网金融信息服务有限公司所有。</li>
+            </ul><br>
+        </div>
+    </div>
+    <br><br>
+    <%include ../tmp_foot.html%>
+</body>
+<script type="text/javascript" src="/js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/libs/ZeroClipboard.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<!-- build:js /js/refriend.min.js -->
+<script type="text/javascript" src="/js/head.js"></script>
+<script type="text/javascript" src="/js/readmsg.js"></script>
+<!-- /build -->
+<script type="text/javascript">
+    if(top != self){
+        location.href = "about:blank";
+    }
+    var domain = '<%=domain%>';
+    var shareLink = {
+        title: "牛娃终于和我见面了，在牛娃注册新用户不仅投资有保障更有多重好礼拿到手软，好东西当然要和朋友分享！",
+        sharesinastring: "",
+        share: function() {
+            window.open(this.sharesinastring, 'newwindow');
+        }
+    };
+    $(".share-qq").click(function(){
+         var url = domain+"<%=user?'s/'+user.custId:'register'%>";
+        shareLink.sharesinastring = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title=' + encodeURIComponent(shareLink.title) + '&url=' + encodeURIComponent(url) + '&summary=' + encodeURIComponent(shareLink.title);
+        shareLink.share();
+    });
+    $(".share-sina").click(function(){
+         var url = domain+"<%=user?'s/'+user.custId:'register'%>";
+         var sharesinastring = 'http://service.weibo.com/share/share.php?title=' + shareLink.title + '&url=' + url + '&content=utf-8';
+         shareLink.sharesinastring = sharesinastring;
+         shareLink.share();
+    });
+    $(".share-wx").hover(function(){
+        $(".showQcode").show();
+    },function(){
+        $(".showQcode").hide();
+    });
+
+    if(window.clipboardData)
+    {
+        $("#copy-button").click(function(){ 
+            var url = $("#copy-button").attr("data-clipboard-text");
+            
+            window.clipboardData.clearData();
+            var t = window.clipboardData.setData("Text", url);
+            if(t){
+                $.dialog({
+                    title: '提示',
+                    lock: true,
+                    opacity: .5,
+                    effect: false,
+                    width: 300,
+                    height: 150,
+                    content: '<div style="text-align:center; font-size: 16px;color:#fb4b4b; margin-top: 20px;">复制成功！</div>'
+                });
+            }
+        });
+    }
+    else
+    {
+        var client = new ZeroClipboard( document.getElementById("copy-button") );
+        client.on( "ready", function( readyEvent ) {
+            client.on( "aftercopy", function( event ) {
+                $.dialog({
+                    title: '提示',
+                    lock: true,
+                    opacity: .5,
+                    effect: false,
+                    width: 300,
+                    height: 150,
+                    content: '<div style="text-align:center; font-size: 16px;color:#fb4b4b; margin-top: 20px;">复制成功！</div>'
+                });
+            } );
+        } );
+    }
+</script>
+</html>

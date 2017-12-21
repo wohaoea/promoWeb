@@ -1,0 +1,44 @@
+.error-img{
+	display: block;
+	margin:122px auto;
+	width: 2.66rem;
+}
+
+.error-text{
+	color: #9f9f9f;
+	margin-top: 80px;
+	text-align: center;
+	font-size: 0.45rem;
+	line-height: 0.8rem;
+}
+
+.btn-group{
+	margin-top: 46px;
+}
+
+.btn{
+	display: inline-block;
+	border-radius: 10px;
+	width: 3.81rem;
+	font-size: 0.45rem;
+	height: 1.2rem;
+	line-height: 1.2em;
+	color: #ffffff;
+	margin:0 0.22rem;
+}
+
+.btn-default{
+	background: #3296fa;
+}
+
+.btn-m{
+	background: #64afff;
+}
+
+.btn-long{
+	width: 8.07rem;
+	background: #64afff;
+	font-size: 34px;
+	height: 89px;
+	line-height: 89px;
+}

@@ -1,0 +1,34 @@
+<% include header.html %>
+<%if(app!=1){%>
+<div id="header">
+	CEO一日助理评选系列活动
+</div>
+<%}%>
+<div id="wrapper">
+	<div class="scroller">
+		<div id="scroller-pullDown" <%if(app==1){%>style='height:0;line-height:0'<%}%>>
+			<span class="pullDownLabel"></span>
+		</div>
+		<div id="thelist">
+			<div class="headerimg">
+				<a href="/ceo/referral"><img src="/imgs/ceo/banheader.png" /></a>
+			</div>
+		  <% include ceolist.html %>
+		</div>
+		<div id="scroller-pullUp">
+			<span class="pullUpLabel"></span>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var pagelist = "<%= total%>";
+	var totalpageSize = "<%= totalpageSize%>";
+</script>
+<% include footer.html %>
+<!-- build:js /js/ceo.min.js -->
+<script src="/js/g.js"></script>
+<script type="text/javascript" src="/js/ceo.js"></script>
+<!-- /build -->
+<script type="text/javascript">
+	
+</script>

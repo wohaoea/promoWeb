@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=1000, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <title>爱拼才会赢</title>
+    <!-- build:css /css/m4.min.css -->
+    <link href='/css/m4.css' rel="stylesheet" type="text/css" />
+    <link href="/css/idialog.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+</head>
+<body >
+<% if(user){%>
+<div class="niuwa-header-wrap">
+    <div class="niuwa-header-wrapbg">
+        <div class="niuwa-header clearfix">
+            <div class="service-phone"><div>客服热线:</div>400-8846-898</div>
+            <div class="title-menu">
+                <ul>
+                    <li>欢迎您 <a href="/p/account/my"><%=user.loginname%></a></li>
+                    <li><a href="<%=domain%>p/myaccount">我的账户</a></li>
+                    <li id="messagemanage"><a href="<%=domain%>p/account/messagemanage">消息 <cite id="xiaoxicount" style="display: none;font-style: normal;">(<span id="msgCount">0</span>)</cite></a></li>
+                    <li><a href="<%=domain%>p/account/recharge">充值</a></li>
+                    <li><a href="<%=domain%>logout">退出</a></li>
+                    <li class="nobd"><a href="<%=domain%>help">帮助中心</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%}else {%>
+<div class="niuwa-header-wrap" id="niuwheader">
+    <div class="niuwa-header clearfix">
+        <div class="service-phone"><div>客服热线:</div>400-8846-898</div>
+
+        <div class="title-menu">
+            <ul>
+                <li><a href="<%=domain%>register" class="active">免费注册</a></li>
+                <li><a href="<%=domain%>login?apchy=apchy">立即登录</a></li>
+                <li class="nobd"><a href="<%=domain%>help">帮助中心</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<%}%>
+
+<div class="niuwa-header-menu-wrap">
+    <div class="niuwa-header-menu-bg">
+        <div class="niuwa-header-menu clearfix">
+            <div class="logo">
+                <a href="/"><img src="/imgs/logo.png" width="357" height="52"> </a>
+            </div>
+            <ul>
+                <li><a href="<%=domain%>" class="activity">首页</a></li>
+                <li><a href="<%=domain%>invest">我要投资</a>
+                    <div class="header-menu-child" style="display: none;">
+                        <div class="header-menu-icontop"></div>
+                        <ul>
+                            <li><a href="<%=domain%>newclient">新牛专享</a></li>
+                            <li><a href="<%=domain%>plan">懒牛计划</a> </li>
+                            <li><a href="<%=domain%>featured">智牛精选</a> </li>
+                            <li><a href="<%=domain%>claim">债权转让</a> </li>
+                        </ul>
+
+                    </div>
+                </li>
+                <li><a href="<%=domain%>society_accept">安全保障</a></li>
+                <li><a href="<%=domain%>choose">新手指引</a></li>
+                <li><a href="<%=domain%>aboutus">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 头部结束
+正文部分 -->
+<div class="title1wrap"></div>
+<div class="title2">
+    <div class="showcoutdown">
+        <i id="sday">00</i>
+        <span>天</span>
+        <i id="shours">00</i>
+        <span>时</span>
+        <i id="sminute">00</i>
+        <span>分</span>
+        <i id="ssecond">00</i>
+        <span>秒</span>
+    </div>
+</div>
+<div class="title3"></div>
+<div class="activityarea">
+    <div class="activityareashade"></div>
+    <div class="<%if(!user){%>userlogin<%}else{%>userloginhas<%}%>">
+        <%if(user){%><span id="countlotty"><%=chance%></span><%}%>
+    </div>
+    <div class="pai pai1"></div>
+    <div class="pai pai2"></div>
+    <div class="pai pai3"></div>
+    <div class="pai pai4"></div>
+    <div class="pai pai5"></div>
+    <div class="pai pai6"></div>
+    <div class="pai pai7"></div>
+</div>
+<div class="exchangearea clearfix">
+    <% include temp_exchange.html %>
+</div>
+<div class="title4con">
+    <div class="title4"></div>
+    <p>1. 完成实名认证的牛娃用户均可参与活动；</p>
+    <p>2. 每日登录即可抽取2个字符，抽奖机会不予累计，有效期之前未进行抽奖，抽奖机会将清零作废；</p>
+    <p>3. 红包、现金券、加息券奖励在兑换奖品后自动发放至客户奖励管理账户；</p>
+    <p>4. 礼品兑换将于活动结束后的7个工作日内统一发放，奖品一律不予退换，不予兑换现金；</p>
+    <p>5. 若由于提交收奖信息错误而导致奖品无法递送将视为参与者主动放弃奖品，将不予补发或重寄；</p>
+    <p>6. 活动结束后的15天内，客服人员如果无法与获奖用户取得联系，获奖资格将会被取消；</p>
+    <p>7. 活动最终解释权归上海牛娃互联网金融信息服务有限公司所有。</p>
+</div>
+<div class="title5" id="touzi" name ='touzi'></div>
+<div class="touziwrap clearfix">
+    <div class="lanniua">
+        <a href="<%=domain%>plan/productdetail?productId=CPPP1505270002" style="display:block;width: 100px;height: 80px;background:none;position: absolute;bottom: 41px;right: 24px;">&nbsp;</a>
+    </div>
+    <div class="lanniub">
+        <a href="<%=domain%>plan/productdetail?productId=CPPP1505270003" style=";display:block;width: 100px;height: 80px;background:none;position: absolute;bottom: 41px;right: 24px;">&nbsp;</a>
+    </div>
+    <div class="lanniuc">
+        <a href="<%=domain%>plan/productdetail?productId=CPPP1505270004" style="display:block;width: 100px;height: 80px;background:none;position: absolute;bottom: 41px;right: 24px;">&nbsp;</a>
+    </div>
+</div>
+<div class="title4con" style="margin-bottom:50px">
+    <div class="title6"></div>
+    <p>1.&nbsp;&nbsp;在活动期间单笔投资每满10000元赠送相应金额的现金券</p>
+    <p style="text-indent: 1em;">（如投资10000元懒牛计划C，获得168元现金券，投资20000元懒牛计划C，获得336元现金券，以此类推，投资金额不予累计。）；</p>
+    <p>2.&nbsp;&nbsp;现金券可用于兑现使用，使用规则可在<a href="<%=domain%>p/account/xjqgl" style="color:#FE6D2C;"> 现金券管理</a>中查看；</p>
+    <p>3.&nbsp;&nbsp;活动仅限于投资懒牛计划的用户；</p>
+    <p>4.&nbsp;&nbsp;现金券将于投资后的2个工作日内发放至您的现金券账户；</p>
+    <p>5.&nbsp;&nbsp;活动最终解释权归上海牛娃互联网金融信息服务有限公司所有。</p>
+</div>
+<!--合作伙伴-->
+<!-- 合作伙伴 begin-->
+<!-- <div style="background:#F2F4F6;width:100%;padding-bottom:50px;">
+         <div class="home-coop clearfix"  style="background:#F2F4F6">
+             <div class="home-coop-head">
+                 <div class="home-coop-title"><span>合作保障机构</span></div>
+                 <div class="home-coop-more"><a href="/cooperation_agency">了解更多</a></div>
+             </div>
+
+             <ul class="home-coop-list clearfix">               
+               <li><img src="../imgs/hezuo/coop1.jpg" width="178" height="78" /> </li> 
+               <li><img src="../imgs/hezuo/coop2.jpg" width="178" height="78" /> </li> 
+               <li><img src="../imgs/hezuo/coop3.jpg" width="178" height="78" /> </li> 
+               <li><img src="../imgs/hezuo/coop4.jpg" width="178" height="78" /> </li> 
+               <li><img src="../imgs/hezuo/coop5.jpg" width="178" height="78" /> </li> 
+               <li><img src="../imgs/hezuo/coop6.jpg" width="178" height="78" /> </li> 
+               <li><img src="../imgs/hezuo/coop7.jpg" width="178" height="78" /> </li> 
+               <li><img src="../imgs/hezuo/coop8.jpg" width="178" height="78" /> </li> 
+               <li><img src="../imgs/hezuo/coop9.jpg" width="178" height="78" /> </li> 
+               <li><img src="../imgs/hezuo/coop10.jpg" width="178" height="78" /> </li> 
+             </ul>
+         </div>
+ -->
+<!-- 合作伙伴 end-->
+
+<!-- 战略合作伙伴 begin-->
+<!--  <div class="home-coop clearfix" style="background:#F2F4F6">
+    <div class="home-coop-head">
+        <div class="home-coop-title"><span>战略合作伙伴</span></div>
+
+    </div>
+    <ul class="home-coop-list clearfix">
+      <li><img src="../imgs/huoban/coop20.jpg" width="178" height="78" /> </li>
+      <li><img src="../imgs/huoban/coop21.jpg" width="178" height="78" /> </li>
+      <li><img src="../imgs/huoban/coop22.jpg" width="178" height="78" /> </li>
+      <li><img src="../imgs/huoban/coop23.jpg" width="178" height="78" /> </li>
+      <li><img src="../imgs/huoban/coop24.jpg" width="178" height="78" /> </li>
+      <li><img src="../imgs/huoban/coop25.jpg" width="178" height="78" /> </li>
+      <li><img src="../imgs/huoban/coop27.jpg" width="178" height="78" /> </li>
+      <li><img src="../imgs/huoban/coop28.jpg" width="178" height="78" /> </li>
+      <li><img src="../imgs/huoban/coop29.jpg" width="178" height="78" /> </li>
+      <li><img src="../imgs/huoban/coop30.jpg" width="178" height="78" /> </li>
+    </ul>
+</div>
+</div> -->
+<!-- 战略合作伙伴 end-->
+<!--footer-->
+
+<!-- 底部 -->
+<div style="" id="footer">
+    <div  class="niuwa-wrap clearfix mt10 black" id="footer-box" style="border:0">
+        <div class="index-footer clearfix">
+            <div class="left-wrap clearfix">
+                <div class="foot-nav">
+                    <ul>
+                        <li><a href="<%=domain%>aboutus" class="title">关于我们</a></li>
+                        <li><a href="http://www.niuwacredit.com">牛娃官网</a></li>
+                        <li><a href="<%=domain%>aboutus/p">平台优势</a></li>
+                        <li><a href="https://promo.i-niuwa.com/m3/niubei" target="_blank">牛呗APP</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="<%=domain%>invest" class="title">投资方案</a></li>
+                        <li><a href="<%=domain%>newclient">新牛专享</a></li>
+                        <li><a href="<%=domain%>plan">懒牛计划</a></li>
+                        <li><a href="/m7/xsqglist">精选活动</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="<%=domain%>society_accept" class="title">安全保障</a></li>
+                        <li><a href="<%=domain%>society_accept">社会认可</a></li>
+                        <li><a href="<%=domain%>project_safeguard">项目安全</a></li>
+                        <li><a href="<%=domain%>fund_safeguard">资金安全</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="<%=domain%>help" class="title">帮助中心</a></li>
+                        <li><a href="<%=domain%>choose">新手指引</a></li>
+                        <li><a href="<% if(user == null) { %><%=domain%>register<%}else{%><%=domain%>p/account/securitymanage<%}%>">注册认证</a></li>
+                        <li><a href="<%=domain%>helpshow/1-1">常见问题</a></li>
+
+                    </ul>
+                </div>
+                <div class="right-wrap">
+                    <p>全国客服热线</p>
+                    <div class="tel400 font36 colwhite">400-8846-898</div>
+                    <div class="work-time">工作日 9:00-21:00<br>节假日 9:00-18:00</div>
+                    <div class="foot-weixin"><img src="/imgs/weixinimg2.png" width="114" height="127"> </div>
+                </div>
+
+
+            </div>
+
+            <div class="web-link clearfix">
+                <div class="link-label">友情链接：</div>
+                <div class="link-all">
+                    <a href="http://www.jingyi98.com" target="_blank" title="经亿网贷">经亿网贷</a>
+                    <a href="http://www.midai.cn/" target="_blank" title="米袋网">米袋网</a>
+                    <a href="http://www.erongtu.com/" target="_blank" title="融途网">融途网</a>
+                    <a href="http://www.ttwdai.com" target="_blank" title="天天网贷">天天网贷</a>
+                    <a href="http://www.p2p110.com" target="_blank" title="网贷110">网贷110</a>
+                    <!--<a href="http://www.wdj168.com" target="_blank" title="网贷界">网贷界</a>-->
+                    <a href="http://daohang.wangdaiguancha.com" target="_blank" title="网贷观察网">网贷观察网</a>
+                    <a href="http://www.sfia.org.cn" target="_blank" title="上海金融信息行业协会" style="width: 130px;">上海金融信息行业协会</a>
+                    <div></div>
+                    <!--<a href="http://www.wangdaibuluo.com/pingtai" target="_blank" title="网贷部落">网贷部落</a>-->
+                    <!--<a href="http://www.wangdaidp.com" target="_blank" title="网贷点评网">网贷点评网</a>-->
+                    <a href="http://www.wangdai3.com" target="_blank" title="网贷第三方">网贷第三方</a>
+                    <a href="http://www.p2peye.com/" target="_blank" title="网贷天眼">网贷天眼</a>
+                    <a href="http://www.wdtianxia.com/" target="_blank" title="网贷天下">网贷天下</a>
+                    <a href="http://www.p2pchina.com" target="_blank" title="网贷中国">网贷中国</a>
+                    <a href="http://www.wangdaitiandi.com/" target="_blank" title="网贷天地">网贷天地</a>
+                    <a href="http://www.wangdaizhijia.com/" target="_blank" title="网贷之家">网贷之家</a>
+                </div>
+            </div>
+
+
+            <div class="approve clearfix">
+                <!-- <a href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=dov73ne26zbqq0ilcr2gs9w5imthzi7bx5" class="gongshang" target="_blank"></a> -->
+                <a href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20160222121245727" class="gongshang" target="_blank"></a>
+                <a href="http://www.miitbeian.gov.cn/" class="beian" target="_blank"></a>
+                <a href="http://www.cfca.com.cn/" class="cfca" target="_blank"></a>
+                <a href="https://sealsplash.geotrust.com/splash?&dn=www.i-niuwa.com" class="geotrust" target="_blank"></a>
+                <a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1324324183" class="webtrust" target="_blank"></a>
+                <a href="https://credit.szfw.org/CX20150721010806200197.html" class="cxweb" target="_blank"></a>
+                <a href="http://www.anquan.org/authenticate/cert/?site=www.niuwap2p.com&at=business" class="anquan" target="_blank"></a>
+                <!--<a href="https://ss.knet.cn/verifyseal.dll?sn=e150806310101597602ghf000000&amp;ct=df&amp;a=1&amp;pa=0.9503582664765418" class="kexing" target="_blank"></a>-->
+                <a href="https://ss.knet.cn" class="kexing" target="_blank"></a>
+                
+            </div>
+
+            <div class="copyright">
+
+                版权所有©上海牛娃互联网金融信息服务有限公司&nbsp;&nbsp;&nbsp;&nbsp;沪ICP备15002518号<br>
+                Shanghai Niuwa Internet Financial Information Service Co.,Ltd.<br>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+<!-- End Google Tag Manager -->
+</body>
+<script type="text/javascript">
+    var islogin=<%= user?true:false%>;
+    var domain="<%=domain%>";
+    var endactivetime = "<%=endactivetime%>";
+</script>
+<script type="text/javascript" src="/js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<!-- build:js /js/m4.min.js -->
+<script type="text/javascript" src="/js/jquery.flip.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/m4.js"></script>
+<!-- /build -->
+</html>

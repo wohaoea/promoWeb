@@ -1,0 +1,162 @@
+.bgsCover {
+    -webkit-background-size: cover!important;
+    -o-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -ms-background-size: cover!important;
+    background-size: cover!important;
+}
+
+.bgsContain {
+    -webkit-background-size: contain!important;
+    -o-background-size: contain!important;
+    -moz-background-size: contain!important;
+    -ms-background-size: contain!important;
+    background-size: contain!important;
+}
+
+.boxShadow {
+    box-shadow: .03rem .03rem .15rem .02rem #c4c4c4;
+    -webkit-box-shadow: .03rem .03rem .15rem .02rem #c4c4c4;
+    -moz-box-shadow: .03rem .03rem .15rem .02rem #c4c4c4;
+    -o-box-shadow: .03rem .03rem .15rem .02rem #c4c4c4;
+    -ms-box-shadow: .03rem .03rem .15rem .02rem #c4c4c4;
+}
+
+.hide {
+    display: none;
+}
+
+.wrap {
+    width: 100%;
+    height: 13.34rem;
+    background: url('../imgs/userSign/signBg.jpg') 0 0 no-repeat;
+}
+
+.head {
+    width: 100%;
+    height: 3.38rem;
+}
+
+.contain {
+    width: 5.77rem;
+    height: 9.95rem;
+    margin: 0 auto;
+    padding: .7rem .32rem 0;
+    position: relative;
+}
+
+.contain .sign {
+    position: relative;
+    width: 1.5rem;
+    height: 1.65rem;
+    text-align: center;
+    font-size: .2rem;
+    color: #6482bc;
+    border-radius: .15rem;
+    box-sizing: border-box;
+}
+
+.contain .sign:nth-child(1),
+.sign:nth-child(2),
+.sign:nth-child(4),
+.sign:nth-child(5) {
+    margin-right: .3rem;
+}
+
+.sign:nth-child(4),
+.sign:nth-child(5),
+.sign:nth-child(6) {
+    margin-top: .57rem;
+}
+
+.success {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: .15rem;
+}
+
+.icon {
+    width: .96rem;
+    height: .62rem;
+    margin: 0.5rem auto;
+    background: url('../imgs/userSign/success.png') 0 0 no-repeat;
+}
+
+.everyDay {
+    width: 100%;
+    height: .82rem;
+    background: url('../imgs/userSign/everyDay.jpg') 0 0 no-repeat;
+}
+
+.disabled {
+    color: #9f9f9f!important;
+    background-color: #eaeaea;
+}
+
+.sevenDay {
+    position: relative;
+    text-align: center;
+    font-size: .22rem;
+    color: #6482bc;
+    left: -0.99rem;
+    width: 1.98rem;
+    height: 2.39rem;
+    margin-left: 50%;
+    border-radius: .15rem;
+    background: url('../imgs/userSign/day7light.jpg') 0 0 no-repeat;
+    margin-top: .57rem;
+}
+
+.integration {
+    width: 100%;
+    line-height: .42rem;
+}
+
+.integration7 {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.date {
+    width: 100%;
+    line-height: .42rem;
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.24rem;
+}
+
+.footer>p {
+    width: 100%;
+    font-size: .2rem;
+    color: #999999;
+    margin-bottom: .05rem;
+}
+
+.tips {
+    width: 3.82rem;
+    height: 1.88rem;
+    border-radius: .2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 9999;
+    text-align: center;
+    padding: .6rem 0;
+}
+
+.tips>p {
+    color: white;
+    font-size: .24rem;
+    margin-bottom: .12rem;
+}

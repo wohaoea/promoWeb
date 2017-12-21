@@ -1,0 +1,51 @@
+<% if(data.pageResult.length==0){%>
+	<div style="min-height:100;background:#fff;color:#bcbcbc;line-height:100px;text-align:center">暂无活动产品</div>
+<%}else{%>
+<div class="xsqglist">
+	<ul class="clearfix">
+		<%data.pageResult.forEach(function(v,k){%>
+			<li>
+				<div class="xsqgleft">
+					<%if (v.bannerFileId){%>
+					<a href="/m7/xsqgdetail/<%=v.prodCode%>"><img src="/getimg/<%=v.bannerFileId%>" class="<%if(!(utils.isNormal(v.startSellTime,v.prodStatus,v.endSellTime).status)){%>togrey<%}%>"/></a>
+					<%}else{%>
+					<a href="/m7/xsqgdetail/<%=v.prodCode%>"><img src="/imgs/m7/ex.png" class="<%if(!(utils.isNormal(v.startSellTime,v.prodStatus,v.endSellTime).status)){%>togrey<%}%>"/></a>
+					<%}%>
+				</div>
+				<div class="xsqgright">
+					<a href="/m7/xsqgdetail/<%=v.prodCode%>" class="clearfix" title="<%=v.productName%>"><i class="xianshi"></i><span><%=utils.subString(v.productName,40)%></span></a>
+					<p class="subtitle" style="<%if(!v.subTitle){%>height:16px<%}%>"><%=utils.subString(v.subTitle,140)%></p>
+					<div class="investbox clearfix">
+						<div class="investw1">
+							<p class="ooo">历史年化收益率</p>
+							<p class="pt10">
+								<span><%=v.yearRate%></span>%
+								<% if( v.addYield != 0 ){ %>
+								<span>+<%=v.addYield%></span>%
+								<% } %>
+							</p>
+						</div>
+						<div class="investw2">
+							<p class="ooo">投资期限</p>
+							<p class="pt10"><span><%=v.investTerm%></span><%=utils.investType(v.termType)%></p>
+						</div>
+						<div class="investw3">
+							<p class="ooo">收益方式</p>
+							<p class="pt15">本息<%if(v.incomeMethod){%>+<span><%=v.incomeMethod%></span><%}%></p>
+						</div>
+						<div class="investw4">
+							<%if(utils.isNormal(v.startSellTime,v.prodStatus,v.endSellTime,v.investFlag).status){%>
+							<p><span class="cd" data-cd='<%- JSON.stringify(utils.DistanceTime2(v.endSellTime))%>' id="cd-<%=k%>">还剩: <%=utils.DistanceTime2(v.endSellTime)._d%>天<%=utils.DistanceTime2(v.endSellTime)._h%>小时<%=utils.DistanceTime2(v.endSellTime)._m%>分<%=utils.DistanceTime2(v.endSellTime)._m%>.0秒</span></p>
+							<%}else{%>
+							<p>&nbsp;</p>
+							<%}%>
+							<a href="/m7/xsqgdetail/<%=v.prodCode%>"class="xsqgjoin  <%if(!(utils.isNormal(v.startSellTime,v.prodStatus,v.endSellTime,v.investFlag).status)){%>btngray<%}%>"><%=utils.isNormal(v.startSellTime,v.prodStatus,v.endSellTime,v.investFlag).text%></a>
+						</div>
+					</div>
+				</div>
+			</li>
+		<%})%>
+	</ul>
+</div>
+<%include tmp_page.html%>
+<%}%>

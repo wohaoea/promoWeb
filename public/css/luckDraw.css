@@ -1,0 +1,674 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.mgb {
+    margin-bottom: 0!important;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a,
+input,
+li {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+input,
+button {
+    border: none;
+}
+
+
+/*遮罩层类*/
+
+.shadow {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+
+/*隐藏类*/
+
+.hidden {
+    display: none;
+}
+
+
+/*清除浮动*/
+
+.clearfix:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.wh100 {
+    width: 100%;
+    height: 100%
+}
+
+img {
+    width: 100%;
+}
+
+.unabled {
+    background: none!important;
+    background-color: #c2c8ce!important;
+}
+
+
+/*导航栏 部分开始*/
+
+.nav {
+    width: 100%;
+    font: 400 .3rem/.3rem 'simsun';
+    color: #fff;
+    padding: .6rem .22rem 0 .24rem;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+
+/*返回箭头按钮*/
+
+.nav .arr {
+    width: .18rem;
+    height: .18rem;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    margin-top: .04rem;
+}
+
+.luckDraw {
+    background: url('../imgs/luckDraw/Lotterybg.png') 0 0 no-repeat;
+    width: 100%;
+    height: 16.34rem;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.luckDraw .title {
+    padding: .44rem .48rem 0 .66rem;
+}
+
+.luckDraw .title img {
+    width: 100%;
+}
+
+.luckDraw .chance {
+    width: 5.8rem;
+    color: #333333;
+    font-size: .24rem;
+    margin: 0 auto .4rem;
+    text-align: center;
+    font-family: 'simsun';
+    letter-spacing: .02rem;
+}
+
+.luckDraw .chance .chanceNum,
+.pointNum {
+    color: #f44d1c;
+    font-family: '黑体';
+    font-weight: 600;
+}
+
+
+
+.luckDraw .table {
+    background: url('../imgs/luckDraw/bg.png') 0 0 no-repeat;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    height: 6.2rem;
+    width: 6.56rem;
+    margin: 0 auto;
+}
+
+.luckDraw .table .big {
+    width: 100%;
+    padding: .32rem .3rem 0 .42rem;
+    height: 5.1rem;
+    box-sizing: border-box
+}
+
+.luckDraw .table .big .box {
+    width: 1.82rem;
+    height: 1.44rem;
+    margin-right: .1rem;
+    margin-top: .12rem;
+    float: left
+}
+
+.luckDraw .table .big .box .hide {
+    width: 100%;
+    height: 100%;
+    border-radius: .12rem;
+}
+
+.luckDraw .table .big .start {
+    background: url('../imgs/luckDraw/usePoint.jpg') 0 -2px no-repeat;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    border-radius: .15rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.luckDraw .table .big .start input {
+    width: 100%;
+    height: 100%;
+}
+
+.luckDraw .table .big .draw {
+    font-size: .3rem;
+    position: absolute;
+    top: 0;
+    word-break: break-all;
+    margin: .34rem .6rem;
+}
+
+.contain{
+    -webkit-background-size: cover!important;
+    -o-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -ms-background-size: cover!important;
+    background-size: cover!important;
+    background-image: url('../imgs/luckDraw/content2.png');
+    background-repeat:  no-repeat;
+}
+
+.luckDraw .table .big .box:nth-child(1) {
+    
+    
+}
+
+.luckDraw .table .big .box:nth-child(2) {
+    background-position: -1.8rem 0;
+}
+
+.luckDraw .table .big .box:nth-child(3) {
+    background-position: -3.6rem 0;
+}
+
+.luckDraw .table .big .box:nth-child(4) {
+    background-position: -12.64rem 0;
+}
+
+.luckDraw .table .big .box:nth-child(6) {
+    background-position: -5.42rem 0;
+}
+
+.luckDraw .table .big .box:nth-child(7) {
+    background-position: -10.84rem 0;
+}
+
+.luckDraw .table .big .box:nth-child(8) {
+    background-position: -9.02rem 0;
+}
+
+.luckDraw .table .big .box:nth-child(9) {
+    background-position: -7.22rem 0;
+}
+
+.luckDraw .table .footer {
+    width: 5.04rem;
+    height: .84rem;
+    margin: .96rem auto;
+    position: relative;
+}
+
+.luckDraw .table .footer button {
+    width: 1.96rem;
+    height: .84rem;
+    background: url('../imgs/luckDraw/btn.png') 0 0 no-repeat;
+    border-radius: .1rem;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    line-height: .84rem;
+    font-size: .3rem;
+}
+
+.luckDraw .lucky_name {
+    width: 6.55rem;
+    height: 4.2rem;
+    text-align: center;
+    margin: 1rem auto;
+    background-color: #87c7f4;
+    border-radius: .2rem;
+    padding: .22rem 1.14rem .28rem;
+    box-sizing: border-box
+}
+
+.luckDraw .lucky_name .name {
+    width: 100%;
+    font-size: .32rem;
+    display: block;
+    margin-bottom: .27rem;
+}
+
+.winner_info li {
+    height: .3rem;
+    line-height: .3rem;
+}
+
+.winner_info>li span {
+    color: #fff;
+    font-family: '宋体';
+    font-size: .26rem;
+}
+
+
+/*遮罩层部分开始*/
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    overflow: hidden;
+    /*padding: 3.38rem .4rem 0;*/
+    box-sizing: border-box
+}
+
+.mask .pop-up {
+    position: absolute;
+    width: 6.8rem;
+    height: 8.26rem;
+    background: url('../imgs/luckDraw/alertbg.png') 100% 100% no-repeat;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    box-sizing: border-box;
+    padding: 1rem 0.4rem 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.mask .pop-up .Congratulations {
+    margin-bottom: .4rem;
+}
+
+.mask .pop-up p {
+    font-size: .32rem;
+    font-family: 'simsun';
+    text-align: center;
+    margin-bottom: .2rem
+}
+
+.mask .pop-up h1,
+li {
+    font-size: .2rem;
+}
+
+.mask .pop-up h1 {
+    font-size: .4rem;
+    font-family: '微软雅黑';
+    text-align: center;
+    margin-bottom: .9rem;
+    color: #333333;
+}
+
+.mask .pop-up li {
+    font-size: .3rem;
+    color: #fff;
+    font-family: 'simsun';
+    margin-bottom: .44rem;
+}
+
+.mask .pop-up input[type='button'] {
+    width: 4.42rem;
+    height: .92rem;
+    font-size: .38rem;
+    color: #fff;
+    background: url('../imgs/luckDraw/subbtn.png') 0 0 no-repeat;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    border-radius: 0.15rem;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    left: 50%;
+    bottom: .72rem;
+}
+
+.mask .pop-up input[type='checkbox'] {
+    width: 100%;
+    height: 100%;
+    display: block
+}
+
+.mask .reward .select {
+    width: .26rem;
+    height: .26rem;
+    border-radius: .06rem;
+    overflow: hidden;
+    background-color: #fff;
+    border: .02rem solid #fff;
+}
+
+.selected {
+    background: url('../imgs/luckDraw/select.png') 50% 50% no-repeat;
+    -webkit-background-size: contain;
+    -o-background-size: contain;
+    -moz-background-size: contain;
+    -ms-background-size: contain;
+    background-size: contain;
+}
+
+.mask .reward .info {
+    padding: .14rem .1rem .12rem;
+    box-sizing: border-box;
+}
+
+.mask .reward .info span {
+    font-size: .18rem;
+    height: 100%;
+    float: left;
+    line-height: .3rem;
+}
+
+.mask .reward .info .loanPrice {
+    float: right
+}
+
+.mask .reward .info .loanNum {
+    margin-right: .1rem
+}
+
+.mask .reward .info .detail {
+    /*width: 100%;*/
+    height: .3rem;
+    margin-left: .04rem
+}
+
+.mask .pop-up .gift {
+    width: 3.52rem;
+    height: 3.53rem;
+    margin: 0 auto;
+}
+
+.mask .pop-up .thanks {
+    width: 2.44rem;
+    height: 3.22rem;
+    margin: 0 auto;
+}
+
+.mask .pop-up .success {
+    width: 3.86rem;
+    height: 2.67rem;
+    margin: 0 auto;
+}
+
+.mask .pop-up .nochance {
+    width: 3.86rem;
+    height: 2.93rem;
+    margin: 0 auto;
+}
+
+.mask .pop-up .reward {
+    width: 100%;
+    height: 3rem;
+    margin: 0 auto;
+    overflow: auto
+}
+
+.mask .pop-up .reward li {
+    width: 100%;
+    height: 20%;
+    margin-bottom: 0
+}
+
+.mask .pop-up .reward li:nth-child(2n) {
+    background-color: #86c3f6;
+}
+
+.mask .pop-up .reward li:nth-child(2n+1) {
+    background-color: #6f9af7;
+}
+
+.mask .pop-up .reward li:nth-child(1) {
+    font-size: .26rem;
+    color: #fff;
+    line-height: .6rem;
+    text-align: center
+}
+
+.mask .close {
+    height: 1.18rem;
+    width: .6rem;
+    float: right;
+    margin-top: -2.22rem;
+    background: url('../imgs/luckDraw/close.png') 0 0 no-repeat;
+    -webkit-background-size: contain;
+    -o-background-size: contain;
+    -moz-background-size: contain;
+    -ms-background-size: contain;
+    background-size: contain;
+}
+
+.luckDraw .recording {
+    width: 100%;
+    height: 10.26rem;
+    background: url('../imgs/luckDraw/recordingbg.png') center no-repeat;
+    -webkit-background-size: contain;
+    -o-background-size: contain;
+    -moz-background-size: contain;
+    -ms-background-size: contain;
+    background-size: contain;
+    overflow: hidden;
+    margin: .92rem auto;
+}
+
+.luckDraw .footer .record {
+    display: block;
+    width: 1.96rem;
+    height: .84rem;
+    background: url('../imgs/luckDraw/btn.png') 0 0 no-repeat;
+    border-radius: .1rem;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    line-height: .84rem;
+    font-size: .3rem;
+    text-decoration: none;
+}
+
+.luckDraw .recording .record {
+    font-size: .42rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 1.26rem;
+}
+
+.luckDraw .recording .award {
+    width: 5.3rem;
+    height: 6.4rem;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin: 1.2rem auto;
+}
+
+.luckDraw .recording .award::-webkit-scrollbar{
+    width:0;
+    height:0;
+}
+
+.luckDraw .recording .award::-o-scrollbar{
+    width:0;
+    height:0;
+}
+.luckDraw .recording .award::-moz-scrollbar{
+    width:0;
+    height:0;
+}
+.luckDraw .recording .award::-ms-scrollbar{
+    width:0;
+    height:0;
+}
+
+.luckDraw .recording .award li {
+    font-size: .28rem;
+    color: #333333;
+    width: 5.3rem;
+    margin: 0 auto;
+    padding-top: .14rem;
+    padding-bottom: .14rem;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.luckDraw .recording .award li .time {
+    font-size: .2rem;
+    color: #aaaaaa;
+}
+
+.luckDraw .recording .award li .already {
+    background-image: none!important;
+    color: #999999!important;
+}
+
+.luckDraw .recording .award li input[type='button'] {
+    background: url('../imgs/luckDraw/recordbtn.png') 0 0 no-repeat;
+    width: 1.5rem;
+    height: 0.56rem;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    border: none;
+    color: #fff;
+    font-size: .3rem;
+    font-family: 'simsun'
+}
+
+.bigshadow {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0);
+    bottom: 0;
+    left: 0;
+    z-index: 99
+}
+
+
+/*暂无获奖记录*/
+
+.norecord {
+    text-align: center;
+    margin-top: 2.4rem!important;
+    color: #999999!important;
+    border-bottom: none!important;
+}
+
+.free {
+    width: 4.42rem;
+    height: .92rem;
+    font-size: .38rem;
+    color: #fff;
+    background: url(../imgs/luckDraw/subbtn.png) 0 0 no-repeat;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    border-radius: 0.15rem;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    left: 50%;
+    bottom: .72rem;
+    text-align: center;
+    line-height: .92rem;
+}
+
+.winner_info .none {
+    color: #fff;
+    font-size: .26rem
+}
+
+.active-rules{
+    margin-top: -.45rem;
+}
+
+.mask .pop-up .active-rules > .rules-details{
+    margin-bottom: 0rem;
+    font-size: .26rem;
+    line-height: .32rem;
+    font-family: "微软雅黑";
+}
+
+.mask .pop-up .zhushi{
+    display: block;
+    color: #fff;
+    font-size: .26rem;
+    text-align: left;
+    font-family: "微软雅黑";
+    margin-top: .3rem;
+}
+
+.mt64{
+    margin-top: -.64rem;
+}

@@ -1,0 +1,173 @@
+ *{
+			font-family: "Microsoft YaHei" ! important;
+		  }
+		 h3{
+				width:100%;
+				background:#f5f5f5;
+				height:0.8rem;
+				line-height:0.8rem;
+				text-indent:0.4rem;
+				font-size:0.37333333rem;
+				color:#333333;
+				font-weight:normal
+			}
+			p{
+				color:#999999;
+				font-size:0.37333333rem;
+				line-height:0.6rem;
+				margin-left:0.4rem;
+				margin-right:0.4rem;
+			}
+			.planarea{
+				position: relative;
+				margin:0.4rem  auto;
+				margin-top:0;
+				width:9.2rem;
+				height:4.8133333333rem;
+			}
+			.planarealeft{
+				float: left;
+				width:1.2rem;
+				height:4.8133333333rem;
+				position:relative;
+				background:url(../imgs/niubeplan/planleft.png);
+				background-size:cover;
+			}
+			.planarearight{
+				float: left;
+				height:4.8133333333rem;
+				position:relative;
+			}
+			.planarearight ul li{
+				border-bottom:1px solid #dddddd;
+				height:1.586666667rem;
+				width:8rem;
+				line-height:1.586666667rem;
+			}
+			i.personico{
+				float: left;
+				width:0.7466666667rem;
+				height:0.6rem;
+				display: block;
+				background:url(../imgs/niubeplan/personico.png);
+				background-size:cover;
+				margin-right:0.7rem;
+				margin-top:0.473333333333rem;
+			}
+			i.niuwa{
+				float: left;
+				width:0.7466666667rem;
+				height:0.6rem;
+				display: block;
+				background:url(../imgs/niubeplan/niuwaico.png);
+				background-size:cover;
+				margin-right:0.7rem;
+				margin-top:0.473333333333rem;
+			}
+			i.jiekuan{
+				float: left;
+				width:0.7466666667rem;
+				height:0.6rem;
+				display: block;
+				background:url(../imgs/niubeplan/jiekuanico.png);
+				background-size:cover;
+				margin-right:0.7rem;
+				margin-top:0.465rem;
+			}
+			.fangchou{
+				position: relative;
+				margin:0.4rem  auto;
+				margin-top:0;
+				width:9.2rem;
+			
+			}
+			.fangchoubox{
+				width:1.6rem;
+				margin-top:0.4rem;
+				float: left;
+				text-align:center;
+			}
+			div.danbaojiekuan{
+				margin:0 auto;
+				width:1.2rem;
+				height:1.2133333333rem;
+				background:url(../imgs/niubeplan/danbaojiekuan.png);
+				background-size:cover;
+				margin-bottom:0.2666667rem
+				
+			}
+			div.rongzizhuling{
+				margin:0 auto;
+				width:1.2rem;
+				height:1.2133333333rem;
+				background:url(../imgs/niubeplan/rongzizhuling.png);
+				background-size:cover;
+				margin-bottom:0.2666667rem
+			}
+			div.liudongzijin{
+				margin:0 auto;
+				width:1.2rem;
+				height:1.2133333333rem;
+				background:url(../imgs/niubeplan/liudongzijin.png);
+				background-size:cover;
+				margin-bottom:0.2666667rem
+			}
+			div.xinyongjiekuan{
+				margin:0 auto;
+				width:1.2rem;
+				height:1.2133333333rem;
+				background:url(../imgs/niubeplan/xinyongjiekuan.png);
+				background-size:cover;
+				margin-bottom:0.2666667rem
+			}
+			div.banquanjiaoyi{
+				margin:0 auto;
+				width:1.2rem;
+				height:1.2133333333rem;
+				background:url(../imgs/niubeplan/banquanjiaoyi.png);
+				background-size:cover;
+				margin-bottom:0.2666667rem
+			}
+			div.yingshoubaoli{
+				margin:0 auto;
+				width:1.2rem;
+				height:1.2133333333rem;
+				background:url(../imgs/niubeplan/yingshoubaoli.png);
+				background-size:cover;
+				margin-bottom:0.2666667rem
+			}
+			div.chengduihuipiao{
+				margin:0 auto;
+				width:1.2rem;
+				height:1.2133333333rem;
+				background:url(../imgs/niubeplan/chengduihuipiao.png);
+				background-size:cover;
+				margin-bottom:0.2666667rem
+			}
+			.licheng{
+				width:8rem;
+				height:1.10666667rem;
+				background:url(../imgs/niubeplan/liucheng.png);
+				background-size:cover;
+				margin:0.4rem auto;
+			}
+			.tiaojianbox{
+				width:9.2rem;
+				margin-top:0.4rem;
+				float: left;
+				text-align:center;
+			}
+			.tiaojianbox>.bix{
+				float: left;
+				height:0.8rem;
+				line-height:0.8rem;
+				color:#666666;
+				font-size:0.32rem;
+				display: block;
+				padding-left:0.28rem;
+				padding-right:0.28rem;
+				border:1px solid #cccccc;
+				border-radius:0.02666667rem;
+				margin-bottom:1rem;
+				margin-left:0.533333rem
+			}

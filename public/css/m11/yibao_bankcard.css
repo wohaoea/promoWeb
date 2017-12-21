@@ -1,0 +1,37 @@
+body{background: #e9ecef;padding-top: 0.36rem;font-size: 0.28rem;color: #999999;border-top: 1px solid #cccccc}
+.bind{height: 1rem}
+._left{float: left;line-height: 1rem;padding-left:0.3rem }
+._right{float: right;line-height: 1rem;padding-right:0.3rem}
+.bind1,.bind2{background: white;height: 1rem;border-top: 1px solid #cccccc;color: black}
+input{outline: none;background: white;border:none;width: 3rem;font-size: 0.28rem;text-align: right;}
+._container{padding: 0.25rem 0.3rem 0 0.3rem;font-size: 0.24rem;height: 3rem }
+.p{text-indent: 0.3rem}
+.pp{margin-top:0.25rem }
+.div{height: 1rem;background: #cccccc;color: white;text-align: center;line-height: 1rem;font-size: 0.36rem;border-radius: 8px;width: 6.9rem;margin-left:0.3rem;margin-top:3.4rem ;margin-bottom:0.35rem  }
+.chengnuo{text-align: center;font-size: 0.24rem;color: #0094fd;padding-bottom:0.5rem }
+.activediv{background: #0094fd}
+.loading{
+    display: none; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    background: black;
+    z-index: 999;
+    opacity: 0.5;
+}
+.load{
+    width: 5.45rem;height: 1.53rem;position: absolute;left: 1.08rem;top: 5.53rem;background: white;line-height: 1.53rem;text-align: center;color: black;font-size: 0.36rem;z-index: 10000;border-radius: 10px;display: none
+}
+.result{width: 6rem;background: white;position: absolute;top:3.2rem;left: 0.75rem;border-radius: 10px;z-index: 1000}
+.result p{font-size: 0.28rem;height: 0.28rem;line-height: 0.28rem;text-align: center;margin-bottom:0.1rem;color: black;width: 5.27rem;margin-left:0.33rem;overflow: hidden;  }
+.result .result_p{height: 0.35rem;color: black;margin-top:0.45rem;text-align: center;line-height: 0.35rem;font-size: 0.35rem;margin-bottom: 0.3rem;font-weight:600 }
+/*.false1 span:first-child,.false2 span:first-child{float: left;padding-left:0.55rem }*/
+.result hr{margin-top:0.8rem;margin-bottom:0 }
+.result .queding{text-align: center;color: #0094fd;height: 1rem;margin: 0;line-height: 1rem;font-size: 0.36rem;cursor: pointer;width: 100% !important}
+.shibai{text-align: center;}
+.result .false1,.result .false2{width: 5.27rem;text-align:left;height: 0.8rem;}
+
+
+
+

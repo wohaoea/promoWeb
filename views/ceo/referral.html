@@ -1,0 +1,52 @@
+<% include header.html %>
+<%if(app!=1){%>
+<div id="header">
+	<div class="gohistory">
+		<a href="javascript:void(0)" onclick="javascript:history.go(-1);"><img src="/imgs/ceo/gohistory.png" /></a>
+	</div>
+	CEO一日助理评选系列活动说明
+</div>
+<%}%>
+<div id="wrapper1" <%if(app==1){%>style='top:0'<%}%>>
+	<div class="scroller">
+		<div class="headerimg">
+				<%if(app==1){%><div class="gohome"></div><%}%>
+				<a href="/ceo/referral"><img src="/imgs/ceo/banheader.png" /></a>
+		</div>
+		<div class="referral">
+			<h4>活动说明</h4>
+			<p>1.活动日期：10月20日—11月30日</p>
+			<p>2.点击“我要参与”，竞选候选人，参与角逐潘石屹一日助理</p>
+			<p>3.拉动小伙伴投票支持参与，投票可获得20元红包奖励</p>
+			<p>4.每个号码限投1票，票数最高三人将进入最后面试环节</p>
+			<p>5.潘石屹指定面试官甄选最终人选</p>
+			<p style="font-size:0.31rem">本次活动最终解释权归上海牛娃互联网金融信息服务有限公司所有</p>
+		</div>
+	</div>
+</div>
+<div id="share">
+	<%if (iswxOS){%>
+	<div class="wxtips"></div>
+	<%}else{%>
+	<div class="shareapp">
+		<div class="shareone"><img src="/imgs/ceo/qqzone.png"  data='qq'/></div>
+		<div class="shareone"><img src="/imgs/ceo/weibo.png" data='wb'/></div>
+	</div>
+	<%}%>
+	<div class="wxtipsfixbody"></div>
+</div>
+<% include footer.html %>
+<script type="text/javascript">
+	var wrapper1 = document.querySelector('#wrapper1');
+	  new IScrollLoadData.IScroll(wrapper1, {
+        probeType: 2,
+        mouseWheel: false,
+        bindToWrapper: true,
+        scrollY: true,
+        tap: true,
+        click: true
+    });
+    $("body").delegate(".gohome","click",function(){
+        window.location.href='/ceo'
+    });
+</script>

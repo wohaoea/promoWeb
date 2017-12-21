@@ -1,0 +1,149 @@
+<% include header.html %>
+<%if(app!=1){%>
+<div id="header">
+	<div class="gohistory">
+		<a href="javascript:void(0)" onclick="javascript:history.go(-1);"><img src="/imgs/ceo/gohistory.png" /></a>
+	</div>
+	我要参与
+</div>
+<%}%>
+<div id="wrapper1" <%if(app==1){%>style='top:0'<%}%>>
+	<div class="scroller">
+		<div class="apply">
+			<div class="headerimg">
+				<%if(app==1){%><div class="gohome"></div><%}%>
+				<a href="/ceo/referral"><img src="/imgs/ceo/banheader.png" /></a>
+			</div>
+			<div class="applytitle">
+				<p>报名参与竞选，和他们一样成为候选人，</p>
+				<p>共同角逐潘石屹一日助理！</p>
+			</div>
+			<div class="applyreg">
+				<div class="list">
+					<div class="pcontent">
+						<div class="pleft">姓名：</div>
+						<div class="pright">
+							<input type='text' id='pname' placeholder='请输入您的姓名' />
+						</div>
+					</div>
+				</div>
+				<div class="list">
+					<div class="pcontent">
+						<div class="pleft">手机号：</div>
+						<div class="pright">
+							<input type='text' id='pphone' placeholder='请输入手机号' />
+						</div>
+					</div>
+				</div>
+				<div class="list">
+					<div class="pcontent">
+						<div class="pleft">邮箱：</div>
+						<div class="pright">
+							<input type='text' id='pemail' placeholder='请输入邮箱地址' />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="inputbox">
+				<div class="baoming">报名</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include footer.html %>
+<script type="text/javascript">
+	var wrapper1 = document.querySelector('#wrapper1');
+	  new IScrollLoadData.IScroll(wrapper1, {
+        probeType: 2,
+        mouseWheel: false,
+        bindToWrapper: true,
+        scrollY: true,
+        tap: true,
+        click: true
+       
+    })
+	function validation(name,phone,email) {
+		if($.trim(name)==''){
+			new window.palert('请填写姓名',true);
+			return false
+		}
+		if (!/^\s*[\u4e00-\u9fa5]{1,}[\u4e00-\u9fa5.·]{0,15}[\u4e00-\u9fa5]{1,}\s*$/.test(name)) {
+			new window.palert('真实姓名应为2~8个汉字',true);
+			return false
+		}
+		if($.trim(phone)==''){
+			new window.palert('请填写手机号',true);
+			return false
+		}
+		if (phone.length != 11) {
+			new window.palert('手机号必须为11位',true);
+			return false
+		}
+		if (!(/^0?(13|15|18|14|17)[0-9]{9}$/).test(phone)) {
+			new window.palert('请输入您的有效手机号',true);
+			return false
+		}
+		if($.trim(email)==''){
+			new window.palert('请填写邮箱',true);
+			return false
+		}
+		if (!/^[0-9a-z][_.0-9a-z-]{0,31}@([0-9a-z][0-9a-z-]{0,30}[0-9a-z]\.){1,4}[a-z]{2,4}$/.test(email.toLowerCase())) {
+			new window.palert('邮箱地址格式错误',true);
+			return false
+		}
+		return true
+	} 
+	$(".baoming").click(function(){
+		var opt ={
+			name:$("#pname").val(),
+			phone:$("#pphone").val(),
+			email:$("#pemail").val()
+		}
+		var that = $(this);
+		if(validation(opt.name,opt.phone,opt.email)){
+			new window.palert('',false,1);
+			$(this).addClass("disabled");
+			   $.ajax({
+	            type: "GET",
+	            url: "/ceo/pla/ceoapply",
+	            data:opt,
+	            beforeSend: function() {
+
+	            },
+	            complete: function() {
+	            	$(".bodyfix2").remove();
+	            	 that.removeClass("disabled");
+	            },
+	            success: function(result) {
+	                $(".bodyfix2").remove();
+	                that.removeClass("disabled");
+	                if(result.result =='fail'){
+	                	new window.palert(result.resultMessage,true);
+	                	return
+	                }
+	                if(result.success){
+	                	if(result.data==0){
+	                		new window.palert("已申请参与过活动",false);
+	                	}else{
+	                		new window.palert("报名成功，请注意查看邮箱信息，<br/>敬请等候审核消息。",false);
+	                	}
+	                	setTimeout(function(){
+	                		window.location.href = '/ceo'
+	                	},5000);
+	                }else{
+	                	new window.palert(result.msg,false);
+	                }
+	            },
+	            error: function(error) {
+	            	 new window.palert("网络不稳定，稍后再试哦~",true);
+	            	 $(".bodyfix2").remove();
+	            	 that.removeClass("disabled");
+	            }
+	        });
+		}	
+	})
+  $("body").delegate(".gohome","click",function(){
+            window.location.href='/ceo'
+   });
+</script>

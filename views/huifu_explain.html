@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="注册" />
+    <meta name="keywords" content="注册,牛娃p2p" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/niuwah5.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+    <style>
+        .explain-info img{
+            width: 80%;
+            margin-left: 10%;
+            border: 1px solid #eeeddd;
+        }
+    </style>
+</head>
+
+<body class="inst-bg">
+<div class="container">
+    <div class="explain-info">
+        <% if( type == 'card' ){ %>
+            <p><span>1</span>、用户提现页或银行卡管理页添加的第一张银行卡为默认提现卡。</p>
+            <p><span>2</span>、绑定的银行卡需为本人名下的银行借记卡，请勿使用存折和信用卡。</p>
+            <p><span>3</span>、默认卡提现时默认选择，有且只有一张默认卡，默认卡不可被删除。</p>
+            <p><span>4</span>、对已绑定的普通银行卡可进行删除，同一张银行卡删除后当天无法再重新绑定，需等 T+1 日后才可以做绑卡操作。</p>
+            <p><span>5</span>、用户可绑定任意多张银行卡，绑定时均可设置为默认提现卡。</p>
+            <p><span>6</span>、用户快捷充值会绑定一张快捷卡，此卡同时自动设置为取现卡，且不能再绑定快捷卡/取现卡。如需解绑快捷卡，用户需要跳转汇付官网进行解绑操作。解绑后，此快捷卡变成默认提现卡。</p>
+        <% }else if( type == 'recharge' ){ %>
+            <p><span>1</span>、充值服务由汇付天下提供，填写充值金额将跳转到汇付天下完成充值。</p>
+            <p><span>2</span>、根据第三方资金托管平台提供的服务，充值使用的银行卡姓名与身份认证的姓名必须一致，必须填写银行预留手机号。</p>
+
+            <p><span>3</span>、各银行快捷充值限额不同，超出充值限额充值可能无法完成（以下限额仅供参考，若有改动请以银行官网公告为准。）</p>
+            <img src="/imgs/explain/rechargeLimit.jpg" style="width: 100%;margin-left: 0">
+        <% }else if( type == 'withdraw' ){ %>
+            <p><span>1</span>、提现服务由汇付天下提供，填写提现金额将跳转到汇付天下完成提现。</p>
+            <p><span>2</span>、平台支持普通提现和即时提现2种提现方式。普通提现：将在汇付收到提现请求后的下一个工作日到帐。即时提现：不论工作日与非工作日，均当天到帐。</p>
+            <p><span>3</span>、普通提现费用2元/笔，系统会根据您帐户的使用情况计算出免费普通提现金的额度，免费提现额度内的提现费用由平台承担，免费提现额度外的由用户承担。</p>
+            <p><span>4</span>、即时提现手续费具体金额以页面显示为准，由用户承担。</p>
+            <p><span>5</span>、提现金额每次不得低于3元，提现次数无任何限制。</p>
+            <p><span>6</span>、汇付资金账户交易密码说明：<br>
+                <span>1）绑定银行卡、提现操作均在汇付页面完成，需要输入您在汇付开户时设置的交易密码;</span><br>
+                <span>2）如您遗忘了之前设置的汇付交易密码，可点击右侧“找回密码”按钮，通过手机验证码方式重置。</span>
+            </p>
+            <p><span>7</span>、
+                汇付交易密码设置说明：<br>
+                <span>1）不少于8位，且包含英文大写、小写、数字、特殊符号中的两类组合;</span><br>
+                <span>2）不能包含过于简单的密码，如客户生日（6位年月日）、手机号、abcd1234、1234abcd、1234qwer、1qaz2wsx等。</span>
+            </p>
+        <% }else if( type == 'unwrap' ){ %>
+            <p><span>1</span>、快捷支付银行卡解绑需登录汇付天下官网操作，地址如下：<br><a href="https://c.chinapnr.com/p2puser/" style="color:#6496e1">https://c.chinapnr.com/p2puser/</a></p>
+            <img src="/imgs/explain/unwrap_1.png" width="100%" >
+            <p><span>2</span>、输入用户名、密码以及验证码登录。密码在注册时已通过短信发送给您，若忘记汇付登录密码，可点击忘记密码找回。</p>
+            <img src="/imgs/explain/unwrap_2.png" width="100%" >
+            <img src="/imgs/explain/unwrap_3.png" width="100%" >
+            <p><span>3</span>、若距离您最近一次使用快捷卡充值时间不足7天，需要上传个人与银行卡资料进行解绑。</p>
+            <img src="/imgs/explain/unwrap_4.png" width="100%" >
+            <p><span>4</span>、若距离您最近一次使用快捷卡充值时间超过7天，输入短信验证码确认身份后即可解绑。</p>
+            <img src="/imgs/explain/unwrap_5.png" width="100%" >
+            <img src="/imgs/explain/unwrap_6.png" width="100%" >
+        <% } %>
+    </div>
+</div>
+</body>
+</html>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5H47RG');</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=title%>" />
+    <meta name="keywords" content="<%=title%>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/m9/fuwu_check.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/h5dialog.css" rel="stylesheet" type="text/css" />
+    <link href="/css/m9/h5header.css" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" type="text/css" href="/css/m9/fuwu_check.css"> 
+    <!-- /build -->
+    <%include ./h5script10.html%>
+</head>
+
+<body>
+	
+	<div class="circle-plugins"></div>
+	<p class="p1">服务正在审核中</p>
+	<p class="p2">请耐心等待</p>
+	<nav class="button">确定</nav>
+    <p id="phone" style='margin-bottom:1rem'>如有疑问请拨打客服电话：<a id="niuwa_phone">400-8846-898</a></p>
+</body>
+
+</html>
+<script>
+var rest_time='<%=rest_time%>'
+var send_time='<%=send_time%>'
+</script>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<!-- build:js /js/m9/fuwu_check.min.js -->
+<script type="text/javascript" src="/js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="/js/libs/h5dialog.js"></script>
+<script type="text/javascript" src='/js/m9/toast_phone.js'></script> 
+<script type="text/javascript" src='/js/m9/circle.js'></script> 
+<!-- /build -->
+<script type="text/javascript">
+	new circleCountDownPlugin({
+		container:$(".circle-plugins"),
+		width:404,
+		height:404,
+		minute:45
+	});
+    $('.button').click(function(){
+        window.location.href="/m9_2/fenqifuwu_second?backBtnStatus=backToIndex&type=yhj2_p3"
+    }) 
+ 
+    if(rest_time<45*60*1000){
+        var lunxun=setInterval(function(){
+            $.post('/m9_2/getLatestLoan',{},function(data){
+                if((data.auditStatus=='PASS'&&data.releaseStatus=='FULL_SCALE')||(data.auditStatus=='VIEW_PREPARE'&&data.releaseStatus=='FULL_SCALE')){
+                    window.location.href='/m9_2/confirm_apply?backBtnStatus=popTip'
+                }else if(data.releaseStatus=='REJECT_AUDIT'||data.auditStatus=='LOANED_FAIL'){
+                    window.location.href='/m9_2/check_result/1?backBtnStatus=hidden'
+                } 
+            })
+
+        },5000) 
+    }else{
+        window.location.href='/m9_2/check_result/3?backBtnStatus=hidden'
+    }
+  
+</script>

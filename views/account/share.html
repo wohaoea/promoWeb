@@ -1,0 +1,63 @@
+<% if(isWX ){ %>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    var shareTitle = '<%=shareTitle%>';
+    var shareDesc = '<%=shareDesc%>';
+    var shareLink = '<%=shareLink%>';
+    var shareImgUrl = '<%=shareImgUrl%>';
+    wx.config({
+        debug: false,
+        appId: '<%=appId%>',
+        timestamp:'<%=timestamp%>' ,
+        nonceStr: '<%=noncestr%>',
+        signature: '<%=signature%>',
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareQZone']
+    });
+    wx.ready(wxInit);
+    function wxInit(){
+        //分享到朋友圈
+        wx.onMenuShareTimeline({
+            title: shareTitle, // 分享标题
+            desc: shareDesc, // 分享描述
+            link: shareLink, // 分享链接
+            imgUrl: shareImgUrl // 分享图标
+        });
+        //分享给朋友
+        wx.onMenuShareAppMessage({
+            title: shareTitle,
+            desc: shareDesc,
+            link: shareLink,
+            imgUrl: shareImgUrl
+        });
+        //分享到QQ
+        wx.onMenuShareQQ({
+            title: shareTitle,
+            desc: shareDesc,
+            link: shareLink,
+            imgUrl: shareImgUrl
+        });
+        //分享到QQ空间
+        wx.onMenuShareQZone({
+            title: shareTitle,
+            desc: shareDesc,
+            link: shareLink,
+            imgUrl: shareImgUrl
+        })
+    }
+    $('.invite-btn').click(function(){
+        $('.shade').show();
+        $('.share-arrow').show();
+    });
+    $('.shade').click(function(){
+        $(this).hide();
+        $('.share-arrow').hide();
+    });
+</script>
+<% }else{ %>
+<script>
+    $('.invite-btn').click(function(){
+        alert('请使用微信自带的浏览器');
+    });
+
+</script>
+<% } %>

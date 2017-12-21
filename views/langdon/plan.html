@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>还款计划</title>
+    <meta name="description" content="还款计划" />
+    <meta name="keywords" content="还款计划" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+
+
+
+    <!-- build:css /css/langdon/plan.min.css -->
+    <link rel="stylesheet" type="text/css" href="/css/base.css">
+    <link rel="stylesheet" href="/css/langdon/plan.css">
+    <!-- /build -->
+</head>
+<body>
+    <div class="plan">
+        <div class="detail_plan">
+            <div class="plan_top">
+                <h4>应还金额
+                    <span class="money"><%=totalRepayAmoun%></span>
+                    元</h4>
+                <p style="font-size:.28rem;color:#b6bede;line-height:.5rem">借款期限<%=term%>个月</p>
+                <div class="separated contain"></div>
+            </div>
+            <div class="plan_content">
+                <ul>
+                    <% for( var j = 0; j < repayPlanList.length; j++ ){ %>
+                        <% var arr = repayPlanList[j]; %>
+                        <li class="year"><%= arr[0].repayDate.substring(0,4)%></li>
+                        <% for(var i = 0; i < arr.length; i++) { %>
+                        <% var item = arr[i]; %>
+                        <li class="day">
+                            <span class="date"><%= item.repayDate.substring(5,10) %></span>
+                            <span class="circle"></span>
+                            <span class="month_money"><%= item.repayAmount %>元</span>
+                        </li>
+                        <% } %>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+    <script src="/js/libs/rem.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每日签到</title>
+    <!-- build:css /css/userSign.min.css -->
+    <link rel="stylesheet" href="/css/userSignCommon.css">
+    <link rel="stylesheet" href="/css/userSign.css">
+    <!-- /build -->
+</head>
+
+<body>
+    <div class="tips hide">
+        <p>签到成功</p>
+        <p>恭喜您获得：20积分</p>
+    </div>
+    <div class="wrap bgsContain">
+        <div class="head"></div>
+        <div class="contain">
+            <ul class="clearfix">
+                <% for(var i = 0;i < 6;i++){ %>
+                    <% if( i==today-1 ){ %>
+                        <% if( arr.indexOf(i) != -1 ){ %>
+                            <li class="sign fl boxShadow">
+                                <div class="success">
+                                    <div class="icon bgsCover"></div>
+                                </div>
+                                <div class="date">第<%= dayArr[i] %>天</div>
+                                <div class="everyDay bgsCover"></div>
+                                <div class="integration credit" data-credit="<%= pointArr[i] %>"><%= pointArr[i] %>积分</div>
+                            </li> 
+                        <% }else{ %>
+                            <li class="sign fl boxShadow">
+                                <div class="success hide">
+                                    <div class="icon bgsCover"></div>
+                                </div>
+                                <div class="date">第<%= dayArr[i] %>天</div>
+                                <div class="everyDay bgsCover"></div>
+                                <div class="integration credit" data-credit="<%= pointArr[i] %>"><%= pointArr[i] %>积分</div>
+                            </li> 
+                        <% } %>
+                    <% } else {%>
+                        <% if(arr.indexOf(i)!=-1){ %>
+                            <li class="sign fl boxShadow">
+                                <div class="success">
+                                    <div class="icon bgsCover"></div>
+                                </div>
+                                <div class="date">第<%= dayArr[i] %>天</div>
+                                <div class="everyDay bgsCover"></div>
+                                <div class="integration credit" data-credit="<%= pointArr[i] %>"><%= pointArr[i] %>积分</div>
+                            </li> 
+                        <% }else{ %>
+                            <li class="sign fl boxShadow">
+                                <div class="date disabled">第<%= dayArr[i] %>天</div>
+                                <div class="everyDay bgsCover" style="background-image:url('imgs/userSign/future.jpg')!important;"></div>
+                                <div class="integration disabled credit" data-credit="<%= pointArr[i] %>"><%= pointArr[i] %>积分</div>
+                            </li> 
+                        <% } %>
+                    <% } %>
+                <% } %>
+                
+               <% if(today == 7) {%>  
+                    <% if(arr.indexOf(6)!=-1){ %>
+                        <li class="sevenDay fl marginTop60 bgsCover boxShadow">
+                            <div class="success">
+                                <div class="icon bgsCover" style="margin-top:1rem"></div>
+                            </div>
+                            <div class="date" style="line-height:.6rem">第七天</div>
+                            <div class="integration7 credit" style="line-height:.6rem" data-credit="<%= pointArr[6] %>"><%= pointArr[6] %>积分</div>
+                        </li>
+                    <% }else{ %>
+                        <li class="sevenDay fl marginTop60 bgsCover boxShadow">
+                            <div class="success hide">
+                                <div class="icon bgsCover" style="margin-top:1rem"></div>
+                            </div>
+                            <div class="date" style="line-height:.6rem">第七天</div>
+                            <div class="integration7 credit" style="line-height:.6rem" data-credit="<%= pointArr[6] %>"><%= pointArr[6] %>积分</div>
+                        </li>
+                    <% } %> 
+                <% }else{ %>
+                    <% if(arr.indexOf(6)!=-1){ %>
+                        <li class="sevenDay fl marginTop60 bgsCover boxShadow">
+                            <div class="success">
+                                <div class="icon bgsCover" style="margin-top:1rem"></div>
+                            </div>
+                            <div class="date" style="line-height:.6rem">第七天</div>
+                            <div class="integration7 credit" style="line-height:.6rem" data-credit="<%= pointArr[6] %>"><%= pointArr[6] %>积分</div>
+                        </li>
+                    <% }else{ %>
+                        <li class="sevenDay fl marginTop60 bgsCover boxShadow" style="background-image:url('imgs/userSign/future7.jpg')!important;">
+                            <div class="date disabled" style="line-height:.6rem">第七天</div>
+                            <div class="integration7 disabled credit" style="line-height:.6rem" data-credit="<%= pointArr[6] %>"><%= pointArr[6] %>积分</div>
+                        </li>
+                    <% } %>
+                <% } %>
+            </ul>
+            <div class="footer">
+                <p>活动时间：<%= startTime %>——<%= endTime %></p>
+                <p>活动期间累计登录七天即可获得相应奖励</p>
+                <p>本活动与苹果公司无关</p>
+            </div>
+        </div>
+    </div>
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+    <!-- build:js /js/userSign.min.js -->
+    <script src="/js/userSign.js"></script>
+    <!-- /build -->
+</body>
+</html>

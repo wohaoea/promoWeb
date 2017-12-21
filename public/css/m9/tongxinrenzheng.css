@@ -1,0 +1,112 @@
+.content-body {
+    margin: 25px 20px;
+    font-size: 28px;
+    border-top: 1px solid #dfdfdf;
+}
+.content-body p {
+    line-height: 90px;
+    border-bottom: 1px solid #dfdfdf;
+}
+.content-body .label {
+    display: inline-block;
+    width: 3.89rem;
+}
+.input-fuwumima {
+    border: none;
+    outline: medium;
+    font-size: 28px;
+}
+a, a:link, a:hover, a:visited {
+    text-decoration: none;
+    color: #3296fa;
+}
+.forget-pass {
+    color: #9e9ea2;
+    margin-top: 20px;
+}
+.btn-group {
+    margin-top: 350px;
+    text-align: center;
+}
+.btn {
+    display: inline-block;
+    border-radius: 10px;
+    width: 3.81rem;
+    font-size: 0.45rem;
+    height: 1.2rem;
+    line-height: 1.2em;
+    color: #ffffff;
+}
+.btn-default {
+    background: #3296fa;
+}
+.btn-m {
+    background: #64afff;
+}
+.btn-long {
+    text-align: center;
+    width: 8.07rem;
+    background: #64afff;
+    font-size: 34px;
+    height: 89px;
+    line-height: 89px;
+    margin: auto;
+}
+.a-shenmeshitongxinrenzheng {
+	font-size: 32px;
+    float: right;
+    margin-top: 10px;
+}
+.div-long {
+    width: 8.07rem;
+    margin: 10px auto;
+}
+
+
+.content-body .label-smscode {
+    display: inline-block;
+    width: 3.89rem;
+}
+.input-smscode {
+    box-sizing: border-box;
+    margin-left: 0.64rem;
+    width: 3rem;
+    border: none;
+    outline: medium;
+    font-size: 0.38rem;
+}
+.p-smscode{
+    font-size: 0.38rem;
+    width: 7.4rem;
+    line-height: 90px;
+    border-bottom: 1px solid #dfdfdf;
+    border-top: 1px solid #dfdfdf;
+}
+.btn-smscode{
+    position: relative;
+    width: 2.18rem;
+    
+    border-radius: 10px;
+    background-color: #9f9f9f;
+    height: 52px;
+    line-height: 52px;
+    font-size: 0.38rem;
+    color:#ffffff;
+}
+
+.p-smscode .active{
+    background-color: #3296fa;
+}
+.loading{
+    display: none; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    background-color: rgb(0,0,0);
+    z-index: 9999;
+    opacity: 0.5;
+}
+.loading img{
+    width: 10%;position: absolute;left: 45%;top: 45%;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>还款</title>
+    <meta name="description" content="还款" />
+    <meta name="keywords" content="还款" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+</head>
+	<body>
+	</body>
+	<script src="/js/libs/jquery-1.8.3.min.js"></script>
+	<script src="/js/libs/querystring.js"></script>
+	<script src="/js/common/formSubmit.js"></script>
+	<script>
+        var $form = $(parent.document).find("form");
+        var serializeObj={};  
+            $($form.serializeArray()).each(function(){  
+                serializeObj[this.name]=this.value;  
+            });  
+            var tourl = serializeObj.tourl
+            delete serializeObj.tourl;
+		    formSubmit.post(tourl,serializeObj)
+	</script>
+</html>

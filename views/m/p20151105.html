@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content=" width=1200, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="牛娃互联网金融" /> 
+    <meta name="description" content="牛娃互联网金融" />
+    <title>牛娃金融</title>
+    <!-- build:css /css/regmarketnew.min.css -->
+    <link href="../css/regmarketnew.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../css/idialog.css" />
+    <!-- /build -->
+    <style type="text/css">
+
+        .tjname {
+                color: #576073;
+                width: 340px;
+                height: 36px;
+                position: absolute;
+                font-size:24px;
+                top: 271px;
+                left: 790px;
+                line-height: 36px;
+                text-align: left;
+            }
+        .tjreferral {
+                color: #576073;
+                font-size: 13px;
+                height: 200px;
+                width: 360px;
+                position: absolute;
+                top: 330px;
+                left: 790px;
+            }
+        .tjreferral p{
+            line-height:24px;
+        }
+        .divbg5{
+            background:#f8d573;
+            padding:30px 0 50px 0;
+            height:auto !important;
+            min-width:1200px
+        }
+        .bgbody5{
+            background:#fff !important;
+            padding:20px 0;
+            height:auto !important;
+        }
+        .sicon {
+            height: 70px;
+            width: 40px;
+            position: absolute;
+            background: url(../imgs/marketnew/market.png);
+        }
+        .srighticon, .srighticon:hover {
+            right: 50px;
+            top: 130px;
+            background-position:-189px -730px;
+        }
+        .slefticon,.slefticon:hover {
+            left: 48px;
+            top: 130px;
+            background-position:-141px -730px ;
+           
+        }
+
+        .slide-box .slide-list li {
+            position: relative;
+            float: left;
+            width: 242px;
+            height: 180px;
+            margin-right: 7px;
+            z-index: 1;
+        }
+        .slide-box .slide-list li img{
+            width: 242px;
+            height: 180px;
+        }
+        .slide-content {
+            position: relative;
+            width: 996px;
+            height: 180px;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        .playbox {
+            width: 640px;
+            height: 355px;
+            padding: 5px;
+            background: #5f5f5f;
+            float: left;
+            position: relative;
+            margin-top: 20px;
+            margin-left: 101px;
+        }
+        .slide-box .mask{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 242px;
+            height: 180px;
+            background: url(imgs/marketnew/cover.png);
+            z-index: 99;
+            cursor: pointer;
+        }
+        .slide-box .mask1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 242px;
+            height: 180px;
+            background: url(imgs/marketnew/cover.png);
+            z-index: 98;
+            cursor: pointer;
+        }
+        .marketregbox {
+            width: 320px;
+            height: 320px;
+            background: #fff !important;
+            float: right;
+            position: relative;
+            margin-top: 20px;
+        }
+        .marketregbox input[type="text"], .marketregbox input[type="password"] {
+            background: #fff;
+            height: 33px;
+            width: 244px;
+            padding-left: 5px;
+            border: 0;
+            line-height: 30px;
+            border:1px solid #c8c8c8;
+        }
+        #btnvalidation{
+            color:#fff;
+            background:#fa4b4b;
+            height:35px !important;
+            line-height:35px;
+        }
+        .labelbar {
+            margin-top: 19px;
+            color: #666666;
+            font-size: 14px;
+            height: 30px;
+            width: 100%;
+        }
+        .labelbar .pingtaixieyi {
+            cursor: pointer;
+            color: #fa4b4b;
+            letter-spacing: 1px;
+        }
+        .marketregbox input.short{
+            width:158px
+        }
+        #refreshimg {
+        width: 75px;
+        height: 35px;
+        margin-left: 7px;
+        }
+        #btnvalidation{
+            width:110px;
+            font-size:14px;
+        }
+        .i-content {
+            padding: 10px 20px!important;
+        }
+        .i-content{
+            height:auto;
+        }
+    </style>
+</head>
+<body>
+
+<div style="width:100%;height:60px;background:#ffffff;min-width:1200px;">
+    <div style="height:60px;width:1200px;margin:0 auto">
+        <a href="<%=domain%>" style="display: block;width:357px;margin-left:18px;margin-top:3px;height:52px;float: left;"><img src="/imgs/logo.png"></a>
+    </div>
+</div>
+<div class="nmarkettop">
+    <div class="nmarketbody clearfix">
+        <div class="leftb"></div>
+          <div class="marketregbox">
+           <!-- <div class="phoneerror"></div>
+           <div class="passworderror"></div>
+           <div class="phonenumerror"></div>
+           <div class="yanzhengmaerror"></div>
+           <div class="xieyierror"></div>
+           <div class="divzhezao"></div> -->
+           <div class="fixlayerbox"></div>
+            <div class="labelbar" style="padding-top:20px;margin-top:0">
+                <div class="iconbox" style="*margin-top:1px">
+                    <i class="iconuser" style="margin: 8px 0 0 8px;"></i>
+                </div><input type="text" id="phonenum" placeholder='请输入手机号' class="fl" />
+            </div>
+            <div class="labelbar">
+                <div class="iconbox">
+                    <i class="iconpassword" style="margin: 8px 0 0 9px;"></i>
+                </div><input type="password" id="password" placeholder='请输入密码'  class="fl" onpaste="return false"/>
+            </div>
+            <div class=" labelbar">
+                <div class="iconbox">
+                    <i class="iconimgv" style="margin: 8px 0 0 8px;"></i>
+                </div><input type="text" id="imgv" placeholder='验证码'  class="short fl"/><img src="/pla/generatecaptcha" style=" cursor:pointer " id="refreshimg" class="fl"/>
+            </div>
+            <div class="clearfix labelbar">
+                <div class="iconbox">
+                    <i class="iconphonev" style="margin: 9px 0 0 6px;"></i>
+                </div><input type="text" id="phonevalidation" placeholder='短信验证码' class="short fl" style="width:124px;"/><input type="button" value="获取验证码" id="btnvalidation" class="fl"/>
+            </div>
+            <div class=" labelbar" style="margin-top:12px">
+               <div class="" style="width:20px;height:30px;float:left"></div><div class="ncheckbox Ycheckbox"></div>我已阅读并同意<span class="pingtaixieyi" id="regdeal">《平台注册协议》</span>
+            </div>
+            <div class="labelbar" style="margin-top:0px;height:55px">
+                <div class="regbtnnew" id="regbtn2" data-ca='regbtn2-reg-newmarket1'>马上注册 领取50元</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ttitlewrap">
+    <div class="ttitlebody"></div>
+</div>
+<div class="displaywrap">
+    <div class="prizebody" >
+       <!--  <div class="sliderbarL"></div> -->
+        <div class="pslider" id="Marquee_x">
+              <ul class="clearfix" style="">
+                <li><img src="imgs/marketnew/zs1.jpg" /></li>
+                <li><img src="imgs/marketnew/zs2.jpg" /></li>
+                <li><img src="imgs/marketnew/zs3.jpg" /></li>
+                <li><img src="imgs/marketnew/zs4.jpg" /></li>
+                <li><img src="imgs/marketnew/zs5.jpg" /></li>
+                <li><img src="imgs/marketnew/zs6.jpg" /></li>
+                <li><img src="imgs/marketnew/zs7.jpg" /></li>
+                <li><img src="imgs/marketnew/zs8.jpg" /></li>
+                <li><img src="imgs/marketnew/zs9.jpg" /></li>
+             </ul>
+        </div>
+        <!-- <div class="sliderbarR"></div> -->
+    </div>
+</div>
+<div class="newswrap">
+    <div class="newtitle"></div>
+     <div class="content clearfix" style="position: relative">
+            <div style="height:1px;width:370px;border-bottom:1px dashed #b1b1b1;background:none;position:absolute;left: 402px;top: 59px;z-index:1000"></div>
+            <div style="height:1px;width:370px;border-bottom:1px dashed #b1b1b1;background:none;position:absolute;left:430px;top:217px;z-index:1000"></div>
+           <div class="fl" style="width:360px;height:280px;margin-left:10px;margin-top:10px"><a href="<%=domain%>news/pfcontent/201506/26/14" target="_blank"><img src="/imgs/market/zhengqingchun.png"/></a></div>
+            <div class="fl" style="width:400px;height:280px;margin-top:10px;padding-left:30px;padding-right:30px">
+                <div style="margin-top:10px;">
+                    <a href="<%=domain%>news/pfcontent/201506/26/14" target="_blank" class="firsta">正青春首席互联网金融合作伙伴</a>
+                    <a href="javascript:;"  class="secenda" style="margin-top:30px;width:374px; color: #666666 !important;cursor:default">牛娃互联网金融受到杨澜的肯定，成为了《正青春》首席金融合作伙伴。《正青春》是由阳光媒体集团主办的名人高校分享活动，与全国50所高校学生展开关于青春关于梦想的跨界讨论。</a>
+                </div>
+                <div style="margin-top:48px">
+                    <a href="<%=domain%>news/pfcontent/201505/37/15" target="_blank" class="firsta" style="text-align: right">上海市市长杨雄莅临牛娃互联网金融</a>
+                    <a href="javascript:;" class="secenda" style="width:370px;display: block;margin-top:30px;float: right;color:#666666 !important;cursor: default">在牛娃互联网金融5月30日上线前夕，上海市市长杨雄莅临对互联网金融行业前景给予肯定，并对牛娃的发展给予鼓励。</a>
+                </div>
+            </div>
+            <div class="fl" style="width:360px;height:280px;margin-top:10px">
+                <a href="<%=domain%>news/pfcontent/201505/37/15" target="_blank"><img src="/imgs/market/fangwen.png" /></a>
+            </div>
+        </div>
+</div>
+<div class="divbg5">
+    <div class="bgbody5 clearfix">
+        <div class="wishtitle"></div>
+        <div class="aboutbox">
+            <div class="slide-box clearfix">
+                <div class="slide-left"><a href="javascript:;" class="sicon slefticon"></a></div>
+                <div class="slide-content">
+                    <ul class="slide-list clearfix">
+                     <li id="panshiyi"><a href="psy" data-name="潘石屹  为牛娃点赞" data-content='["SOHO中国有限公司董事长","创办北京中鸿天房地产有限公司","创建北京万通实业股份有限公司","创办SOHO中国公司",
+"“中国房地产十大功勋人物”奖","“亚洲企业领袖协会”会员","《既要成功 也要成仁-潘石屹的八堂公开课》","《屹见：潘石屹聊聊我们这个时代》","《投诉潘石屹、批判现代城》"]'><img src="/imgs/market/psy.png"></a></li>
+                        <li><a href="yy" data-name="袁 岳  为牛娃点赞" data-content='["零点研究咨询集团董事长","清华大学公共管理学院客座讲授","联合国儿童基金会援华项目评估顾问","中国市场研究业协会（CMRA）副会长","《实证中国：零点调查——数字解读百姓生活》","《中国这边，美国那边》","《新绝配：营销管理新视野》","《哈佛修炼》"]'><img src="/imgs/market/yy.png"></a></li>
+                        <li><a href="wxb" data-name="吴晓波  为牛娃点赞" data-content='["财经作家","贝塔斯曼亚洲签约作家","中国娇子青年领袖","2009最受读者关注年度十大作家","2013中国文化先锋奖","新浪2013年度最有价值专栏作家","《激荡三十年》","《跌荡一百年》","《历代经济变革得失》","《大败局》"]'><img src="/imgs/market/wxb.png"></a></li>
+                        <li><a href="jf" data-name="简 昉  为牛娃点赞" data-content='["创办《Channel V》","曾任香港南华传媒上海公司总经理","艾瑞网专家","2011年度中国广告行业杰出女性奖","《上班这点事》","《谁来一起午餐》","《旭茉JESSICA》"]'><img src="/imgs/market/jf.png"></a></li>
+                        <li><a href="mdq" data-name="毛大庆  为牛娃点赞" data-content='["优客工场创业投资公司创始人、董事长","2005年北京房地产影响力人物","2009年度贡献房山杰出人物","2011年度领袖地产领袖人物","2014年度公益人物","英国皇家测量师协会荣誉会员","中科院MBA中心客座教授","《城市人居生活质量评价理论研究》","《一口气读懂新加坡》","《北京绿皮书》"]'><img src="/imgs/market/mdq.png"></a></li>
+                        <li><a href="lcc" data-name="刘成城  为牛娃点赞" data-content='["36氪创始人兼CEO","民主建国会会员","亚杰商会会员","2013年被评为福布斯“30位30岁以下创业者”"]'><img src="/imgs/market/lcc.png"></a></li>
+                        <li><a href="lht" data-name="刘洪涛  为牛娃点赞" data-content='["北京开心麻花娱乐文化传媒有限公司创始人","曾任中国新闻社记者、编辑","曾任任中国新闻社影视部主任","发起并创立了中新社视频新闻业务","2010年加盟民营话剧机构“开心麻花”"]'><img src="/imgs/market/lht.png"></a></li>
+                        <li><a href="ls" data-name="刘硕  为牛娃点赞" data-content='["阳光媒体集团签约主持人","曾任旅游卫视主持人","《天下女人》节目主持人","《天呐女人》节目主持人","《无间访》主持人","《看今天》主持人","《第一时尚》主播"]'><img src="/imgs/market/ls.png"></a></li>
+                      <li><a href="wlq" data-name="王留全 为牛娃点赞" data-content='["赞赏社交出版平台创始人","前“蓝狮子”总编辑","出版《阿里巴巴：天下没有难做的生意》","出版《为什么中国人勤劳而不富有》","出版《下一个倒下的会不会是华为》","出版《历代经济变革得失》"]'><img src="/imgs/market/wlq.png"></a></li>
+                        <li><a href="qf" data-name="齐放  为牛娃点赞" data-content='["智联招聘校园招聘执行总监","曾在联合国儿童基金会工作","智联招聘高级售前经理","校园事业部执行总监"]'><img src="/imgs/market/qf.png"></a></li>
+                           <!-- <li><a href="tqy" data-name="田庆友  为牛娃点赞" data-content='[ "上海丰会投资创始人","曾操盘伦敦、纽约、香港多只投资基金","曾参与创立与操作管理香港共同投资基金","曾任美国怀德证券中国区首席代表","天使投资人","《局外商道》","《合伙人》","《操盘手》"]'><img src="/imgs/market/tqy.jpg"></a></li>
+                          <li><a href="lm" data-name="刘民  为牛娃点赞" data-content='[ "上盖凡科技创始人兼CEO"]'><img src="/imgs/market/lm.jpg"></a></li>
+                          <li><a href="wqh" data-name="吴霁虹  为牛娃点赞" data-content='["RCM董事长","“强基因”理论创建人","原美国伯克利加州大学中美战略合作中心主任","北京大学访问教授","《 下一步:中国企业全球化路径》","《Doing Business in China》 ","《众创时代：互联网+、物联网时代企业创新完整解决方案》"]'><img src="/imgs/market/wqh.jpg"></a></li>
+                        <li><a href="lzd" data-name="刘振东  为牛娃点赞" data-content='[ "天津德胜投资集团有限公司总经理"]'><img src="/imgs/market/lzd.jpg"></a></li>
+                         <li><a href="wmx" data-name="王明轩  为牛娃点赞" data-content='[  "国广星空CEO","传统电视与新媒体跨界人士 ","
+                        先后供职于大连电视台、光线传媒、银汉传播，以及新媒体领域的永新视博、闪动科技","《即将消亡的电视》","《假如腾讯也做电视》","《给智能电视泼点冷水》"]'><img src="/imgs/market/wmx.jpg"></a></li> 
+                         <li><a href="wy" data-name="王艳  为牛娃点赞" data-content='["著名京剧演员","天津京剧院国家一级演员","天津市政协委员","天津戏剧家协会理事","天津市第十一届青联委员","《杨门女将》","《白蛇传》","《谢瑶环》"]'><img src="/imgs/market/wy.jpg"></a></li> 
+                         <li><a href="cyf" data-name="柴云飞  为牛娃点赞" data-content='["坚持卓越投资管理有限公司合伙人","哥伦比亚大学博士","坚持卓越投资管理有限公司管理合伙人","曾参与创立乐淘网、比邻网、友邻网等互联网项目","现投资多家移动互联网公司，投资领域包括运动健康、020、智能硬件、电商等"]'><img src="/imgs/market/cyf.jpg"></a></li>   
+                         <li><a href="sb" data-name="孙斌  为牛娃点赞" data-content='["国瑞税务集团创始人兼CEO"]'><img src="/imgs/market/sb.jpg"></a></li>
+                         <li><a href="zbh" data-name="张佰华  为牛娃点赞" data-content='["黑龙江中慧地热有限公司副董事长","哈尔滨工业大学电子技术专业","现任黑龙江中惠地热股份有限公司副董事长、总经理","中惠地热被国家发改委列为“国家高新技术产业化示范工程项目”"]'><img src="/imgs/market/zbh.jpg"></a></li>
+                          <li><a href="ryf" data-name="任岩峰  为牛娃点赞" data-content='["看准网联合创始人","国家高级心理咨询师","2010年创立智联瑞博企业管理公司","2013年创立君泽道咨询公司","2014年与赵鹏联合创办看准网"]'><img src="/imgs/market/zbh.jpg"></a></li> -->
+                    </ul>
+                </div>
+                <div class="slide-right"><a href="javascript:;" class="sicon srighticon"></a></div>
+            </div>
+            <div id="leader" name="leader"></div>
+        </div>
+        <div class="playbox" id="playbox">
+            <img src="/imgs/market/psyimg.png" id="psyimg"/>
+        </div>
+        <div class="tjname">潘石屹  为牛娃点赞</div>
+        <div class="tjreferral">
+            <p>SOHO中国有限公司董事长</p><p>创办北京中鸿天房地产有限公司</p><p>创建北京万通实业股份有限公司</p><p>创办SOHO中国公司</p><p>“中国房地产十大功勋人物”奖</p><p>“亚洲企业领袖协会”会员</p><p>《既要成功 也要成仁-潘石屹的八堂公开课》</p><p>《屹见：潘石屹聊聊我们这个时代》</p><p>《投诉潘石屹、批判现代城》</p>
+        </div>
+    </div>
+</div>
+   
+<div class="adwrap">
+    <div class="adbody"></div>
+</div>
+<div class="investwrap">
+    <div class="investbody">
+        <ul>
+            <li class="acc">
+                <h3>超短期</h3>
+                <div class="subheader">100元起投，新手体验 </div>
+                <div class="incomebox clearfix">
+                    <div class="bar">
+                        <p>年化利率</p>
+                        <p style="color:#424352;margin-top:8px;"><em style="font-size:30px;color:#fb4b4b">14</em>%</p>
+                    </div>
+                    <div class="bar" style="width:56px;float:right">
+                         <p style=" ">投资期限</p>
+                        <p style="color:#424352;margin-top:8px;"><em style="font-size:30px;color:#424352">15</em>天</p>
+                    </div>
+                </div>
+                <a href="https://i-niuwa.com/newclient" target="_blank" class="bbtn" data-ca='go-newclient-market1'>查看新牛专享</a>
+            </li>
+             <li>
+                <h3>更省心</h3>
+                <div class="subheader">1000元起投，躺着赚钱 </div>
+                <div class="incomebox clearfix">
+                    <div class="bar">
+                        <p>年化利率</p>
+                        <p style="color:#424352;margin-top:8px;white-space:nowrap;"><em style="font-size:30px;color:#fb4b4b;white-space:nowrap;">8-12</em>%</p>
+                    </div>
+                    <div class="bar" style="width:66px;float:right">
+                         <p style=" ">投资期限</p>
+                        <p style="color:#424352;margin-top:8px;white-space:nowrap;"><em style="font-size:30px;color:#424352;white-space:nowrap;">3-12</em>月</p>
+                    </div>
+                </div>
+                <a href="https://i-niuwa.com/plan" target="_blank" class="bbtn" data-ca='go-plan-market1'>查看懒牛计划</a>                 
+             </li>
+              <li>
+                <h3>最灵活</h3>
+                <div class="subheader">100元起投，灵活转让</div>
+                <div class="incomebox clearfix">
+                    <div class="bar">
+                        <p>年化利率</p>
+                        <p style="color:#424352;margin-top:8px;white-space:nowrap;"><em style="font-size:30px;color:#fb4b4b;white-space:nowrap;">6-12</em>%</p>
+                    </div>
+                    <div class="bar" style="width:66px;float:right">
+                         <p style=" ">投资期限</p>
+                        <p style="color:#424352;margin-top:8px;white-space:nowrap;  "><em style="font-size:30px;color:#424352;white-space:nowrap;  ">1-12</em>月</p>
+                    </div>
+                </div>
+                <a href="https://i-niuwa.com/featured" target="_blank" class="bbtn" data-ca='go-featured-market1'>查看智牛精选</a>
+              </li>
+        </ul>
+    </div>
+</div>
+<div class="footermarket" style="height:80px;width:100%;background:#3c4650;">
+    <div style="margin:0 auto;width:1200px;height:80px;background:#3c4650;">
+        <p style="color:#9b9b9b;font-size:12px;text-align: center;padding-top:25px;">版权所有©上海牛娃互联网金融信息服务有限公司    沪ICP备15002518号</p>
+        <p style="color:#9b9b9b;font-size:12px;text-align: center;">Shanghai Niuwa Internet Financial Information Service Co.,Ltd.</p>
+    </div>
+</div>
+</body>
+<script>
+    var domain = '<%= dom%>';
+    if(top != self){  
+        location.href = "about:blank";
+    }
+</script>
+<script src="js/libs/jquery-1.8.3.min.js"></script>
+<script src="js/libs/jquery.sha256.min.js"></script>
+<script type="text/javascript" src="/js/ckplayer/ckplayer.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/libs/jquery.iDialog.js"></script>
+<script type="text/javascript" src="js/libs/ma.js"></script>
+
+<!--[if lt IE 8 ]><script type="text/javascript" src="js/libs/json2.min.js"></script><![endif]-->
+<!-- build:js /js/marketnew.min.js -->
+<script type="text/javascript" src='/js/jQuery-jcMarquee.js'></script>
+<script  src="/js/marketnew.js"></script>
+<!-- /build -->
+<!-- Google Tag Manager -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+
+<!-- End Google Tag Manager -->
+</html>

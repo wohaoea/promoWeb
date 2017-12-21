@@ -1,0 +1,105 @@
+<div id="share">
+	<%if (iswxOS){%>
+	<div class="wxtips"></div>
+	<%}else{%>
+	<div class="shareapp">
+		<div class="shareone"><img src="/imgs/ceo/qqzone.png"  data='qq'/></div>
+		<div class="shareone"><img src="/imgs/ceo/weibo.png" data='wb'/></div>
+	</div>
+	<%}%>
+	<div class="wxtipsfixbody"></div>
+</div>
+<script>
+    var domain = '<%= dom%>';
+    var h5domain = '<%= h5domain%>';
+    var promodomain = '<%= promodomain%>';
+    var shareid ='<%= cusid%>';
+</script>
+<div id="footer">
+	<div class="myactive"><a href="/ceo/ceoapply" onclick="window.location.href='/ceo/ceoapply'">我要参与</a></div>
+	<div class="myshare"><a href="javascript:;">我要分享</a></div>
+</div>
+</body>
+<!-- Google Tag Manager -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+
+<!-- End Google Tag Manager -->
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.sha256.min.js"></script>
+<script src="/js/libs/iscroll/iscroll-probe.js"></script>
+<script src="/js/libs/iscroll/iscroll-load-data.js"></script>
+<script src="/js/libs/palert.js"></script>
+<script src="/js/libs/ma.js" defer async=true></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+	$(".myshare").click(function(){
+		$("#share").show();
+	});
+	$(".shareone,.wxtipsfixbody").click(function(){
+		$("#share").hide();
+	})
+    wx.config({
+        debug: false,
+        appId: 'wx1c31a58272c4dd10', 
+        timestamp:'<%=timespan%>' , 
+        nonceStr: '<%=noncestr%>', 
+        signature: '<%=signature%>',
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ']
+    });
+
+    wx.ready(function(){
+
+        wx.onMenuShareTimeline({
+        	imgUrl: promodomain+'imgs/ceo/shareimg.jpg', // 分享图标
+            title: '参与潘石屹一日助理评选，到牛人身边，和成功站在一起！',
+            desc: '谁将成为潘石屹一日助理最终人选，你来决定！投票送20元红包！', 
+            link: window.location.href+'/?ceopcode='+shareid
+        });
+
+        wx.onMenuShareAppMessage({
+        	imgUrl: promodomain+'imgs/ceo/shareimg.jpg', // 分享图标
+            title: '参与潘石屹一日助理评选，到牛人身边，和成功站在一起！', 
+            desc: '谁将成为潘石屹一日助理最终人选，你来决定！投票送20元红包！', 
+            link: window.location.href+'/?ceopcode='+shareid
+        });
+
+        wx.onMenuShareQQ({
+        	imgUrl: promodomain+'imgs/ceo/shareimg.jpg', // 分享图标
+            title: '参与潘石屹一日助理评选，到牛人身边，和成功站在一起！', 
+            desc: '谁将成为潘石屹一日助理最终人选，你来决定！投票送20元红包！', 
+            link: window.location.href+'/?ceopcode='+shareid
+        });
+       
+    });
+    var shareLink = {
+			sharesinastring: "",
+			title: "参与潘石屹一日助理评选，到牛人身边，和成功站在一起！",
+			summary:"谁将成为潘石屹一日助理最终人选，你来决定！投票送20元红包！",
+			desc:"谁将成为潘石屹一日助理最终人选，你来决定！投票送20元红包！",
+			wbtitle: "参与潘石屹一日助理评选，到牛人身边，和成功站在一起！投票送20元红包！",
+			pic:promodomain+'imgs/ceo/shareimg.jpg',
+			share: function() {
+				window.open(this.sharesinastring, 'newwindow');
+			}
+		};
+		$(".shareapp img").click(function(e) {
+			e.stopPropagation();
+			var that = $(this);
+			var url = window.location.href+'/?ceopcode='+shareid;
+			//var url = 'http://m.i-niuwa.com/?ceopcode='+shareid;
+			if (that.attr("data") == "wx") {
+
+			} else if (that.attr("data") == "wb") {
+				shareLink.sharesinastring = 'http://service.weibo.com/share/share.php?title=' + shareLink.wbtitle + '&url=' + url + '&content=utf-8'+'&pic=' + encodeURIComponent(shareLink.pic);;
+				shareLink.share();
+			} else if (that.attr("data") == "qq") {
+				shareLink.sharesinastring = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title=' + encodeURIComponent(shareLink.title) + '&url=' + encodeURIComponent(url) + '&summary=' + encodeURIComponent(shareLink.summary)+'&desc=' + encodeURIComponent(shareLink.desc)+'&pics=' + encodeURIComponent(shareLink.pic);
+				shareLink.share();
+			}
+
+		});
+</script>

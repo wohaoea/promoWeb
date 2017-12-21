@@ -1,0 +1,279 @@
+﻿*
+{
+    padding: 0px;
+    margin: 0px;
+}
+h1, h2, h3, h4, h5, h6
+{
+    padding: 0px;
+    margin: 0px;
+}
+img
+{
+    border: none;
+}
+dl, dt
+{
+    padding: 0px;
+    margin: 0px;
+}
+a
+{
+    text-decoration: none;
+    font-family: 微软雅黑;
+}
+.cl
+{
+    clear: both;
+    font-family: 微软雅黑;
+}
+.fl
+{
+    float: left;
+    font-family: 微软雅黑;
+}
+.fr
+{
+    float: right;
+    font-family: 微软雅黑;
+}
+ul, li
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 微软雅黑;
+}
+body{font:14px/22px "微软雅黑","宋体",Arial,'\5b8b\4f53',Helvetica,sans-serif;color:#666; overflow:auto;background:#fff}
+a{color:#666;text-decoration:none; cursor:pointer; outline:none;}
+.clearfix:before,
+
+.clearfix:after {
+
+    display: table;
+
+    line-height: 0;
+
+    content: "";
+
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+.yg-wrap{
+    width: 1000px;
+    margin: 0 auto;
+}
+.yg-banner{
+    height: 460px;
+    background: url(../imgs/m4/yangguang/banner.jpg) no-repeat top center;
+}
+.yg-meat{
+    height: 160px;
+    background: #3c465b;
+}
+.yg-meat-list{
+    padding-left: 20px;
+    padding-top: 48px;
+}
+.yg-meat-list li{
+    float: left;
+    width: 170px;
+    padding-right: 70px;
+}
+.yg-meat-list li h1{
+    font-weight: normal;
+    color: #fff;
+    font-size: 24px;
+}
+.yg-meat-list li h2{
+    font-weight: normal;
+    color: #ffe690;
+    font-size: 24px;
+    padding-top: 16px;
+}
+.yg-img1{
+    padding: 34px 0 0 40px;
+}
+.yg-h1{
+    padding: 38px 0;
+    text-align: center;
+    font-size: 24px;
+    color: #3c465b;
+}
+.rhlp-list{
+    margin-left: -30px;
+}
+.rhlp-list li{
+    float: left;
+    margin-left: 30px;
+    width: 243px;
+    height: 100px;
+    padding: 200px 18px 0 39px;
+    color: #6a6d75;
+}
+.rhlp-list li.item1{
+    background: url(../imgs/m4/yangguang/img2.jpg) no-repeat;
+}
+.rhlp-list li.item2{
+    background: url(../imgs/m4/yangguang/img3.jpg) no-repeat;
+}
+.rhlp-list li.item3{
+    background: url(../imgs/m4/yangguang/img4.jpg) no-repeat;
+}
+.cailiao{
+    padding: 20px;
+    color: #3c465b;
+    margin-bottom: 15px;
+}
+.cailiao h1{
+    font-size: 18px;
+    font-weight: normal;
+    padding-bottom: 20px;
+}
+.cailiao p{
+    line-height: 26px;
+}
+.yg-zslist{
+    padding-left: 66px;
+    padding-bottom: 40px;
+}
+.yg-zslist li{
+    float: left;
+    width: 293px;
+    margin-left: 95px;
+}
+.yg-zslist li img{
+    cursor: pointer;
+}
+.close-icon{
+    display: block;
+    float: right;
+    width: 49px;
+    height: 49px;
+    background: url(../imgs/m4/yangguang/close_icon.png) 0 0;
+    cursor: pointer;
+}
+.close-icon:hover{
+    background: url(../imgs/m4/yangguang/close_icon.png) 0 -68px;
+}
+
+/*右侧快捷导航*/
+.shortcut{
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    width: 50px;
+    height: 270px;
+    z-index: 99999;
+}
+.shortcut1{
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    width: 50px;
+    height: 70px;
+    z-index: 99999;
+}
+.shortcut a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: url(../imgs/floaticon.png);
+
+}
+.shortcut .hotlinebox{
+    display: none;
+    position: absolute;
+    left: -160px;
+    bottom: 0px;
+    width:130px;
+    height: 50px;
+    padding-left: 30px;
+    line-height: 50px;
+    font-size: 16px;
+    color: #646464;
+    background: url(../imgs/floaticon_bg.png) 0 0;
+}
+.shortcut .weixinbox{
+    display: none;
+    position: absolute;
+    left: -160px;
+    bottom: 60px;
+    width: 148px;
+    height: 138px;
+    padding: 12px 0 0 12px;
+    background: url(../imgs/floaticon_bg.png) 0 -57px;
+}
+.shortcut a.gotop{
+    background-position: 0 0;
+}
+.shortcut a.gotop:hover{
+    background-position: -68px 0;
+}
+
+.shortcut a.weibo{
+    background-position: 0 -55px;
+}
+.shortcut a.weibo:hover{
+    background-position: -68px -55px;
+}
+.shortcut a.weixin{
+    background-position: 0 -110px;
+}
+.shortcut a.weixin:hover{
+    background-position: -68px -110px;
+}
+.shortcut a.qqmsg{
+    background-position: 0 -165px;
+}
+.shortcut a.qqmsg:hover{
+    background-position: -68px -165px;
+}
+.shortcut a.hotline{
+    background-position: 0 -220px;
+}
+.shortcut a.hotline:hover{
+    background-position: -66px -220px;
+}
+
+.shade{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    opacity: 0.5;
+    display:none;
+}
+.notice{
+    position: fixed;
+    width: 1000px;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 5% auto 0;
+    box-sizing: border-box;
+    max-height: 80%;
+    background-color: #fff;
+    padding: 40px 41px;
+    color: #6d6d6d;
+    z-index: 1000;
+    display: none;
+    overflow:auto;
+}
+.notice .title{
+    font-size: 16px;
+    line-height: 30px;
+    color: #333;
+}

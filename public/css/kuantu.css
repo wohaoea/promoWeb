@@ -1,0 +1,210 @@
+body{
+    font-size: .4rem;
+}
+.BG1{
+    background: #ff534f;
+}
+a.link1{
+    color: #fff57d;
+}
+.my-page{
+    width: 100%;
+    position: relative;
+}
+
+.reg-box{
+    margin: 0 1rem;
+}
+.reg-box li{
+    height: 1.2rem;
+    margin-bottom: .4rem;
+}
+.reg-box li p{
+    float: left;
+    display: block;
+    width: 100%;
+    height: 1.2rem;
+    background: #fff;
+    border-radius: 10px;
+}
+.reg-box li p.w380{
+    width: 5.066666666666666rem;
+}
+.reg-box li cite{
+    float: left;
+    display: block;
+    width: .48rem;
+    padding: .30666666666666664rem .4rem 0 .4rem;
+}
+.reg-box li .verif-icon{
+    padding-top: .4rem;
+}
+.reg-box li .txt1,.reg-box li .txt2,.reg-box li .txt3,.reg-box li .txt4{
+    border: none;
+    height: 1.2rem;
+    padding-left: 1.3333333333333333rem;
+    width: 6.4rem;
+    line-height: .5733333333333334rem;
+    font-size: .4rem;
+    background: url(../imgs/m4/kuantu/user_icon.png) .4533333333333333rem .30666666666666664rem no-repeat;
+
+}
+.reg-box li .txt2{
+    background: url(../imgs/m4/kuantu/pwd_icon.png) .4533333333333333rem .30666666666666664rem no-repeat;
+}
+.reg-box li .txt3{
+    width: 3.6rem;
+    background: url(../imgs/m4/kuantu/verif_icon.png) .4533333333333333rem .41333333333333333rem no-repeat;
+}
+
+.reg-box li .txt4{
+    width: 3.6rem;
+    background: url(/imgs/tuxing.png) .4533333333333333rem .41333333333333333rem no-repeat;
+}
+.send-node,.send-node-gray{
+    float: left;
+    display: block;
+    margin-left: .26666666666666666rem;
+    width: 2.6666666666666665rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    background: #ffd232;
+    text-align: center;
+    color: #fff;
+    font-size: .4rem;
+    border-radius: 10px;
+}
+.send-node-gray{
+    background: #c1bcbc;
+}
+.checkbox{
+    display: none;
+}
+.reg-box .form-meat{
+    float: left;
+    display: block;
+    font-size: .36rem;
+    color: #fff;
+}
+.form-btn{
+    display: block;
+    border: none;
+    width: 8rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    background: #ffd801;
+    color: #fff;
+    text-align: center;
+    font-size: .4rem;
+    border-radius: 10px;
+}
+.checkicon{
+    float: left;
+    display:block;
+    width: .4rem;
+    height: .4rem;
+    margin: .059rem .2rem 0 0;
+    background: url(../imgs/m4/kuantu/checkbox.png);
+}
+.checkboxactive{
+    background: url(../imgs/m4/kuantu/checkboxactive.png);
+    background-size: .4rem .4rem;
+}
+
+/*注册回调*/
+.niuwa-box,.kt-box{
+    width: 8rem;
+    margin: 1.8133333333333332rem auto 0;
+    color: #fff;
+}
+.kt-box{
+    margin-top: .8533333333333334rem;
+}
+.niuwa-hongbao{
+    width: 8rem;
+    height: 3.08rem;
+    background: url(../imgs/m4/kuantu/hongbaobg.png) no-repeat;
+    background-size: 8rem 3.08rem;
+    text-align: center;
+
+}
+.niuwa-hongbao h1{
+    font-size: .48rem;
+    padding-top: .64rem;
+    font-weight: normal;
+}
+.niuwa-hongbao p{
+    font-size: .68rem;
+    padding-top: .13333333333333333rem;
+}
+.niuwa-hongbao span{
+    font-size: .96rem;
+}
+a.niuwa-hongbao-btn,a.kt-hongbao-btn{
+    display: block;
+    width: 100%;
+    height: 1.2rem;
+    margin-top: .32rem;
+    line-height: 1.2rem;
+    text-align: center;
+    font-size: .48rem;
+    background: #ff534f;
+    border-radius: 10px;
+    color: #fff;
+}
+a.kt-hongbao-btn{
+    background: #005bab;
+    margin-top: .4rem;
+}
+.niuwa-shouyi{
+    height: .72rem;
+    font-size: .48rem;
+    color: #000;
+    text-align: center;
+    padding: .13333333333333333rem 0;
+}
+.kt-hongbao{
+    width: 6rem;
+    height: 3.066666666666667rem;
+    padding: 0 0 0 2rem;
+    background: url(../imgs/m4/kuantu/kthongbaobg.png) no-repeat;
+    background-size: 8rem 3.066666666666667rem;
+    text-align: left;
+}
+.kt-hongbao h1{
+    font-weight: normal;
+    padding-top: .64rem;
+}
+.kt-hongbao h1 span{
+    font-size: .96rem;
+}
+/*活动细则*/
+/*
+.rule-head{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1.2rem;
+    background: #fb4b4b;
+    text-align: center;
+    color: #fff;
+    font-size: .48rem;
+    line-height: 1.2rem;
+}
+a.callback{
+    position: absolute;
+    left: .32rem;
+    top: 0;
+    display: block;
+    width: 1rem;
+    height: 1.2rem;
+    color: #fff;
+}
+
+.rule-content{
+    margin: 1.8133333333333332rem .4rem .5333333333333333rem .4rem;
+    color: #666;
+    font-size: .37333333333333335rem;
+    line-height: 200%;
+}*/

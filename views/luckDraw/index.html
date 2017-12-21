@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>幸运大抽奖</title>
+    <!-- build:css /css/luckDraw.min.css -->
+    <link rel="stylesheet" type="text/css" href="css/luckDraw.css">
+    <!-- /build -->
+    <style>
+        <% if(isEnd){ %>
+            .contain{
+                background-image: url('../imgs/luckDraw/content.png')!important;
+            }
+        <% } %>
+        .tip{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: rgba(0, 0, 0, .6);
+            font-size: .28rem;
+            width: 3.6rem;
+            height: 2rem;
+            z-index: 999;
+            text-align: center;
+            color: #fff;
+            line-height: 2rem;
+            border-radius: .1rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="tip">
+        服务异常，请联系客服
+    </p>
+    <input type="hidden" value="<%=chance%>" class="userchance">
+    <div class="luckDraw clearfix">
+        <!--头部部分开始-->
+        <div class="title">
+            <img src="/imgs/luckDraw/title.png" alt="">
+        </div>
+        <div class="chance clearfix" style="line-height:.34rem">
+            <div class="fl"><span>免费抽奖机会：</span><span class="chanceNum"><%=chance%>次</span></div>
+            <div class="fr">
+                <span>剩余积分： </span>
+                <span class="pointNum"><%=point%></span>
+            </div>
+        </div>
+        <!--头部部分结束-->
+        <!--幸运大转盘部分开始-->
+        <div class="table clearfix">
+            <ul class="big">
+                <li class="box contain">
+                    <div class="hide"></div>
+                </li>
+                <li class="box contain">
+                    <div class="hide"></div>
+                </li>
+                <li class="box contain">
+                    <div class="hide"></div>
+                </li>
+                <li class="box contain">
+                    <div class="hide"></div>
+                </li>
+                <% if(chance == '0'){ %>
+                    <input type="button" class="box start">
+                <% }else{ %>
+                    <input type="button" class="box start" style="background-image:url('/imgs/luckDraw/Immediately.jpg')">
+                <% } %>
+                <li class="box contain">
+                    <div class="hide"></div>
+                </li>
+                <li class="box contain">
+                    <div class="hide"></div>
+                </li>
+                <li class="box contain">
+                    <div class="hide"></div>
+                </li>
+                <li class="box contain">
+                    <div class="hide"></div>
+                </li>
+            </ul>
+            <div class="footer clearfix">
+                <%if(isLogin){%>
+                    <div class="record fl" onclick="window.location.href='/luckDrawAward'">获奖记录</div>
+                <%}else{%>
+                    <div class="record fl" onclick="window.location.href='toapp://login'">获奖记录</div>
+                <%}%>
+                <button class="rules fr">活动规则</button>
+            </div>
+        </div>
+        <!--幸运大转盘部分结束-->
+        <!--中奖名单部分开始-->
+        <div class="lucky_name">
+            <span class="name">中奖名单</span>
+            <ul class="winner_info">
+            </ul>
+        </div>
+        <!--中奖名单部分结束-->
+        <!--遮罩层部分开始-->
+        <!--活动规则弹出框-->
+        <div id="rules" class="mask hidden">
+            <div class="pop-up">
+                <div class="close"></div>
+                <div class="mt64">
+                    <h1>活动规则</h1>
+                    <ul class="active-rules">
+                        <li class="rules-details">1.每次抽奖消耗1次抽奖机会或300积分。</li>
+                        <li class="rules-details">2.抽奖机会获得：注册牛呗可获得1次机会，每次借款成功可获得1次机会。</li>
+                        <li class="rules-details">3.抽中奖品可在【获奖记录】中查看</li>
+                        <li class="rules-details">4.奖品领取：领取成功将在1-3个工作日内发放。</li>
+                        <li class="rules-details">①流量包：抽中后可在获奖记录中直接领取</li>
+                        <li class="rules-details">②现金券：抽中后可在获奖记录中直接领取，领取成功在奖励管理查收现金券。</li>
+                        <li class="rules-details">③免利息、免本金：每次正常还清借款可领取一次奖品。（逾期还款无法领取），领取奖品时需选择已还清借款编号，根据借款编号发放相应奖品，领取成功在奖励管理查收现金券。</li>
+                        <li class="rules-details">④免还30天利息：借款期限大于30天免还30天利息；借款期限小于30天免还实际借款天数的利息（包含提前还款）。</li>
+                        <li class="rules-details">5.本次活动的最终解释权归牛娃金服所有。</li>
+                    </ul>
+                    <p class="zhushi" style="margin-bottom:0rem">注: 1.本次活动的本金是指借款实际到账金额。</p>
+                    <p class="zhushi" style="margin-top:0rem;text-indent:1.5em;">2.本活动与苹果公司无关。</p>
+                </div>   
+            </div>
+        </div>
+        <!--获得奖品弹出框-->
+        <div id="prize" class="mask hidden">
+            <div class="pop-up">
+                <div class="close"></div>
+                <h1 class="Congratulations">恭喜中奖啦～</h1>
+                <p id="prizeTip"></p>
+                <p class="mgb">请到获奖记录中领取奖励</p>
+                <div class="gift">
+                    <img src="/imgs/luckDraw/alert1.png" alt="">
+                </div>
+                <input type="button" value="朕知道了">
+            </div>
+        </div>
+        <!--谢谢参与弹出框-->
+        <div id="thanks" class="mask hidden">
+
+            <div class="pop-up">
+                <div class="close"></div>
+                <h1 class="Congratulations">没中奖～</h1>
+                <p>别灰心再来一次吧！</p>
+                <div class="thanks">
+                    <img src="/imgs/luckDraw/alert4.png" alt="">
+                </div>
+                <input type="button" value="朕知道了">
+            </div>
+        </div>
+        <!-- 抽中精美水杯 -->
+        <div id="cup" class="mask hidden">
+            <div class="pop-up "  style="padding-top: .9rem">
+                <div class="close"></div>
+                <h1 class="Congratulations" style="margin-bottom: .3rem">恭喜中奖啦～</h1>
+                <p style="margin-bottom: .1rem">您获得了精美水杯一个</p>
+                <p style="font-size:.26rem;margin-bottom: .06rem">本奖品由返利网提供</p>
+                <p style="font-size:.26rem;margin-bottom: .06rem">如有疑问请联系返利网客服</p>
+                <p style="font-size:.26rem;margin-bottom: .06rem" id="usercode">兑换码</p>
+                <div class="gift" style="margin-top: -1rem;background: url('/imgs/luckDraw/alert1.png') 0 0 no-repeat;background-size:100% 100%;overflow:hidden">
+                </div>
+                <p style="font-size:.22rem;margin-bottom: .06rem;color: #ffb7b8;margin-top: -.55rem">*每位用户只能领一份</p>
+                <p style="font-size:.22rem;margin-bottom: .06rem;color: #ffb7b8">领取时间截止至11月30号</p>
+                <input type="button" value="立即领取" onclick="window.location.href='http://passport.fanli.com/mark?c=j8zi8s1hhf'">
+            </div>
+        </div>
+
+        <!--抽奖机会用完-->
+        <div id="nochance" class="mask hidden">
+            <div class="pop-up">
+                <div class="close">
+                </div>
+                <h1 class="Congratulations">抽奖机会用完～</h1>
+                <p>借款成功可免费获得抽奖机会</p>
+                <p>签到可获得积分（300积分抽一次）</p>
+                <div class="nochance">
+                    <img src="/imgs/luckDraw/alert2.png" alt="">
+                </div>
+                <input type="button" value="朕知道了">
+            </div>
+        </div>
+
+        <!--遮罩层部分结束-->
+        <div class="bigshadow hidden"></div>
+    </div>
+
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+    <script src="/js/libs/rem.js"></script>
+    <!-- build:js /js/luckDraw.min.js -->
+    <script src="/js/luckDraw.js"></script>
+    <!-- /build -->
+</body>
+
+</html>

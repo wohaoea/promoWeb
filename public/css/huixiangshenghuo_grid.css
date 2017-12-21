@@ -1,0 +1,104 @@
+/*body{
+margin: 0;
+padding: 0;
+min-width: 1000px;
+background: #F2F4F6;
+}*/
+
+.shop+.active{
+	cursor: pointer;
+}
+
+.wapp .active{
+	cursor: pointer;
+}
+
+.wappitem{
+float: left;
+background-color: #fff;
+width: 244px;
+height: 330px;
+margin-top: 10px;
+margin-left: 8px;
+}
+
+.wappimg {
+text-align: center;
+margin-top: 18px;
+position: relative;
+}
+.wappimg>img{
+width: 198px;
+height: 198px;
+}
+
+.wappname {
+font-weight: bold;
+color: #000;
+text-align: center;
+margin-top: 10px;
+}
+
+.wappopr{
+width: 160px;
+height: 40px;
+line-height: 40px;
+border: solid 1px #cdcdcd;
+text-align: center;
+margin: auto;
+margin-top: 15px;
+color:#AFAFAF;
+}
+
+.active>.wappopr{
+border: solid 1px #FF4B4B;
+color: #FF4B4B;
+cursor: pointer;
+}
+
+.solerout {
+background: url("../imgs/solerout.png");
+height: 85px;
+width: 85px;
+position: absolute;
+right: 0px;
+top: -18px;
+}
+
+.wappimg>img{
+/* -webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter: gray;
+filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+filter: grayscale(100%); */
+border: solid 1px #DCDCDC;
+}
+/* .active>.wappimg>img {
+filter: grayscale(0);
+-webkit-filter: grayscale(0);
+-moz-filter: grayscale(0);
+-o-filter: grayscale(0);
+-ms-filter: grayscale(0);
+} */
+.active>.wappimg>.solerout {
+display: none;
+}
+
+.expiration {
+text-align: center;
+color: #cdcdcd;
+font-size: 12px;
+margin-top: 10px;
+display: none;
+}
+
+.active>.expiration{
+display: block;
+}
+.wapp{
+    margin-left: -9px;
+	width: 1010px;
+	height: auto;
+}

@@ -1,0 +1,53 @@
+<%if(!user){%>
+<div class="leftbar">
+    <ul>
+      <li style="height:60px;line-height:70px" class=""><div class="niu"></div>x0</li>
+      <li class=""><div class="wa"></div>x0</li>
+      <li class=""><div class="hu"></div>x0</li>
+      <li class=""><div class="lian"></div>x0</li>
+      <li class=""><div class="wang"></div>x0</li>
+      <li class=""><div class="jin"></div>x0</li>
+      <li class="" style="height:60px;line-height:50px"><div class="rong"></div>x0</li>
+    </ul>
+  </div>
+  <div class="rightbar clearfix">
+     <ul>
+        <li class="exnot1" data-val="3"></li>
+        <li class="exnot3" data-val="2"></li>
+        <li class="exnot4" data-val="4"></li> 
+        <li class="exnot2" data-val="7"></li>
+        <li class="exnot5" data-val="1"></li>
+        <li class="exnot6" data-val="6"></li>
+        <li class="exnot7" data-val="5"></li>
+        <li class="exnot8" data-val="8"></li>
+        <li class="exnot9" data-val="9"></li>
+        <li class="exnot10" data-val="10"></li>
+      </ul>
+ </div>
+ <%}else{%>
+  <div class="leftbar">
+    <ul>
+      <li style="height:60px;line-height:60px" class="<%if(prizeList[0].count!=0){%>acthas<%}%>"><div class="niu"></div>x<%=prizeList[0].count%></li>
+      <li class="<%if(prizeList[1].count!=0){%>acthas<%}%>"><div class="wa"></div>x<%=prizeList[1].count%></li>
+      <li class="<%if(prizeList[2].count!=0){%>acthas<%}%>"><div class="hu"></div>x<%=prizeList[2].count%></li>
+      <li class="<%if(prizeList[3].count!=0){%>acthas<%}%>"><div class="lian"></div>x<%=prizeList[3].count%></li>
+      <li class="<%if(prizeList[4].count!=0){%>acthas<%}%>"><div class="wang"></div>x<%=prizeList[4].count%></li>
+      <li class="<%if(prizeList[5].count!=0){%>acthas<%}%>"><div class="jin"></div>x<%=prizeList[5].count%></li>
+      <li class="<%if(prizeList[6].count!=0){%>acthas<%}%>" style="height:60px;line-height:50px"><div class="rong"></div>x<%=prizeList[6].count%></li>
+    </ul>
+  </div>
+  <div class="rightbar clearfix">
+     <ul>
+        <li class="<%if(prizeList[2].count==0){%>exnot1<%}else{%>ex1 exact<%}%>" data-val="3"></li>
+        <li class="<%if(prizeList[1].count==0){%>exnot3<%}else{%>ex3 exact<%}%>" data-val="2"></li>
+        <li class="<%if(prizeList[3].count==0){%>exnot4<%}else{%>ex4 exact<%}%>" data-val="4"></li>
+        <li class="<%if(prizeList[6].count==0){%>exnot2<%}else{%>ex2 exact<%}%>" data-val="7"></li>
+        <li class="<%if(prizeList[0].count==0){%>exnot5<%}else{%>ex5 exact<%}%>" data-val="1"></li>
+        <li class="<%if(prizeList[5].count==0){%>exnot6<%}else{%>ex6 exact<%}%>" data-val="6"></li>
+        <li class="<%if(prizeList[4].count==0){%>exnot7<%}else{%>ex7 exact<%}%>" data-val="5"></li>
+        <li class="<%if(prizeList[0].count==0||prizeList[1].count==0){%>exnot8<%}else{%>ex8 exact<%}%>" data-val="8"></li>
+        <li class="<%if(prizeList[0].count==0||prizeList[1].count==0||prizeList[5].count==0||prizeList[6].count==0){%>exnot9<%}else{%>ex9 exact<%}%>" data-val="9"></li>
+        <li class="<%if(prizeList[0].count==0||prizeList[1].count==0||prizeList[2].count==0||prizeList[3].count==0||prizeList[4].count==0||prizeList[5].count==0||prizeList[6].count==0){%>exnot10<%}else{%>ex10 exact<%}%>" data-val="10"></li>
+      </ul>
+ </div>
+ <%}%>

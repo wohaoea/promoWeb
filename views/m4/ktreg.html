@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>注册</title>
+    <meta name="description" content="活动细则" />
+    <meta name="keywords" content="活动细则" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css /css/kuantu.min.css -->
+    <link href="/css/niuwah5.css" rel="stylesheet" type="text/css" />
+    <link href="/css/kuantu.css" rel="stylesheet" type="text/css" />
+    <!-- /build -->
+
+    <script>
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return 'no';
+            }else{
+                return 'yes';
+            }
+        }
+        var weixing = isWeiXin();
+        var dpr,rem,scale,docEl=document.documentElement,fontEl=document.createElement("style"),metaEl=document.querySelector('meta[name="viewport"]');
+        var u = (window.navigator.appVersion.match(/android/gi),window.navigator.appVersion.match(/iphone/gi));
+        dpr=window.devicePixelRatio||1;
+        if(u && window.devicePixelRatio>=3){
+            dpr=3;
+        }else if(window.devicePixelRatio>=2){
+            dpr=2;
+        }else{
+            dpr=1;
+        };
+        rem=docEl.clientWidth*dpr/10;scale=1/dpr;metaEl.setAttribute("content","width="+dpr*docEl.clientWidth+",initial-scale="+scale+",maximum-scale="+scale+", minimum-scale="+scale+",user-scalable="+ weixing);docEl.setAttribute("data-dpr",dpr);docEl.firstElementChild.appendChild(fontEl);fontEl.innerHTML="html{font-size:"+rem+"px!important;}";
+        window.rem2px=function(a){a=parseFloat(a);return a*rem};window.px2rem=function(a){a=parseFloat(a);return a/rem};
+    </script>
+</head>
+
+<body class="BG1">
+<div class="my-page">
+    <div><img src="/imgs/m4/kuantu/ktbg.png" style="width: 10rem; height: 7.626666666666667rem;"> </div>
+    <ul class="reg-box">
+        <li>
+            <p><input type="text" name="phone" id="phone" value="" placeholder="请输入手机号" class="txt1"></p>
+        </li>
+        <li>
+            <p><input type="password" name="password" id="password" value="" placeholder="密码（可包含字母、数字或符号）" class="txt2"></p>
+        </li>
+        <li>
+            <p class="w380"><input type="text"  id="verifyiCode" value="" placeholder="图形验证码" class="txt4"></p>
+            <img  style=" cursor: pointer; margin-top: 0.12rem;float: right;width: 2.84rem; border-radius: 0.12rem;" id="refreshimg" class="fl"/>
+        </li>
+        <li>
+            <p class="w380"><input type="text" name="verifycode" id="verifyCode" value="" placeholder="短信验证码" class="txt3"></p>
+            <span class="send-node" id="sendNote">获取验证码</span>
+        </li>
+        <li style="height: .5333333333333333rem;">
+            <input type="checkbox" class="checkbox" value="1" id="tongyi" checked><b class="checkicon checkboxactive"></b><span class="form-meat">我已阅读并同意<a href="/clause" class="link1">《平台注册协议》</a>及<a href="/m4/ktrule" class="link1">活动细则</a></span>
+        </li>
+        <li>
+            <div class="form-btn" id="regBtn">注册领券</div>
+        </li>
+    </ul>
+</div>
+<!-- Google Tag Manager -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5H47RG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+
+<!-- End Google Tag Manager -->
+</body>
+</html>
+<script src="/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/js/libs/jquery.sha256.min.js"></script>
+
+<!-- build:js /js/kuantu.min.js -->
+<script src="/js/g.js"></script>
+<script type="text/javascript" src="/js/kuantu.js"></script>
+<!-- /build -->
+<script type="text/javascript">
+if(top != self){  
+        location.href = "about:blank";
+    }
+</script>

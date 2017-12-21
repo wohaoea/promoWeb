@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/js/libs/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<form id='form' name="form" action="<%= tourl%>" style="display:none" method='POST'>
+    <%for(var key in postData){%>
+    <input name="<%=key %>" id="<%=key %>" value='<%-postData[key] %>' type="hidden" />
+    <%}%>
+</form>
+</body>
+<script type="text/javascript">
+    $(function(){
+        $("#form").submit();
+    });
+</script>
+</html>

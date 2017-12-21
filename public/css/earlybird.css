@@ -1,0 +1,588 @@
+﻿body{
+	font: tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif;
+	background:url(../imgs/bg.png);
+	background-position: -2px 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	overflow-x: hidden;
+}
+
+
+#menu { position: fixed; right: 20px; top: 50%; width: 90px; margin: -160px 0 0; padding: 0; list-style-type: none; z-index: 70;}
+#menu li { margin-top: 10px; font: 14px "Microsoft Yahei";}
+#menu a { display: block; padding: 10px 0; background-color: #fff; color: #0074EA; text-align: center; text-decoration: none;}
+#menu .active a { color: #fff; background-color: rgb(0, 116, 234);}
+.section { text-align: center; font: 18px "Microsoft Yahei"; color: #fff;}
+.section1 {position:absolute;z-index:1;width: 100%;height:100%}
+.pagebg{display: none;position:absolute;left:0;top:0;z-index:1;}
+.pagebg img{}
+.border1{
+	background:#afafaf;
+	height:1px;
+	width:0;
+	left:0;
+	position: absolute;
+	z-index:100;
+	top:100px
+}
+.border2{
+	background:#afafaf;
+	height:1px;
+	width:100%;
+	left:100%;
+	position: absolute;
+	z-index:100;
+	top:360px;
+}
+.pagebox{
+	position: absolute;
+	width:100%;
+	height:640px;
+	top:50%;
+	left:0;
+	margin-top:-320px;
+	z-index:101;
+}
+.pageinside{
+	width:1050px;
+	height: 640px;
+	position: relative;
+	margin:0 auto;
+	display: none;
+}
+.pageboxone{
+	position: absolute;
+	width:1050px;
+	height:640px;
+	top:50%;
+	margin-top:-320px;
+	left:50%;
+	margin-left:-525px;
+	z-index:101;
+	overflow: hidden;
+}
+.pageboxtwo{
+	position: absolute;
+	width:1050px;
+	height:640px;
+	top:50%;
+	margin-top:-320px;
+	left:50%;
+	margin-left:-525px;
+	z-index:101;
+	overflow: hidden;
+}
+.pageboxthree{
+	position: absolute;
+	width:1050px;
+	height:640px;
+	top:50%;
+	margin-top:-320px;
+	left:50%;
+	margin-left:-525px;
+	z-index:101;
+	overflow: hidden;
+}
+.showtimebox{
+	width:310px;
+	height:330px;
+	position: absolute;
+	top:50px;
+	right:0;
+	background:url(../imgs/earlybird.gif);
+	background-position:5px -505px;
+	z-index:101
+}
+.showtimebox .hh{
+	width:236px;
+	height:24px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-1326px -595px;
+	margin:110px auto 20px;
+}
+.logo{
+	position: absolute;
+	width:501px;
+	height:81px;
+	top:15px;
+	left:0px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-1154px -419px;
+	z-index:101
+}
+.greet{
+	position: absolute;
+	left:100px;
+	top:170px;
+	width:697px;
+	height:122px;
+	background:url(../imgs/earlybird.gif);
+	background-position:0px -21px;
+	z-index:101;
+	display: none;
+}
+.content{
+	position: absolute;
+	right:30px;
+	bottom:30px;
+	width:258px;
+	height:216px;
+	background:url(../imgs/earlybird.gif);
+	background-position:0px -173px;
+	z-index:101;
+}
+h3{
+	color:#afafaf;
+	font-weight:normal;
+	margin-top:90px;
+	font-size:20px;
+	line-height:20px;
+	text-align:center;
+	font-family: "宋体","Arial Narrow",HELVETICA;
+}
+.countdown{
+	background:#ff6464;
+	width:200px;
+	height:40px;
+	line-height:40px;
+	color:#fff;
+	margin:0 auto;
+	text-align:center;
+}
+.regbtn a{
+	display:block;
+	width:260px;
+	height:45px;
+	text-decoration:none;
+	color:#afafaf;
+	line-height:45px
+}
+.regbtn a:hover{
+	text-decoration:none;
+	color:#ff6464;
+}
+.regbtn{
+	margin-top:20px;
+	margin-left:35px;
+	height:41px;
+	width:241px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-1325px -640px;
+}
+.regbtn:hover{
+	height:41px;
+	width:241px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-1325px -693px;
+}
+.nextpbox{
+	position: absolute;
+	left:50%;
+	bottom: 30px;
+	margin-left:-25px;
+	z-index:101;
+	height:50px;
+	width:50px;
+
+}
+.uppbox{
+	position: absolute;
+	left:50%;
+	bottom: 30px;
+	margin-left:-25px;
+	z-index:101;
+	height:50px;
+	width:50px;
+
+}
+.nextpage{
+	display: block;
+	height:50px;
+	width:50px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-26px -428px
+}
+.nextpage:hover{
+	background-position:-88px -428px
+}
+.uppage{
+	display: block;
+	height:50px;
+	width:50px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-211px -429px;
+}
+.uppage:hover{
+	
+	background-position:-149px -429px;
+}
+.ebirdheader{
+	width:424px;
+	height:125px;
+	background:url(../imgs/earlybird.gif);
+	position: absolute;
+	top:90px;
+	left:50%;
+	margin-left:-212px;
+}
+.ebplancontent{
+	width:720px;
+	height:160px;
+	top:260px;
+	left:50%;
+	margin-left:-360px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-328px -405px;
+	position: absolute;
+}
+.ebplan{
+	background-position:-286px -262px;
+}
+.ebabout{
+	background-position:-730px -262px;
+}
+.ebaboutpower{
+	width:298px;
+	height:345px;
+	top:200px;
+	left:100px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-352px -595px;
+	position: absolute;
+}
+.ebaboutreliable{
+	width:298px;
+	height:345px;
+	top:200px;
+	left:436px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-689px -595px;
+	position: absolute;
+}
+.ebaboutmajor{
+	width:298px;
+	height:345px;
+	top:200px;
+	left:698px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-951px -595px;
+	position: absolute;
+}
+.qqmsg{
+	position:fixed;
+	top:50%;
+	right:50px;
+	margin-top:-30px;
+	height:100px;
+	width:100px;
+	background:url(../imgs/qq100.png);
+	z-index:10000000;
+	cursor: pointer;
+	display: block;
+}
+.aboutus{
+	position:fixed;
+	top:50%;
+	right:50px;
+	margin-top:-150px;
+	height:100px;
+	width:100px;
+	background:url(../imgs/aboutus.png);
+	z-index:10000000;
+	cursor: pointer;
+	display: block;
+}
+.kefuus{
+	position:fixed;
+	top:50%;
+	right:50px;
+	margin-top:84px;
+	height:16px;
+	width:108px;
+	background:url(../imgs/connphone.png);
+	z-index:10000000;
+	cursor: pointer;
+	display: block;
+}
+.ebreg{
+	background-position:-760px -125px;
+}
+.leftrefer{
+	width:500px;
+	position:absolute;
+	top:240px;
+	left:180px;
+}
+.leftrefer .inputdiv{
+	position: relative;
+	margin:10px 0;
+	text-align: left;
+}
+.leftrefer .inputdiv .input-text{
+	width:320px;
+	height:30px;
+	line-height:30px !important;
+	border:1px solid #c8c8c8;
+	font: 12px/1.5 tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif;
+	text-indent:10px;
+	color:#c8c8c8;
+}
+.leftrefer .leftinputtitle{
+	text-align:left;
+	color:#969696;
+	width:95px;
+	line-height:34px;
+	height:34px;
+	display:inline-block;
+	*display: inline;
+	*zoom:1;
+	*line-height:26px;
+	font-size:16px;
+}
+.rightcode{
+	position:absolute;
+	top:240px;
+	right:160px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-1253px -30px;
+	width:185px;
+	height:288px;
+
+}
+.sendmessage{
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	border:0;
+	background:#f0f0f0;
+	margin-left:10px;
+	height:35px;
+	line-height:35px;
+	color:#969696;
+	font: 14px/1.5 \5b8b\4f53,sans-serif;
+	cursor:pointer;
+	width:110px;
+	text-align:center;
+}
+.sendmessage1{
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	border:0;
+	background:#f0f0f0;
+	margin-left:10px;
+	height:35px;
+	line-height:35px;
+	color:#969696;
+	font: 14px/1.5 \5b8b\4f53,sans-serif;
+	cursor:pointer;
+	width:110px;
+	text-align:center;
+	display: none;
+}
+.btn{
+	background:#ff6464;
+	color:#fff;
+	height:40px;
+	line-height:40px;
+	cursor:pointer;
+	width:150px;
+}
+.btn:hover{
+	background:#eb3232;
+}
+.right{
+	width:16px;
+	height:13px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-3px -3px;
+	position:absolute;
+	top:12px;
+	left:430px;
+}
+.errormassage{
+	width:100px;
+	height:13px;
+	position:absolute;
+	top:12px;
+	left:425px;
+	color:#FF6464;
+	font-size:12px
+}
+.error{
+	width:16px;
+	height:13px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-30px -3px;
+	position:absolute;
+	top:12px;
+	left:430px;
+}
+#unbindclick{
+	display:block;
+}
+#bindclick{
+	display:none;
+}
+#psd{
+	display: none;
+}
+#apsd{
+	display: none;
+}
+.grey{
+	background:#F0F0F0;
+	color:#969696
+}
+.grey:hover{
+	background:#F0F0F0;
+	color:#969696
+}
+.btnactive{
+	color:#fff;
+	background:#FF6464;
+}
+.signOne{
+	 display: none;
+	
+	position:absolute;
+	width:484px;
+	height:214px;
+	z-index:101;
+	left:50%;
+	margin-left:-242px;
+	top:50%;
+	margin-top:-107px;
+	
+}
+.signTwo{
+	display: none; 
+	position:absolute;
+	width:505px;
+	height:215px;
+	z-index:101;
+	left:50%;
+	margin-left:-252px;
+	top:50%;
+	margin-top:-107px;
+}
+.signThree{
+	display: none;
+	position:absolute;
+	width:510px;
+	height:215px;
+	z-index:101;
+	left:50%;
+	margin-left:-255px;
+	top:50%;
+	margin-top:-107px;
+}
+.signFour{
+	 display: none; 
+	position:absolute;
+	width:771px;
+	height:235px;
+	z-index:101;
+	left:50%;
+	margin-left:-386px;
+	top:50%;
+	margin-top:-118px;
+}
+ .disp{
+	display: none;
+}
+.disp1{
+	display: none;
+}
+.disp2{
+	display: none;
+} 
+
+.left-round{
+	position: fixed;
+	left: -742px;
+	top: -742px;	
+	width: 1242px;
+	height: 1242px;
+	background: url(../imgs/round.png) no-repeat;
+	background-position: 0 0;
+}
+.left-round1,.left-round2{
+	position: fixed;
+	left: -300px;
+	top: -300px;	
+	width: 845px;
+	height: 845px;
+	background: url(../imgs/left-round1.png) no-repeat;
+	/*background-position: -2px 2px;*/
+}
+.left-round2{
+	display: none;
+	background: url(../imgs/left-round2.png) no-repeat -2px 8px;
+}
+
+.right-round1,.right-round2{
+	position: fixed;
+	right: -300px;
+	bottom: -300px;	
+	width: 845px;
+	height: 845px;
+	background: url(../imgs/right-round1.png) no-repeat;
+	/*background-position: -2px 2px;*/
+}
+.right-round2{
+	/*display: none;*/
+	background: url(../imgs/right-round2.png) no-repeat -4px 3px;
+}
+.transition1{
+
+}
+.transition2{
+	
+}
+.nlogo{
+	width:180px;
+	height:206px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-103px;
+	margin-left:-90px;
+	display: none;
+}
+.tip-info{
+	width:300px;
+    text-align:center;
+    margin:10px auto;
+    line-height:30px
+}
+.init-my-btn{
+    font-size:14px !important;
+    width:146px !important;
+    margin-top:20px !important;
+    padding:4px 0;
+    float: left;
+    margin-left:13px;
+}
+.i-dialog{
+	color: #969696;
+	font: 18px "Microsoft Yahei";
+}
+.seeyou{
+	width:126px;
+	height:22px;
+	background:url(../imgs/earlybird.gif);
+	background-position:-1332px -751px;
+	position: absolute;
+	left:450px;
+	bottom:99px;
+}
+.roundline{
+	width:1376px;
+	position:absolute;
+	top:-160px;
+	left:50%;
+	margin-left:-688px;
+	z-index:1;
+	background:url(../imgs/roudline.gif) no-repeat;
+}

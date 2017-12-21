@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>牛娃金融</title>
+    <meta name="description" content="注册" /> 
+    <meta name="keywords" content="注册,牛娃p2p" /> 
+    
+    <style type="text/css">
+    	body{
+			font: tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif;
+			background:url(../imgs/bg.png);
+			background-position: -2px 0;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+    	.reg2bg{
+    		background: url(../imgs/bgzaoniao.gif) no-repeat;
+    		height: 445px;
+ 		    width: 1006px;		    
+    	}
+    	.c1,.c2,.c3{display: inline-block;}
+    	.c1{display: inline-block;}
+    	#txtxinke,#txtyouxuan,#txtjingxuan{font-size: 14px;color: #cdcdcd; padding: 5px; border: solid 1px #c6c6c6;  width: 240px;  height: 30px;  line-height: 30px;  position: absolute; top: 360px;font: 16px "Microsoft Yahei";  }
+    	#txtxinke{  left: 30px;}
+    	#txtyouxuan{left: 380px;}
+    	#txtjingxuan{left: 730px;}
+    	#btnsave{width: 150px;  height: 50px;  line-height: 50px;  background-color: #ff6464;  border: none;  color: #fff;  float: right; font-size: 18px; margin-top: 10px; cursor: pointer;margin-right:5px;}
+    	.clear{clear: both;}
+    	.tips{font-size: 12px;color: #969696;line-height: 20px;}
+    	#errortips{float:right;margin-right:50px;color: #ff6464;margin-top:5px; display:none;font-size: 12px;}
+    	.yuan1{position:absolute;bottom:200px;left:255px;height:20px;width:20px;z-index:100000;color:#cdcdcd;font: 16px "Microsoft Yahei"; }
+    	.yuan2{position:absolute;bottom:200px;left:605px;height:20px;width:20px;z-index:100000;color:#cdcdcd;font: 16px "Microsoft Yahei"; }
+    	.yuan3{position:absolute;bottom:200px;left:955px;height:20px;width:20px;z-index:100000;color:#cdcdcd;font: 16px "Microsoft Yahei"; }
+		.qqmsg{
+			position:fixed;
+			top:50%;
+			right:50px;
+			margin-top:-30px;
+			height:100px;
+			width:100px;
+			background:url(../imgs/qq100.png);
+			z-index:10000000;
+			cursor: pointer;
+			display: block;
+		}
+		.aboutus{
+			position:fixed;
+			top:50%;
+			right:50px;
+			margin-top:-150px;
+			height:100px;
+			width:100px;
+			background:url(../imgs/aboutus.png);
+			z-index:10000000;
+			cursor: pointer;
+			display: block;
+		}
+		.kefuus{
+			position:fixed;
+			top:50%;
+			right:50px;
+			margin-top:84px;
+			height:16px;
+			width:108px;
+			background:url(../imgs/connphone.png);
+			z-index:10000000;
+			cursor: pointer;
+			display: block;
+		}
+	
+    </style>
+    
+</head>
+
+<body>
+	<a class="qqmsg" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODAwNzc4MF8yNzEyOTJfNDAwODg0Njg5OF8yXw" target="_bank" ></a>
+	<div style="width:1006px;margin: auto; position: absolute;height:590px;top:50%;left:50%;margin-left:-503px;margin-top:-295px;">
+		<div class="reg2bg"></div>
+		<div class="c1"><input maxlength="20" size="9" type="text" id="txtxinke" class="ai"/><div style="clear:both"></div></div>
+		<div class="c2 "><input maxlength="20" size="9" type="text" id="txtyouxuan" class="ai"/><div style="clear:both"></div></div>
+		<div class="c3 "><input maxlength="20" size="9" type="text" id="txtjingxuan" class="ai"/><div style="clear:both"></div></div>
+		<div><input type="button" id="btnsave" value="确认预约"/></div>
+		<div class="clear"></div>
+		<div id="errortips" ></div>
+		<div class="tips">
+			<div style="height:1px;background:#969696;width:540px;margin-bottom:5px;"></div>
+			<div style="clear:both"></div>
+			*成功预约的用户，上线活动期间可享有14%年化收益率的专属投资通道，投资不设上限。<br/>
+			&nbsp;上线活动期间如约投资懒牛计划、智牛精选均可获得双倍红包奖励。<br/>
+			&nbsp;以上投资项目均可同时预约。
+		</div>
+		<div class="yuan1">元</div>
+		<div class="yuan2">元</div>
+		<div class="yuan3">元</div>
+	</div>
+	<script type="text/javascript" src="/js/libs/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/js/libs/autoNumeric.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".ai").autoNumeric('init', {aSep : '', vMin : '0.00', vMax : '9999999999.99'});
+		var strconst="请输入预约投资金额";
+		$("#txtxinke,#txtyouxuan,#txtjingxuan").val(strconst);
+		$("#txtxinke,#txtyouxuan,#txtjingxuan").focus(function(){
+			var that=$(this);
+			if(that.val()==strconst){
+				that.css("color","#000");
+				that.val("");
+			}
+		}).blur(function(){
+			var that=$(this);
+			that.css("color","#000");
+			if(that.val().length==0){
+				that.val(strconst);
+				that.css("color","#cdcdcd");
+			}
+		});
+		$("#btnsave").click(function(){
+			var xinke=$("#txtxinke").val().replace(strconst,'');
+			var youxuan=$("#txtyouxuan").val().replace(strconst,'');
+			var jingxuan=$("#txtjingxuan").val().replace(strconst,'');
+			
+			//投资post 金额
+			if(xinke==""&&youxuan==""&&jingxuan==""){
+				$("#errortips").show().html("至少输入一个预约投资金额");
+			}else{
+				$.post("/regpc2",{newAmount:xinke,planAmount:youxuan,directAmount:jingxuan},function(result){
+					if(result.success){
+						window.location.href="/regpc3";
+					}else{
+						$("#errortips").show().html(result.msg);
+					}
+			});
+			}
+		});
+	});
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5H47RG');</script>
+</body>
+
